@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Algopush</title>
+  <meta name="description" content="Read the privacy policy of Algopush to understand how your data is collected, used, and protected." />
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://algopush.com/privacy-policy.html">
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    :root {
+      --primary-color: #2584a1;
+      --text-color: #333;
+      --bg-color: #f9f9f9;
+      --max-width: 800px;
+    }
+
+    body {
+      margin: 0; /* Ensure no margin on body */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    /* Privacy Policy Section Styles (kept independent of global styles) */
+    .policy-container {
+      max-width: var(--max-width);
+      margin: 2rem auto;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .policy-container {
+        padding: 1rem;
+      }
+
+      h1, h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Inject -->
+  <div id="header"></div>
+    <br>
+  <center><h1>Privacy Policy</h1></center>
+
+  <main class="policy-container">
+
+    <p>Welcome to <strong>Algopush</strong> (algopush.com). We value your privacy and are committed to protecting your personal data. This privacy policy outlines how we collect, use, and safeguard the information you provide while browsing our website.</p>
+
+    <h2>1. Information We Collect</h2>
+    <p>We collect minimal personal information. Here’s what may be collected:</p>
+    <ul>
+      <li><strong>Usage Data:</strong> Such as pages visited, browser type, and referring website.</li>
+      <li><strong>Analytics:</strong> We use GoatCounter to anonymously count page views.</li>
+      <li><strong>Contact Info:</strong> Only when you reach out to us via forms or email.</li>
+    </ul>
+
+    <h2>2. How We Use Your Data</h2>
+    <p>We use your information to:</p>
+    <ul>
+      <li>Improve site experience and content.</li>
+      <li>Monitor site performance and detect technical issues.</li>
+      <li>Respond to your inquiries when you contact us.</li>
+    </ul>
+
+    <h2>3. Third-Party Services</h2>
+    <p>We may use third-party services like:</p>
+    <ul>
+      <li><strong>GoatCounter</strong> – Anonymous site analytics without cookies.</li>
+      <li><strong>GitHub Pages</strong> – For hosting the website.</li>
+    </ul>
+
+    <h2>4. Data Security</h2>
+    <p>We implement reasonable security practices to protect your information, but no online system is 100% secure. We encourage you to browse responsibly.</p>
+
+    <h2>5. Cookies</h2>
+    <p>This site does not use tracking cookies. Our analytics are privacy-friendly and do not store personal data.</p>
+
+    <h2>6. Your Rights</h2>
+    <p>You have the right to access, modify, or delete your personal data. Contact us at <a href="mailto:contact@algopush.com">contact@algopush.com</a> for any requests.</p>
+
+    <h2>7. Changes to This Policy</h2>
+    <p>This privacy policy may be updated occasionally. Any changes will be posted on this page with the updated date.</p>
+
+    <h2>8. Contact Us</h2>
+    <p>If you have questions about this Privacy Policy, please email us at <a href="mailto:contact@algopush.com">contact@algopush.com</a>.</p>
+  </main>
+
+  <!-- Footer Inject -->
+  <div id="footer"></div>
+
+  <script>
+    // Load Header and Footer from external HTML files
+    async function loadComponent(id, file) {
+      const res = await fetch(file);
+      const text = await res.text();
+      document.getElementById(id).innerHTML = text;
+    }
+    loadComponent("header", "./header.html");  // Ensure the file path is correct
+    loadComponent("footer", "./footer.html");  // Ensure the file path is correct
+  </script>
+
+</body>
+
+</html>

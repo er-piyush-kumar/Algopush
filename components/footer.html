@@ -1,19 +1,52 @@
 <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025<a href="https://algopush.com">Algopush</a> All Rights Reserved.</p>
-      <div class="page-views">
-        <p>Page views: <span id="goatcounter">Loading...</span></p>
-      </div>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/piyushkumarnsut/">LinkedIn</a>
-      </div>
+  <div class="container">
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/piyushkumarnsut/">LinkedIn</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
     </div>
-  </footer>
+    <div class="page-views">
+      <p>Page views: <span id="goatcounter">Loading...</span></p>
+    </div>
+    <div class=""><p>&copy; 2025 | <a href="https://algopush.com">Algopush</a> | All Rights Reserved.</p></div>
+  </div>
 
-  <!-- GoatCounter script -->
-<script async src="https://gc.zgo.at/count.js" data-goatcounter="erpiyushkumar"></script>
+  <style>
+    footer {
+      background-color: black;
+      color: white;
+      font-weight: 400;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
 
-<script>
+    .site-footer .container {
+      max-width: 100%;
+      color: white;
+      margin: auto;
+      padding: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .social-links a{
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .social-links a:hover, a:hover {
+      text-decoration: underline;
+    }
+
+    .page-views {
+      margin: 0.1rem;
+      font-size: 1rem;
+    }
+  </style>
+
+  <script async src="https://gc.zgo.at/count.js" data-goatcounter="https://erpiyushkumar.goatcounter.com/count"></script>
+  <script>
     window.addEventListener('load', function() {
       // Check if GoatCounter has loaded properly
       if (window.GoatCounter) {
@@ -23,3 +56,4 @@
       }
     });
   </script>
+</footer>

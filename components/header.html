@@ -1,7 +1,88 @@
-<header class="site-header">
-    <div class="container header-flex">
-      <div class="logo">
-        <img src="./logo.png" alt="Algopush Logo" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algopush</title>
+  
+  <style>
+    /* Header Styles */
+    
+    .site-header {
+      background-color: #2584a1;
+      color: white;
+    }
+
+    .site-header .container {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      max-width: 100%;  /* Full width */
+      margin: auto;
+      font-size: 1.2rem;
+      padding: 1.5rem;
+      display: flex;
+      font-weight: 500;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-header h1 {
+      margin: 0;
+    }
+
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    .main-nav li {
+      margin: 0 1em;
+    }
+
+    .main-nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      text-decoration: underline;
+    }
+
+    #search {
+      padding: 0.4em;
+      margin-left: 1em;
+      border-radius: 5px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .site-header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .main-nav ul {
+        flex-direction: column;
+      }
+
+      .main-nav li {
+        margin: 0.5em 0;
+      }
+
+      .search-bar {
+        margin-top: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="site-header">
+    <div class="container">
+      <div>
+        <h1>ALGOPUSH</h1>
       </div>
       <nav class="main-nav">
         <ul>
@@ -17,3 +98,15 @@
       </div>
     </div>
   </header>
+
+  <script>
+    // JavaScript for any dynamic header behavior can go here
+    // For example: Adding search functionality, menu toggle, etc.
+    document.getElementById('search').addEventListener('input', function() {
+      // Add logic to handle search functionality if needed
+      console.log('Searching for:', this.value);
+    });
+  </script>
+
+</body>
+</html>

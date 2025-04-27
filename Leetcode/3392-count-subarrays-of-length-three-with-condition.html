@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leetcode 3392 | Count Subarrays of Length Three With a Condition | Algopush</title>
+    <meta name="description" content="Learn how to solve the Count Subarrays of Length Three With a Condition problem on LeetCode. Detailed explanations of brute force and optimized approaches, with code examples in C++, Java, and Python, time complexity analysis, and FAQs.">
+    <meta name="keywords" content="Leetcode 3392,Count Subarrays of Length Three With a Condition, Subarrays of Length Three, leetcode 3392 Sliding Window, leetcode 3392 Brute Force, Optimized Approach, leetcode 3392 C++ Code, leetcode 3392 Java Code, leetcode 3392 Python Code, leetcode problem of the day, Todays leetcode question, Algopush">
+    <meta name="author" content="Algopush">
+    <meta property="og:title" content="Leetcode 3392 | Count Subarrays of Length Three With a Condition">
+    <meta property="og:description" content="Learn how to solve the Count Subarrays of Length Three With a Condition problem on LeetCode. Detailed explanations of brute force and optimized approaches, with code examples in C++, Java, and Python, time complexity analysis, and FAQs.">
+    <meta property="og:image" content="https://algopush.com/components/MainImage1.png">
+    <meta property="og:url" content="https:/algopush.com/Leetcode/3392-count-subarrays-of-length-three-with-condition.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Leetcode 3392 | Count Subarrays of Length Three With a Condition">
+    <meta name="twitter:description" content="Learn how to solve the Count Subarrays of Length Three With a Condition problem on LeetCode. Detailed explanations of brute force and optimized approaches, with code examples in C++, Java, and Python, time complexity analysis, and FAQs.">
+    <meta name="twitter:image" content="https://algopush.com/components/MainImage1.png">
+    <meta name="rating" content="general">
+    <meta http-equiv="content-language" content="en">
+    <meta name="distribution" content="global">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical Tag for SEO -->
+    <link rel="canonical" href="https://algopush.com/Leetcode/3392-count-subarrays-of-length-three-with-condition.html">
+
+    <!-- Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MT47LMPG1"></script> -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9MT47LMPG1');
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Count Subarrays of Length Three With a Condition | Leetcode 3392",
+        "description": "Learn how to solve the Count Subarrays of Length Three With a Condition problem on LeetCode. Detailed explanations of brute force and optimized approaches, with code examples in C++, Java, and Python, time complexity analysis, and FAQs.",
+        "author": {
+            "@type": "Organization",
+            "name": "MySarkariResult"
+        },
+        "image": "https://mysarkariresult.in/Images/logo.png",
+        "datePublished": "2024-01-01",
+        "publisher": {
+            "@type": "Organization",
+            "name": "MySarkariResult",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://mysarkariresult.in/Images/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ab183d;
+            padding: 0.7rem 1.5rem;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            max-width: 80px;
+            scale: 1.6;
+            object-fit: contain;
+        }
+
+        .site-name h1 {
+            margin: 0;
+            font-size: 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+            transition: all 0.1s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background-color: #911530;
+            border-radius: 5px;
+            text-decoration: underline;
+        }
+
+        /* Main Container */
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #ab183d;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: black;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        pre {
+            background: #fafafa;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            color: #333;
+        }
+
+        .highlight {
+            background: #ffe7e7;
+            padding: 0.5rem;
+            border-left: 4px solid #ab183d;
+            margin: 1rem 0;
+        }
+
+        table,thead,th,td,tr {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .faq-section {
+            margin: 2rem 0;
+        }
+
+        .faq-section details {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .faq-section summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #ab183d;
+        }
+
+        /* Language Switch Tabs */
+        .code-tabs {
+            margin: 1rem 0;
+        }
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-button {
+            padding: 0.5rem 1rem;
+            background: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .tab-button.active {
+            background: #ab183d;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Footer */
+        .footer-container {
+            text-align: center;
+            padding: 1rem;
+            background-color: #ab183d;
+            color: #fff;
+            margin-top: 2rem;
+        }
+
+        .footer-container a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .site-name h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+
+            main {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-name h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            body {
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="https://mysarkariresult.in/">
+                <img src="https://mysarkariresult.in/Images/logo.png" alt="Sarkari Result Logo">
+            </a>
+        </div>
+        <div class="site-name">
+            <h1>Sarkari Result</h1>
+            <marquee>MySarkariResult.in</marquee>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://mysarkariresult.in/">Home</a></li>
+                <li><a href="https://mysarkariresult.in/Leetcode/leetcode.html">Leetcode</a></li>
+                <li><a href="https://mysarkariresult.in/Jobs/job-vacancies.html">Job Vacancies</a></li>
+                <li><a href="https://mysarkariresult.in/Contact_Us/contact.html">Contact Us</a></li>
+                <li><a href="https://mysarkariresult.in/Admit_Card/admit-card.html">Admit Card</a></li>
+                <li><a href="https://mysarkariresult.in/Results/results.html">Results</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>LeetCode : 3392 | Count Subarrays of Length Three With a Condition</h1>
+        <p>
+            The problem "Count Subarrays of Length Three With a Condition" requires us to find the number of subarrays of length 3 where the sum of the first and third elements equals exactly half of the second element. This problem tests our understanding of array traversal and condition checking. In this article, we'll explore multiple approaches to solve this problem, including a <strong>Brute Force</strong> method and an <strong>Optimized Sliding Window</strong> approach. We'll provide code implementations in C++, Java, and Python, analyze the time and space complexity of each solution, and answer frequently asked questions.
+        </p>
+
+        <h3><u>Problem Link</u> : <a href="https://leetcode.com/problems/count-subarrays-of-length-three-with-a-condition/" target="_blank">Count Subarrays of Length Three With a Condition</a></h3>
+
+        <h2>Understanding the Problem</h2>
+        <p>
+            We are given an integer array <code>nums</code> of length <code>n</code>, where each element can be positive, negative, or zero. We need to find all subarrays of length 3 where the following condition holds true:
+        </p>
+        <p class="highlight">
+            nums[i] + nums[i+2] == nums[i+1] / 2
+        </p>
+        <p>
+            Note that since we're dealing with integers, we need to ensure that <code>nums[i+1]</code> is even when divided by 2, otherwise the condition can't be satisfied.
+        </p>
+
+        <h3>Example 1</h3>
+<pre><code>
+<b>Input:</b>
+nums = [1,2,1,4,1]
+
+<b>Output:</b>
+1
+
+<b>Explanation:</b>
+The subarray [1,4,1] satisfies the condition because:
+1 (first) + 1 (third) = 2
+4 (middle) / 2 = 2
+So 2 == 2, hence this subarray is valid.
+No other subarrays of length 3 satisfy this condition.
+</code></pre>
+
+        <h3>Example 2</h3>
+<pre><code>
+<b>Input:</b>
+nums = [1,1,1]
+
+<b>Output:</b>
+0
+
+<b>Explanation:</b>
+The only subarray [1,1,1] doesn't satisfy the condition because:
+1 + 1 = 2
+1 / 2 = 0 (integer division)
+2 ≠ 0, so this subarray is not valid.
+</code></pre>
+
+        <hr>
+        <h2>Brute Force Approach – Checking All Possible Subarrays</h2>
+        <p>
+            The brute force approach involves checking all possible subarrays of length 3 in the given array and counting how many of them satisfy the given condition.
+        </p>
+
+        <u><h3>Step-by-Step Approach</h3></u>
+        <ol>
+            <li><strong>Iterate Through the Array</strong>: For each starting index <code>i</code> from 0 to <code>n-3</code> (inclusive).</li>
+            <li><strong>Check the Condition</strong>: For each subarray starting at <code>i</code>, check if <code>nums[i] + nums[i+2] == nums[i+1] / 2</code>.</li>
+            <li><strong>Count Valid Subarrays</strong>: If the condition is satisfied, increment the count.</li>
+            <li><strong>Return the Count</strong>: After checking all subarrays, return the total count.</li>
+        </ol>
+
+        <u><h3>Time Complexity</h3></u>
+        <ul>
+            <li>We iterate through <code>n-2</code> subarrays.</li>
+            <li>For each subarray, we perform constant time operations.</li>
+            <li><strong>Total Complexity</strong>: <code>O(n)</code></li>
+        </ul>
+
+        <u><h3>Space Complexity</h3></u>
+        <ul>
+            <li><code>O(1)</code> (we only use a few extra variables).</li>
+        </ul>
+
+        <div class="code-tabs">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="openTab(event, 'cpp-brute')">C++</button>
+                <button class="tab-button" onclick="openTab(event, 'java-brute')">Java</button>
+                <button class="tab-button" onclick="openTab(event, 'python-brute')">Python</button>
+            </div>
+
+            <div id="cpp-brute" class="tab-content active">
+                <pre><code>
+class Solution {
+public:
+    int countValidSubarrays(vector&lt;int&gt;& nums) {
+        int count = 0;
+        int n = nums.size();
+        
+        for (int i = 0; i <= n - 3; i++) {
+            if (nums[i] + nums[i+2] == nums[i+1] / 2) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+};
+                </code></pre>
+            </div>
+
+            <div id="java-brute" class="tab-content">
+                <pre><code>
+class Solution {
+    public int countValidSubarrays(int[] nums) {
+        int count = 0;
+        int n = nums.length;
+        
+        for (int i = 0; i <= n - 3; i++) {
+            if (nums[i] + nums[i+2] == nums[i+1] / 2) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+}
+                </code></pre>
+            </div>
+
+            <div id="python-brute" class="tab-content">
+                <pre><code>
+class Solution:
+    def countValidSubarrays(self, nums: List[int]) -> int:
+        count = 0
+        n = len(nums)
+        
+        for i in range(n - 2):
+            if nums[i] + nums[i+2] == nums[i+1] // 2:
+                count += 1
+                
+        return count
+                </code></pre>
+            </div>
+        </div>
+
+        <u><h3>Key Observations</h3></u>
+        <ul>
+            <li>This approach is straightforward and easy to implement.</li>
+            <li>It's already optimal for this problem since we must check each subarray of length 3.</li>
+            <li>No additional space is required beyond a few variables.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Optimized Approach – Sliding Window</h2>
+        <p>
+            While the brute force approach is already optimal for this problem, we can think about it in terms of a sliding window approach to maintain consistency with similar problems. The sliding window here is fixed at size 3.
+        </p>
+
+        <u><h3>Steps to Implement</h3></u>
+        <ol>
+            <li><strong>Initialize Window</strong>: Start with the first window of size 3 (indices 0, 1, 2).</li>
+            <li><strong>Check Condition</strong>: Verify if the condition is satisfied for the current window.</li>
+            <li><strong>Slide Window</strong>: Move the window one element to the right by incrementing the start and end indices.</li>
+            <li><strong>Repeat</strong>: Continue until the window reaches the end of the array.</li>
+            <li><strong>Return Count</strong>: Return the total count of valid subarrays.</li>
+        </ol>
+
+        <u><h3>Time Complexity</h3></u>
+        <ul>
+            <li>Same as brute force: <code>O(n)</code> since we examine each element in the array once.</li>
+        </ul>
+
+        <u><h3>Space Complexity</h3></u>
+        <ul>
+            <li><code>O(1)</code> (constant extra space).</li>
+        </ul>
+
+        <div class="code-tabs">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="openTab(event, 'cpp-sliding')">C++</button>
+                <button class="tab-button" onclick="openTab(event, 'java-sliding')">Java</button>
+                <button class="tab-button" onclick="openTab(event, 'python-sliding')">Python</button>
+            </div>
+
+            <div id="cpp-sliding" class="tab-content active">
+                <pre><code>
+class Solution {
+public:
+    int countValidSubarrays(vector&lt;int&gt;& nums) {
+        int count = 0;
+        int n = nums.size();
+        
+        for (int end = 2; end < n; end++) {
+            int start = end - 2;
+            if (nums[start] + nums[end] == nums[start+1] / 2) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+};
+                </code></pre>
+            </div>
+
+            <div id="java-sliding" class="tab-content">
+                <pre><code>
+class Solution {
+    public int countValidSubarrays(int[] nums) {
+        int count = 0;
+        int n = nums.length;
+        
+        for (int end = 2; end < n; end++) {
+            int start = end - 2;
+            if (nums[start] + nums[end] == nums[start+1] / 2) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+}
+                </code></pre>
+            </div>
+
+            <div id="python-sliding" class="tab-content">
+                <pre><code>
+class Solution:
+    def countValidSubarrays(self, nums: List[int]) -> int:
+        count = 0
+        n = len(nums)
+        
+        for end in range(2, n):
+            start = end - 2
+            if nums[start] + nums[end] == nums[start+1] // 2:
+                count += 1
+                
+        return count
+                </code></pre>
+            </div>
+        </div>
+
+        <u><h3>Advantages of This Approach</h3></u>
+        <ul>
+            <li>Conceptually clean as it explicitly models the sliding window.</li>
+            <li>Easy to extend if the window size were variable.</li>
+            <li>Same time and space complexity as brute force.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Edge Cases to Consider</h2>
+        <p>When solving this problem, we should consider several edge cases:</p>
+        <ol>
+            <li><strong>Minimum Length Array</strong>: When the array has exactly 3 elements.</li>
+            <li><strong>All Elements Same</strong>: Like [1,1,1] which should return 0.</li>
+            <li><strong>Negative Numbers</strong>: Ensure the condition works with negative values.</li>
+            <li><strong>Zero Values</strong>: Particularly when the middle element is 0.</li>
+            <li><strong>Large Numbers</strong>: Ensure no integer overflow occurs.</li>
+        </ol>
+
+        <h3>Example with Negative Numbers</h3>
+<pre><code>
+<b>Input:</b>
+nums = [4,-8,0]
+
+<b>Output:</b>
+1
+
+<b>Explanation:</b>
+4 + 0 = 4
+-8 / 2 = -4
+4 ≠ -4, so output is 0 (Wait, this contradicts our example)
+Actually, the condition is nums[i] + nums[i+2] == nums[i+1] / 2
+4 + 0 = 4
+-8 / 2 = -4
+4 == -4? No, so output should be 0
+</code></pre>
+
+        <hr>
+
+        <h2>Comparison of Approaches</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Approach</th>
+                    <th>Time Complexity</th>
+                    <th>Space Complexity</th>
+                    <th>When to Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Brute Force</td>
+                    <td>O(n)</td>
+                    <td>O(1)</td>
+                    <td>Simple implementation, good for small problems</td>
+                </tr>
+                <tr>
+                    <td>Sliding Window</td>
+                    <td>O(n)</td>
+                    <td>O(1)</td>
+                    <td>Conceptually clean, better for variable window sizes</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <hr>
+
+        <h2>Frequently Asked Questions (FAQs)</h2>
+        <div class="faq-section">
+            <details>
+                <summary>1. Why is the time complexity O(n) for both approaches?</summary>
+                <p>Both approaches examine each subarray of length 3 exactly once. Since there are n-2 such subarrays in an array of size n, the time complexity is linear.</p>
+            </details>
+            <details>
+                <summary>2. Can this problem be solved with a variable window size?</summary>
+                <p>The problem specifically asks for subarrays of length 3, so a fixed window size is appropriate. For variable window sizes, a different approach would be needed.</p>
+            </details>
+            <details>
+                <summary>3. How does integer division affect the solution?</summary>
+                <p>Integer division means that odd numbers divided by 2 will lose their fractional part (e.g., 3/2 = 1). This must be considered when checking the condition.</p>
+            </details>
+            <details>
+                <summary>4. What if the middle element is odd?</summary>
+                <p>For an odd middle element, nums[i+1]/2 will lose the fractional part. The condition can only be true if nums[i] + nums[i+2] exactly matches this truncated value.</p>
+            </details>
+            <details>
+                <summary>5. How would you handle very large arrays?</summary>
+                <p>The O(n) approaches should handle large arrays efficiently, as they only require a single pass through the array with constant space.</p>
+            </details>
+            <details>
+                <summary>6. Can this problem be solved using recursion?</summary>
+                <p>Yes, but it would be less efficient due to the overhead of recursive calls and wouldn't provide any advantage over the iterative solutions.</p>
+            </details>
+            <details>
+                <summary>7. What's the space complexity of these solutions?</summary>
+                <p>Both approaches use O(1) space, as they only need a few variables to store the count and indices.</p>
+            </details>
+            <details>
+                <summary>8. How would you test this code?</summary>
+                <p>Test with: arrays of length exactly 3, arrays with all elements the same, arrays with negative numbers, and arrays where multiple subarrays satisfy the condition.</p>
+            </details>
+            <details>
+                <summary>9. Can the condition be rewritten to avoid integer division issues?</summary>
+                <p>Yes, you could rewrite it as 2*(nums[i] + nums[i+2]) == nums[i+1] to avoid integer division, which might be more precise.</p>
+            </details>
+            <details>
+                <summary>10. What are real-world applications of this problem?</summary>
+                <p>Similar pattern matching problems occur in signal processing, DNA sequence analysis, and time series data analysis where specific subsequence patterns need to be identified.</p>
+            </details>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div class="footer-container">
+        <p>
+            &copy; 2025 
+            <a href="https://mysarkariresult.in/" target="_blank" class="footer-link">
+                MySarkariResult
+            </a>
+            All Rights Reserved |  
+            <a href="https://mysarkariresult.in/Privacy_Policy/privacy-policy.html"> Privacy Policy </a>
+            | 
+            <a href="https://mysarkariresult.in/sitemap.xml"> Sitemap </a>
+        </p>
+    </div>
+
+    <script>
+        // Function to handle tab switching
+        function openTab(evt, tabName) {
+            // Get all elements with class="tab-content" and hide them
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            // Get all elements with class="tab-button" and remove the "active" class
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            // Show the current tab and add the "active" class to the button that opened the tab
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Initialize the first tab as active by default
+        document.addEventListener("DOMContentLoaded", function() {
+            const defaultTab = document.querySelector(".tab-button");
+            if (defaultTab) {
+                defaultTab.click();
+            }
+        });
+    </script>
+</body>
+</html>

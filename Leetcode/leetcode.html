@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode Solutions - Comprehensive Problem Solving Guide | Algopush</title>
+    <meta name="description" content="Master coding interviews with our complete LeetCode solution guide. Detailed explanations for problems in C++, Java, and Python with time complexity analysis. Perfect for interview preparation.">
+    <meta name="keywords" content="LeetCode solutions, Leetcode problem of the day, leetcode potd, todays leetcode question, leetcode contest question, leetcode todays contest, coding interview preparation, algorithm problems, data structures, C++ Java Python examples, problem solving techniques, Algopush">
+    <meta name="author" content="Algopush">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://algopush.com/Leetcode/leetcode.html">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="LeetCode Solutions - Comprehensive Problem Solving Guide | Algopush">
+    <meta property="og:description" content="Master coding interviews with our complete LeetCode solution guide with detailed explanations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://algopush.com/Leetcode/leetcode.html">
+    <meta property="og:image" content="https://algopush.com/components/MainImage1.png">
+    <meta property="og:site_name" content="Algopush">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LeetCode Solutions - Comprehensive Problem Solving Guide">
+    <meta name="twitter:description" content="Master coding interviews with our complete LeetCode solution guide.">
+    <meta name="twitter:image" content="https://algopush.com/components/MainImage1.png">
+    
+    <!-- Structured Data / Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "LeetCode Solutions Collection",
+        "description": "Comprehensive collection of LeetCode problem solutions with detailed explanations",
+        "url": "https://algopush.com/Leetcode/leetcode.html",
+        "numberOfItems": "1",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "TechArticle",
+                    "name": "Count Subarrays of Length Three With Condition",
+                    "url": "https://algopush.com/Leetcode/3392-count-subarrays-of-length-three-with-condition.html",
+                    "description": "Count subarrays where sum of first and third elements equals half of the second element",
+                    "difficulty": "Easy"
+                }
+            }
+<!--             
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "TechArticle",
+                    "name": "Two Sum",
+                    "url": "https://algopush.com/1-two-sum.html",
+                    "description": "Find two numbers in an array that add up to a specific target number",
+                    "difficulty": "Easy"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "TechArticle",
+                    "name": "Maximum Subarray",
+                    "url": "https://algopush.com/53-maximum-subarray.html",
+                    "description": "Find the contiguous subarray with the largest sum (Kadane's Algorithm)",
+                    "difficulty": "Medium"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "TechArticle",
+                    "name": "3Sum",
+                    "url": "https://algopush.com/15-3sum.html",
+                    "description": "Find all unique triplets in the array that sum to zero",
+                    "difficulty": "Medium"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                    "@type": "TechArticle",
+                    "name": "Word Search II",
+                    "url": "https://algopush.com/212-word-search-ii.html",
+                    "description": "Find all words from a dictionary that exist in a 2D board of letters",
+                    "difficulty": "Hard"
+                }
+            } -->
+        ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://algopush.com/components/Favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://algopush.com/components/Favicon.png">
+    
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://algopush.com/script.js" as="script">
+    <link rel="preload" href="https://algopush.com/styles.css" as="style">
+    
+    <style>
+        :root {
+            --primary-color: #102c41;
+            --secondary-color: #196391;
+            --accent-color: #102c41;
+            --light-bg: #f5f9fc;
+            --text-color: #333;
+            --base-font-size: 1rem;
+            --spacing-unit: 1rem;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.5;
+            font-size: var(--base-font-size);
+        }
+
+        .leetcode-container {
+            width: 95%;
+            max-width: 90rem;
+            margin: 0 auto;
+            padding: calc(var(--spacing-unit) * 1.5);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 0.125rem solid var(--primary-color);
+            padding-bottom: calc(var(--spacing-unit) * 0.75);
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+            font-size: clamp(1.5rem, 5vw, 2.25rem);
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: calc(var(--spacing-unit) * 1);
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+            align-items: center;
+        }
+
+        .search-container {
+            flex: 1 1 20rem;
+            min-width: 60%;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1);
+            border: 0.0625rem solid #ddd;
+            border-radius: 0.375rem;
+            font-size: calc(var(--base-font-size) * 1);
+            box-sizing: border-box;
+        }
+
+        .difficulty-filters {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 0.75);
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
+            border: none;
+            border-radius: 1.25rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: calc(var(--base-font-size) * 0.875);
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active {
+            transform: scale(1.05);
+            box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.2);
+        }
+
+        .filter-btn.all {
+            background: #e0e0e0;
+        }
+
+        .filter-btn.easy {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .filter-btn.medium {
+            background: #fff8e1;
+            color: #ff8f00;
+        }
+
+        .filter-btn.hard {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .leetcode-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+            gap: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .leetcode-card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.1875rem 0.625rem rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border-left: 0.25rem solid var(--accent-color);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
+        .leetcode-card:hover {
+            transform: translateY(-0.1875rem);
+            box-shadow: 0 0.3125rem 0.9375rem rgba(0,0,0,0.15);
+            text-decoration: none;
+        }
+
+        .leetcode-card:hover .problem-title {
+            text-decoration: underline;
+        }
+
+        .card-content {
+            padding: calc(var(--spacing-unit) * 1.125);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .problem-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: calc(var(--spacing-unit) * 0.625);
+        }
+
+        .problem-number {
+            font-size: calc(var(--base-font-size) * 0.875);
+            background: var(--primary-color);
+            color: white;
+            padding: calc(var(--spacing-unit) * 0.1875) calc(var(--spacing-unit) * 0.625);
+            border-radius: 0.75rem;
+        }
+
+        .problem-difficulty {
+            font-size: calc(var(--base-font-size) * 0.75);
+            font-weight: 600;
+            padding: calc(var(--spacing-unit) * 0.1875) calc(var(--spacing-unit) * 0.625);
+            border-radius: 0.25rem;
+        }
+
+        .easy { background: #e8f5e9; color: #2e7d32; }
+        .medium { background: #fff8e1; color: #ff8f00; }
+        .hard { background: #ffebee; color: #c62828; }
+
+        .problem-title {
+            font-size: calc(var(--base-font-size) * 1.125);
+            margin: calc(var(--spacing-unit) * 0.3125) 0 calc(var(--spacing-unit) * 0.625);
+            color: var(--primary-color);
+            line-height: 1.3;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .problem-description {
+            font-size: calc(var(--base-font-size) * 0.875);
+            color: #555;
+            margin: calc(var(--spacing-unit) * 0.625) 0;
+            flex-grow: 1;
+        }
+
+        /* Breadcrumb navigation for SEO */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 62rem) {
+            .leetcode-grid {
+                grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+            }
+        }
+
+        @media (max-width: 48rem) {
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-container {
+                min-width: 100%;
+            }
+            
+            .difficulty-filters {
+                justify-content: center;
+            }
+            
+            .leetcode-grid {
+                grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+                gap: calc(var(--spacing-unit) * 1);
+            }
+        }
+
+        @media (max-width: 30rem) {
+            .leetcode-container {
+                width: 100%;
+                padding: calc(var(--spacing-unit) * 1);
+            }
+            
+            .leetcode-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-btn {
+                padding: calc(var(--spacing-unit) * 0.375) calc(var(--spacing-unit) * 0.75);
+                font-size: calc(var(--base-font-size) * 0.8125);
+            }
+            
+            .card-content {
+                padding: calc(var(--spacing-unit) * 0.9375);
+            }
+            
+            .problem-title {
+                font-size: calc(var(--base-font-size) * 1);
+            }
+        }
+
+        @media (max-width: 23.4375rem) {
+            :root {
+                --base-font-size: 0.9375rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="leetcode-container">
+        <!-- Breadcrumb navigation for better SEO -->
+        <div class="breadcrumb">
+            <a href="https://algopush.com">Home</a> &gt; 
+            <a href="https://algopush.com/Leetcode/leetcode.html">Leetcode</a> &gt; 
+            <span>LeetCode Problems</span>
+        </div>
+        
+        <h1>LeetCode Solutions</h1>
+        
+        <div class="controls">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search problems by number or title..." aria-label="Search LeetCode problems">
+            </div>
+            <div class="difficulty-filters">
+                <button class="filter-btn all active" data-difficulty="all">All</button>
+                <button class="filter-btn easy" data-difficulty="easy">Easy</button>
+                <button class="filter-btn medium" data-difficulty="medium">Medium</button>
+                <button class="filter-btn hard" data-difficulty="hard">Hard</button>
+            </div>
+        </div>
+        
+        <div class="leetcode-grid">
+            <!-- Problem 3392 -->
+            <a href="https://algopush.com/Leetcode/3392-count-subarrays-of-length-three-with-condition.html" class="leetcode-card" 
+               data-number="3392" data-difficulty="easy" data-title="Count Subarrays of Length Three">
+                <div class="card-content">
+                    <div class="problem-header">
+                        <span class="problem-number">#3392</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                    </div>
+                    <h2 class="problem-title">Count Subarrays of Length Three With Condition</h2>
+                    <p class="problem-description">
+                        Count subarrays where sum of first and third elements equals half of the second element.
+                    </p>
+                </div>
+            </a>
+            
+            <!-- Sample Problem 2
+            <a href="1-two-sum.html" class="leetcode-card" 
+               data-number="1" data-difficulty="easy" data-title="Two Sum">
+                <div class="card-content">
+                    <div class="problem-header">
+                        <span class="problem-number">#1</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                    </div>
+                    <h2 class="problem-title">Two Sum</h2>
+                    <p class="problem-description">
+                        Find two numbers in an array that add up to a specific target number.
+                    </p>
+                </div>
+            </a> -->
+            
+            <!-- Sample Problem 3
+            <a href="53-maximum-subarray.html" class="leetcode-card" 
+               data-number="53" data-difficulty="medium" data-title="Maximum Subarray">
+                <div class="card-content">
+                    <div class="problem-header">
+                        <span class="problem-number">#53</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                    </div>
+                    <h2 class="problem-title">Maximum Subarray</h2>
+                    <p class="problem-description">
+                        Find the contiguous subarray with the largest sum (Kadane's Algorithm).
+                    </p>
+                </div>
+            </a> -->
+            
+            <!-- Sample Problem 4
+            <a href="15-3sum.html" class="leetcode-card" 
+               data-number="15" data-difficulty="medium" data-title="3Sum">
+                <div class="card-content">
+                    <div class="problem-header">
+                        <span class="problem-number">#15</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                    </div>
+                    <h2 class="problem-title">3Sum</h2>
+                    <p class="problem-description">
+                        Find all unique triplets in the array that sum to zero.
+                    </p>
+                </div>
+            </a> -->
+            
+            <!-- Sample Problem 5
+            <a href="212-word-search-ii.html" class="leetcode-card" 
+               data-number="212" data-difficulty="hard" data-title="Word Search II">
+                <div class="card-content">
+                    <div class="problem-header">
+                        <span class="problem-number">#212</span>
+                        <span class="problem-difficulty hard">Hard</span>
+                    </div>
+                    <h2 class="problem-title">Word Search II</h2>
+                    <p class="problem-description">
+                        Find all words from a dictionary that exist in a 2D board of letters.
+                    </p>
+                </div>
+            </a> -->
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        // Load header and footer
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                });
+            
+            fetch('../components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+
+            // Search and filter functionality
+            const searchInput = document.getElementById('search-input');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.leetcode-card');
+            let currentDifficulty = 'all';
+            
+            function filterCards() {
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                cards.forEach(card => {
+                    const number = card.getAttribute('data-number');
+                    const title = card.getAttribute('data-title').toLowerCase();
+                    const difficulty = card.getAttribute('data-difficulty');
+                    
+                    const matchesSearch = number.includes(searchTerm) || title.includes(searchTerm);
+                    const matchesDifficulty = currentDifficulty === 'all' || difficulty === currentDifficulty;
+                    
+                    card.style.display = (matchesSearch && matchesDifficulty) ? 'block' : 'none';
+                });
+            }
+            
+            searchInput.addEventListener('input', filterCards);
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    currentDifficulty = this.getAttribute('data-difficulty');
+                    filterCards();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

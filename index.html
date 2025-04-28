@@ -1,136 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Learn programming, solve coding problems, and explore computer science with Algopush. Tutorials, LeetCode solutions, data structures, algorithms, and more.">
-  <meta name="keywords" content="coding, programming, algorithms, data structures, LeetCode, tutorials, solutions, Leetcode today's question, Leetcode contest solution, Leetcode easy problems, Algopush">
-  <title>Algopush - Learn. Code. Achieve.</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="canonical" href="https://algopush.com/"/>
-  <link rel="icon" href="https://algopush.com/components/Favicon.png" type="image/x-icon" />
-
-  <!-- Open Graph Meta Tags (for Social Media Sharing) -->
-  <meta property="og:title" content="Algopush - Learn. Code. Achieve.">
-  <meta property="og:description" content="Learn programming, solve coding problems, and explore computer science with Algopush. Tutorials, LeetCode solutions, data structures, algorithms, and more.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free programming resources: LeetCode solutions, coding patterns, tech trends, and algorithm explanations. Learn data structures and algorithms through detailed blog posts.">
+  <meta name="keywords" content="LeetCode solutions, programming patterns, algorithm explanations, coding blog, data structures, algorithms, C++, Python, Java, tech trends, free programming resources">
+  <title>Algopush | Free Programming Resources & LeetCode Solutions</title>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://algopush.com/">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://algopush.com/components/Favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://algopush.com/components/apple-touch-icon.png">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Algopush | Free Programming Resources & LeetCode Solutions">
+  <meta property="og:description" content="Free programming resources: LeetCode solutions, coding patterns, and algorithm explanations. Learn data structures through detailed blog posts.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://algopush.com/">
   <meta property="og:image" content="https://algopush.com/components/MainImage1.png">
-
+  <meta property="og:site_name" content="Algopush">
+  
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Algopush - Learn. Code. Achieve.">
-  <meta name="twitter:description" content="Learn programming, solve coding problems, and explore computer science with Algopush. Tutorials, LeetCode solutions, data structures, algorithms, and more.">
+  <meta name="twitter:title" content="Algopush | Free Programming Resources & LeetCode Solutions">
+  <meta name="twitter:description" content="Free programming resources: LeetCode solutions, coding patterns, and algorithm explanations. Learn data structures through detailed blog posts.">
   <meta name="twitter:image" content="https://algopush.com/components/MainImage1.png">
-
-  <!-- Structured Data (Schema.org) for Website -->
+  
+  <!-- Structured Data (Schema.org) -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "url": "https://algopush.com/",
       "name": "Algopush",
-      "description": "Learn programming, solve coding problems, and explore computer science with Algopush. Tutorials, LeetCode solutions, data structures, algorithms, and more.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Algopush"
+      "url": "https://algopush.com/",
+      "description": "Free programming resources, LeetCode solutions, and algorithm explanations for all skill levels",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://algopush.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
     }
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Algopush",
+      "url": "https://algopush.com/",
+      "logo": "https://algopush.com/components/MainImage1.png"
+    }
+  </script>
 
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="./styles.css" as="style">
+  <link rel="preload" href="./script.js" as="script">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SVDQ76NF5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-0SVDQ76NF5');
   </script>
-  <!-- End Google Analytics -->
-
 </head>
 
 <body>
   <div id="header"></div>
-  <br>
-  <br>
-  <div class="wrapper">
-    <main class="main-content container">
-      
-      <section class="section intro">
-        <h1>Welcome to <span class="highlight">Algopush</span></h1>
-        <i>Your journey to mastering coding starts here. Whether you're just starting out or leveling up, Algopush is your partner in success!</i>
-      </section>
 
-      <section class="section">
-        <h2>🌟 What is Algopush?</h2>
-        <p>Algopush is your friendly place to learn <b>programming</b>, <b>data structures</b>, <b>algorithms</b>, and <b>problem-solving</b> — explained in simple language so even school students can understand!</p>
-        <i>No boring content. No confusing jargon. Only fun, clear learning!</i>
-      </section>
-
-      <section class="section">
-        <h2>🎯 Why Choose Algopush?</h2>
-        <ul class="feature-list">
-          <li><b>✅ Easy Explanations</b> - Short and clear topics, easy to understand.</li>
-          <li><b>✅ Practice Problems</b> - Solve coding questions and boost your skills.</li>
-          <li><b>✅ Multiple Languages</b> - Learn C++, Python, Java, and more!</li>
-          <li><b>✅ Free Learning</b> - Everything here is free and accessible to all.</li>
-          <li><b>✅ Step-by-Step Solutions</b> - No confusion. Just clear answers!</li>
-          <li><b>✅ Real-World Projects</b> - Apply your knowledge by building projects.</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>📚 What Can You Learn?</h2>
-        <div class="feature-list">
-          <p>✨ Programming Basics</p>
-          <p>✨ Data Structures (Arrays, Linked Lists, Trees)</p>
-          <p>✨ Algorithms (Sorting, Searching, DP)</p>
-          <p>✨ LeetCode Daily Solutions</p>
-          <p>✨ Competitive Programming Tips</p>
-          <p>✨ Interview Preparation</p>
-          <p>✨ Build Mini Projects</p>
+  <main class="main-container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Free Programming Resources at <span>Algopush</span></h1>
+        <p class="hero-subtitle">LeetCode solutions, algorithm patterns, tech trends, and in-depth explanations</p>
+        <div class="hero-cta">
+          <a href="/Leetcode/leetcode.html" class="btn-primary">Browse LeetCode Solutions</a>
+          <a href="/Blog/blog.html" class="btn-secondary">Read Latest Posts</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section">
-        <h2>👩‍💻 Who is Algopush for?</h2>
-        <p>✔️ School students curious about coding</p>
-        <p>✔️ College students preparing for placements</p>
-        <p>✔️ Beginners starting their coding journey</p>
-        <p>✔️ Developers polishing their skills</p>
-        <blockquote>If you can dream it, you can code it — and we’ll help you!</blockquote>
-      </section>
+    <!-- Features Section -->
+    <section class="features-section">
+      <h2 class="section-title">What You'll Find Here</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><center><img src="./components/aiboy.png" alt="boy Image" height="40%" width="40%"></center></div>
+          <h3>Detailed Explanations</h3>
+          <p>Clear breakdowns of algorithms and data structures with multiple approaches and complexity analysis.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>Pattern Recognition</h3>
+          <p>Identify common coding patterns to solve problems more efficiently.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Tech Trends</h3>
+          <p>Analysis of current trends in software development and computer science.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💡</div>
+          <h3>Practical Tips</h3>
+          <p>Actionable advice for coding interviews and real-world programming challenges.</p>
+        </div>
+      </div>
+    </section>
 
-      <section class="section">
-        <h2>🚀 Join the Algopush Journey</h2>
-        <p>At Algopush, you're not alone. We grow and learn together. Start now:</p>
-        <ul class="feature-list">
-          <li>✅ Explore tutorials</li>
-          <li>✅ Solve coding challenges</li>
-          <li>✅ Prepare for interviews</li>
-          <li>✅ Build real-world skills</li>
-          <li>✅ Stay updated with new technologies</li>
-        </ul>
-      </section>
+    <!-- Latest Posts -->
+    <section class="latest-posts">
+      <h2 class="section-title">Recent Articles</h2>
+      <div class="posts-grid">
+        <article class="post-card">
+          <div class="post-badge">New</div>
+          <h3>Mastering Sliding Window Technique</h3>
+          <p>Complete guide with 5 LeetCode examples and variations</p>
+          <div class="post-meta">
+            <span class="post-date">June 15, 2023</span>
+            <span class="post-read-time">8 min read</span>
+          </div>
+          <a href="/blog/sliding-window" class="post-link">Read Article →</a>
+        </article>
+        <article class="post-card">
+          <div class="post-badge">Algorithm</div>
+          <h3>Union-Find Explained</h3>
+          <p>Understanding Disjoint Set Union with path compression</p>
+          <div class="post-meta">
+            <span class="post-date">June 10, 2023</span>
+            <span class="post-read-time">6 min read</span>
+          </div>
+          <a href="/blog/union-find" class="post-link">Read Article →</a>
+        </article>
+        <article class="post-card">
+          <div class="post-badge">Trends</div>
+          <h3>Rust in 2023</h3>
+          <p>Why Rust is gaining popularity for systems programming</p>
+          <div class="post-meta">
+            <span class="post-date">June 5, 2023</span>
+            <span class="post-read-time">5 min read</span>
+          </div>
+          <a href="/blog/rust-2023" class="post-link">Read Article →</a>
+        </article>
+      </div>
+      <div class="view-all-container">
+        <a href="/blog" class="btn-view-all">View All Articles</a>
+      </div>
+    </section>
 
-      <section class="section">
-        <h2>📰 Latest on Algopush</h2>
-        <p>We regularly post solutions for:</p>
-        <ul class="feature-list">
-          <li>✔️ LeetCode Today's Question</li>
-          <li>✔️ LeetCode Weekly Contest Problems</li>
-          <li>✔️ Beginner-friendly Problem Sets</li>
-          <li>✔️ Coding tips and tricks</li>
-        </ul>
-        <p>👉 Stay tuned for regular updates and new challenges!</p>
-      </section>
+    <!-- LeetCode Solutions -->
+    <section class="leetcode-section">
+      <h2 class="section-title">Popular LeetCode Solutions</h2>
+      <div class="leetcode-grid">
+        <div class="leetcode-card">
+          <h3>Two Sum</h3>
+          <p>Multiple approaches with time/space analysis</p>
+          <div class="leetcode-difficulty easy">Easy</div>
+          <a href="/leetcode/two-sum" class="leetcode-link">View Solution →</a>
+        </div>
+        <div class="leetcode-card">
+          <h3>LRU Cache</h3>
+          <p>Implementing O(1) operations</p>
+          <div class="leetcode-difficulty medium">Medium</div>
+          <a href="/leetcode/lru-cache" class="leetcode-link">View Solution →</a>
+        </div>
+        <div class="leetcode-card">
+          <h3>Merge k Sorted Lists</h3>
+          <p>Priority queue vs divide-and-conquer</p>
+          <div class="leetcode-difficulty hard">Hard</div>
+          <a href="/leetcode/merge-k-lists" class="leetcode-link">View Solution →</a>
+        </div>
+      </div>
+      <div class="view-all-container">
+        <a href="/leetcode" class="btn-view-all">Browse All Solutions</a>
+      </div>
+    </section>
 
-    </main>
-  </div>
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+      <div class="newsletter-content">
+        <h2>Get New Posts Delivered</h2>
+        <p>Subscribe to receive the latest algorithm explanations and coding resources</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn-newsletter">Subscribe</button>
+        </form>
+        <p class="newsletter-note">No spam, just quality content. Unsubscribe anytime.</p>
+      </div>
+    </section>
+  </main>
 
   <div id="footer"></div>
+
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #1e40af;
+      --accent-color: #102c41;
+      --text-color: #1f2937;
+      --light-text: #6b7280;
+      --background-color: #f9fafb;
+      --card-bg: #ffffff;
+      --border-radius: 0.75rem; /* 12px */
+      --box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 
+                   0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06);
+      --spacing-unit: 1rem; /* Base spacing unit */
+      
+      /* Fluid typography */
+      --min-font-size: 1rem;
+      --max-font-size: 1.25rem;
+      --min-screen-width: 20rem; /* 320px */
+      --max-screen-width: 80rem; /* 1280px */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      font-size: clamp(var(--min-font-size), 1vw, var(--max-font-size));
+    }
+
+    .main-container {
+      max-width: 80rem; /* 1280px */
+      margin: 0 auto;
+      padding: 0 calc(var(--spacing-unit) * 1.5);
+    }
+
+    section {
+      padding: calc(var(--spacing-unit) * 3) 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      text-align: center;
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      color: var(--secondary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: calc(var(--spacing-unit) * 4) var(--spacing-unit);
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-radius: var(--border-radius);
+      margin: calc(var(--spacing-unit) * 2) 0;
+    }
+
+    .hero-title {
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      margin-bottom: var(--spacing-unit);
+      line-height: 1.2;
+    }
+
+    .hero-title span {
+      color: var(--primary-color);
+    }
+
+    .hero-subtitle {
+      font-family:Arial, Helvetica, sans-serif;
+      font-style: italic;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      color: var(--light-text);
+      max-width: 100%; /* 600px */
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: var(--spacing-unit);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary, .btn-secondary, .btn-view-all, .btn-newsletter {
+      padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+      border-radius: var(--border-radius);
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-size: clamp(0.875rem, 2vw, 1rem);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-0.125rem); /* -2px */
+    }
+
+    .btn-secondary {
+      border: 0.125rem solid var(--primary-color); /* 2px */
+      color: var(--primary-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* Features Section */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); /* 250px */
+      gap: calc(var(--spacing-unit) * 2);
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: calc(var(--spacing-unit) * 2);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-0.3125rem); /* -5px */
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: var(--spacing-unit);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: calc(var(--spacing-unit) * 0.5);
+    }
+
+    /* Latest Posts */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr)); /* 280px */
+      gap: calc(var(--spacing-unit) * 2);
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    .post-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: calc(var(--spacing-unit) * 1.5);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-0.3125rem); /* -5px */
+    }
+
+    .post-badge {
+      position: absolute;
+      top: -0.625rem; /* -10px */
+      right: 1.25rem; /* 20px */
+      background: var(--primary-color);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1.25rem; /* 20px */
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .post-card h3 {
+      margin-bottom: calc(var(--spacing-unit) * 0.5);
+      font-size: 1.125rem;
+    }
+
+    .post-card p {
+      color: var(--light-text);
+      margin-bottom: var(--spacing-unit);
+      font-size: 0.9375rem;
+    }
+
+    .post-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8125rem;
+      color: var(--light-text);
+      margin-bottom: var(--spacing-unit);
+    }
+
+    .post-link {
+      color: var(--primary-color);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .post-link:hover {
+      text-decoration: underline;
+    }
+
+    .view-all-container {
+      text-align: center;
+      margin-top: calc(var(--spacing-unit) * 1.5);
+    }
+
+    .btn-view-all {
+      background: var(--primary-color);
+      color: white;
+      padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 2);
+    }
+
+    .btn-view-all:hover {
+      background: var(--secondary-color);
+    }
+
+    /* LeetCode Section */
+    .leetcode-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr)); /* 280px */
+      gap: calc(var(--spacing-unit) * 2);
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    .leetcode-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: calc(var(--spacing-unit) * 1.5);
+      transition: transform 0.3s ease;
+    }
+
+    .leetcode-card:hover {
+      transform: translateY(-0.3125rem); /* -5px */
+    }
+
+    .leetcode-card h3 {
+      margin-bottom: calc(var(--spacing-unit) * 0.5);
+      font-size: 1.125rem;
+    }
+
+    .leetcode-card p {
+      color: var(--light-text);
+      margin-bottom: var(--spacing-unit);
+      font-size: 0.9375rem;
+    }
+
+    .leetcode-difficulty {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1.25rem; /* 20px */
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-unit);
+    }
+
+    .leetcode-difficulty.easy {
+      background-color: #dcfce7;
+      color: #166534;
+    }
+
+    .leetcode-difficulty.medium {
+      background-color: #fef9c3;
+      color: #854d0e;
+    }
+
+    .leetcode-difficulty.hard {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+
+    .leetcode-link {
+      color: var(--primary-color);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .leetcode-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      color: white;
+      text-align: center;
+      padding: calc(var(--spacing-unit) * 4) var(--spacing-unit);
+      border-radius: var(--border-radius);
+      margin: calc(var(--spacing-unit) * 2) 0;
+    }
+
+    .newsletter-section h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: var(--spacing-unit);
+    }
+
+    .newsletter-section p {
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      opacity: 0.9;
+      max-width: 37.5rem; /* 600px */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 31.25rem; /* 500px */
+      margin: 0 auto;
+      gap: var(--spacing-unit);
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: calc(var(--spacing-unit) * 0.75);
+      border-radius: var(--border-radius);
+      border: none;
+      font-size: 1rem;
+    }
+
+    .btn-newsletter {
+      background: white;
+      color: var(--primary-color);
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-newsletter:hover {
+      transform: translateY(-0.125rem); /* -2px */
+      box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    }
+
+    .newsletter-note {
+      font-size: 0.8125rem;
+      margin-top: var(--spacing-unit);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 48rem) { /* 768px */
+      .hero {
+        padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
+      }
+      
+      .features-grid, .posts-grid, .leetcode-grid {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* 240px */
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 30rem) { /* 480px */
+      section {
+        padding: calc(var(--spacing-unit) * 2) 0;
+      }
+      
+      .hero-cta {
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .post-meta {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+  </style>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /components/
+Disallow: /private/
+
+Sitemap: https://algopush.com/sitemap.xml

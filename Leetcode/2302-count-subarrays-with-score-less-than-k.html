@@ -4,46 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      LeetCode 3392 Solution | Count Subarrays of Length Three With Condition | Algopush
+      LeetCode 2302 Solution | Count Subarrays With Score Less Than K | Algopush
     </title>
     <meta
       name="description"
-      content="Comprehensive LeetCode 3392 solution guide: Learn optimal approaches (Brute Force & Sliding Window) with C++, Java, Python code. Understand time/space complexity with detailed explanations and FAQs."
+      content="Optimal solution for LeetCode 2302 using sliding window technique. Learn how to count subarrays where product of sum and length is less than k with C++, Java, and Python implementations."
     />
     <meta
       name="keywords"
-      content="LeetCode 3392, Count Subarrays solution, Sliding Window pattern, Array problems, Coding interview preparation, Algorithm practice, LeetCode daily challenge, C++ Java Python solutions, Time complexity analysis, Algopush tutorials"
+      content="LeetCode 2302, Count Subarrays With Score Less Than K, Sliding Window algorithm, Array problems, Coding interview preparation, Algorithm optimization, LeetCode hard problems, C++ Java Python solutions, Time complexity analysis, Algopush tutorials"
     />
     <meta name="author" content="Algopush" />
     <meta
       property="og:title"
-      content="LeetCode 3392 Solution | Count Subarrays of Length Three With Condition"
+      content="LeetCode 2302 Solution | Count Subarrays With Score Less Than K"
     />
     <meta
       property="og:description"
-      content="Master LeetCode 3392 with optimal approaches (Brute Force & Sliding Window) and multi-language code solutions. Perfect for coding interview preparation."
+      content="Master the sliding window approach to solve LeetCode 2302 efficiently. Complete guide with multiple implementations and complexity analysis."
     />
     <meta
       property="og:image"
-      content="https://algopush.com/components/MainImage1.png"
+      content="https://algopush.com/Leetcode/Images/2302.png"
     />
     <meta
       property="og:url"
-      content="https://algopush.com/Leetcode/3392-count-subarrays-of-length-three-with-condition.html"
+      content="https://algopush.com/Leetcode/2302-count-subarrays-with-score-less-than-k.html"
     />
     <meta property="og:type" content="article" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="LeetCode 3392 Solution | Count Subarrays of Length Three With Condition"
+      content="LeetCode 2302 Solution | Count Subarrays With Score Less Than K"
     />
     <meta
       name="twitter:description"
-      content="Complete guide to solving LeetCode 3392 with Brute Force & Sliding Window approaches in C++, Java, and Python."
+      content="Optimal sliding window solution for LeetCode 2302 with detailed explanations and code implementations."
     />
     <meta
       name="twitter:image"
-      content="https://algopush.com/components/MainImage1.png"
+      content="https://algopush.com/Leetcode/Images/2302.png"
     />
     <meta name="rating" content="general" />
     <meta http-equiv="content-language" content="en" />
@@ -51,7 +51,7 @@
     <meta name="robots" content="index, follow" />
     <link
       rel="canonical"
-      href="https://algopush.com/Leetcode/3392-count-subarrays-of-length-three-with-condition.html"
+      href="https://algopush.com/Leetcode/2302-count-subarrays-with-score-less-than-k.html"
     />
 
     <!-- Favicon -->
@@ -78,16 +78,16 @@
       {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "LeetCode 3392 Solution: Count Subarrays of Length Three With Condition",
-        "description": "Detailed explanation of multiple approaches to solve LeetCode 3392 with code examples in C++, Java, and Python.",
+        "headline": "LeetCode 2302 Solution: Count Subarrays With Score Less Than K",
+        "description": "Detailed explanation of sliding window approach to solve LeetCode 2302 with code examples in C++, Java, and Python.",
         "author": {
           "@type": "Organization",
           "name": "Algopush",
           "url": "https://algopush.com"
         },
-        "image": "https://algopush.com/components/MainImage1.png",
-        "datePublished": "2024-04-27",
-        "dateModified": "2024-04-27",
+        "image": "https://algopush.com/Leetcode/Images/2302.png",
+        "datePublished": "2023-04-28",
+        "dateModified": "2023-04-28",
         "publisher": {
           "@type": "Organization",
           "name": "Algopush",
@@ -98,7 +98,7 @@
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://algopush.com/Leetcode/3392-count-subarrays-of-length-three-with-condition.html"
+          "@id": "https://algopush.com/Leetcode/2302-count-subarrays-with-score-less-than-k.html"
         },
         "speakable": {
           "@type": "SpeakableSpecification",
@@ -493,16 +493,16 @@
       <div class="breadcrumb">
         <a href="https://algopush.com">Home</a> &gt;
         <a href="https://algopush.com/Leetcode/leetcode.html">LeetCode</a> &gt;
-        <span>Problem 3392</span>
+        <span>Problem 2302</span>
       </div>
 
-      <h1>LeetCode 3392: Count Subarrays of Length Three With a Condition</h1>
+      <h1>LeetCode 2302: Count Subarrays With Score Less Than K</h1>
 
       <!-- Problem Metadata -->
       <div class="problem-meta">
         <div class="meta-item">
           <span class="label">Difficulty:</span>
-          <span class="value">Easy</span>
+          <span class="value">Hard</span>
         </div>
         <div class="meta-item">
           <span class="label">Topics:</span>
@@ -510,54 +510,44 @@
         </div>
         <div class="meta-item">
           <span class="label">Companies:</span>
-          <span class="value">Common in coding interviews</span>
+          <span class="value">Google, Amazon, Meta</span>
         </div>
       </div>
 
       <div class="callout tip">
-        <strong>Pro Tip:</strong> This problem is excellent for practicing the
-        Sliding Window pattern, which is fundamental for many array manipulation
-        problems in coding interviews.
+        <strong>Pro Tip:</strong> This problem is an excellent example of when to use the sliding window technique for optimizing subarray calculations. Mastering this pattern will help you solve many array manipulation problems efficiently.
       </div>
 
       <p>
-        The problem "Count Subarrays of Length Three With a Condition" (LeetCode
-        3392) challenges us to find the number of subarrays of length 3 where
-        the sum of the first and third elements equals exactly half of the
-        second element. This problem tests our understanding of array traversal
-        and condition checking, making it a great exercise for coding interview
-        preparation.
+        The problem "Count Subarrays With Score Less Than K" (LeetCode 2302) requires us to count the number of non-empty subarrays where the product of the subarray's sum and its length is strictly less than a given integer <code>k</code>. This problem tests our ability to optimize subarray calculations and is a classic example of when the sliding window technique shines.
       </p>
 
       <h2>Problem Statement</h2>
       <p>
-        Given an integer array <code>nums</code> of length <code>n</code>, where
-        each element can be positive, negative, or zero, we need to find all
-        subarrays of length 3 where the following condition holds true:
+        The <strong>score</strong> of an array is defined as the <strong>product of its sum and its length</strong>.
+      </p>
+      <p>
+        Given a positive integer array <code>nums</code> and an integer <code>k</code>, return the number of non-empty subarrays of <code>nums</code> whose score is strictly less than <code>k</code>.
+      </p>
+      <p>
+        A subarray is a contiguous sequence of elements within an array.
       </p>
 
       <div class="highlight">
-        <code>nums[i] + nums[i+2] == nums[i+1] / 2</code>
+        <code>score = (sum of subarray elements) × (length of subarray)</code>
       </div>
 
-      <p>
-        <strong>Important Note:</strong> Since we're dealing with integer
-        division, we need to consider that <code>nums[i+1] / 2</code> will
-        truncate any fractional part. This means the condition can only be
-        satisfied when either:
-      </p>
+      <h3>Constraints</h3>
       <ul>
-        <li><code>nums[i+1]</code> is even, or</li>
-        <li>
-          The sum <code>nums[i] + nums[i+2]</code> exactly matches the truncated
-          value
-        </li>
+        <li><code>1 ≤ nums.length ≤ 10<sup>5</sup></code></li>
+        <li><code>1 ≤ nums[i] ≤ 10<sup>5</sup></code></li>
+        <li><code>1 ≤ k ≤ 10<sup>15</sup></code></li>
       </ul>
 
       <h2>Problem Link</h2>
       <p>
         <a
-          href="https://leetcode.com/problems/count-subarrays-of-length-three-with-a-condition/"
+          href="https://leetcode.com/problems/count-subarrays-with-score-less-than-k/"
           target="_blank"
           rel="noopener noreferrer"
           >View on LeetCode ↗</a
@@ -565,62 +555,51 @@
       </p>
 
       <h3>Example 1</h3>
-      <pre><code>
-<b>Input:</b> nums = [1,2,1,4,1]
-<b>Output:</b> 1
+<pre><code><b>Input:</b> nums = [2,1,4,3,5], k = 10
+<b>Output:</b> 6
 <b>Explanation:</b>
-The subarray [1,4,1] satisfies the condition because:
-1 (first) + 1 (third) = 2
-4 (middle) / 2 = 2
-Thus, 2 == 2, so this subarray is valid.
-No other subarrays of length 3 satisfy this condition.
-        </code></pre>
+The 6 subarrays having scores less than 10 are:
+- [2] → score = 2 × 1 = 2
+- [1] → 1 × 1 = 1
+- [4] → 4 × 1 = 4
+- [3] → 3 × 1 = 3
+- [5] → 5 × 1 = 5
+- [2,1] → (2+1) × 2 = 6
+Note that subarrays like [1,4] and [4,3,5] have scores of 10 and 36 respectively,
+which are not less than 10.</code></pre>
 
       <h3>Example 2</h3>
-      <pre><code>
-<b>Input:</b> nums = [1,1,1]
-<b>Output:</b> 0
+<pre><code><b>Input:</b> nums = [1,1,1], k = 5
+<b>Output:</b> 5
 <b>Explanation:</b>
-The only subarray [1,1,1] doesn't satisfy the condition because:
-1 + 1 = 2
-1 / 2 = 0 (integer division)
-2 ≠ 0, so this subarray is not valid.
-        </code></pre>
+Every subarray except [1,1,1] has a score less than 5:
+- [1] → 1 × 1 = 1
+- [1] → 1 × 1 = 1
+- [1] → 1 × 1 = 1
+- [1,1] → (1+1) × 2 = 4
+- [1,1] → (1+1) × 2 = 4
+The subarray [1,1,1] has score (1+1+1) × 3 = 9, which is not less than 5.</code></pre>
 
       <div class="callout note">
-        <strong>Edge Case Consideration:</strong> Pay special attention to
-        arrays with negative numbers and zeros, as they can lead to unexpected
-        results if not handled properly.
+        <strong>Note:</strong> Since all elements are positive, longer subarrays will generally have higher scores, which is why we can optimize using the sliding window approach.
       </div>
 
       <hr />
 
-      <h2>Approach 1: Brute Force Solution</h2>
+      <h2>Approach 1: Brute Force (TLE)</h2>
       <p>
-        The brute force approach is the most straightforward solution, where we
-        check every possible subarray of length 3 in the given array and count
-        how many of them satisfy our condition.
+        The brute force approach checks every possible subarray and calculates its score. While straightforward, this approach results in O(n²) time complexity, which is too slow for the upper constraint of n ≤ 10⁵.
       </p>
 
       <h3>Algorithm Steps</h3>
       <ol>
-        <li>
-          <strong>Initialize a counter</strong> to zero to keep track of valid
-          subarrays.
-        </li>
-        <li>
-          <strong>Iterate through the array</strong> from index 0 to
-          <code>n-3</code> (inclusive).
-        </li>
-        <li>
-          <strong>For each subarray</strong> starting at index <code>i</code>,
-          check if the condition
-          <code>nums[i] + nums[i+2] == nums[i+1] / 2</code> is satisfied.
-        </li>
-        <li>
-          <strong>Increment the counter</strong> whenever the condition is met.
-        </li>
-        <li><strong>Return the counter</strong> as the final result.</li>
+        <li><strong>Initialize</strong> a counter to zero</li>
+        <li><strong>Iterate</strong> through all possible starting indices</li>
+        <li><strong>For each starting index</strong>, expand the subarray to the right</li>
+        <li><strong>Calculate</strong> the score for each subarray</li>
+        <li><strong>Increment</strong> counter if score &lt; k</li>
+        <li><strong>Break</strong> early if score ≥ k (since longer subarrays will have higher scores)</li>
+        <li><strong>Return</strong> the final count</li>
       </ol>
 
       <h3>Complexity Analysis</h3>
@@ -633,21 +612,17 @@ The only subarray [1,1,1] doesn't satisfy the condition because:
         </thead>
         <tbody>
           <tr>
-            <td>O(n)</td>
+            <td>O(n²)</td>
             <td>O(1)</td>
           </tr>
         </tbody>
       </table>
 
       <p>
-        <strong>Explanation:</strong> Although this is called a "brute force"
-        solution, it's actually optimal for this problem since we must examine
-        each subarray of length 3 exactly once. The time complexity is linear
-        (O(n)) because we perform a constant amount of work for each of the n-2
-        subarrays.
+        <strong>Why it fails:</strong> For n = 10<sup>5</sup>, the number of operations would be around 10<sup>10</sup>, which is way beyond what's acceptable (typically need to stay under 10<sup>6</sup> operations).
       </p>
 
-      <h3>Multi-language Implementation</h3>
+      <h3>Implementation</h3>
 
       <div class="code-tabs">
         <div class="tab-buttons">
@@ -669,14 +644,21 @@ The only subarray [1,1,1] doesn't satisfy the condition because:
           <pre><code>
 class Solution {
 public:
-    int countValidSubarrays(vector&lt;int&gt;& nums) {
-        int count = 0;
+    long long countSubarrays(vector&lt;int&gt;& nums, long long k) {
         int n = nums.size();
+        long long count = 0;
         
-        for (int i = 0; i <= n - 3; i++) {
-            // Check if first + third equals half of middle
-            if (nums[i] + nums[i+2] == nums[i+1] / 2) {
-                count++;
+        for(int i = 0; i &lt; n; i++) {
+            long long sum = 0;
+            for(int j = i; j &lt; n; j++) {
+                sum += nums[j];
+                long long score = sum * (j - i + 1);
+                
+                if(score &lt; k) {
+                    count++;
+                } else {
+                    break; // Longer subarrays will have higher scores
+                }
             }
         }
         
@@ -689,14 +671,21 @@ public:
         <div id="java-brute" class="tab-content">
           <pre><code>
 class Solution {
-    public int countValidSubarrays(int[] nums) {
-        int count = 0;
+    public long countSubarrays(int[] nums, long k) {
         int n = nums.length;
+        long count = 0;
         
-        for (int i = 0; i <= n - 3; i++) {
-            // Using multiplication to avoid integer division issues
-            if (2 * (nums[i] + nums[i+2]) == nums[i+1]) {
-                count++;
+        for(int i = 0; i &lt; n; i++) {
+            long sum = 0;
+            for(int j = i; j &lt; n; j++) {
+                sum += nums[j];
+                long score = sum * (j - i + 1);
+                
+                if(score &lt; k) {
+                    count++;
+                } else {
+                    break; // Longer subarrays will have higher scores
+                }
             }
         }
         
@@ -709,56 +698,57 @@ class Solution {
         <div id="python-brute" class="tab-content">
           <pre><code>
 class Solution:
-    def countValidSubarrays(self, nums: List[int]) -> int:
-        count = 0
+    def countSubarrays(self, nums: List[int], k: int) -> int:
         n = len(nums)
+        count = 0
         
-        for i in range(n - 2):
-            # Using multiplication to avoid integer division issues
-            if 2 * (nums[i] + nums[i+2]) == nums[i+1]:
-                count += 1
+        for i in range(n):
+            current_sum = 0
+            for j in range(i, n):
+                current_sum += nums[j]
+                score = current_sum * (j - i + 1)
                 
+                if score &lt; k:
+                    count += 1
+                else:
+                    break  # Longer subarrays will have higher scores
+                    
         return count
                 </code></pre>
         </div>
       </div>
 
-      <div class="callout note">
-        <strong>Implementation Note:</strong> In the Java and Python
-        implementations, we've rewritten the condition using multiplication
-        (<code>2*(a + c) == b</code>) instead of division to avoid potential
-        issues with integer division truncation. This makes the code more
-        precise and easier to understand.
+      <div class="callout warning">
+        <strong>Note:</strong> This solution will result in Time Limit Exceeded (TLE) for large inputs due to its O(n²) time complexity.
       </div>
 
       <hr />
 
-      <h2>Approach 2: Sliding Window Technique</h2>
+      <h2>Approach 2: Sliding Window (Optimal)</h2>
       <p>
-        While the brute force approach is already optimal for this specific
-        problem, we can conceptualize it as a sliding window problem to
-        demonstrate a pattern that's widely applicable to similar problems with
-        variable window sizes.
+        The optimal solution uses a sliding window technique to maintain a window where the score is less than <code>k</code>. This approach works because with positive numbers, expanding the window increases the score, and shrinking it decreases the score.
       </p>
+
+      <h3>Key Insights</h3>
+      <ul>
+        <li>All elements are positive, so expanding window increases score</li>
+        <li>For each right pointer, find the smallest left where window is valid</li>
+        <li>Number of valid subarrays ending at right is <code>window length</code></li>
+      </ul>
 
       <h3>Algorithm Steps</h3>
       <ol>
-        <li>
-          <strong>Initialize a counter</strong> to zero and set the window size
-          to 3.
+        <li><strong>Initialize</strong> left pointer, sum, and count to 0</li>
+        <li><strong>Iterate</strong> with right pointer from 0 to n-1</li>
+        <li><strong>Add</strong> nums[right] to the current sum</li>
+        <li><strong>While</strong> score (sum × window length) ≥ k:
+          <ul>
+            <li>Subtract nums[left] from sum</li>
+            <li>Move left pointer forward</li>
+          </ul>
         </li>
-        <li>
-          <strong>Slide the window</strong> from the start to the end of the
-          array.
-        </li>
-        <li>
-          <strong>For each window position</strong>, check if the condition is
-          satisfied by the elements at the first, middle, and last positions.
-        </li>
-        <li>
-          <strong>Increment the counter</strong> whenever the condition is met.
-        </li>
-        <li><strong>Return the counter</strong> as the final result.</li>
+        <li><strong>Add</strong> window length to count (all subarrays ending at right)</li>
+        <li><strong>Return</strong> the total count</li>
       </ol>
 
       <h3>Complexity Analysis</h3>
@@ -778,45 +768,48 @@ class Solution:
       </table>
 
       <p>
-        <strong>Explanation:</strong> The sliding window approach has the same
-        time complexity as the brute force method (O(n)) because we're still
-        examining each subarray of length 3 exactly once. The space complexity
-        remains O(1) as we're only using a constant amount of additional space.
+        <strong>Explanation:</strong> Each element is processed exactly twice (added once when window expands and removed once when window contracts), resulting in O(n) time complexity.
       </p>
 
-      <h3>Multi-language Implementation</h3>
+      <h3>Implementation</h3>
 
       <div class="code-tabs">
         <div class="tab-buttons">
           <button
             class="tab-button active"
-            onclick="openTab(event, 'cpp-sliding')"
+            onclick="openTab(event, 'cpp-optimal')"
           >
             C++
           </button>
-          <button class="tab-button" onclick="openTab(event, 'java-sliding')">
+          <button class="tab-button" onclick="openTab(event, 'java-optimal')">
             Java
           </button>
-          <button class="tab-button" onclick="openTab(event, 'python-sliding')">
+          <button class="tab-button" onclick="openTab(event, 'python-optimal')">
             Python
           </button>
         </div>
 
-        <div id="cpp-sliding" class="tab-content active">
+        <div id="cpp-optimal" class="tab-content active">
           <pre><code>
 class Solution {
 public:
-    int countValidSubarrays(vector&lt;int&gt;& nums) {
-        int count = 0;
+    long long countSubarrays(vector&lt;int&gt;& nums, long long k) {
+        long long count = 0;
+        long long sum = 0;
+        int left = 0;
         int n = nums.size();
         
-        // Slide a window of size 3 through the array
-        for (int end = 2; end < n; end++) {
-            int start = end - 2;
-            // Check the condition for the current window
-            if (nums[start] + nums[end] == nums[start+1] / 2) {
-                count++;
+        for(int right = 0; right &lt; n; right++) {
+            sum += nums[right];
+            
+            // Shrink the window from left while condition is invalid
+            while(sum * (right - left + 1) >= k) {
+                sum -= nums[left];
+                left++;
             }
+            
+            // All subarrays ending at 'right' with start >= left are valid
+            count += (right - left + 1);
         }
         
         return count;
@@ -825,20 +818,26 @@ public:
                 </code></pre>
         </div>
 
-        <div id="java-sliding" class="tab-content">
+        <div id="java-optimal" class="tab-content">
           <pre><code>
 class Solution {
-    public int countValidSubarrays(int[] nums) {
-        int count = 0;
+    public long countSubarrays(int[] nums, long k) {
+        long count = 0;
+        long sum = 0;
+        int left = 0;
         int n = nums.length;
         
-        // Slide a window of size 3 through the array
-        for (int end = 2; end < n; end++) {
-            int start = end - 2;
-            // Using multiplication to avoid integer division issues
-            if (2 * (nums[start] + nums[end]) == nums[start+1]) {
-                count++;
+        for(int right = 0; right &lt; n; right++) {
+            sum += nums[right];
+            
+            // Shrink the window from left while condition is invalid
+            while(sum * (right - left + 1) >= k) {
+                sum -= nums[left];
+                left++;
             }
+            
+            // All subarrays ending at 'right' with start >= left are valid
+            count += (right - left + 1);
         }
         
         return count;
@@ -847,107 +846,66 @@ class Solution {
                 </code></pre>
         </div>
 
-        <div id="python-sliding" class="tab-content">
+        <div id="python-optimal" class="tab-content">
           <pre><code>
 class Solution:
-    def countValidSubarrays(self, nums: List[int]) -> int:
+    def countSubarrays(self, nums: List[int], k: int) -> int:
         count = 0
-        n = len(nums)
+        current_sum = 0
+        left = 0
         
-        # Slide a window of size 3 through the array
-        for end in range(2, n):
-            start = end - 2
-            # Using multiplication to avoid integer division issues
-            if 2 * (nums[start] + nums[end]) == nums[start+1]:
-                count += 1
+        for right in range(len(nums)):
+            current_sum += nums[right]
+            
+            # Shrink the window from left while condition is invalid
+            while current_sum * (right - left + 1) >= k:
+                current_sum -= nums[left]
+                left += 1
                 
+            # All subarrays ending at 'right' with start >= left are valid
+            count += (right - left + 1)
+            
         return count
                 </code></pre>
         </div>
       </div>
 
       <div class="callout tip">
-        <strong>When to Use Sliding Window:</strong> While both approaches are
-        equivalent for this problem, the sliding window pattern becomes
-        essential for problems with variable window sizes or when we need to
-        optimize certain window properties (like maximum sum, minimum length,
-        etc.).
+        <strong>Why This Works:</strong> For each right pointer, we find the smallest left such that the window [left..right] has score &lt; k. All subarrays ending at right with start ≥ left are valid, and there are exactly (right - left + 1) of them.
       </div>
 
       <hr />
 
       <h2>Edge Cases and Special Considerations</h2>
       <p>
-        When implementing solutions for this problem, it's crucial to consider
-        various edge cases that might affect the correctness of your code:
+        When implementing solutions for this problem, consider these edge cases:
       </p>
 
-      <h3>1. Minimum Length Array</h3>
-      <p>When the array has exactly 3 elements:</p>
-      <pre><code><b>Input:</b> [4, 8, 4]
-<b>Output:</b> 1 (4 + 4 == 8 / 2 → 8 == 4? No, wait 8/2 is 4, so 4+4=8, 8/2=4 → 8==4? No)
-Wait, this example is incorrect. Let's try:
+      <h3>1. Single Element Arrays</h3>
+      <pre><code><b>Input:</b> nums = [5], k = 10
+<b>Output:</b> 1 (5 × 1 = 5 &lt; 10)
 
-<b>Input:</b> [3, 6, 3]
-<b>Output:</b> 1 (3 + 3 == 6 / 2 → 6 == 3? No)
-Actually, 6/2=3, and 3+3=6, so 6==3 is false. Hmm.
+<b>Input:</b> nums = [10], k = 5
+<b>Output:</b> 0 (10 × 1 = 10 ≥ 5)</code></pre>
 
-<b>Correct Example:</b>
-<b>Input:</b> [2, 4, 2]
-<b>Output:</b> 1 (2 + 2 == 4 / 2 → 4 == 2? No)
-I think all length-3 arrays where first+third equals half of middle:
-a + c = b/2
-2a + 2c = b
-So [1,4,1]: 2+2=4 ✔
-[2,8,2]: 4+4=8 ✔
-[0,0,0]: 0+0=0 ✔</code></pre>
+      <h3>2. All Elements Equal</h3>
+      <pre><code><b>Input:</b> nums = [2,2,2,2], k = 10
+<b>Output:</b> 4
+[2]×1=2, [2]×1=2, [2]×1=2, [2]×1=2
+No subarrays of length ≥2 have score &lt; 10:
+[2,2]×2=8, [2,2,2]×3=18, etc.</code></pre>
 
-      <h3>2. Arrays with Negative Numbers</h3>
-      <pre><code><b>Input:</b> [4, -8, 0]
-<b>Output:</b> 0
-4 + 0 = 4
--8 / 2 = -4
-4 == -4? False
+      <h3>3. Large k Values</h3>
+      <pre><code><b>Input:</b> nums = [1,2,3,...,100000], k = 10<sup>15</sup>
+<b>Output:</b> n*(n+1)/2 ≈ 5×10<sup>9</sup> (all possible subarrays)
+Must handle large counts efficiently</code></pre>
 
-<b>Input:</b> [-3, -6, -3]
-<b>Output:</b> 1
--3 + -3 = -6
--6 / 2 = -3
--6 == -3? False (No)
-Wait, according to our condition:
-a + c == b / 2
--3 + -3 = -6
--6 / 2 = -3
--6 == -3? False
-So output should be 0</code></pre>
-
-      <h3>3. Arrays with Zero Values</h3>
-      <pre><code><b>Input:</b> [0, 0, 0]
-<b>Output:</b> 1
-0 + 0 = 0
-0 / 2 = 0
-0 == 0? True
-
-<b>Input:</b> [1, 0, -1]
-<b>Output:</b> 1
-1 + -1 = 0
-0 / 2 = 0
-0 == 0? True</code></pre>
-
-      <h3>4. Large Numbers</h3>
-      <p>
-        Ensure your solution handles large numbers without integer overflow:
-      </p>
-      <pre><code><b>Input:</b> [2147483647, -2147483648, 2147483647]
-<b>Output:</b> 0
-2147483647 + 2147483647 = (would overflow in 32-bit int)
--2147483648 / 2 = -1073741824
-But with proper handling, the condition would be false</code></pre>
+      <h3>4. Minimum/Maximum Values</h3>
+      <pre><code><b>Input:</b> nums = [1,1,1,...,1] (10<sup>5</sup> elements), k = 2
+<b>Output:</b> 10<sup>5</sup> (only single-element subarrays qualify)</code></pre>
 
       <div class="callout warning">
-        <strong>Important:</strong> Always test your solution with these edge
-        cases to ensure correctness. The examples above demonstrate how subtle
-        integer division and arithmetic can affect your results.
+        <strong>Important:</strong> Always test with the upper constraint limits (n=10⁵) to ensure your solution handles large inputs efficiently.
       </div>
 
       <hr />
@@ -967,28 +925,25 @@ But with proper handling, the condition would be false</code></pre>
         <tbody>
           <tr>
             <td>Brute Force</td>
-            <td>O(n)</td>
+            <td>O(n²)</td>
             <td>O(1)</td>
-            <td>Simple problems with fixed window size</td>
-            <td>Easy to implement, straightforward logic</td>
-            <td>Not adaptable to variable window sizes</td>
+            <td>Small inputs (n &lt; 1000)</td>
+            <td>Simple to implement</td>
+            <td>Fails for large n</td>
           </tr>
           <tr>
             <td>Sliding Window</td>
             <td>O(n)</td>
             <td>O(1)</td>
-            <td>Problems with variable window sizes or optimization needs</td>
-            <td>Conceptually clean, adaptable pattern</td>
-            <td>Slightly more complex for fixed-size windows</td>
+            <td>All cases, especially large n</td>
+            <td>Optimal for constraints</td>
+            <td>Slightly more complex logic</td>
           </tr>
         </tbody>
       </table>
 
       <div class="callout tip">
-        <strong>Interview Tip:</strong> Even though both approaches have the
-        same complexity for this problem, interviewers often prefer candidates
-        who can recognize and articulate the sliding window pattern, as it
-        demonstrates knowledge of common algorithm design techniques.
+        <strong>Interview Tip:</strong> When you see subarray problems with positive numbers and product/sum conditions, the sliding window technique should be your first thought. This pattern is common in coding interviews.
       </div>
 
       <hr />
@@ -998,94 +953,73 @@ But with proper handling, the condition would be false</code></pre>
       <div class="faq-section">
         <details>
           <summary>
-            1. Why is the time complexity O(n) when we're checking subarrays?
+            1. Why does the sliding window approach work for this problem?
           </summary>
           <p>
-            Although we're checking subarrays, we're only examining each element
-            a constant number of times (specifically, each element is part of
-            exactly one subarray of length 3, except for the first two and last
-            two elements). This results in linear time complexity relative to
-            the input size.
+            The sliding window approach works because all numbers are positive. This means that expanding the window always increases the score (sum × length), and shrinking the window always decreases it. This monotonic property allows us to efficiently find valid windows by adjusting the left pointer.
           </p>
         </details>
 
         <details>
           <summary>
-            2. Can this problem be extended to subarrays of variable length?
+            2. Would this solution work if the array contained negative numbers?
           </summary>
           <p>
-            The current problem specifically asks for subarrays of length 3. For
-            variable length subarrays, we would need a different approach,
-            possibly involving prefix sums or more complex sliding window
-            techniques depending on the exact condition we're checking.
+            No, the sliding window approach wouldn't work directly with negative numbers because expanding the window could potentially decrease the sum (and thus the score). For arrays with negative numbers, we would need a different approach like prefix sums with a hash map.
           </p>
         </details>
 
         <details>
           <summary>
-            3. How does integer division affect the solution's correctness?
+            3. How does the count += (right - left + 1) work?
           </summary>
           <p>
-            Integer division truncates toward zero, which means odd numbers
-            divided by 2 will lose their fractional part. This affects our
-            condition because <code>nums[i+1] / 2</code> might not equal the
-            mathematical division result. That's why in some implementations we
-            multiply both sides by 2 to avoid division.
-          </p>
-        </details>
-
-        <details>
-          <summary>4. What's the space complexity of these solutions?</summary>
-          <p>
-            Both approaches use O(1) additional space because they only require
-            a few variables to store the count and indices, regardless of the
-            input size. No additional data structures are needed.
-          </p>
-        </details>
-
-        <details>
-          <summary>5. Can this problem be solved using recursion?</summary>
-          <p>
-            While possible, a recursive solution would be less efficient due to
-            the overhead of function calls and would provide no advantage over
-            the iterative approaches. Recursion is generally not suitable for
-            this type of array traversal problem.
+            This counts all valid subarrays ending at the current right pointer. For a window [left..right], there are exactly (right - left + 1) subarrays ending at right: [left..right], [left+1..right], ..., [right..right].
           </p>
         </details>
 
         <details>
           <summary>
-            6. How would you modify the solution if the condition was different?
+            4. What's the space complexity of the optimal solution?
           </summary>
           <p>
-            The structure would remain similar, but the condition check would
-            change. For example, if the condition was "product of first and
-            third equals middle", we would replace the addition and division
-            with multiplication. The core algorithm pattern stays the same.
-          </p>
-        </details>
-
-        <details>
-          <summary>7. What's the best way to test this code?</summary>
-          <p>
-            Create test cases that cover: arrays of minimum length (3), arrays
-            with all elements equal, arrays with negative numbers, arrays with
-            zeros, and large arrays with maximum/minimum integer values. Also
-            include cases where multiple subarrays satisfy the condition and
-            cases where none do.
+            The space complexity is O(1) because we only use a constant amount of additional space (for variables like sum, count, left, right) regardless of the input size.
           </p>
         </details>
 
         <details>
           <summary>
-            8. Is there a mathematical insight that could optimize this further?
+            5. Can this problem be solved using prefix sums?
           </summary>
           <p>
-            For this specific problem, no further optimization is possible
-            because we must examine each subarray to check the condition. The
-            O(n) time complexity is already optimal. However, recognizing that
-            we can rewrite the condition as <code>2*(a + c) == b</code> makes
-            the code cleaner and avoids integer division issues.
+            While prefix sums could help calculate subarray sums quickly, they wouldn't directly help with the score calculation (sum × length) or the sliding window optimization. The sliding window approach is more suitable for this specific problem.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            6. How would you modify the solution if the condition was ≤ k instead of &lt; k?
+          </summary>
+          <p>
+            We would simply change the while loop condition from <code>>= k</code> to <code>> k</code>. This would make the window include subarrays with score equal to k in our count.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            7. What's the best way to test this code?
+          </summary>
+          <p>
+            Test with: single-element arrays, all elements equal, strictly increasing/decreasing arrays, minimum/maximum values, and the upper constraint limits. Also verify edge cases where k is very small or very large compared to array values.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            8. Is there a mathematical formula to solve this without iteration?
+          </summary>
+          <p>
+            No general formula exists because the solution depends on the specific values in the array. The sliding window approach is optimal for this problem with O(n) time complexity.
           </p>
         </details>
 
@@ -1094,35 +1028,28 @@ But with proper handling, the condition would be false</code></pre>
             9. How does this problem relate to real-world applications?
           </summary>
           <p>
-            Patterns like this appear in signal processing (finding specific
-            waveforms), financial analysis (identifying price patterns), and
-            bioinformatics (locating DNA sequences). The sliding window
-            technique is fundamental to many time-series analysis tasks.
+            Similar algorithms are used in data streaming applications where we need to monitor subsets of data that meet certain statistical criteria (like average × duration below a threshold). It's also useful in financial analysis for finding periods with certain performance metrics.
           </p>
         </details>
 
         <details>
           <summary>
-            10. Would this solution work for very large arrays (size &gt; 10^6)?
+            10. What similar problems should I practice to master this pattern?
           </summary>
           <p>
-            Yes, the O(n) time complexity ensures the solution scales linearly
-            with input size. For very large arrays, the constant factors become
-            important, but this solution should perform well as it only performs
-            simple arithmetic operations per element.
+            Recommended problems: 209 (Minimum Size Subarray Sum), 713 (Subarray Product Less Than K), 904 (Fruit Into Baskets), 1004 (Max Consecutive Ones III), and 1658 (Minimum Operations to Reduce X to Zero). These all use variations of the sliding window technique.
           </p>
         </details>
       </div>
 
       <div class="callout">
-        <strong>Final Thoughts:</strong> This problem serves as an excellent
-        introduction to array manipulation and the sliding window pattern. While
-        simple, it demonstrates important concepts that form the foundation for
-        more complex problems in coding interviews and real-world applications.
+        <strong>Final Thoughts:</strong> This problem beautifully demonstrates the power of the sliding window technique for optimizing subarray calculations. The key insight is recognizing that with positive numbers, window expansion and contraction have predictable effects on the score. Mastering this pattern will help you solve many array manipulation problems efficiently.
       </div>
     </main>
 
     <!-- Footer will be inserted by JavaScript -->
     <div id="footer"></div>
+
   </body>
 </html>
+    

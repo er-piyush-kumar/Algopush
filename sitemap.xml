@@ -16,6 +16,14 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Contacts -->
+    <url>
+        <loc>https://algopush.com/components/privacy-policy.html</loc>
+        <lastmod>2025-04-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Leetcode -->
     <url>
         <loc>https://algopush.com/Leetcode/leetcode.html</loc>

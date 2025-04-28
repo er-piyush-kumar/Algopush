@@ -1,49 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Home -->
     <url>
-        <loc>https://algopush.com</loc>
+        <loc>https://algopush.com/</loc>
         <lastmod>2025-04-28</lastmod>
-        <changefreq>daily</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
 
+    <!-- Privacy Policy -->
     <url>
-        <loc>https://algopush.com/Leetcode/leetcode.html</loc>
-        <lastmod>2024-04-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <!-- <url>
-        <loc>https://algopush.com/blog</loc>
-        <lastmod>2025-04-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://algopush.com/about</loc>
-        <lastmod>2025-04-27</lastmod>
-        <changefreq>monthly</changefreq>
+        <loc>https://algopush.com/components/privacy-policy.html</loc>
+        <lastmod>2025-04-28</lastmod>
+        <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
-    <url>
-        <loc>https://algopush.com/contact</loc>
-        <lastmod>2025-04-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url> -->
 
+    <!-- Leetcode -->
+    <url>
+        <loc>https://algopush.com/Leetcode/leetcode.html</loc>
+        <lastmod>2025-04-28</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Leetcode Posts -->
     <url>
         <loc>https://algopush.com/Leetcode/3392-count-subarrays-of-length-three-with-condition.html</loc>
-        <lastmod>2024-04-28</lastmod>
+        <lastmod>2025-04-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>http://algopush.com/Leetcode/2302-count-subarrays-with-score-less-than-k.html</loc>
-        <lastmod>2023-04-28</lastmod>
+        <loc>https://algopush.com/Leetcode/2302-count-subarrays-with-score-less-than-k.html</loc>
+        <lastmod>2025-04-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    <!-- Add more URLs here for other pages on your site -->
 </urlset>

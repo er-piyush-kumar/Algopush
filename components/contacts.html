@@ -41,7 +41,7 @@
     .content-container {
       max-width: 900px;
       margin: 1.5rem auto;
-      padding: 2 var(--spacing-unit);
+      padding: 0 var(--spacing-unit);
     }
     
     .contact-content {
@@ -81,7 +81,7 @@
     
     .contact-icon {
       font-size: 1.5rem;
-      color: var(--primary-color); /* Changed to primary color */
+      color: var(--primary-color);
       margin-bottom: 0rem;
       display: inline-block;
       font-weight: 500;
@@ -98,7 +98,7 @@
     }
     
     input, textarea {
-      width: 92%;
+      width: 94%;
       padding: 0.75rem;
       border: 1px solid #ddd;
       border-radius: var(--border-radius);
@@ -189,13 +189,13 @@
       <h2 style="text-align: center;">Send a Message</h2>
       <form id="contactForm" action="https://formsubmit.co/ermrpiyushkumar@gmail.com" method="POST">
         <!-- reCAPTCHA Integration -->
+        <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_recaptcha" value="6LcjxicrAAAAAIWavH5vtjAOQZOzOJzcNVQ4BQsl">
-        <input type="hidden" name="_captcha" value="true">
         
         <!-- FormSubmit Settings -->
         <input type="hidden" name="_subject" value="New Algopush Contact">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="./thank-you.html">
+        <input type="hidden" name="_next" value="https://algopush.com/components/thank-you.html">
         
         <!-- Form Fields -->
         <div class="form-group">

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Home -->
     <url>
-        <loc>https://algopush.com/</loc>
+        <loc>https://algopush.com</loc>
         <lastmod>2025-04-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
@@ -18,7 +18,13 @@
 
     <!-- Contacts -->
     <url>
-        <loc>https://algopush.com/components/privacy-policy.html</loc>
+        <loc>https://algopush.com/components/contacts.html</loc>
+        <lastmod>2025-04-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://algopush.com/components/thank-you.html</loc>
         <lastmod>2025-04-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>

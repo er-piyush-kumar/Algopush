@@ -1202,6 +1202,162 @@ class Solution:
 
     <hr />
 
+    <h2>Approach 5: Index Tracking (Optimal Space)</h2>
+    <p>
+      This approach tracks the indices of all occurrences of the maximum element, then calculates valid subarrays by
+      leveraging these indices. It provides an alternative way to solve the problem with O(n) time and O(m) space (where
+      m is the count of max elements).
+    </p>
+
+    <h3>Key Insights</h3>
+    <ul>
+      <li>Store all indices where the maximum element appears</li>
+      <li>For each occurrence after the k-th one, calculate valid subarrays using the (i-k)th index</li>
+      <li>Efficiently counts subarrays without maintaining a sliding window</li>
+    </ul>
+
+    <h3>Algorithm Steps</h3>
+    <ol>
+      <li><strong>Find</strong> the maximum element in the array</li>
+      <li><strong>Initialize</strong> an empty list to store indices of max elements</li>
+      <li><strong>Initialize</strong> count to 0</li>
+      <li><strong>Iterate</strong> through the array:
+        <ul>
+          <li>When encountering the max element, record its index</li>
+          <li>If we have at least k occurrences:
+            <ul>
+              <li>The valid starting points are from 0 to the (i-k)th occurrence index + 1</li>
+              <li>Add these starting points to the count</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><strong>Return</strong> the total count</li>
+    </ol>
+
+    <h3>Complexity Analysis</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Time Complexity</th>
+          <th>Space Complexity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>O(n)</td>
+          <td>O(m) where m is count of max elements</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip">
+      <strong>When to Use:</strong> This approach is useful when you need to track specific positions of the max element
+      for other calculations. While it uses O(m) space, it can be more intuitive for some variations of this problem.
+    </div>
+
+    <h3>Implementation</h3>
+
+    <div class="code-tabs">
+      <div class="tab-buttons">
+        <button class="tab-button active" onclick="openTab(event, 'cpp-index')">
+          C++
+        </button>
+        <button class="tab-button" onclick="openTab(event, 'java-index')">
+          Java
+        </button>
+        <button class="tab-button" onclick="openTab(event, 'python-index')">
+          Python
+        </button>
+      </div>
+
+      <div id="cpp-index" class="tab-content active">
+        <pre><code>
+class Solution {
+public:
+    long long countSubarrays(vector&lt;int&gt;& nums, int k) {
+        long long count = 0;
+        int maxE = *max_element(begin(nums),end(nums));
+        vector&lt;int&gt; indices;
+
+        for(int i = 0; i &lt; nums.size(); i++) {
+            if(nums[i] == maxE) {
+                indices.push_back(i);
+            }
+
+            int size = indices.size();
+            if(size >= k) {
+                int last_index = indices[size-k];
+                count += last_index + 1;
+            }
+        }
+        return count;
+    }
+};
+// TC: O(n) 
+// SC: O(m) where m is number of max elements
+                </code></pre>
+      </div>
+
+      <div id="java-index" class="tab-content">
+        <pre><code>
+class Solution {
+    public long countSubarrays(int[] nums, int k) {
+        long count = 0;
+        int maxE = Arrays.stream(nums).max().getAsInt();
+        List&lt;Integer&gt; indices = new ArrayList&lt;&gt;();
+
+        for(int i = 0; i &lt; nums.length; i++) {
+            if(nums[i] == maxE) {
+                indices.add(i);
+            }
+
+            int size = indices.size();
+            if(size >= k) {
+                int last_index = indices.get(size - k);
+                count += last_index + 1;
+            }
+        }
+        return count;
+    }
+}
+// TC: O(n) 
+// SC: O(m) where m is number of max elements
+                </code></pre>
+      </div>
+
+      <div id="python-index" class="tab-content">
+        <pre><code>
+class Solution:
+    def countSubarrays(self, nums: List[int], k: int) -> int:
+        count = 0
+        maxE = max(nums)
+        indices = []
+
+        for i in range(len(nums)):
+            if nums[i] == maxE:
+                indices.append(i)
+
+            size = len(indices)
+            if size >= k:
+                last_index = indices[size - k]
+                count += last_index + 1
+                
+        return count
+# TC: O(n) 
+# SC: O(m) where m is number of max elements
+                </code></pre>
+      </div>
+    </div>
+
+    <div class="callout note">
+      <strong>Note:</strong> While this approach uses O(m) space, it's still efficient as m ≤ n. The sliding window
+      approach (Approach 4) remains the most space-efficient with O(1) space.
+    </div>
+
+    <hr />
+
+    <!-- Update the Comparison Table to include the new approach -->
     <h2>Comparison of Approaches</h2>
     <table>
       <thead>
@@ -1234,18 +1390,26 @@ class Solution:
         <tr>
           <td>Sliding Window (Map)</td>
           <td>O(n)</td>
-          <td>O(1) or O(m) where m is unique elements</td>
+          <td>O(1) or O(m)</td>
           <td>When tracking multiple elements</td>
           <td>More general</td>
           <td>Slightly more overhead</td>
         </tr>
         <tr>
-          <td>Optimized Sliding Window (No Map)</td>
+          <td>Optimized Sliding Window</td>
           <td>O(n)</td>
           <td>O(1)</td>
-          <td>Best for this specific problem</td>
-          <td>Most space-efficient, clean implementation</td>
-          <td>Only works when tracking single element count</td>
+          <td>Best for this problem</td>
+          <td>Most space-efficient</td>
+          <td>Only tracks single element</td>
+        </tr>
+        <tr>
+          <td>Index Tracking</td>
+          <td>O(n)</td>
+          <td>O(m)</td>
+          <td>When positions are needed</td>
+          <td>Intuitive counting</td>
+          <td>Uses more space</td>
         </tr>
       </tbody>
     </table>

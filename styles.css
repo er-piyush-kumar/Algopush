@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   font-family: 'Segoe UI', sans-serif;
   background: #fff;
@@ -31,7 +32,11 @@ html, body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   color: #102c41;
   margin-bottom: 10px;
 }
@@ -116,7 +121,8 @@ blockquote {
     font-size: 1.3rem;
   }
 
-  p, ul.feature-list li {
+  p,
+  ul.feature-list li {
     font-size: 0.95rem;
   }
 

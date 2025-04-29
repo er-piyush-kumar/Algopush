@@ -60,4 +60,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <url>
+        <loc>https://algopush.com/Leetcode/2962-count-subarrays-where-max-element-appears-at-least-k-times.html</loc>
+        <lastmod>2025-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
   <!-- Favicon -->
   <link rel="icon" href="../components/favicon.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="../components/favicon.png">
-  
+
   <style>
     :root {
       --primary-color: #102c41;
@@ -23,7 +24,7 @@
       --border-radius: 6px;
       --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
     }
-    
+
     body {
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
@@ -35,7 +36,7 @@
       flex-direction: column;
       min-height: 100vh;
     }
-    
+
     main {
       flex: 1;
       display: flex;
@@ -43,7 +44,7 @@
       justify-content: center;
       padding: 2rem;
     }
-    
+
     .thank-you-container {
       background: var(--card-bg);
       padding: 3rem 2rem;
@@ -53,24 +54,24 @@
       max-width: 600px;
       width: 100%;
     }
-    
+
     h1 {
       color: var(--primary-color);
       font-size: 2.2rem;
       margin-bottom: 1.5rem;
     }
-    
+
     p {
       font-size: 1.1rem;
       margin-bottom: 2rem;
       color: var(--text-color);
     }
-    
+
     .emoji {
       font-size: 3rem;
       margin-bottom: 1rem;
     }
-    
+
     .home-link {
       display: inline-block;
       background-color: var(--secondary-color);
@@ -81,22 +82,23 @@
       font-weight: 500;
       transition: background-color 0.2s ease;
     }
-    
+
     .home-link:hover {
       background-color: var(--primary-color);
     }
-    
+
     @media (max-width: 768px) {
       .thank-you-container {
         padding: 2rem 1.5rem;
       }
-      
+
       h1 {
         font-size: 1.8rem;
       }
     }
   </style>
 </head>
+
 <body>
   <div id="header-container"></div>
 
@@ -118,11 +120,12 @@
       .then(response => response.text())
       .then(data => document.getElementById('header-container').innerHTML = data)
       .catch(error => console.error('Error loading header:', error));
-    
+
     fetch('footer.html')
       .then(response => response.text())
       .then(data => document.getElementById('footer-container').innerHTML = data)
       .catch(error => console.error('Error loading footer:', error));
   </script>
 </body>
+
 </html>

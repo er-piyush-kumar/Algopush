@@ -1,108 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free programming resources: LeetCode solutions, coding patterns, tech trends, and algorithm explanations. Learn data structures and algorithms through detailed blog posts.">
-  <meta name="keywords" content="LeetCode solutions, programming patterns, algorithm explanations, coding blog, data structures, algorithms, C++, Python, Java, tech trends, free programming resources">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Free programming resources: LeetCode solutions, coding patterns, tech trends, and algorithm explanations. Learn data structures and algorithms through detailed blog posts." />
+  <meta name="keywords"
+    content="LeetCode solutions, programming patterns, Todays Leetcode question, leetcode problem of the day, leetcode todays contest, leetcode todays contest question, leetcode problem solution, leetcode problem explanation, algorithm explanations, coding blog, data structures, algorithms, C++, Python, Java, tech trends, free programming resources" />
   <title>Algopush | Free Programming Resources & LeetCode Solutions</title>
-  
+
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://algopush.com/">
-  
+  <link rel="canonical" href="https://algopush.com" />
+
   <!-- Favicon -->
-  <link rel="icon" href="../components/favicon.png" type="image/x-icon">
-  <link rel="apple-touch-icon" href="../components/favicon.png">
-  
+  <link rel="icon" href="../components/favicon.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../components/favicon.png" />
+
   <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Algopush | Free Programming Resources & LeetCode Solutions">
-  <meta property="og:description" content="Free programming resources: LeetCode solutions, coding patterns, and algorithm explanations. Learn data structures through detailed blog posts.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://algopush.com/">
-  <meta property="og:image" content="https://algopush.com/components/MainImage1.png">
-  <meta property="og:site_name" content="Algopush">
-  
+  <meta property="og:title" content="Algopush | Free Programming Resources & LeetCode Solutions" />
+  <meta property="og:description"
+    content="Free programming resources: LeetCode solutions, coding patterns, and algorithm explanations. Learn data structures through detailed blog posts." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://algopush.com/" />
+  <meta property="og:image" content="https://algopush.com/components/MainImage1.png" />
+  <meta property="og:site_name" content="Algopush" />
+
   <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Algopush | Free Programming Resources & LeetCode Solutions">
-  <meta name="twitter:description" content="Free programming resources: LeetCode solutions, coding patterns, and algorithm explanations. Learn data structures through detailed blog posts.">
-  <meta name="twitter:image" content="https://algopush.com/components/MainImage1.png">
-  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Algopush | Free Programming Resources & LeetCode Solutions" />
+  <meta name="twitter:description"
+    content="Free programming resources: LeetCode solutions, coding patterns, and algorithm explanations. Learn data structures through detailed blog posts." />
+  <meta name="twitter:image" content="https://algopush.com/components/MainImage1.png" />
+
   <!-- Structured Data (Schema.org) -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Algopush",
-      "url": "https://algopush.com/",
-      "description": "Free programming resources, LeetCode solutions, and algorithm explanations for all skill levels",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://algopush.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Algopush",
+        "url": "https://algopush.com/",
+        "description": "Free programming resources, LeetCode solutions, and algorithm explanations for all skill levels",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://algopush.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
-    }
-  </script>
+    </script>
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Algopush",
-      "url": "https://algopush.com/",
-      "logo": "https://algopush.com/components/MainImage1.png"
-    }
-  </script>
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Algopush",
+        "url": "https://algopush.com/",
+        "logo": "https://algopush.com/components/MainImage1.png"
+      }
+    </script>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://algopush.com"
+        }]
+      }
+    </script>
 
   <!-- Preload Critical Resources -->
-  <link rel="preload" href="./styles.css" as="style">
-  <link rel="preload" href="./script.js" as="script">
-  
+  <link rel="preload" href="./styles.css" as="style" />
+  <link rel="preload" href="./script.js" as="script" />
+
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+
   <!-- Animate.css for animations -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
   <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css" />
-  
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SVDQ76NF5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-0SVDQ76NF5');
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-0SVDQ76NF5");
   </script>
 
   <style>
     :root {
-  /* Core Colors */
-  --primary-color: #196391;       /* Main buttons, headings, navigation */
-  --secondary-color: #102b41;     /* Borders, footer, secondary elements */
-  --accent-color: #f0c39f;        /* Links, highlights, interactive states */
-  --text-color: #222;             /* Soft black for better readability */
-  --light-text: #6b7280;          /* Lighter gray (accessible contrast) */
-  
-  /* Backgrounds */
-  --background-color: #f5f9fc;    /* Light blue-gray for page BG */
-  --card-bg: #ffffff;             /* Pure white for content cards/posts */
-  --hover-bg: rgba(25, 99, 145, 0.05); /* Subtle hover effect (optional) */
+      /* Core Colors */
+      --primary-color: #196391;
+      /* Main buttons, headings, navigation */
+      --secondary-color: #102b41;
+      /* Borders, footer, secondary elements */
+      --accent-color: #f0c39f;
+      /* Links, highlights, interactive states */
+      --text-color: #222;
+      /* Soft black for better readability */
+      --light-text: #6b7280;
+      /* Lighter gray (accessible contrast) */
 
-  /* UI Elements */
-  --border-radius: 6px;           /* Consistent rounded corners */
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08); /* Softer shadow */
-  --box-shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.12); /* Hover elevation */
+      /* Backgrounds */
+      --background-color: #f5f9fc;
+      /* Light blue-gray for page BG */
+      --card-bg: #ffffff;
+      /* Pure white for content cards/posts */
+      --hover-bg: rgba(25,
+          99,
+          145,
+          0.05);
+      /* Subtle hover effect (optional) */
 
-  /* Spacing */
-  --spacing-unit: 1rem;           /* Base spacing for margins/padding */
-}
+      /* UI Elements */
+      --border-radius: 6px;
+      /* Consistent rounded corners */
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+      /* Softer shadow */
+      --box-shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.12);
+      /* Hover elevation */
 
+      /* Spacing */
+      --spacing-unit: 1rem;
+      /* Base spacing for margins/padding */
+    }
 
     * {
       margin: 0;
@@ -110,8 +145,40 @@
       box-sizing: border-box;
     }
 
+    /* Breadcrumb Styles */
+    .breadcrumb {
+      padding: 0.8rem 1rem;
+      background: #f5f5f5;
+      border-radius: var(--border-radius);
+      margin: 1rem 0 2rem;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb ol {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+
+    .breadcrumb li {
+      display: inline;
+      margin-right: 0.5rem;
+    }
+
+    .breadcrumb li:not(:last-child)::after {
+      content: "›";
+      margin-left: 0.5rem;
+      color: var(--light-text);
+    }
+
+    .breadcrumb [aria-current="page"] {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       line-height: 1.6;
       color: var(--text-color);
       background-color: var(--background-color);
@@ -171,7 +238,10 @@
       flex-wrap: wrap;
     }
 
-    .btn-primary, .btn-secondary, .btn-view-all, .btn-newsletter {
+    .btn-primary,
+    .btn-secondary,
+    .btn-view-all,
+    .btn-newsletter {
       padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
       border-radius: var(--border-radius);
       font-weight: 500;
@@ -550,13 +620,21 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     /* Responsive Adjustments */
     @media (max-width: 62rem) {
-      .features-grid, .posts-grid, .leetcode-grid {
+
+      .features-grid,
+      .posts-grid,
+      .leetcode-grid {
         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
       }
     }
@@ -565,17 +643,18 @@
       section {
         padding: calc(var(--spacing-unit) * 2) 0;
       }
-      
+
       .hero-cta {
         flex-direction: column;
         width: 100%;
       }
-      
-      .btn-primary, .btn-secondary {
+
+      .btn-primary,
+      .btn-secondary {
         width: 100%;
         text-align: center;
       }
-      
+
       .post-meta {
         flex-direction: column;
         gap: 0.25rem;
@@ -584,7 +663,7 @@
       .developer-slide {
         padding: var(--spacing-unit);
       }
-      
+
       .developer-image {
         width: 100px;
         height: 100px;
@@ -595,11 +674,11 @@
       .main-container {
         padding: 0 var(--spacing-unit);
       }
-      
+
       .feature-card {
         padding: var(--spacing-unit);
       }
-      
+
       .feature-icon {
         width: 60px;
         height: 60px;
@@ -611,12 +690,27 @@
 <body>
   <div id="header"></div>
 
+  <!-- Breadcrumb Navigation with Schema Markup -->
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">Home</span>
+        <meta itemprop="position" content="1" />
+      </li>
+    </ol>
+  </nav>
+
   <main class="main-container">
     <!-- Hero Section -->
     <section class="hero animate__animated animate__fadeIn">
       <div class="hero-content">
-        <h1 class="hero-title">Free Programming Resources at <span>Algopush</span></h1>
-        <p class="hero-subtitle">LeetCode solutions, algorithm patterns, tech trends, and in-depth explanations</p>
+        <h1 class="hero-title">
+          Free Programming Resources at <span>Algopush</span>
+        </h1>
+        <p class="hero-subtitle">
+          LeetCode solutions, algorithm patterns, tech trends, and in-depth
+          explanations
+        </p>
         <div class="hero-cta">
           <a href="/Leetcode/leetcode.html" class="btn-primary">Browse LeetCode Solutions</a>
           <a href="#" class="btn-secondary">Read Latest Posts</a>
@@ -629,24 +723,44 @@
       <h2 class="section-title">What You'll Find Here</h2>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon"><img src="./components/Image1.png" alt="Detailed Explanations"></div>
+          <div class="feature-icon">
+            <img src="./components/Image1.png" alt="Detailed Explanations" />
+          </div>
           <h3>Detailed Explanations</h3>
-          <p>Clear breakdowns of algorithms and data structures with multiple approaches and complexity analysis.</p>
+          <p>
+            Clear breakdowns of algorithms and data structures with multiple
+            approaches and complexity analysis.
+          </p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon"><img src="./components/Image2.png" alt="Pattern Recognition"></div>
+          <div class="feature-icon">
+            <img src="./components/Image2.png" alt="Pattern Recognition" />
+          </div>
           <h3>Pattern Recognition</h3>
-          <p>Identify common coding patterns to solve problems more efficiently.</p>
+          <p>
+            Identify common coding patterns to solve problems more
+            efficiently.
+          </p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon"><img src="./components/Image3.png" alt="Tech Trends"></div>
+          <div class="feature-icon">
+            <img src="./components/Image3.png" alt="Tech Trends" />
+          </div>
           <h3>Tech Trends</h3>
-          <p>Analysis of current trends in software development and computer science.</p>
+          <p>
+            Analysis of current trends in software development and computer
+            science.
+          </p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon"><img src="./components/Image4.png" alt="Practical Tips"></div>
+          <div class="feature-icon">
+            <img src="./components/Image4.png" alt="Practical Tips" />
+          </div>
           <h3>Practical Tips</h3>
-          <p>Actionable advice for coding interviews and real-world programming challenges.</p>
+          <p>
+            Actionable advice for coding interviews and real-world programming
+            challenges.
+          </p>
         </div>
       </div>
     </section>
@@ -704,13 +818,28 @@
           <h3>Count Subarrays of Length Three With a Condition</h3>
           <p>Multiple approaches with time/space analysis</p>
           <div class="leetcode-difficulty easy">Easy</div>
-          <a href="./Leetcode/3392-count-subarrays-of-length-three-with-condition.html" class="leetcode-link">View Solution →</a>
+          <a href="./Leetcode/3392-count-subarrays-of-length-three-with-condition.html" class="leetcode-link">View
+            Solution →</a>
+        </div>
+        <div class="leetcode-card">
+          <h3>Count Subarrays Where Max Element Appears at Least K Times</h3>
+          <p>
+            Count all subarrays where the maximum element appears at least k
+            times
+          </p>
+          <div class="leetcode-difficulty medium">Medium</div>
+          <a href="./Leetcode/2962-count-subarrays-where-max-element-appears-at-least-k-times.html"
+            class="leetcode-link">View Solution →</a>
         </div>
         <div class="leetcode-card">
           <h3>Count Subarrays With Score Less Than K</h3>
-          <p>Count all the subarrays where product of sum and length is less than k</p>
+          <p>
+            Count all the subarrays where product of sum and length is less
+            than k
+          </p>
           <div class="leetcode-difficulty hard">Hard</div>
-          <a href="./Leetcode/2302-count-subarrays-with-score-less-than-k.html" class="leetcode-link">View Solution →</a>
+          <a href="./Leetcode/2302-count-subarrays-with-score-less-than-k.html" class="leetcode-link">View Solution
+            →</a>
         </div>
       </div>
       <div class="view-all-container">
@@ -722,14 +851,15 @@
     <section class="developers-section animate__animated animate__fadeIn">
       <h2 class="developers-title">Meet Our Team</h2>
       <div class="developers-slider">
-
         <!-- Developer 1 -->
         <div class="developer-slide active">
           <div class="developer-info">
-            <img src="./components/developer1.jpg" alt="Piyush Kumar" class="developer-image">
+            <img src="./components/developer1.jpg" alt="Piyush Kumar" class="developer-image" />
             <h3 class="developer-name">Piyush Kumar</h3>
             <p class="developer-role">Developer</p>
-            <p class="developer-bio">NSUT Graduate | GATE CS Qualified | C++ Developer/Programmer</p>
+            <p class="developer-bio">
+              NSUT Graduate | GATE CS Qualified | C++ Developer/Programmer
+            </p>
             <!-- <div class="developer-links">
               <a href="https://leetcode.com/u/Delhi_Boy_2/" target="_blank" class="developer-link" aria-label="LeetCode profile">
                 <i class="fas fa-code"></i>
@@ -744,7 +874,7 @@
         <!-- Developer 2 -->
         <div class="developer-slide">
           <div class="developer-info">
-            <img src="./components/developer2.jpg" alt="Devanshu Sahay" class="developer-image">
+            <img src="./components/developer2.jpg" alt="Devanshu Sahay" class="developer-image" />
             <h3 class="developer-name">Devanshu Sahay</h3>
             <p class="developer-role">Engineer</p>
             <p class="developer-bio">
@@ -780,48 +910,48 @@
 
   <script>
     // Load header and footer
-    document.addEventListener('DOMContentLoaded', function() {
-      fetch('../components/header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('header').innerHTML = data;
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("../components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
         });
-      
-      fetch('../components/footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('footer').innerHTML = data;
+
+      fetch("../components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
         });
 
       // Animate feature cards on scroll
-      const featureCards = document.querySelectorAll('.feature-card');
-      
+      const featureCards = document.querySelectorAll(".feature-card");
+
       const animateCards = () => {
         featureCards.forEach((card, index) => {
           setTimeout(() => {
             const cardPosition = card.getBoundingClientRect().top;
             const screenPosition = window.innerHeight / 1.3;
-            
+
             if (cardPosition < screenPosition) {
-              card.classList.add('animate');
+              card.classList.add("animate");
             }
           }, index * 150);
         });
       };
 
-      window.addEventListener('load', animateCards);
-      window.addEventListener('scroll', animateCards);
+      window.addEventListener("load", animateCards);
+      window.addEventListener("scroll", animateCards);
 
       // Developer slider functionality
-      const slides = document.querySelectorAll('.developer-slide');
-      const prevBtn = document.querySelector('.prev-btn');
-      const nextBtn = document.querySelector('.next-btn');
+      const slides = document.querySelectorAll(".developer-slide");
+      const prevBtn = document.querySelector(".prev-btn");
+      const nextBtn = document.querySelector(".next-btn");
       let currentSlide = 0;
       let slideInterval;
 
       function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        slides[index].classList.add('active');
+        slides.forEach((slide) => slide.classList.remove("active"));
+        slides[index].classList.add("active");
       }
 
       function nextSlide() {
@@ -841,12 +971,13 @@
         slideInterval = setInterval(nextSlide, 5000);
       }
 
-      nextBtn.addEventListener('click', nextSlide);
-      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
 
       // Start auto-rotation
       slideInterval = setInterval(nextSlide, 5000);
     });
   </script>
 </body>
+
 </html>

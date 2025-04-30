@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Primary Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LeetCode Solutions | Algorithm Problem Solving Guide - Algopush</title>
-  <meta name="description" content="Comprehensive LeetCode solutions with detailed explanations, time complexity analysis, and multiple approaches. Master coding interview questions with our algorithm guides.">
-  <meta name="keywords" content="LeetCode solutions, coding interview preparation, algorithm problems, data structures, time complexity, space complexity, problem solving">
+  <meta name="description"
+    content="Comprehensive LeetCode solutions with detailed explanations, time complexity analysis, and multiple approaches. Master coding interview questions with our algorithm guides.">
+  <meta name="keywords"
+    content="LeetCode solutions, coding interview preparation, algorithm problems, data structures, time complexity, space complexity, problem solving">
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode Solutions | Algorithm Problem Solving Guide - Algopush">
@@ -21,6 +24,10 @@
   <meta name="twitter:title" content="LeetCode Solutions | Algorithm Problem Solving Guide - Algopush">
   <meta name="twitter:description" content="Detailed LeetCode solutions with explanations and complexity analysis">
   <meta name="twitter:image" content="https://algopush.com/components/MainImage1.png">
+  <meta name="rating" content="general" />
+  <meta http-equiv="content-language" content="en" />
+  <meta name="distribution" content="global" />
+  <meta name="robots" content="index, follow" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://algopush.com/Leetcode/leetcode.html">
@@ -116,7 +123,7 @@
 
     .filter-btn.active {
       transform: scale(1.05);
-      box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.2);
+      box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
     }
 
     .filter-btn.all {
@@ -148,7 +155,7 @@
     .leetcode-card {
       background: white;
       border-radius: 0.5rem;
-      box-shadow: 0 0.1875rem 0.625rem rgba(0,0,0,0.1);
+      box-shadow: 0 0.1875rem 0.625rem rgba(0, 0, 0, 0.1);
       transition: all 0.2s ease;
       cursor: pointer;
       border-left: 0.25rem solid var(--accent-color);
@@ -160,7 +167,7 @@
 
     .leetcode-card:hover {
       transform: translateY(-0.1875rem);
-      box-shadow: 0 0.3125rem 0.9375rem rgba(0,0,0,0.15);
+      box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.15);
     }
 
     .leetcode-card:hover .problem-title {
@@ -197,9 +204,20 @@
       white-space: nowrap;
     }
 
-    .easy { background: #e8f5e9; color: #2e7d32; }
-    .medium { background: #fff8e1; color: #ff8f00; }
-    .hard { background: #ffebee; color: #c62828; }
+    .easy {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .medium {
+      background: #fff8e1;
+      color: #ff8f00;
+    }
+
+    .hard {
+      background: #ffebee;
+      color: #c62828;
+    }
 
     .problem-title {
       font-size: calc(var(--base-font-size) * 1.125);
@@ -222,10 +240,12 @@
       margin-bottom: 1rem;
       color: #666;
     }
+
     .breadcrumb a {
       color: var(--secondary-color);
       text-decoration: none;
     }
+
     .breadcrumb a:hover {
       text-decoration: underline;
     }
@@ -243,17 +263,17 @@
         align-items: stretch;
         gap: calc(var(--spacing-unit) * 0.75);
       }
-      
+
       .search-container {
         min-width: 100%;
         order: 1;
       }
-      
+
       .difficulty-filters {
         justify-content: flex-start;
         order: 2;
       }
-      
+
       .leetcode-grid {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         gap: calc(var(--spacing-unit) * 1);
@@ -269,16 +289,16 @@
         width: 100%;
         padding: calc(var(--spacing-unit) * 1);
       }
-      
+
       .filter-btn {
         padding: calc(var(--spacing-unit) * 0.375) calc(var(--spacing-unit) * 0.75);
         font-size: calc(var(--base-font-size) * 0.8125);
       }
-      
+
       .card-content {
         padding: calc(var(--spacing-unit) * 0.9375);
       }
-      
+
       .problem-title {
         font-size: calc(var(--base-font-size) * 1);
       }
@@ -296,22 +316,24 @@
     }
   </style>
 </head>
+
 <body>
   <div id="header"></div>
 
   <div class="leetcode-container">
     <!-- Breadcrumb navigation -->
     <div class="breadcrumb">
-      <a href="https://algopush.com">Home</a> &gt; 
-      <a href="https://algopush.com/Leetcode/leetcode.html">Leetcode</a> &gt; 
+      <a href="https://algopush.com">Home</a> &gt;
+      <a href="https://algopush.com/Leetcode/leetcode.html">Leetcode</a> &gt;
       <span>LeetCode Problems</span>
     </div>
-    
+
     <h1>LeetCode Solutions</h1>
-    
+
     <div class="controls">
       <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search problems by number or title..." aria-label="Search LeetCode problems">
+        <input type="text" id="search-input" placeholder="Search problems by number or title..."
+          aria-label="Search LeetCode problems">
       </div>
       <div class="difficulty-filters">
         <button class="filter-btn all active" data-difficulty="all">All</button>
@@ -320,11 +342,11 @@
         <button class="filter-btn hard" data-difficulty="hard">Hard</button>
       </div>
     </div>
-    
+
     <div class="leetcode-grid">
       <!-- Problem 3392 -->
-      <a href="3392-count-subarrays-of-length-three-with-condition.html" class="leetcode-card" 
-         data-number="3392" data-difficulty="easy" data-title="Count Subarrays of Length Three">
+      <a href="3392-count-subarrays-of-length-three-with-condition.html" class="leetcode-card" data-number="3392"
+        data-difficulty="easy" data-title="Count Subarrays of Length Three">
         <div class="card-content">
           <div class="problem-header">
             <span class="problem-number">#3392</span>
@@ -337,24 +359,71 @@
         </div>
       </a>
 
-       <!-- Problem 2962 -->
-       <a href="2962-count-subarrays-where-max-element-appears-at-least-k-times.html" class="leetcode-card" 
-       data-number="2962" data-difficulty="medium" data-title="Count Subarrays Where Max Element Appears at Least K Times">
-      <div class="card-content">
-        <div class="problem-header">
-          <span class="problem-number">#2962</span>
-          <span class="problem-difficulty medium">Medium</span>
+      <!-- Problem 1295 -->
+      <a href="1295-find-numbers-with-even-number-of-digits.html" class="leetcode-card" data-number="1295"
+        data-difficulty="easy" data-title="Find Numbers with Even Number of Digits">
+        <div class="card-content">
+          <div class="problem-header">
+            <span class="problem-number">#1295</span>
+            <span class="problem-difficulty easy">Easy</span>
+          </div>
+          <h2 class="problem-title">Find Numbers with Even Number of Digits</h2>
+          <p class="problem-description">
+            Count numbers which has even number of digits.
+          </p>
         </div>
-        <h2 class="problem-title">Count Subarrays Where Max Element Appears at Least K Times</h2>
-        <p class="problem-description">
-          Count all subarrays where the maximum element appears at least k times
-        </p>
-      </div>
-    </a>
-      
+      </a>
+
+      <!-- Problem 2799 -->
+      <a href="2799-count-complete-subarrays-in-an-array.html" class="leetcode-card" data-number="2799"
+        data-difficulty="medium" data-title="Count Complete Subarrays in an Array">
+        <div class="card-content">
+          <div class="problem-header">
+            <span class="problem-number">#2799</span>
+            <span class="problem-difficulty medium">Medium</span>
+          </div>
+          <h2 class="problem-title">Count Complete Subarrays in an Array</h2>
+          <p class="problem-description">
+            Count how many subarrays contain all distinct elements present in the original array.
+          </p>
+        </div>
+      </a>
+
+      <!-- Problem 1829 -->
+      <a href="1829-maximum-xor-for-each-query.html" class="leetcode-card"
+        data-number="1829" data-difficulty="medium"
+        data-title="Maximum XOR for Each Query">
+        <div class="card-content">
+          <div class="problem-header">
+            <span class="problem-number">#1829</span>
+            <span class="problem-difficulty medium">Medium</span>
+          </div>
+          <h2 class="problem-title">Maximum XOR for Each Query</h2>
+          <p class="problem-description">
+            Find the maximum XOR result for each query on an array.
+          </p>
+        </div>
+      </a>
+
+      <!-- Problem 2962 -->
+      <a href="2962-count-subarrays-where-max-element-appears-at-least-k-times.html" class="leetcode-card"
+        data-number="2962" data-difficulty="medium"
+        data-title="Count Subarrays Where Max Element Appears at Least K Times">
+        <div class="card-content">
+          <div class="problem-header">
+            <span class="problem-number">#2962</span>
+            <span class="problem-difficulty medium">Medium</span>
+          </div>
+          <h2 class="problem-title">Count Subarrays Where Max Element Appears at Least K Times</h2>
+          <p class="problem-description">
+            Count all subarrays where the maximum element appears at least k times
+          </p>
+        </div>
+      </a>
+
       <!-- Problem 2302 -->
-      <a href="2302-count-subarrays-with-score-less-than-k.html" class="leetcode-card" 
-         data-number="2302" data-difficulty="hard" data-title="Count Subarrays With Score Less Than K">
+      <a href="2302-count-subarrays-with-score-less-than-k.html" class="leetcode-card" data-number="2302"
+        data-difficulty="hard" data-title="Count Subarrays With Score Less Than K">
         <div class="card-content">
           <div class="problem-header">
             <span class="problem-number">#2302</span>
@@ -372,14 +441,14 @@
   <div id="footer"></div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       // Load header and footer
       fetch('../components/header.html')
         .then(response => response.text())
         .then(data => {
           document.getElementById('header').innerHTML = data;
         });
-      
+
       fetch('../components/footer.html')
         .then(response => response.text())
         .then(data => {
@@ -391,26 +460,26 @@
       const filterButtons = document.querySelectorAll('.filter-btn');
       const cards = document.querySelectorAll('.leetcode-card');
       let currentDifficulty = 'all';
-      
+
       function filterCards() {
         const searchTerm = searchInput.value.toLowerCase();
-        
+
         cards.forEach(card => {
           const number = card.getAttribute('data-number');
           const title = card.getAttribute('data-title').toLowerCase();
           const difficulty = card.getAttribute('data-difficulty');
-          
+
           const matchesSearch = number.includes(searchTerm) || title.includes(searchTerm);
           const matchesDifficulty = currentDifficulty === 'all' || difficulty === currentDifficulty;
-          
+
           card.style.display = (matchesSearch && matchesDifficulty) ? 'flex' : 'none';
         });
       }
-      
+
       searchInput.addEventListener('input', filterCards);
-      
+
       filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
           filterButtons.forEach(btn => btn.classList.remove('active'));
           this.classList.add('active');
           currentDifficulty = this.getAttribute('data-difficulty');
@@ -427,7 +496,7 @@
         "name": "LeetCode Solutions",
         "description": "Collection of solved LeetCode problems with detailed explanations",
         "url": "https://algopush.com/Leetcode/leetcode.html",
-        "numberOfItems": 3,
+        "numberOfItems": 6,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -455,6 +524,33 @@
               "name": "Count Subarrays With Score Less Than K",
               "url": "https://algopush.com/Leetcode/2302-count-subarrays-with-score-less-than-k.html"
             }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Article",
+              "name": "Find Numbers with Even Number of Digits",
+              "url": "https://algopush.com/Leetcode/1295-find-numbers-with-even-number-of-digits.html"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Article",
+              "name": "Maximum XOR for Each Query",
+              "url": "https://algopush.com/Leetcode/1829-maximum-xor-for-each-query.html"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Article",
+              "name": "Count Complete Subarrays in an Array",
+              "url": "https://algopush.com/Leetcode/2799-count-complete-subarrays-in-an-array.html"
+            }
           }
         ]
       });
@@ -462,4 +558,5 @@
     });
   </script>
 </body>
+
 </html>

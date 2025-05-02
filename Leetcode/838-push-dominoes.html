@@ -77,60 +77,70 @@
   </script>
 
   <script>
-    // Tab functionality
-    document.querySelectorAll('.tab-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const tabName = button.getAttribute('data-tab');
-        const container = button.closest('.code-tabs');
-
-        // Update active tab button
-        container.querySelectorAll('.tab-button').forEach(btn => {
-          btn.classList.remove('active');
-        });
-        button.classList.add('active');
-
-        // Update active tab content
-        container.querySelectorAll('.tab-content').forEach(content => {
-          content.classList.remove('active');
-        });
-        container.querySelector(`#${tabName}-tab`).classList.add('active');
-      });
-    });
-
-    // Copy button functionality
-    document.querySelectorAll('.code-copy').forEach(button => {
-      button.addEventListener('click', () => {
-        const activeTab = button.closest('.code-container').querySelector('.tab-content.active');
-        const code = activeTab.querySelector('code').innerText;
-        navigator.clipboard.writeText(code).then(() => {
-          const originalText = button.textContent;
-          button.textContent = 'Copied!';
-          setTimeout(() => button.textContent = originalText, 2000);
-        });
-      });
-    });
-
-    // FAQ highlight when opened
-    document.querySelectorAll('.faq-section details').forEach(detail => {
-      detail.addEventListener('toggle', () => {
-        if (detail.open) {
-          detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // Tab functionality with improved mobile support
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize tabs
+      document.querySelectorAll('.code-tabs').forEach(container => {
+        const tabButtons = container.querySelectorAll('.tab-button');
+        const tabContents = container.querySelectorAll('.tab-content');
+        
+        // Set first tab as active by default if none are active
+        if (!container.querySelector('.tab-button.active')) {
+          tabButtons[0]?.classList.add('active');
+          tabContents[0]?.classList.add('active');
         }
+        
+        // Add click handlers
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const tabName = button.getAttribute('data-tab');
+            
+            // Update active tab button
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Update active tab content
+            tabContents.forEach(content => content.classList.remove('active'));
+            container.querySelector(`#${tabName}-tab`).classList.add('active');
+          });
+        });
       });
+      
+      // Copy button functionality
+      document.querySelectorAll('.code-copy').forEach(button => {
+        button.addEventListener('click', () => {
+          const activeTab = button.closest('.code-container').querySelector('.tab-content.active');
+          const code = activeTab.querySelector('code').innerText;
+          navigator.clipboard.writeText(code).then(() => {
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            setTimeout(() => button.textContent = originalText, 2000);
+          });
+        });
+      });
+      
+      // FAQ highlight when opened
+      document.querySelectorAll('.faq-section details').forEach(detail => {
+        detail.addEventListener('toggle', () => {
+          if (detail.open) {
+            detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
+      });
+      
+      // Load header and footer
+      fetch("../components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        });
+
+      fetch("../components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
     });
-
-    // Load header and footer
-    fetch("../components/header.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("header").innerHTML = data;
-      });
-
-    fetch("../components/footer.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("footer").innerHTML = data;
-      });
   </script>
 
   <style>
@@ -342,6 +352,8 @@
       display: flex;
       background: #eaecee;
       border-bottom: 1px solid #ddd;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .tab-button {
@@ -352,6 +364,8 @@
       font-weight: 500;
       color: var(--text-color);
       transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .tab-button.active {
@@ -377,7 +391,6 @@
       from {
         opacity: 0;
       }
-
       to {
         opacity: 1;
       }
@@ -521,17 +534,42 @@
       }
     }
 
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      main {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .problem-meta {
+        flex-direction: column;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
     @media (max-width: 480px) {
       main {
         padding: 1rem;
       }
 
       h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
       }
 
       h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
 
       pre {
@@ -539,12 +577,7 @@
         font-size: 0.85rem;
       }
 
-      .tab-buttons {
-        flex-wrap: wrap;
-      }
-
       .tab-button {
-        flex: 1 0 auto;
         padding: 0.6rem;
         font-size: 0.9rem;
       }

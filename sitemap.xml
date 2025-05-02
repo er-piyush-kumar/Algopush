@@ -103,4 +103,11 @@
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://algopush.com/Leetcode/3432-count-partitions-with-even-sum-difference.html</loc>
+        <lastmod>2025-05-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>

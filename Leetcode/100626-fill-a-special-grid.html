@@ -593,7 +593,7 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
         <div class="tab-content active" id="cpp-recursive-tab">
           <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
 <span class="code-token-keyword">public</span>:
-    vector&lt;vector&lt;<span class="code-token-keyword">int</span>&gt;&gt; <span class="code-token-function">fillGrid</span>(<span class="code-token-keyword">int</span> N) {
+    vector&lt;vector&lt;<span class="code-token-keyword">int</span>&gt;&gt; <span class="code-token-function">specialGrid</span>(<span class="code-token-keyword">int</span> N) {
         <span class="code-token-keyword">int</span> size = <span class="code-token-function">pow</span>(2, N);
         vector&lt;vector&lt;<span class="code-token-keyword">int</span>&gt;&gt; <span class="code-token-function">grid</span>(size, vector&lt;<span class="code-token-keyword">int</span>&gt;(size));
         <span class="code-token-function">fill</span>(grid, 0, 0, size, 0);
@@ -621,7 +621,7 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
         <!-- Java Code -->
         <div class="tab-content" id="java-recursive-tab">
           <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
-    <span class="code-token-keyword">public</span> <span class="code-token-keyword">int</span>[][] <span class="code-token-function">fillGrid</span>(<span class="code-token-keyword">int</span> N) {
+    <span class="code-token-keyword">public</span> <span class="code-token-keyword">int</span>[][] <span class="code-token-function">specialGrid</span>(<span class="code-token-keyword">int</span> N) {
         <span class="code-token-keyword">int</span> size = (<span class="code-token-keyword">int</span>) Math.<span class="code-token-function">pow</span>(2, N);
         <span class="code-token-keyword">int</span>[][] grid = <span class="code-token-keyword">new</span> <span class="code-token-keyword">int</span>[size][size];
         <span class="code-token-function">fill</span>(grid, 0, 0, size, 0);
@@ -648,7 +648,7 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
         <!-- Python Code -->
         <div class="tab-content" id="python-recursive-tab">
           <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span>:
-    <span class="code-token-keyword">def</span> <span class="code-token-function">fillGrid</span>(self, N: int) -> List[List[int]]:
+    <span class="code-token-keyword">def</span> <span class="code-token-function">specialGrid</span>(self, N: int) -> List[List[int]]:
         size = 2 ** N
         grid = [[0] * size <span class="code-token-keyword">for</span> _ <span class="code-token-keyword">in</span> <span class="code-token-function">range</span>(size)]
         self.<span class="code-token-function">fill</span>(grid, 0, 0, size, 0)
@@ -721,7 +721,7 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
         <div class="tab-content active" id="cpp-math-tab">
           <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
 <span class="code-token-keyword">public</span>:
-    vector&lt;vector&lt;<span class="code-token-keyword">int</span>&gt;&gt; <span class="code-token-function">fillGrid</span>(<span class="code-token-keyword">int</span> N) {
+    vector&lt;vector&lt;<span class="code-token-keyword">int</span>&gt;&gt; <span class="code-token-function">specialGrid</span>(<span class="code-token-keyword">int</span> N) {
         <span class="code-token-keyword">int</span> size = <span class="code-token-function">pow</span>(2, N);
         vector&lt;vector&lt;<span class="code-token-keyword">int</span>&gt;&gt; <span class="code-token-function">grid</span>(size, vector&lt;<span class="code-token-keyword">int</span>&gt;(size));
         
@@ -745,7 +745,7 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
         <!-- Java Code -->
         <div class="tab-content" id="java-math-tab">
           <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
-    <span class="code-token-keyword">public</span> <span class="code-token-keyword">int</span>[][] <span class="code-token-function">fillGrid</span>(<span class="code-token-keyword">int</span> N) {
+    <span class="code-token-keyword">public</span> <span class="code-token-keyword">int</span>[][] <span class="code-token-function">specialGrid</span>(<span class="code-token-keyword">int</span> N) {
         <span class="code-token-keyword">int</span> size = (<span class="code-token-keyword">int</span>) Math.<span class="code-token-function">pow</span>(2, N);
         <span class="code-token-keyword">int</span>[][] grid = <span class="code-token-keyword">new</span> <span class="code-token-keyword">int</span>[size][size];
         
@@ -769,7 +769,7 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
         <!-- Python Code -->
         <div class="tab-content" id="python-math-tab">
           <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span>:
-    <span class="code-token-keyword">def</span> <span class="code-token-function">fillGrid</span>(self, N: int) -> List[List[int]]:
+    <span class="code-token-keyword">def</span> <span class="code-token-function">specialGrid</span>(self, N: int) -> List[List[int]]:
         size = 2 ** N
         grid = [[0] * size <span class="code-token-keyword">for</span> _ <span class="code-token-keyword">in</span> <span class="code-token-function">range</span>(size)]
         

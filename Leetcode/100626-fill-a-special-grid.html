@@ -5,13 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeetCode 100626 | Fill a Special Grid</title>
-  <meta name="description" content="Solve the Special Grid problem using recursive quadrant filling and mathematical patterns. Complete solutions in C++, Java, and Python." />
-  <meta name="keywords" content="LeetCode 100626, Fill a Special Grid, recursive algorithms, matrix manipulation, coding interview preparation, C++ Java Python solutions" />
+  <meta name="description"
+    content="Solve the Special Grid problem using recursive quadrant filling and mathematical patterns. Complete solutions in C++, Java, and Python." />
+  <meta name="keywords"
+    content="LeetCode 100626, Fill a Special Grid, recursive algorithms, matrix manipulation, coding interview preparation, C++ Java Python solutions" />
   <meta name="author" content="Algopush" />
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 100626: Fill a Special Grid">
-  <meta property="og:description" content="Complete guide to solving the Special Grid problem using recursive quadrant filling and mathematical patterns.">
+  <meta property="og:description"
+    content="Complete guide to solving the Special Grid problem using recursive quadrant filling and mathematical patterns.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/100626.png">
   <meta property="og:url" content="https://algopush.com/Leetcode/100626-fill-a-special-grid.html">
   <meta property="og:type" content="article">
@@ -19,7 +22,8 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 100626: Fill a Special Grid">
-  <meta name="twitter:description" content="Optimal solutions using recursion and mathematical patterns. Code examples in C++, Java, and Python.">
+  <meta name="twitter:description"
+    content="Optimal solutions using recursion and mathematical patterns. Code examples in C++, Java, and Python.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/100626.png">
 
   <!-- Structured Data for SEO -->
@@ -521,11 +525,13 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> This problem requires understanding of recursive quadrant filling and mathematical patterns. Optimal solutions run in O(4^N) time complexity.
+      <strong>Pro Tip:</strong> This problem requires understanding of recursive quadrant filling and mathematical
+      patterns. Optimal solutions run in O(4^N) time complexity.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>Construct a 2<sup>N</sup> x 2<sup>N</sup> grid where each quadrant follows strict ordering rules recursively. Numbers must range from 0 to 2<sup>2N</sup> - 1.</p>
+    <p>Construct a 2<sup>N</sup> x 2<sup>N</sup> grid where each quadrant follows strict ordering rules recursively.
+      Numbers must range from 0 to 2<sup>2N</sup> - 1.</p>
 
     <h3>Example 1</h3>
     <pre><code>Input: N = 1
@@ -669,7 +675,8 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This recursive approach fills quadrants in reverse order (TR → BR → BL → TL) with appropriate value offsets to maintain ordering.
+        <strong>Implementation Note:</strong> This recursive approach fills quadrants in reverse order (TR → BR → BL →
+        TL) with appropriate value offsets to maintain ordering.
       </div>
     </div>
 
@@ -786,7 +793,8 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This mathematical approach uses bitwise operations to calculate cell values directly based on their coordinates, avoiding recursion.
+        <strong>Implementation Note:</strong> This mathematical approach uses bitwise operations to calculate cell
+        values directly based on their coordinates, avoiding recursion.
       </div>
     </div>
 
@@ -808,7 +816,8 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
 <b>Explanation:</b> Ensure recursive pattern holds for deep nesting</code></pre>
 
     <div class="callout warning">
-      <strong>Important:</strong> Test all quadrant boundaries and ensure recursive calls maintain proper offset calculations.
+      <strong>Important:</strong> Test all quadrant boundaries and ensure recursive calls maintain proper offset
+      calculations.
     </div>
 
     <hr />
@@ -818,32 +827,39 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
     <div class="faq-section">
       <details>
         <summary>1. Why does the recursive approach work?</summary>
-        <p>The recursive approach maintains the quadrant ordering by assigning value ranges that ensure each quadrant's maximum is less than the next quadrant's minimum.</p>
+        <p>The recursive approach maintains the quadrant ordering by assigning value ranges that ensure each quadrant's
+          maximum is less than the next quadrant's minimum.</p>
       </details>
 
       <details>
         <summary>2. How does the mathematical solution work?</summary>
-        <p>It encodes quadrant positions at each level using bit patterns, calculating the value through bitwise operations that mirror the recursive structure.</p>
+        <p>It encodes quadrant positions at each level using bit patterns, calculating the value through bitwise
+          operations that mirror the recursive structure.</p>
       </details>
 
       <details>
         <summary>3. Can we optimize further?</summary>
-        <p>Both approaches are optimal for their paradigms. The mathematical solution avoids recursion stack overhead but may be harder to understand.</p>
+        <p>Both approaches are optimal for their paradigms. The mathematical solution avoids recursion stack overhead
+          but may be harder to understand.</p>
       </details>
 
       <details>
         <summary>4. How to handle very large N?</summary>
-        <p>Both approaches work up to N=15 (32768x32768 grid) within memory limits. For N>15, consider iterative approaches with memory optimization.</p>
+        <p>Both approaches work up to N=15 (32768x32768 grid) within memory limits. For N>15, consider iterative
+          approaches with memory optimization.</p>
       </details>
 
       <details>
         <summary>5. Why reverse order in recursion?</summary>
-        <p>Filling TR first ensures smaller values are placed first, followed by larger values in subsequent quadrants to maintain the required ordering.</p>
+        <p>Filling TR first ensures smaller values are placed first, followed by larger values in subsequent quadrants
+          to maintain the required ordering.</p>
       </details>
     </div>
 
     <div class="callout">
-      <strong>Final Thoughts:</strong> This problem demonstrates beautiful recursive patterns and mathematical relationships in grid construction. The recursive approach is more intuitive, while the mathematical solution offers deeper insights into bit manipulation patterns.
+      <strong>Final Thoughts:</strong> This problem demonstrates beautiful recursive patterns and mathematical
+      relationships in grid construction. The recursive approach is more intuitive, while the mathematical solution
+      offers deeper insights into bit manipulation patterns.
     </div>
   </main>
 
@@ -851,34 +867,34 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
 
   <script>
     // Tab functionality with improved mobile support
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Initialize tabs
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Set first tab as active by default if none are active
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         // Add click handlers
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
-            
+
             // Update active tab button
             tabButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            
+
             // Update active tab content
             tabContents.forEach(content => content.classList.remove('active'));
             container.querySelector(`#${tabName}-tab`).classList.add('active');
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -891,7 +907,7 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
           });
         });
       });
-      
+
       // FAQ highlight when opened
       document.querySelectorAll('.faq-section details').forEach(detail => {
         detail.addEventListener('toggle', () => {
@@ -900,7 +916,7 @@ Explanation: Each quadrant maintains required ordering recursively</code></pre>
           }
         });
       });
-      
+
       // Load header and footer
       fetch("../components/header.html")
         .then((response) => response.text())

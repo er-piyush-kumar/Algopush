@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeetCode 3541 | Find Most Frequent Vowel and Consonant</title>
+  <meta name="description" content="Complete solution for LeetCode 3541: Discover optimal methods to find maximum vowel and consonant frequencies. Detailed analysis with time/space complexity comparisons and multi-language implementations.">
+  <meta name="keywords" content="LeetCode 3541, Vowel Frequency, Consonant Frequency, String Manipulation, Frequency Counting, Algorithm Optimization">
+  <meta name="author" content="Algopush" />
+  <link rel="canonical" href="https://algopush.com/Leetcode/3541-find-most-frequent-vowel-and-consonant.html">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="LeetCode 3541: Find Most Frequent Vowel and Consonant">
+  <meta property="og:description" content="Master frequency counting techniques for string analysis. Complete guide with array and hash map approaches in C++, Java, and Python.">
+  <meta property="og:image" content="https://algopush.com/Leetcode/Images/3541.png">
+  <meta property="og:url" content="https://algopush.com/Leetcode/3541-find-most-frequent-vowel-and-consonant.html">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LeetCode 3541: Find Most Frequent Vowel and Consonant">
+  <meta name="twitter:description" content="Optimal solutions for calculating maximum vowel and consonant frequencies. Code examples with complexity analysis.">
+  <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3541.png">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Find Most Frequent Vowel and Consonant",
+      "url": "https://algopush.com/Leetcode/3541-find-most-frequent-vowel-and-consonant.html",
+      "image": "https://algopush.com/Leetcode/Images/3541.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Algopush",
+        "url": "https://algopush.com"
+      },
+      "datePublished": "2025-05-15",
+      "dateModified": "2025-05-15",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Algopush",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://algopush.com/components/logo.png"
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="https://algopush.com">Home</a> &gt;
+      <a href="https://algopush.com/Leetcode/leetcode.html">LeetCode</a> &gt;
+      <span>3541. Find Most Frequent Vowel and Consonant</span>
+    </div>
+
+    <div class="problem-visual">
+      <img src="https://algopush.com/Leetcode/Images/3541.png" alt="Frequency analysis visualization" loading="lazy">
+    </div>
+
+    <h1>3541: Find Most Frequent Vowel and Consonant</h1>
+
+    <div class="problem-meta">
+      <div class="meta-item">
+        <span class="label">Difficulty:</span>
+        <span class="value">Easy</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Topics:</span>
+        <span class="value">String Manipulation, Frequency Counting</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Companies:</span>
+        <span class="value">Amazon, Microsoft, Bloomberg</span>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <strong>Pro Tip:</strong> The optimal solution requires efficient frequency counting and proper classification of vowels vs consonants.
+    </div>
+
+    <h2>Problem Statement</h2>
+    <p>Given a string, return the sum of maximum vowel frequency and maximum consonant frequency. Handle edge cases where no vowels/consonants exist.</p>
+
+    <h3>Example 1</h3>
+    <pre><code>Input: s = "successes"
+Output: 6
+Explanation: Max vowel (e) = 2, Max consonant (s) = 4</code></pre>
+
+    <h3>Example 2</h3>
+    <pre><code>Input: s = "aeiaeia"
+Output: 3
+Explanation: Max vowel (a) = 3, No consonants</code></pre>
+
+    <div class="callout note">
+      <strong>Problem Link:</strong>
+      <a href="https://leetcode.com/problems/find-most-frequent-vowel-and-consonant/" target="_blank" rel="noopener noreferrer">
+        View on LeetCode ↗
+      </a>
+    </div>
+
+    <hr />
+
+    <h2>Approach 1: Frequency Array (Optimal)</h2>
+    <p>Use fixed-size array to store character frequencies for O(1) lookups.</p>
+
+    <h3>Algorithm Steps</h3>
+    <ol>
+      <li>Initialize 26-element frequency array</li>
+      <li>Count character occurrences</li>
+      <li>Iterate through alphabet to find max frequencies</li>
+    </ol>
+
+    <h3>Complexity Analysis</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Time Complexity</th>
+          <th>Space Complexity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>O(n)</td>
+          <td>O(1)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="code-container">
+      <div class="code-header">
+        <span class="code-filename">Optimal Solution</span>
+        <button class="code-copy">Copy Code</button>
+      </div>
+      <div class="code-tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="cpp-array">C++</button>
+          <button class="tab-button" data-tab="java-array">Java</button>
+          <button class="tab-button" data-tab="python-array">Python</button>
+        </div>
+
+        <!-- C++ Code -->
+        <div class="tab-content active" id="cpp-array-tab">
+          <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
+<span class="code-token-keyword">public</span>:
+    <span class="code-token-keyword">int</span> <span class="code-token-function">maxFreqSum</span>(string s) {
+        vector&lt;<span class="code-token-keyword">int</span>&gt; freq(26, 0);
+        <span class="code-token-keyword">for</span>(char c : s) freq[c-'a']++;
+        
+        <span class="code-token-keyword">int</span> max_vowel = 0, max_cons = 0;
+        <span class="code-token-keyword">for</span>(<span class="code-token-keyword">int</span> i = 0; i < 26; ++i) {
+            char c = 'a' + i;
+            <span class="code-token-keyword">if</span>(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                max_vowel = max(max_vowel, freq[i]);
+            } else {
+                max_cons = max(max_cons, freq[i]);
+            }
+        }
+        <span class="code-token-keyword">return</span> max_vowel + max_cons;
+    }
+};</code></pre>
+        </div>
+
+        <!-- Java Code -->
+        <div class="tab-content" id="java-array-tab">
+          <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
+    <span class="code-token-keyword">public</span> <span class="code-token-keyword">int</span> <span class="code-token-function">maxFreqSum</span>(String s) {
+        <span class="code-token-keyword">int</span>[] freq = new int[26];
+        <span class="code-token-keyword">for</span>(char c : s.toCharArray()) freq[c-'a']++;
+        
+        <span class="code-token-keyword">int</span> maxVowel = 0, maxCons = 0;
+        <span class="code-token-keyword">for</span>(<span class="code-token-keyword">int</span> i = 0; i < 26; i++) {
+            char c = (<span class="code-token-keyword">char</span>)('a' + i);
+            <span class="code-token-keyword">if</span>(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                maxVowel = Math.max(maxVowel, freq[i]);
+            } else {
+                maxCons = Math.max(maxCons, freq[i]);
+            }
+        }
+        <span class="code-token-keyword">return</span> maxVowel + maxCons;
+    }
+}</code></pre>
+        </div>
+
+        <!-- Python Code -->
+        <div class="tab-content" id="python-array-tab">
+          <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span>:
+    <span class="code-token-keyword">def</span> <span class="code-token-function">maxFreqSum</span>(self, s: str) -> int:
+        freq = [0] * 26
+        <span class="code-token-keyword">for</span> c <span class="code-token-keyword">in</span> s:
+            freq[ord(c) - ord('a')] += 1
+            
+        max_vowel = max_cons = 0
+        <span class="code-token-keyword">for</span> i <span class="code-token-keyword">in</span> range(26):
+            c = chr(ord('a') + i)
+            <span class="code-token-keyword">if</span> c <span class="code-token-keyword">in</span> {'a', 'e', 'i', 'o', 'u'}:
+                max_vowel = max(max_vowel, freq[i])
+            else:
+                max_cons = max(max_cons, freq[i])
+        <span class="code-token-keyword">return</span> max_vowel + max_cons</code></pre>
+        </div>
+      </div>
+      <div class="callout note">
+        <strong>Implementation Note:</strong> This method provides constant space complexity and optimal performance for all input sizes.
+      </div>
+    </div>
+
+    <hr />
+
+    <h2>Approach 2: Hash Map (Alternative)</h2>
+    <p>Use dictionary-based frequency counting for better readability.</p>
+
+    <h3>Algorithm Steps</h3>
+    <ol>
+      <li>Create frequency map using hash table</li>
+      <li>Iterate through map entries</li>
+      <li>Track maximum frequencies during iteration</li>
+    </ol>
+
+    <h3>Complexity Analysis</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Time Complexity</th>
+          <th>Space Complexity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>O(n)</td>
+          <td>O(26)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="code-container">
+      <div class="code-header">
+        <span class="code-filename">Alternative Solution</span>
+        <button class="code-copy">Copy Code</button>
+      </div>
+      <div class="code-tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="cpp-hash">C++</button>
+          <button class="tab-button" data-tab="java-hash">Java</button>
+          <button class="tab-button" data-tab="python-hash">Python</button>
+        </div>
+
+        <!-- C++ Code -->
+        <div class="tab-content active" id="cpp-hash-tab">
+          <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
+<span class="code-token-keyword">public</span>:
+    <span class="code-token-keyword">int</span> <span class="code-token-function">maxFreqSum</span>(string s) {
+        unordered_map&lt;<span class="code-token-keyword">char</span>, <span class="code-token-keyword">int</span>&gt; freq;
+        <span class="code-token-keyword">for</span>(char c : s) freq[c]++;
+        
+        <span class="code-token-keyword">int</span> max_vowel = 0, max_cons = 0;
+        <span class="code-token-keyword">for</span>(auto& [c, count] : freq) {
+            <span class="code-token-keyword">if</span>(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                max_vowel = max(max_vowel, count);
+            } else {
+                max_cons = max(max_cons, count);
+            }
+        }
+        <span class="code-token-keyword">return</span> max_vowel + max_cons;
+    }
+};</code></pre>
+        </div>
+
+        <!-- Java Code -->
+        <div class="tab-content" id="java-hash-tab">
+          <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
+    <span class="code-token-keyword">public</span> <span class="code-token-keyword">int</span> <span class="code-token-function">maxFreqSum</span>(String s) {
+        Map&lt;Character, Integer&gt; freq = new HashMap<>();
+        <span class="code-token-keyword">for</span>(char c : s.toCharArray()) {
+            freq.put(c, freq.getOrDefault(c, 0) + 1);
+        }
+        
+        <span class="code-token-keyword">int</span> maxVowel = 0, maxCons = 0;
+        <span class="code-token-keyword">for</span>(Map.Entry&lt;Character, Integer&gt; entry : freq.entrySet()) {
+            char c = entry.getKey();
+            <span class="code-token-keyword">if</span>(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                maxVowel = Math.max(maxVowel, entry.getValue());
+            } else {
+                maxCons = Math.max(maxCons, entry.getValue());
+            }
+        }
+        <span class="code-token-keyword">return</span> maxVowel + maxCons;
+    }
+}</code></pre>
+        </div>
+
+        <!-- Python Code -->
+        <div class="tab-content" id="python-hash-tab">
+          <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span>:
+    <span class="code-token-keyword">def</span> <span class="code-token-function">maxFreqSum</span>(self, s: str) -> int:
+        freq = {}
+        <span class="code-token-keyword">for</span> c <span class="code-token-keyword">in</span> s:
+            freq[c] = freq.get(c, 0) + 1
+            
+        max_vowel = max_cons = 0
+        <span class="code-token-keyword">for</span> c, count <span class="code-token-keyword">in</span> freq.items():
+            <span class="code-token-keyword">if</span> c <span class="code-token-keyword">in</span> {'a', 'e', 'i', 'o', 'u'}:
+                max_vowel = max(max_vowel, count)
+            else:
+                max_cons = max(max_cons, count)
+        <span class="code-token-keyword">return</span> max_vowel + max_cons</code></pre>
+        </div>
+      </div>
+      <div class="callout note">
+        <strong>Implementation Note:</strong> While theoretically similar in complexity, this method has slightly higher constant factors due to hash table operations.
+      </div>
+    </div>
+
+    <hr />
+
+    <h2>Approach Comparison</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Approach</th>
+          <th>Time</th>
+          <th>Space</th>
+          <th>Best Use Case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Frequency Array</td>
+          <td>O(n)</td>
+          <td>O(1)</td>
+          <td>Optimal for fixed character sets</

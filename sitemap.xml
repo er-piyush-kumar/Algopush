@@ -145,6 +145,18 @@
         <priority>0.8</priority>
     </url>
 
-    
+    <url>
+        <loc>https://algopush.com/Leetcode/3541-find-most-frequent-vowel-and-consonant.html</loc>
+        <lastmod>2025-05-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://algopush.com/Leetcode/3542-minimum-operations-to-convert-all-elements-to-zero.html</loc>
+        <lastmod>2025-05-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
 </urlset>

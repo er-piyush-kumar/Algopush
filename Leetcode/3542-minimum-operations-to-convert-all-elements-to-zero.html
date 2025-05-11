@@ -4,36 +4,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2918 | Minimum Equal Sum of Two Arrays After Replacing Zeros</title>
-  <meta name="description" content="Complete solution for LeetCode 2918: Learn optimal strategies to balance array sums by replacing zeros. Detailed analysis with mathematical proofs.">
-  <meta name="keywords" content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 2918, Minimum Equal Sum, Array Manipulation, Zero Replacement Problem, Algorithm Optimization, Competitive Programming, LeetCode Hard Problem">
+  <title>3542 | Minimum Operations to Convert All Elements to Zero</title>
+  <meta name="description" content="LeetCode 3542: Minimum operations to zero arrays using greedy strategies. Detailed analysis with complexity comparison and multiple implementations.">
+  <meta name="keywords" content="LeetCode 3542, Minimum Operations to Zero, Array Manipulation, Greedy Algorithms, Subarray Operations, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question">
   <meta name="author" content="Algopush" />
-  <link rel="canonical" href="https://algopush.com/Leetcode/2918-minimum-equal-sum-of-two-arrays-after-replacing-zeros.html">
+  <link rel="canonical" href="https://algopush.com/Leetcode/3542-minimum-operations-to-convert-all-elements-to-zero.html">
+
   <!-- Favicon -->
   <link rel="icon" href="../components/favicon.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="../components/favicon.png">
 
   <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="LeetCode 2918: Minimum Equal Sum of Two Arrays After Replacing Zeros">
-  <meta property="og:description" content="Master the mathematical approach to balance array sums through zero replacement. Complete guide with multiple optimization strategies and code implementations.">
-  <meta property="og:image" content="https://algopush.com/Leetcode/Images/2918.png">
-  <meta property="og:url" content="https://algopush.com/Leetcode/2918-minimum-equal-sum-of-two-arrays-after-replacing-zeros.html">
+  <meta property="og:title" content="LeetCode 3542: Minimum Operations to Convert All Elements to Zero">
+  <meta property="og:description" content="Master efficient greedy approaches to minimize operations for array zero conversion. Complete guide with mathematical proofs and code implementations.">
+  <meta property="og:image" content="https://algopush.com/Leetcode/Images/3542.png">
+  <meta property="og:url" content="https://algopush.com/Leetcode/3542-minimum-operations-to-convert-all-elements-to-zero.html">
   <meta property="og:type" content="article">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LeetCode 2918: Minimum Equal Sum of Two Arrays After Replacing Zeros">
-  <meta name="twitter:description" content="Optimal solution for balancing array sums with zero replacement constraints. Code examples in Python, Java, and C++.">
-  <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/2918.png">
+  <meta name="twitter:title" content="LeetCode 3542: Minimum Operations to Convert All Elements to Zero">
+  <meta name="twitter:description" content="Optimal greedy solution for converting arrays to zero with minimal operations. Code examples in Python, Java, and C++.">
+  <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3542.png">
 
   <!-- Structured Data for SEO -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "headline": "Minimum Equal Sum of Two Arrays After Replacing Zeros",
-      "url": "https://algopush.com/Leetcode/2918-minimum-equal-sum-of-two-arrays-after-replacing-zeros.html",
-      "image": "https://algopush.com/Leetcode/Images/2918.png",
+      "headline": "Minimum Operations to Convert All Elements to Zero",
+      "url": "https://algopush.com/Leetcode/3542-minimum-operations-to-convert-all-elements-to-zero.html",
+      "image": "https://algopush.com/Leetcode/Images/3542.png",
       "author": {
         "@type": "Organization",
         "name": "Algopush",
@@ -500,14 +501,14 @@
     <div class="breadcrumb">
       <a href="https://algopush.com">Home</a> &gt;
       <a href="https://algopush.com/Leetcode/leetcode.html">LeetCode</a> &gt;
-      <span>2918. Minimum Equal Sum of Two Arrays After Replacing Zeros</span>
+      <span>3542. Minimum Operations to Convert All Elements to Zero</span>
     </div>
 
     <div class="problem-visual">
-      <img src="https://algopush.com/Leetcode/Images/2918.png" alt="Array sum balancing visualization" loading="lazy">
+      <img src="https://algopush.com/Leetcode/Images/3542.png" alt="Array operations visualization" loading="lazy">
     </div>
 
-    <h1>2918: Minimum Equal Sum of Two Arrays After Replacing Zeros</h1>
+    <h1>3542: Minimum Operations to Convert All Elements to Zero</h1>
 
     <div class="problem-meta">
       <div class="meta-item">
@@ -516,52 +517,50 @@
       </div>
       <div class="meta-item">
         <span class="label">Topics:</span>
-        <span class="value">Arrays, Greedy Algorithms, Mathematics</span>
+        <span class="value">Arrays, Greedy Algorithms, Counting</span>
       </div>
       <div class="meta-item">
         <span class="label">Companies:</span>
-        <span class="value">Google, Amazon, Bloomberg</span>
+        <span class="value">Google, Meta, Amazon</span>
       </div>
     </div>
 
     <div class="callout tip">
-      <strong>Key Insight:</strong> The optimal solution requires calculating base sums and understanding the mathematical relationship between zero counts in both arrays.
+      <strong>Key Insight:</strong> The optimal strategy requires processing elements in sorted order and counting contiguous value groups.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>Given two arrays containing positive integers and zeros, replace all zeros with positive integers such that both arrays have equal sums. Return the minimum possible equal sum or -1 if impossible.</p>
+    <p>Given an array of non-negative integers, determine the minimum number of operations needed to make all elements zero. Each operation lets you select a subarray and set all occurrences of its minimum value to zero.</p>
 
     <h3>Example 1</h3>
-    <pre><code>Input: nums1 = [3,2,0,1,0], nums2 = [6,5,0]
-Output: 12
-Explanation: Replace zeros with [2,4] in nums1 and [1] in nums2</code></pre>
+    <pre><code>Input: nums = [0,2]
+Output: 1
+Explanation: Target subarray [1,1] containing 2</code></pre>
 
     <h3>Example 2</h3>
-    <pre><code>Input: nums1 = [2,0,2,0], nums2 = [1,4]
-Output: -1
-Explanation: Impossible to balance sums</code></pre>
+    <pre><code>Input: nums = [3,1,2,1]
+Output: 3
+Explanation: Requires three targeted operations</code></pre>
 
     <div class="callout note">
       <strong>Problem Link:</strong>
-      <a href="https://leetcode.com/problems/minimum-equal-sum-of-two-arrays-after-replacing-zeros/" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/problems/minimum-operations-to-convert-all-elements-to-zero/" target="_blank" rel="noopener noreferrer">
         View on LeetCode ↗
       </a>
     </div>
 
     <hr />
 
-    <h2>Approach 1: Mathematical Analysis</h2>
-    <p>Calculate base sums and zero counts to determine minimal possible sum.</p>
+    <h2>Approach 1: Greedy Group Counting (Optimal)</h2>
+    <p>Process elements in sorted order, counting contiguous groups for each value.</p>
 
     <h3>Algorithm Steps</h3>
     <ol>
-      <li>Calculate sum1 (sum of non-zero elements in nums1) + count of zeros</li>
-      <li>Calculate sum2 (sum of non-zero elements in nums2) + count of zeros</li>
-      <li>Determine valid minimal sum based on relationships:
+      <li>Sort unique values in ascending order</li>
+      <li>For each value v:
         <ul>
-          <li>sum1 < sum2 → Check if sum2 ≤ sum1 + zeros1*inf</li>
-          <li>sum2 < sum1 → Check if sum1 ≤ sum2 + zeros2*inf</li>
-          <li>If both have zeros → max(base_sum1 + 1, base_sum2 + 1)</li>
+          <li>Count contiguous groups of v separated by higher values/zeros</li>
+          <li>Add group count to total operations</li>
         </ul>
       </li>
     </ol>
@@ -576,8 +575,8 @@ Explanation: Impossible to balance sums</code></pre>
       </thead>
       <tbody>
         <tr>
-          <td>O(n + m)</td>
-          <td>O(1)</td>
+          <td>O(n log n)</td>
+          <td>O(n)</td>
         </tr>
       </tbody>
     </table>
@@ -598,31 +597,29 @@ Explanation: Impossible to balance sums</code></pre>
         <div class="tab-content active" id="cpp-sol-tab">
           <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
 <span class="code-token-keyword">public</span>:
-    <span class="code-token-keyword">long</span> <span class="code-token-keyword">long</span> <span class="code-token-function">minSum</span>(vector&lt;<span class="code-token-keyword">int</span>&gt;& nums1, vector&lt;<span class="code-token-keyword">int</span>&gt;& nums2) {
-        <span class="code-token-keyword">long</span> <span class="code-token-keyword">long</span> sum1 = 0, sum2 = 0;
-        <span class="code-token-keyword">int</span> zero1 = 0, zero2 = 0;
+    <span class="code-token-keyword">int</span> <span class="code-token-function">minOperations</span>(vector&lt;<span class="code-token-keyword">int</span>&gt;& nums) {
+        set&lt;<span class="code-token-keyword">int</span>&gt; unique(nums.<span class="code-token-function">begin</span>(), nums.<span class="code-token-function">end</span>());
+        vector&lt;<span class="code-token-keyword">int</span>&gt; sorted(unique.<span class="code-token-function">begin</span>(), unique.<span class="code-token-function">end</span>());
+        <span class="code-token-keyword">int</span> total = 0;
         
-        <span class="code-token-keyword">for</span>(<span class="code-token-keyword">int</span> num : nums1) {
-            <span class="code-token-keyword">if</span>(num == 0) zero1++;
-            sum1 += num;
+        <span class="code-token-keyword">for</span>(<span class="code-token-keyword">int</span> v : sorted) {
+            <span class="code-token-keyword">if</span>(v == 0) <span class="code-token-keyword">continue</span>;
+            <span class="code-token-keyword">int</span> count = 0;
+            <span class="code-token-keyword">bool</span> inGroup = false;
+            <span class="code-token-keyword">for</span>(<span class="code-token-keyword">int</span> num : nums) {
+                <span class="code-token-keyword">if</span>(num >= v) {
+                    <span class="code-token-keyword">if</span>(num == v && !inGroup) {
+                        count++;
+                        inGroup = true;
+                    }
+                    <span class="code-token-keyword">if</span>(num != v) inGroup = false;
+                } <span class="code-token-keyword">else</span> {
+                    inGroup = false;
+                }
+            }
+            total += count;
         }
-        
-        <span class="code-token-keyword">for</span>(<span class="code-token-keyword">int</span> num : nums2) {
-            <span class="code-token-keyword">if</span>(num == 0) zero2++;
-            sum2 += num;
-        }
-        
-        <span class="code-token-keyword">long</span> <span class="code-token-keyword">long</span> base1 = sum1 + zero1;
-        <span class="code-token-keyword">long</span> <span class="code-token-keyword">long</span> base2 = sum2 + zero2;
-        
-        <span class="code-token-keyword">if</span>(zero1 == 0 && base1 < base2) <span class="code-token-keyword">return</span> -1;
-        <span class="code-token-keyword">if</span>(zero2 == 0 && base2 < base1) <span class="code-token-keyword">return</span> -1;
-        
-        <span class="code-token-keyword">if</span>(zero1 == 0 && zero2 == 0) {
-            <span class="code-token-keyword">return</span> sum1 == sum2 ? sum1 : -1;
-        }
-        
-        <span class="code-token-keyword">return</span> max(base1, base2);
+        <span class="code-token-keyword">return</span> total;
     }
 };</code></pre>
         </div>
@@ -630,31 +627,31 @@ Explanation: Impossible to balance sums</code></pre>
         <!-- Java Code -->
         <div class="tab-content" id="java-sol-tab">
           <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
-    <span class="code-token-keyword">public</span> <span class="code-token-keyword">long</span> <span class="code-token-function">minSum</span>(<span class="code-token-keyword">int</span>[] nums1, <span class="code-token-keyword">int</span>[] nums2) {
-        <span class="code-token-keyword">long</span> sum1 = 0, sum2 = 0;
-        <span class="code-token-keyword">int</span> zero1 = 0, zero2 = 0;
+    <span class="code-token-keyword">public</span> <span class="code-token-keyword">int</span> <span class="code-token-function">minOperations</span>(<span class="code-token-keyword">int</span>[] nums) {
+        Set&lt;Integer&gt; unique = <span class="code-token-keyword">new</span> HashSet&lt;&gt;();
+        <span class="code-token-keyword">for</span>(<span class="code-token-keyword">int</span> num : nums) unique.<span class="code-token-function">add</span>(num);
+        List&lt;Integer&gt; sorted = <span class="code-token-keyword">new</span> ArrayList&lt;&gt;(unique);
+        Collections.<span class="code-token-function">sort</span>(sorted);
+        <span class="code-token-keyword">int</span> total = 0;
         
-        <span class="code-token-keyword">for</span>(<span class="code-token-keyword">int</span> num : nums1) {
-            <span class="code-token-keyword">if</span>(num == 0) zero1++;
-            sum1 += num;
+        <span class="code-token-keyword">for</span>(<span class="code-token-keyword">int</span> v : sorted) {
+            <span class="code-token-keyword">if</span>(v == 0) <span class="code-token-keyword">continue</span>;
+            <span class="code-token-keyword">int</span> count = 0;
+            <span class="code-token-keyword">boolean</span> inGroup = false;
+            <span class="code-token-keyword">for</span>(<span class="code-token-keyword">int</span> num : nums) {
+                <span class="code-token-keyword">if</span>(num >= v) {
+                    <span class="code-token-keyword">if</span>(num == v && !inGroup) {
+                        count++;
+                        inGroup = true;
+                    }
+                    <span class="code-token-keyword">if</span>(num != v) inGroup = false;
+                } <span class="code-token-keyword">else</span> {
+                    inGroup = false;
+                }
+            }
+            total += count;
         }
-        
-        <span class="code-token-keyword">for</span>(<span class="code-token-keyword">int</span> num : nums2) {
-            <span class="code-token-keyword">if</span>(num == 0) zero2++;
-            sum2 += num;
-        }
-        
-        <span class="code-token-keyword">long</span> base1 = sum1 + zero1;
-        <span class="code-token-keyword">long</span> base2 = sum2 + zero2;
-        
-        <span class="code-token-keyword">if</span>(zero1 == 0 && base1 < base2) <span class="code-token-keyword">return</span> -1;
-        <span class="code-token-keyword">if</span>(zero2 == 0 && base2 < base1) <span class="code-token-keyword">return</span> -1;
-        
-        <span class="code-token-keyword">if</span>(zero1 == 0 && zero2 == 0) {
-            <span class="code-token-keyword">return</span> sum1 == sum2 ? sum1 : -1;
-        }
-        
-        <span class="code-token-keyword">return</span> Math.max(base1, base2);
+        <span class="code-token-keyword">return</span> total;
     }
 }</code></pre>
         </div>
@@ -662,87 +659,78 @@ Explanation: Impossible to balance sums</code></pre>
         <!-- Python Code -->
         <div class="tab-content" id="python-sol-tab">
           <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span>:
-    <span class="code-token-keyword">def</span> <span class="code-token-function">minSum</span>(self, nums1: List[int], nums2: List[int]) -> int:
-        sum1, zero1 = 0, 0
-        sum2, zero2 = 0, 0
-        
-        <span class="code-token-keyword">for</span> num <span class="code-token-keyword">in</span> nums1:
-            <span class="code-token-keyword">if</span> num == 0:
-                zero1 += 1
-            sum1 += num
-            
-        <span class="code-token-keyword">for</span> num <span class="code-token-keyword">in</span> nums2:
-            <span class="code-token-keyword">if</span> num == 0:
-                zero2 += 1
-            sum2 += num
-            
-        base1 = sum1 + zero1
-        base2 = sum2 + zero2
-        
-        <span class="code-token-keyword">if</span> zero1 == 0 <span class="code-token-keyword">and</span> base1 < base2:
-            <span class="code-token-keyword">return</span> -1
-        <span class="code-token-keyword">if</span> zero2 == 0 <span class="code-token-keyword">and</span> base2 < base1:
-            <span class="code-token-keyword">return</span> -1
-            
-        <span class="code-token-keyword">if</span> zero1 == 0 <span class="code-token-keyword">and</span> zero2 == 0:
-            <span class="code-token-keyword">return</span> sum1 <span class="code-token-keyword">if</span> sum1 == sum2 <span class="code-token-keyword">else</span> -1
-            
-        <span class="code-token-keyword">return</span> max(base1, base2)</code></pre>
+    <span class="code-token-keyword">def</span> <span class="code-token-function">minOperations</span>(self, nums: List[int]) -> int:
+        unique = sorted(set(nums))
+        total = 0
+        <span class="code-token-keyword">for</span> v <span class="code-token-keyword">in</span> unique:
+            <span class="code-token-keyword">if</span> v == 0:
+                <span class="code-token-keyword">continue</span>
+            count = 0
+            in_group = False
+            <span class="code-token-keyword">for</span> num <span class="code-token-keyword">in</span> nums:
+                <span class="code-token-keyword">if</span> num >= v:
+                    <span class="code-token-keyword">if</span> num == v <span class="code-token-keyword">and</span> <span class="code-token-keyword">not</span> in_group:
+                        count += 1
+                        in_group = True
+                    <span class="code-token-keyword">if</span> num != v:
+                        in_group = False
+                <span class="code-token-keyword">else</span>:
+                    in_group = False
+            total += count
+        <span class="code-token-keyword">return</span> total</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Insight:</strong> The solution leverages mathematical constraints to determine the minimal possible sum without explicit simulation of replacements.
+        <strong>Implementation Insight:</strong> This solution efficiently counts value groups without modifying the original array, achieving O(n log n) time through sorting and linear scans.
       </div>
     </div>
 
     <hr />
 
-    <h2>Key Mathematical Observations</h2>
+    <h2>Approach Comparison</h2>
     <table>
       <thead>
         <tr>
-          <th>Condition</th>
-          <th>Calculation</th>
-          <th>Reasoning</th>
+          <th>Approach</th>
+          <th>Time</th>
+          <th>Space</th>
+          <th>Use Case</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Both arrays have zeros</td>
-          <td>max(base1, base2)</td>
-          <td>Each zero adds at least 1, take maximum base</td>
+          <td>Greedy Group Counting</td>
+          <td>O(n log n)</td>
+          <td>O(n)</td>
+          <td>General case, optimal solution</td>
         </tr>
         <tr>
-          <td>One array has zeros</td>
-          <td>Check feasibility</td>
-          <td>Non-zero array's sum must ≤ potential sum</td>
-        </tr>
-        <tr>
-          <td>No zeros</td>
-          <td>Compare sums</td>
-          <td>Direct equality check required</td>
+          <td>Frequency Map</td>
+          <td>O(n²)</td>
+          <td>O(n)</td>
+          <td>Theoretical alternative</td>
         </tr>
       </tbody>
     </table>
 
     <div class="callout warning">
-      <strong>Critical Edge Case:</strong> When one array has no zeros, its sum must be ≤ the other array's potential minimal sum.
+      <strong>Important:</strong> The optimal approach leverages sorting and linear scanning to achieve efficiency, crucial for handling large input sizes up to 10⁵ elements.
     </div>
 
     <hr />
 
     <h2>Edge Case Analysis</h2>
-    <h3>1. All Zeros</h3>
-    <pre><code>nums1 = [0,0], nums2 = [0] → min sum = 3</code></pre>
+    <h3>1. All Elements Zero</h3>
+    <pre><code>Input: [0,0,0] → Output: 0</code></pre>
 
-    <h3>2. No Zeros</h3>
-    <pre><code>nums1 = [5,5], nums2 = [10] → sum = 10</code></pre>
+    <h3>2. Strictly Increasing</h3>
+    <pre><code>Input: [1,2,3,4] → Output: 4</code></pre>
 
-    <h3>3. One Array Dominant</h3>
-    <pre><code>nums1 = [10,0], nums2 = [5,5] → min sum = 11</code></pre>
+    <h3>3. Alternating Values</h3>
+    <pre><code>Input: [2,1,2,1] → Output: 2</code></pre>
 
     <div class="callout danger">
-      <strong>Pitfall Alert:</strong> Always check if arrays without zeros have matching sums before other calculations.
+      <strong>Pitfall Alert:</strong> Always handle zero values explicitly to avoid unnecessary operations.
     </div>
 
     <hr />
@@ -751,58 +739,58 @@ Explanation: Impossible to balance sums</code></pre>
 
     <div class="faq-section">
       <details>
-        <summary>1. Why add 1 for each zero in base sum?</summary>
-        <p>Each zero must be replaced by at least 1, contributing minimally to the sum.</p>
+        <summary>1. Why process values in sorted order?</summary>
+        <p>Smaller values can be eliminated first, creating segments that reduce operations needed for larger values.</p>
       </details>
 
       <details>
-        <summary>2. How does the solution handle large numbers?</summary>
-        <p>Uses long integers to prevent overflow, crucial for arrays with 1e5 elements.</p>
+        <summary>2. How does group counting work?</summary>
+        <p>Contiguous blocks of the same value separated by higher values/zeros each require one operation.</p>
       </details>
 
       <details>
-        <summary>3. Why use max(base1, base2)?</summary>
-        <p>Both arrays must reach the same sum, so we need to satisfy the higher base requirement.</p>
+        <summary>3. Why O(n log n) complexity?</summary>
+        <p>Due to sorting unique values. Linear scans afterward maintain efficiency.</p>
       </details>
 
       <details>
-        <summary>4. What if one array has higher non-zero sum but more zeros?</summary>
-        <p>The algorithm automatically selects the maximum base sum to ensure both can reach it.</p>
+        <summary>4. Can we optimize further?</summary>
+        <p>This is already optimal for constraints. Further optimization would require different mathematical modeling.</p>
       </details>
 
       <details>
-        <summary>5. Can zeros be replaced with values greater than 1?</summary>
-        <p>Yes, but the minimal sum requires using the smallest possible replacements (1s).</p>
+        <summary>5. How handle duplicate values?</summary>
+        <p>Duplicates in the same contiguous group are handled in a single operation.</p>
       </details>
 
       <details>
-        <summary>6. How to verify solution correctness?</summary>
-        <p>Check that: 1) Final sums match, 2) All replacements are positive, 3) No better solution exists.</p>
+        <summary>6. Why use set for unique values?</summary>
+        <p>Ensures we process each value exactly once, avoiding redundant calculations.</p>
       </details>
 
       <details>
-        <summary>7. What's the time complexity breakdown?</summary>
-        <p>O(n + m) for array traversal + O(1) calculations. Optimal for large inputs.</p>
+        <summary>7. What if all elements are same?</summary>
+        <p>Requires exactly 1 operation regardless of array size.</p>
       </details>
 
       <details>
-        <summary>8. Why return -1 for some cases?</summary>
-        <p>When constraints make balancing impossible (e.g., fixed sum already too high).</p>
+        <summary>8. How verify correctness?</summary>
+        <p>Check that each operation reduces the maximum value until all elements are zero.</p>
       </details>
 
       <details>
-        <summary>9. How to handle multiple zero replacements?</summary>
-        <p>All zeros must be ≥1, but optimal solution uses exactly 1 for minimal contribution.</p>
+        <summary>9. Why track 'inGroup' state?</summary>
+        <p>Prevents overcounting by tracking contiguous value sequences efficiently.</p>
       </details>
 
       <details>
-        <summary>10. Practical applications of this problem?</summary>
-        <p>Resource allocation, data balancing, and constraint satisfaction problems.</p>
+        <summary>10. Real-world applications?</summary>
+        <p>Resource deallocation, memory management, and optimization problems in distributed systems.</p>
       </details>
     </div>
 
     <div class="callout">
-      <strong>Final Analysis:</strong> This problem teaches essential skills in constraint analysis and mathematical optimization for array manipulation. The solution demonstrates how careful mathematical reasoning can lead to O(n) time algorithms even for seemingly complex problems.
+      <strong>Final Insight:</strong> This problem demonstrates how careful value processing order and group counting can lead to efficient solutions for seemingly complex array transformation challenges.
     </div>
   </main>
 

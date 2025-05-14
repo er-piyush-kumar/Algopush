@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3335 | Total Characters in String After Transformations I</title>
+  <meta name="description" content="LeetCode 3335 solution: Efficient approaches to calculate string length after transformations using frequency mapping and mathematical optimization.">
+  <meta name="keywords" content="LeetCode 3335, String Transformations, Frequency Mapping, Mathematical Optimization, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, Leetcode company dsa problem, DSA Problems">
+  <meta name="author" content="Algopush">
+  <link rel="canonical" href="https://algopush.com/Leetcode/3335-total-characters-after-transformations.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../components/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../components/favicon.png">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="LeetCode 3335 | Total Characters in String After Transformations I">
+  <meta property="og:description"
+    content="Master grid partitioning techniques for equal sums with optimal time complexity. Complete guide with mathematical proofs and multi-language implementations.">
+  <meta property="og:image" content="https://algopush.com/Leetcode/Images/3335.png">
+  <meta property="og:url" content="https://algopush.com/Leetcode/3335-total-characters-after-transformations.html">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LeetCode 3335 | Total Characters in String After Transformations I">
+  <meta name="twitter:description"
+    content="Optimal solution for grid partitioning with horizontal/vertical cuts. Code examples in Python, Java, and C++.">
+  <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3335.png">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Total Characters in String After Transformations I",
+      "url": "https://algopush.com/Leetcode/3335-total-characters-after-transformations.html",
+      "image": "https://algopush.com/Leetcode/Images/3335.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Algopush",
+        "url": "https://algopush.com"
+      },
+      "datePublished": "2025-05-15",
+      "dateModified": "2025-05-15",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Algopush",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://algopush.com/components/logo.png"
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --primary-color: #102c41;
+      --secondary-color: #196391;
+      --accent-color: #102c41;
+      --meta-color: #db5305;
+      --light-bg: #f5f9fc;
+      --highlight-color: #f5f9fc;
+      --text-color: black;
+      --light-text: #7f8c8d;
+      --border-radius: 6px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+      --callout-tip: #e8f8f5;
+      --callout-note: #eaf2f8;
+      --callout-warning: #fef5e7;
+      --callout-danger: #ffebee;
+      --callout-tip-border: #1abc9c;
+      --callout-note-border: #3498db;
+      --callout-warning-border: #f39c12;
+      --callout-danger-border: #f44336;
+    }
+
+    /* Base Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    /* Main Content Container */
+    main {
+      max-width: 920px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      box-shadow: var(--box-shadow);
+      border-radius: var(--border-radius);
+    }
+
+    /* Problem Visualization Image */
+    .problem-visual {
+      max-width: 100%;
+      margin: 1.5rem 0;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    .problem-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Typography */
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-top: 1.8rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: 2rem;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 0.8rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      color: var(--secondary-color);
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #ddd;
+    }
+
+    /* Code Blocks */
+    pre {
+      background: #f8f9fa;
+      padding: 1.2rem;
+      border-radius: var(--border-radius);
+      overflow-x: auto;
+      border-left: 4px solid var(--accent-color);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    code {
+      font-family: monospace;
+      color: #2c3e50;
+    }
+
+    .highlight {
+      background: var(--highlight-color);
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      margin: 1.5rem 0;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      padding: 0.8rem;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 500;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Code Container */
+    .code-container {
+      position: relative;
+      margin: 1.5rem 0;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    .code-header {
+      background: var(--primary-color);
+      padding: 0.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .code-filename {
+      font-weight: 600;
+    }
+
+    .code-copy {
+      background: white;
+      color: var(--primary-color);
+      border: none;
+      padding: 0.25rem 0.75rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .code-copy:hover {
+      background: var(--highlight-color);
+    }
+
+    /* Code Syntax Highlighting */
+    .code-token-keyword {
+      color: #d73a49;
+    }
+
+    .code-token-function {
+      color: #6f42c1;
+    }
+
+    .code-token-comment {
+      color: #6a737d;
+      font-style: italic;
+    }
+
+    .code-token-string {
+      color: #032f62;
+    }
+
+    .code-token-number {
+      color: #005cc5;
+    }
+
+    /* Tabs */
+    .code-tabs {
+      margin: 2rem 0;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    .tab-buttons {
+      display: flex;
+      background: #eaecee;
+      border-bottom: 1px solid #ddd;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-button {
+      padding: 0.7rem 1.2rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--text-color);
+      transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .tab-button.active {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .tab-button:hover:not(.active) {
+      background: #d5dbdb;
+    }
+
+    .tab-content {
+      display: none;
+      background: white;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      margin: 2rem 0;
+    }
+
+    .faq-section details {
+      margin: 0.8rem 0;
+      padding: 0.1rem;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      background: white;
+      transition: var(--transition);
+    }
+
+    .faq-section details[open] {
+      border-color: var(--accent-color);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background: #f9f9f9;
+    }
+
+    .faq-section summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--primary-color);
+      padding: 0.8rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .faq-section summary:hover {
+      color: var(--accent-color);
+      background: #f5f5f5;
+    }
+
+    .faq-section p {
+      margin-top: 1rem;
+      padding: 0 1rem 1rem;
+    }
+
+    /* Breadcrumb Navigation */
+    .breadcrumb {
+      padding: 0.8rem 1rem;
+      background: linear-gradient(to right, #f5f5f5, white);
+      border-radius: var(--border-radius);
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb a {
+      color: var(--secondary-color);
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Problem Metadata */
+    .problem-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: var(--border-radius);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .meta-item .label {
+      font-weight: 600;
+      color: var(--meta-color);
+    }
+
+    /* Callout Boxes */
+    .callout {
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: var(--border-radius);
+      border-left: 4px solid;
+    }
+
+    .callout.tip {
+      background-color: var(--callout-tip);
+      border-color: var(--callout-tip-border);
+    }
+
+    .callout.note {
+      background-color: var(--callout-note);
+      border-color: var(--callout-note-border);
+    }
+
+    .callout.warning {
+      background-color: var(--callout-warning);
+      border-color: var(--callout-warning-border);
+    }
+
+    .callout.danger {
+      background-color: var(--callout-danger);
+      border-color: var(--callout-danger-border);
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      main {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .problem-meta {
+        flex-direction: column;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      pre {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+      }
+
+      .tab-button {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+      }
+
+      .code-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .code-copy {
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <div id="header"></div>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="https://algopush.com">Home</a> &gt;
+      <a href="https://algopush.com/Leetcode/leetcode.html">LeetCode</a> &gt;
+      <span>3335. Total Characters in String After Transformations I</span>
+    </div>
+
+    <h1>3335: Total Characters in String After Transformations I</h1>
+
+    <div class="problem-meta">
+      <div class="meta-item">
+        <span class="label">Difficulty:</span>
+        <span class="value">Medium</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Topics:</span>
+        <span class="value">String Manipulation, Frequency Counting, Mathematical Modeling</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Companies:</span>
+        <span class="value">Google, Amazon, Bloomberg</span>
+      </div>
+    </div>
+
+    <h2>Problem Statement</h2>
+    <p>Given a string s and integer t, calculate the length after t transformations where:
+    <ul>
+      <li>'z' becomes "ab"</li>
+      <li>Other characters become next in alphabet</li>
+    </ul>
+    Return result modulo 10⁹+7.</p>
+
+    <h3>Example 1</h3>
+    <pre><code>Input: s = "abcyy", t = 2
+Output: 7
+Explanation: After 2 transforms: "cdeabab"</code></pre>
+
+    <h3>Example 2</h3>
+    <pre><code>Input: s = "azbk", t = 1
+Output: 5
+Explanation: After 1 transform: "babcl"</code></pre>
+
+    <div class="callout note">
+      <strong>Problem Link:</strong>
+      <a href="https://leetcode.com/problems/total-characters-in-string-after-transformations-i/" target="_blank">
+        View on LeetCode ↗
+      </a>
+    </div>
+
+    <hr>
+
+    <h2>Approach 1: Brute Force with Hash Map (TLE)</h2>
+    <p>Track character frequencies using hash map. Fails for large t due to O(t*26) complexity.</p>
+
+    <div class="code-container">
+      <div class="code-tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="cpp-map">C++</button>
+          <button class="tab-button" data-tab="java-map">Java</button>
+          <button class="tab-button" data-tab="python-map">Python</button>
+        </div>
+
+        <div class="tab-content active" id="cpp-map-tab">
+          <pre><code>class Solution {
+public:
+    int mod = 1e9+7;
+    int lengthAfterTransformations(string s, int t) {
+        unordered_map&lt;char, int&gt; mp;
+        for(char c : s) mp[c]++;
+        
+        while(t--) {
+            unordered_map&lt;char, int&gt; temp;
+            for(auto [ch,cnt] : mp) {
+                if(ch == 'z') {
+                    temp['a'] = (temp['a'] + cnt) % mod;
+                    temp['b'] = (temp['b'] + cnt) % mod;
+                } else {
+                    temp[ch+1] = (temp[ch+1] + cnt) % mod;
+                }
+            }
+            mp = temp;
+        }
+        
+        int res = 0;
+        for(auto [_,cnt] : mp) res = (res + cnt) % mod;
+        return res;
+    }
+};</code></pre>
+        </div>
+
+        <div class="tab-content" id="java-map-tab">
+          <pre><code>class Solution {
+    final int MOD = 1000000007;
+    
+    public int lengthAfterTransformations(String s, int t) {
+        Map&lt;Character, Integer&gt; map = new HashMap<>();
+        for(char c : s.toCharArray()) 
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        
+        while(t-- > 0) {
+            Map&lt;Character, Integer&gt; temp = new HashMap<>();
+            for(Map.Entry&lt;Character, Integer&gt; e : map.entrySet()) {
+                char ch = e.getKey();
+                int cnt = e.getValue();
+                if(ch == 'z') {
+                    temp.put('a', (temp.getOrDefault('a', 0) + cnt) % MOD);
+                    temp.put('b', (temp.getOrDefault('b', 0) + cnt) % MOD);
+                } else {
+                    char next = (char)(ch + 1);
+                    temp.put(next, (temp.getOrDefault(next, 0) + cnt) % MOD);
+                }
+            }
+            map = temp;
+        }
+        
+        int res = 0;
+        for(int v : map.values()) res = (res + v) % MOD;
+        return res;
+    }
+}</code></pre>
+        </div>
+
+        <div class="tab-content" id="python-map-tab">
+          <pre><code>class Solution:
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 10**9+7
+        from collections import defaultdict
+        
+        freq = defaultdict(int)
+        for c in s:
+            freq[c] += 1
+            
+        for _ in range(t):
+            new_freq = defaultdict(int)
+            for ch, cnt in freq.items():
+                if ch == 'z':
+                    new_freq['a'] = (new_freq['a'] + cnt) % MOD
+                    new_freq['b'] = (new_freq['b'] + cnt) % MOD
+                else:
+                    new_ch = chr(ord(ch) + 1)
+                    new_freq[new_ch] = (new_freq[new_ch] + cnt) % MOD
+            freq = new_freq
+            
+        return sum(freq.values()) % MOD</code></pre>
+        </div>
+      </div>
+      <div class="callout warning">
+        <strong>Limitation:</strong> Hash map operations become expensive for large t values (>10⁴)
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Approach 2: Optimized Frequency Array</h2>
+    <p>Use fixed-size array (26 elements) for O(1) access. Reduces complexity to O(t*26).</p>
+
+    <div class="code-container">
+      <div class="code-tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="cpp-arr">C++</button>
+          <button class="tab-button" data-tab="java-arr">Java</button>
+          <button class="tab-button" data-tab="python-arr">Python</button>
+        </div>
+
+        <div class="tab-content active" id="cpp-arr-tab">
+          <pre><code>class Solution {
+public:
+    int lengthAfterTransformations(string s, int t) {
+        const int MOD = 1e9+7;
+        vector&lt;long&gt; freq(26, 0);
+        for(char c : s) freq[c-'a']++;
+        
+        while(t--) {
+            vector&lt;long&gt; temp(26, 0);
+            for(int i=0; i<26; i++) {
+                if(!freq[i]) continue;
+                if(i == 25) { // 'z'
+                    temp[0] = (temp[0] + freq[i]) % MOD;
+                    temp[1] = (temp[1] + freq[i]) % MOD;
+                } else {
+                    temp[i+1] = (temp[i+1] + freq[i]) % MOD;
+                }
+            }
+            freq = temp;
+        }
+        
+        return accumulate(freq.begin(), freq.end(), 0L) % MOD;
+    }
+};</code></pre>
+        </div>
+
+        <div class="tab-content" id="java-arr-tab">
+          <pre><code>class Solution {
+    public int lengthAfterTransformations(String s, int t) {
+        final int MOD = 1000000007;
+        long[] freq = new long[26];
+        for(char c : s.toCharArray()) freq[c-'a']++;
+        
+        while(t-- > 0) {
+            long[] temp = new long[26];
+            for(int i=0; i<26; i++) {
+                if(freq[i] == 0) continue;
+                if(i == 25) { // 'z'
+                    temp[0] = (temp[0] + freq[i]) % MOD;
+                    temp[1] = (temp[1] + freq[i]) % MOD;
+                } else {
+                    temp[i+1] = (temp[i+1] + freq[i]) % MOD;
+                }
+            }
+            freq = temp;
+        }
+        
+        long sum = 0;
+        for(long n : freq) sum = (sum + n) % MOD;
+        return (int)sum;
+    }
+}</code></pre>
+        </div>
+
+        <div class="tab-content" id="python-arr-tab">
+          <pre><code>class Solution:
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 10**9 + 7
+        freq = [0] * 26
+        for c in s:
+            freq[ord(c)-97] += 1
+        
+        for _ in range(t):
+            new_freq = [0] * 26
+            for i in range(26):
+                if not freq[i]:
+                    continue
+                if i == 25:  # 'z'
+                    new_freq[0] = (new_freq[0] + freq[i]) % MOD
+                    new_freq[1] = (new_freq[1] + freq[i]) % MOD
+                else:
+                    new_freq[i+1] = (new_freq[i+1] + freq[i]) % MOD
+            freq = new_freq
+        
+        return sum(freq) % MOD</code></pre>
+        </div>
+      </div>
+      <div class="callout tip">
+        <strong>Optimization:</strong> Fixed-size array eliminates hash collisions and provides O(1) access
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Approach 3: Mathematical Growth Tracking</h2>
+    <p>Track 'z' generations and their contribution over time. O(t) time complexity.</p>
+
+    <div class="code-container">
+      <div class="code-tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="cpp-math">C++</button>
+          <button class="tab-button" data-tab="java-math">Java</button>
+          <button class="tab-button" data-tab="python-math">Python</button>
+        </div>
+
+        <div class="tab-content active" id="cpp-math-tab">
+          <pre><code>class Solution {
+public:
+    int lengthAfterTransformations(string s, int t) {
+        const int MOD = 1e9+7;
+        vector&lt;long&gt; freq(26, 0);
+        for(char c : s) freq[c-'a']++;
+        
+        long z_generations = 0; // Track how many times 'z's are produced
+        for(int i=0; i<t; i++) {
+            long new_z = freq[25];
+            long total = accumulate(freq.begin(), freq.end(), 0L);
+            
+            // Calculate new frequencies
+            for(int j=25; j>0; j--) {
+                freq[j] = freq[j-1];
+            }
+            freq[0] = new_z; // 'z' -> 'a'
+            freq[1] = (freq[1] + new_z) % MOD; // 'z' -> 'b'
+            
+            z_generations = (z_generations + new_z) % MOD;
+        }
+        
+        long base = accumulate(freq.begin(), freq.end(), 0L) % MOD;
+        long extra = (z_generations * (t % MOD)) % MOD;
+        return (base + extra) % MOD;
+    }
+};</code></pre>
+        </div>
+
+        <div class="tab-content" id="java-math-tab">
+          <pre><code>class Solution {
+    public int lengthAfterTransformations(String s, int t) {
+        final int MOD = 1000000007;
+        long[] freq = new long[26];
+        for(char c : s.toCharArray()) freq[c-'a']++;
+        
+        long zGens = 0;
+        for(int i=0; i<t; i++) {
+            long newZ = freq[25];
+            // Shift characters
+            for(int j=25; j>0; j--) freq[j] = freq[j-1];
+            freq[0] = newZ;
+            freq[1] = (freq[1] + newZ) % MOD;
+            zGens = (zGens + newZ) % MOD;
+        }
+        
+        long sum = 0;
+        for(long n : freq) sum = (sum + n) % MOD;
+        return (int)((sum + zGens * t) % MOD);
+    }
+}</code></pre>
+        </div>
+
+        <div class="tab-content" id="python-math-tab">
+          <pre><code>class Solution:
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 10**9 + 7
+        freq = [0] * 26
+        for c in s:
+            freq[ord(c)-97] += 1
+        
+        z_gens = 0
+        for _ in range(t):
+            new_z = freq[-1]
+            # Shift all characters
+            for i in range(25, 0, -1):
+                freq[i] = freq[i-1]
+            freq[0] = new_z
+            freq[1] = (freq[1] + new_z) % MOD
+            z_gens = (z_gens + new_z) % MOD
+        
+        total = sum(freq) % MOD
+        return (total + z_gens * t) % MOD</code></pre>
+        </div>
+      </div>
+      <div class="callout tip">
+        <strong>Key Insight:</strong> Each 'z' generates exponential growth through transformations
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Complexity Comparison</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Approach</th>
+          <th>Time</th>
+          <th>Space</th>
+          <th>Max t Supported</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hash Map</td>
+          <td>O(t*26)</td>
+          <td>O(26)</td>
+          <td>~10⁴</td>
+        </tr>
+        <tr>
+          <td>Frequency Array</td>
+          <td>O(t*26)</td>
+          <td>O(26)</td>
+          <td>~10⁵</td>
+        </tr>
+        <tr>
+          <td>Math Model</td>
+          <td>O(t)</td>
+          <td>O(26)</td>
+          <td>~10¹⁸</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout warning">
+      <strong>Important:</strong> The mathematical approach requires handling large numbers with modulo at each step
+    </div>
+
+    <hr>
+
+    <h2>Edge Cases</h2>
+    <h3>1. All 'z's</h3>
+    <pre><code>Input: s = "zzz", t = 1 → Output: 6 ("ababab")</code></pre>
+
+    <h3>2. Single Character</h3>
+    <pre><code>Input: s = "a", t = 5 → Output: 1 ("f")</code></pre>
+
+    <h3>3. Maximum t</h3>
+    <pre><code>Input: s = "a", t = 1e5 → Output: 1 (after 1e5 shifts)</code></pre>
+
+    <div class="callout danger">
+      <strong>Pitfall:</strong> Forgetting modulo operations during intermediate steps can cause integer overflow
+    </div>
+
+    <hr>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section">
+      <details>
+        <summary>Why does 'z' contribute to exponential growth?</summary>
+        <p>Each 'z' generates 2 characters in next transformation, which can themselves become 'z's in future steps.</p>
+      </details>
+
+      <details>
+        <summary>How to handle very large t values?</summary>
+        <p>Use mathematical approach tracking 'z' generations and their multiplicative effects.</p>
+      </details>
+
+      <details>
+        <summary>Why use modulo 1e9+7?</summary>
+        <p>Standard modulus for programming competitions to prevent integer overflow.</p>
+      </details>
+
+      <details>
+        <summary>Can we precompute transformation patterns?</summary>
+        <p>Yes, but storage becomes impractical for t > 30 due to exponential growth.</p>
+      </details>
+
+      <details>
+        <summary>How to verify correctness?</summary>
+        <p>Compare small t results with brute force simulation.</p>
+      </details>
+    </div>
+
+    <div class="callout">
+      <strong>Final Note:</strong> The optimal approach depends on constraints - use frequency array for general cases and math model for very large t.
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    // Reuse the same JavaScript from previous post
+    document.addEventListener('DOMContentLoaded', function () {
+      // Tab functionality
+      document.querySelectorAll('.code-tabs').forEach(container => {
+        const tabButtons = container.querySelectorAll('.tab-button');
+        const tabContents = container.querySelectorAll('.tab-content');
+
+        // Initialize first tab
+        if (!container.querySelector('.tab-button.active')) {
+          tabButtons[0]?.classList.add('active');
+          tabContents[0]?.classList.add('active');
+        }
+
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const tabName = button.getAttribute('data-tab');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            button.classList.add('active');
+            container.querySelector(`#${tabName}-tab`).classList.add('active');
+          });
+        });
+      });
+
+      // Copy button functionality
+      document.querySelectorAll('.code-copy').forEach(button => {
+        button.addEventListener('click', () => {
+          const activeTab = button.closest('.code-container').querySelector('.tab-content.active');
+          const code = activeTab.querySelector('code').innerText;
+          navigator.clipboard.writeText(code).then(() => {
+            button.textContent = 'Copied!';
+            setTimeout(() => button.textContent = 'Copy Code', 2000);
+          });
+        });
+      });
+
+      // Load header and footer
+      fetch("../components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        });
+
+      fetch("../components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Algopush</title>
+    <style>
+        :root {
+            --primary-color: #102c41;
+            --secondary-color: #196391;
+            --accent-color: #db5305;
+            --text-color: #333;
+            --light-bg: #f5f9fc;
+            --border-radius: 0.5rem;
+            --base-font: 1rem;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            font-size: var(--base-font);
+        }
+
+        main {
+            max-width: 80rem;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .breadcrumb {
+            font-size: 0.9em;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin: 1.5em 0 1em;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+
+        .position-card {
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
+        }
+
+        .position-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .meta-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            text-align: center;
+        }
+
+        .assessment-notice {
+            border: 2px solid var(--accent-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .application-form {
+            max-width: 40rem;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+        }
+
+        button {
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 48rem) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            
+            .position-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="/">Home</a> / Careers
+        </div>
+
+        <h1>Join Our Team</h1>
+
+        <div class="assessment-notice">
+            <h3>Web Developer Intern Program</h3>
+            <p>Assessment Fee: $299 (One-time, non-refundable)</p>
+            <small>Includes technical evaluation and career guidance</small>
+        </div>
+
+        <div class="position-card">
+            <h2>Web Developer Intern</h2>
+            <div class="position-meta">
+                <div class="meta-item">
+                    <h4>Duration</h4>
+                    <p>3-6 Months</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Stipend</h4>
+                    <p>$500/month</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Location</h4>
+                    <p>Remote</p>
+                </div>
+            </div>
+
+            <h3>Requirements</h3>
+            <ul>
+                <li>Basic HTML/CSS/JavaScript knowledge</li>
+                <li>Familiarity with version control (Git)</li>
+                <li>Passion for web development</li>
+                <li>Portfolio or coding samples required</li>
+            </ul>
+
+            <h3>Program Benefits</h3>
+            <ul>
+                <li>Hands-on project experience</li>
+                <li>Mentorship from senior developers</li>
+                <li>Certificate of completion</li>
+                <li>Job placement assistance</li>
+            </ul>
+        </div>
+
+        <div class="application-form">
+            <h2>Application Form</h2>
+            <form id="internApplication">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="portfolio">Portfolio Link</label>
+                    <input type="url" id="portfolio">
+                </div>
+
+                <div class="form-group">
+                    <label for="resume">Resume (PDF only)</label>
+                    <input type="file" id="resume" accept=".pdf" required>
+                </div>
+
+                <button type="submit">Submit Application ($299)</button>
+            </form>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header/Footer loading
+            fetch('../components/header.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('header').innerHTML = data);
+
+            fetch('../components/footer.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer').innerHTML = data);
+
+            // Form handling
+            document.getElementById('internApplication').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Add payment processing logic here
+                alert('Application submitted! Redirecting to payment...');
+            });
+        });
+    </script>
+</body>
+</html>

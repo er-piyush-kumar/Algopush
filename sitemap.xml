@@ -8,6 +8,14 @@
         <priority>1.0</priority>
     </url>
 
+    <!-- Career -->
+    <url>
+        <loc>https://algopush.com/components/career.html</loc>
+        <lastmod>2025-05-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Privacy Policy -->
     <url>
         <loc>https://algopush.com/components/privacy-policy.html</loc>
@@ -175,7 +183,7 @@
 
     <url>
         <loc>https://algopush.com/Leetcode/3546-equal-sum-grid-partition-i.html</loc>
-        <lastmod>2025-05-12</lastmod>
+        <lastmod>2025-05-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

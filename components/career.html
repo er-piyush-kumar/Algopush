@@ -1,226 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers - Algopush</title>
-    <style>
-        :root {
-            --primary-color: #102c41;
-            --secondary-color: #196391;
-            --accent-color: #db5305;
-            --text-color: #333;
-            --light-bg: #f5f9fc;
-            --border-radius: 0.5rem;
-            --base-font: 1rem;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers at Algopush | Web Developer Internship Opportunities</title>
+  <meta name="description" content="Join Algopush as a Web Developer Intern. Paid internship program with ₹5000-₹10000 monthly stipend. Build real-world projects and enhance your skills.">
+  <meta name="keywords" content="MAANG Internship, MERN Internship in india, Full stack internship, frontend internship, web developer internship, paid internship, remote internship, frontend development, HTML CSS JavaScript, internship in India">
+  <meta name="author" content="Algopush">
+  <link rel="canonical" href="https://algopush.com/career.html">
 
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            font-size: var(--base-font);
-        }
+  <!-- Favicon -->
+  <link rel="icon" href="../components/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../components/favicon.png">
 
-        main {
-            max-width: 80rem;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Web Developer Internship | Algopush Careers">
+  <meta property="og:description" content="Paid remote internship program with ₹5000-₹10000 monthly stipend. Learn web development with real projects.">
+  <meta property="og:image" content="https://algopush.com/Images/career-banner.jpg">
+  <meta property="og:url" content="https://algopush.com/career.html">
+  <meta property="og:type" content="website">
 
-        .breadcrumb {
-            font-size: 0.9em;
-            margin-bottom: 2rem;
-            color: #666;
-        }
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web Developer Internship | Algopush Careers">
+  <meta name="twitter:description" content="Paid remote internship program with ₹5000-₹10000 monthly stipend. Learn web development with real projects.">
+  <meta name="twitter:image" content="https://algopush.com/Images/career-banner.jpg">
 
-        h1, h2, h3 {
-            color: var(--primary-color);
-            margin: 1.5em 0 1em;
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "JobPosting",
+      "title": "Web Developer Intern",
+      "description": "Remote internship opportunity for web development enthusiasts. Work on real projects with mentorship from industry experts.",
+      "datePosted": "2025-05-15",
+      "validThrough": "2025-12-31",
+      "employmentType": "INTERN",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Algopush",
+        "sameAs": "https://algopush.com"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Remote",
+          "addressRegion": "India",
+          "addressCountry": "IN"
         }
-
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 2rem; }
-        h3 { font-size: 1.5rem; }
-
-        .position-card {
-            background: var(--light-bg);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin: 1.5rem 0;
-            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 5000,
+          "maxValue": 10000,
+          "unitText": "MONTH"
         }
+      }
+    }
+  </script>
 
-        .position-meta {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
+  <style>
+    :root {
+      --primary-color: #102c41;
+      --secondary-color: #196391;
+      --accent-color: #102c41;
+      --meta-color: #db5305;
+      --light-bg: #f5f9fc;
+      --highlight-color: #f5f9fc;
+      --text-color: black;
+      --light-text: #7f8c8d;
+      --border-radius: 6px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+      --callout-tip: #e8f8f5;
+      --callout-note: #eaf2f8;
+      --callout-warning: #fef5e7;
+      --callout-danger: #ffebee;
+      --callout-tip-border: #1abc9c;
+      --callout-note-border: #3498db;
+      --callout-warning-border: #f39c12;
+      --callout-danger-border: #f44336;
+    }
 
-        .meta-item {
-            background: white;
-            padding: 1rem;
-            border-radius: 0.375rem;
-            text-align: center;
-        }
+    body {
+      font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+    }
 
-        .assessment-notice {
-            border: 2px solid var(--accent-color);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
+    main {
+      max-width: 920px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      box-shadow: var(--box-shadow);
+      border-radius: var(--border-radius);
+    }
 
-        .application-form {
-            max-width: 40rem;
-            margin: 2rem auto;
-        }
+    /* Breadcrumb Navigation */
+    .breadcrumb {
+      padding: 0.8rem 1rem;
+      background: linear-gradient(to right, #f5f5f5, white);
+      border-radius: var(--border-radius);
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+    .breadcrumb a {
+      color: var(--secondary-color);
+    }
 
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
 
-        input, select, textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 0.375rem;
-            font-size: 1rem;
-        }
+    h1, h2, h3, h4 {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-top: 1.8rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
 
-        button {
-            background: var(--accent-color);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: opacity 0.2s;
-        }
+    h1 {
+      font-size: 2rem;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
+    }
 
-        button:hover {
-            opacity: 0.9;
-        }
+    h2 {
+      font-size: 1.6rem;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 0.8rem;
+    }
 
-        @media (max-width: 48rem) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.75rem; }
-            
-            .position-meta {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    h3 {
+      font-size: 1.3rem;
+    }
+
+    .position-card {
+      background: var(--light-bg);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--box-shadow);
+    }
+
+    .position-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .meta-item {
+      background: white;
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      flex: 1;
+      min-width: 10rem;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .assessment-notice {
+      background-color: var(--callout-note);
+      border-left: 4px solid var(--callout-note-border);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: var(--border-radius);
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .program-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+
+    .feature-card h4 {
+      color: var(--secondary-color);
+      margin-top: 0;
+    }
+
+    .google-form-embed {
+      margin: 2rem 0;
+      background: white;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+
+    .google-form-embed iframe {
+      width: 100%;
+      min-height: 800px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .position-meta {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="header"></div>
+  <div id="header"></div>
 
-    <main>
-        <div class="breadcrumb">
-            <a href="/">Home</a> / Careers
+  <main>
+    <div class="breadcrumb">
+      <a href="https://algopush.com">Home</a> &gt;
+      <span>Careers</span>
+    </div>
+
+    <h1>Join Our Team as a Web Developer Intern</h1>
+
+    <div class="assessment-notice">
+      <h3>Internship Program Details</h3>
+      <p><strong>Assessment Fee:</strong> ₹299 (One-time, non-refundable)</p>
+      <p>Includes technical evaluation and personalized career guidance session</p>
+    </div>
+
+    <div class="position-card">
+      <h2>Web Developer Intern</h2>
+      
+      <div class="position-meta">
+        <div class="meta-item">
+          <h4>Duration</h4>
+          <p>3-6 Months</p>
         </div>
-
-        <h1>Join Our Team</h1>
-
-        <div class="assessment-notice">
-            <h3>Web Developer Intern Program</h3>
-            <p>Assessment Fee: $299 (One-time, non-refundable)</p>
-            <small>Includes technical evaluation and career guidance</small>
+        <div class="meta-item">
+          <h4>Stipend</h4>
+          <p>₹5000 - ₹10000/month</p>
         </div>
-
-        <div class="position-card">
-            <h2>Web Developer Intern</h2>
-            <div class="position-meta">
-                <div class="meta-item">
-                    <h4>Duration</h4>
-                    <p>3-6 Months</p>
-                </div>
-                <div class="meta-item">
-                    <h4>Stipend</h4>
-                    <p>$500/month</p>
-                </div>
-                <div class="meta-item">
-                    <h4>Location</h4>
-                    <p>Remote</p>
-                </div>
-            </div>
-
-            <h3>Requirements</h3>
-            <ul>
-                <li>Basic HTML/CSS/JavaScript knowledge</li>
-                <li>Familiarity with version control (Git)</li>
-                <li>Passion for web development</li>
-                <li>Portfolio or coding samples required</li>
-            </ul>
-
-            <h3>Program Benefits</h3>
-            <ul>
-                <li>Hands-on project experience</li>
-                <li>Mentorship from senior developers</li>
-                <li>Certificate of completion</li>
-                <li>Job placement assistance</li>
-            </ul>
+        <div class="meta-item">
+          <h4>Location</h4>
+          <p>Remote (India)</p>
         </div>
+      </div>
 
-        <div class="application-form">
-            <h2>Application Form</h2>
-            <form id="internApplication">
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" required>
-                </div>
+      <h3>Requirements</h3>
+      <ul>
+        <li>Basic understanding of HTML, CSS, and JavaScript</li>
+        <li>Familiarity with Git version control</li>
+        <li>Passion for web development and problem-solving</li>
+        <li>Portfolio or coding samples (GitHub preferred)</li>
+        <li>Currently pursuing or recently completed degree in CS/IT or related field</li>
+      </ul>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
+      <h3>Internship Highlights</h3>
+      <ul>
+        <li>Work on real-world projects with production code</li>
+        <li>Weekly 1:1 mentorship sessions</li>
+        <li>Flexible working hours</li>
+        <li>Certificate and recommendation letter upon successful completion</li>
+      </ul>
+    </div>
 
-                <div class="form-group">
-                    <label for="portfolio">Portfolio Link</label>
-                    <input type="url" id="portfolio">
-                </div>
+    <h2>Program Features</h2>
+    <div class="program-features">
+      <div class="feature-card">
+        <h4>Hands-on Experience</h4>
+        <p>Work on live projects that impact our platform and users directly. No dummy projects.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Mentorship</h4>
+        <p>Get guidance from senior developers with 5+ years of industry experience.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Skill Development</h4>
+        <p>Learn modern web technologies including React, Node.js, and database management.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Career Support</h4>
+        <p>Resume reviews, interview preparation, and job placement assistance.</p>
+      </div>
+    </div>
 
-                <div class="form-group">
-                    <label for="resume">Resume (PDF only)</label>
-                    <input type="file" id="resume" accept=".pdf" required>
-                </div>
+    <h2>Application Process</h2>
+    <ol>
+      <li>Submit the application form (₹299 assessment fee)</li>
+      <li>Technical screening call (30 minutes)</li>
+      <li>Coding assessment (2 hours)</li>
+      <li>Final interview (1 hour)</li>
+      <li>Offer letter and onboarding</li>
+    </ol>
 
-                <button type="submit">Submit Application ($299)</button>
-            </form>
-        </div>
-    </main>
+    <div class="google-form-embed">
+  <h3>Apply Now</h3>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPu21JpR1PmQpGkbroQj1peebdUtyWmJV8rwt8GWT6g_el1A/viewform?usp=header" 
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          style="height: 800px"
+          loading="lazy">
+  </iframe>
+</div>
 
-    <div id="footer"></div>
+    <div class="callout note">
+      <strong>Note:</strong> The ₹299 assessment fee covers the evaluation process and ensures serious applicants only. 
+      Fee will be not be refunded if we're unable to proceed with your application after screening.
+    </div>
+  </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Header/Footer loading
-            fetch('../components/header.html')
-                .then(response => response.text())
-                .then(data => document.getElementById('header').innerHTML = data);
+  <div id="footer"></div>
 
-            fetch('../components/footer.html')
-                .then(response => response.text())
-                .then(data => document.getElementById('footer').innerHTML = data);
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Header/Footer loading
+      fetch('../components/header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
 
-            // Form handling
-            document.getElementById('internApplication').addEventListener('submit', function(e) {
-                e.preventDefault();
-                // Add payment processing logic here
-                alert('Application submitted! Redirecting to payment...');
-            });
-        });
-    </script>
+      fetch('../components/footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data);
+    });
+  </script>
 </body>
 </html>

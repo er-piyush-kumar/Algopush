@@ -54,6 +54,14 @@
         <priority>0.9</priority>
     </url>
 
+    <!-- Blog Posts -->
+    <url>
+        <loc>https://algopush.com/Blog/sliding-window-technique.html</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Leetcode Posts -->
     <url>
         <loc>https://algopush.com/Leetcode/3392-count-subarrays-of-length-three-with-condition.html</loc>

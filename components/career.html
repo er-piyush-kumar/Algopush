@@ -205,6 +205,31 @@
       margin-top: 0;
     }
 
+    .test-instructions {
+      background-color: var(--callout-warning);
+      border-left: 4px solid var(--callout-warning-border);
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: var(--border-radius);
+    }
+
+    .assessment-button {
+      display: inline-block;
+      background-color: var(--meta-color);
+      color: white;
+      padding: 12px 24px;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      margin: 1rem 0;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .assessment-button:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
     .google-form-embed {
       margin: 2rem 0;
       background: white;
@@ -264,14 +289,31 @@
 
     <h1>Join Our Team as a Web Developer Intern</h1>
 
+    <!-- Assessment Details Section -->
     <div class="assessment-notice">
-      <h3>Internship Program Details</h3>
-      <p><strong>Assessment Fee:</strong> ₹299 (One-time, non-refundable)</p>
-      <p>Includes technical evaluation and personalized career guidance session</p>
+      <h2>Web Development Assessment Schedule</h2>
+      <p><strong>Test Date:</strong> 25th May 2025</p>
+      <p><strong>Time:</strong> 12:00 PM to 12:30 PM (IST)</p>
+      <p><strong>Duration:</strong> 30 Minutes</p>
+      
+      <div class="test-instructions">
+        <h4>Important Instructions:</h4>
+        <ul>
+          <li>The assessment will be conducted through Google Forms</li>
+          <li>Link will become active exactly at 12:00 PM IST</li>
+          <li>Ensure stable internet connection</li>
+        </ul>
+      </div>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqBRlNID9e75JPHNavrqKOuF8Mn8Q2K-WOVwRzuXAfarh-jA/viewform?usp=header" 
+         class="assessment-button"
+         target="_blank">
+        Start Assessment (Available at 12:00 PM)
+      </a>
     </div>
 
     <div class="position-card">
-      <h2>Web Developer Intern</h2>
+      <h2>Internship Program Details</h2>
       
       <div class="position-meta">
         <div class="meta-item">
@@ -326,29 +368,22 @@
       </div>
     </div>
 
-    <h2>Application Process</h2>
-    <ol>
-      <li>Submit the application form (₹299 assessment fee)</li>
-      <li>Technical screening call (30 minutes)</li>
-      <li>Coding assessment (2 hours)</li>
-      <li>Final interview (1 hour)</li>
-      <li>Offer letter and onboarding</li>
-    </ol>
-
+    <!-- Commented Out Application Form -->
     <div class="google-form-embed">
-  <h3>Apply Now</h3>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPu21JpR1PmQpGkbroQj1peebdUtyWmJV8rwt8GWT6g_el1A/viewform?usp=header" 
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          style="height: 800px"
-          loading="lazy">
-  </iframe>
-</div>
+      <h3>Apply Now</h3>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPu21JpR1PmQpGkbroQj1peebdUtyWmJV8rwt8GWT6g_el1A/viewform?usp=header" 
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              style="height: 800px"
+              loading="lazy">
+      </iframe>
+    </div>
+   
 
-    <div class="callout note">
-      <strong>Note:</strong> The ₹299 assessment fee covers the evaluation process and ensures serious applicants only. 
-      Fee will be not be refunded if we're unable to proceed with your application after screening.
+    <div class="assessment-notice">
+      <strong>Note:</strong> The ₹299 assessment fee covers the evaluation process and technical infrastructure costs. 
+      This fee is non-refundable if the assessment is attempted.
     </div>
   </main>
 

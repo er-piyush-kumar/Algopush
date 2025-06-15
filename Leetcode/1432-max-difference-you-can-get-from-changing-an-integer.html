@@ -1144,20 +1144,16 @@ Difference: 9 - 1 = 8</code></pre>
 
     <div id="footer"></div>
     <script>
-        // Tab functionality with improved mobile support
         document.addEventListener('DOMContentLoaded', function () {
-            // Initialize tabs
             document.querySelectorAll('.code-tabs').forEach(container => {
                 const tabButtons = container.querySelectorAll('.tab-button');
                 const tabContents = container.querySelectorAll('.tab-content');
 
-                // Set first tab as active by default if none are active
                 if (!container.querySelector('.tab-button.active')) {
                     tabButtons[0]?.classList.add('active');
                     tabContents[0]?.classList.add('active');
                 }
 
-                // Add click handlers
                 tabButtons.forEach(button => {
                     button.addEventListener('click', () => {
                         const tabName = button.getAttribute('data-tab');
@@ -1173,7 +1169,6 @@ Difference: 9 - 1 = 8</code></pre>
                 });
             });
 
-            // Copy button functionality
             document.querySelectorAll('.code-copy').forEach(button => {
                 button.addEventListener('click', () => {
                     const activeTab = button.closest('.code-container').querySelector('.tab-content.active');
@@ -1186,7 +1181,6 @@ Difference: 9 - 1 = 8</code></pre>
                 });
             });
 
-            // FAQ highlight when opened
             document.querySelectorAll('.faq-section details').forEach(detail => {
                 detail.addEventListener('toggle', () => {
                     if (detail.open) {

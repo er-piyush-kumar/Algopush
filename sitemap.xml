@@ -245,4 +245,11 @@
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://algopush.com/Leetcode/1432-max-difference-you-can-get-from-changing-an-integer.html</loc>
+        <lastmod>2025-06-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>

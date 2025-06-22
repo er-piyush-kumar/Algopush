@@ -273,4 +273,11 @@
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://algopush.com/Leetcode/3587-minimum-adjacent-swaps-to-alternate-parity.html</loc>
+        <lastmod>2025-06-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>

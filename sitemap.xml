@@ -3,15 +3,15 @@
     <!-- Home -->
     <url>
         <loc>https://algopush.com</loc>
-        <lastmod>2025-05-06</lastmod>
+        <lastmod>2025-06-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
 
-    <!-- Career -->
+    <!-- About -->
     <url>
-        <loc>https://algopush.com/components/career.html</loc>
-        <lastmod>2025-05-15</lastmod>
+        <loc>https://algopush.com/components/about.html</loc>
+        <lastmod>2025-06-29</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -19,7 +19,31 @@
     <!-- Privacy Policy -->
     <url>
         <loc>https://algopush.com/components/privacy-policy.html</loc>
-        <lastmod>2025-05-06</lastmod>
+        <lastmod>2025-06-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Terms and Conditions -->
+    <url>
+        <loc>https://algopush.com/components/terms-conditions.html</loc>
+        <lastmod>2025-06-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Disclaimer -->
+    <url>
+        <loc>https://algopush.com/components/disclaimer.html</loc>
+        <lastmod>2025-06-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Career -->
+    <url>
+        <loc>https://algopush.com/components/career.html</loc>
+        <lastmod>2025-05-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -38,18 +62,10 @@
         <priority>0.7</priority>
     </url>
 
-    <!-- About -->
-    <url>
-        <loc>https://algopush.com/components/about.html</loc>
-        <lastmod>2025-05-06</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
     <!-- Leetcode -->
     <url>
         <loc>https://algopush.com/Leetcode/leetcode.html</loc>
-        <lastmod>2025-05-06</lastmod>
+        <lastmod>2025-06-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>

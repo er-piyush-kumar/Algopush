@@ -296,12 +296,18 @@
         <priority>0.8</priority>
     </url>
 
-     <url>
+    <url>
         <loc>https://algopush.com/Leetcode/1290-convert-binary-number-in-linked-list-to-integer.html</loc>
         <lastmod>2025-07-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://algopush.com/Leetcode/3136-valid-word.html</loc>
+        <lastmod>2025-07-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
 </urlset>

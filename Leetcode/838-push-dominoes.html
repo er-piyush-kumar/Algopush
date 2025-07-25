@@ -77,34 +77,34 @@
 
   <script>
     // Tab functionality with improved mobile support
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Initialize tabs
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Set first tab as active by default if none are active
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         // Add click handlers
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
-            
+
             // Update active tab button
             tabButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            
+
             // Update active tab content
             tabContents.forEach(content => content.classList.remove('active'));
             container.querySelector(`#${tabName}-tab`).classList.add('active');
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -117,7 +117,7 @@
           });
         });
       });
-      
+
       // FAQ highlight when opened
       document.querySelectorAll('.faq-section details').forEach(detail => {
         detail.addEventListener('toggle', () => {
@@ -126,7 +126,7 @@
           }
         });
       });
-      
+
       // Load header and footer
       fetch("../components/header.html")
         .then((response) => response.text())
@@ -193,12 +193,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -405,6 +407,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }

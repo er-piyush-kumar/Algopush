@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeetCode 1695 | Maximum Erasure Value</title>
-  <meta name="description" content="Discover optimal solutions for LeetCode 1695: Maximum Erasure Value using sliding window and prefix sum techniques. Detailed explanations and implementations." />
-  <meta name="keywords" content="leetcode, leetcode 1695, maximum erasure value, sliding window algorithm, prefix sum, two pointers, unique subarray, array problems, coding interview preparation, , leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, algorithm optimization, leetcode premium problem, , leetcode array question, leetcode contest question, leetcode contest" />
+  <meta name="description"
+    content="Discover optimal solutions for LeetCode 1695: Maximum Erasure Value using sliding window and prefix sum techniques. Detailed explanations and implementations." />
+  <meta name="keywords"
+    content="leetcode, leetcode 1695, maximum erasure value, sliding window algorithm, prefix sum, two pointers, unique subarray, array problems, coding interview preparation, , leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, algorithm optimization, leetcode premium problem, , leetcode array question, leetcode contest question, leetcode contest" />
   <meta name="author" content="Algopush" />
   <link rel="canonical" href="https://algopush.com/Leetcode/1695-maximum-erasure-value.html">
 
@@ -15,7 +18,8 @@
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 1695: Maximum Erasure Value">
-  <meta property="og:description" content="Optimal O(n) solutions using sliding window and prefix sum techniques. Complete guide with detailed implementations and complexity analysis.">
+  <meta property="og:description"
+    content="Optimal O(n) solutions using sliding window and prefix sum techniques. Complete guide with detailed implementations and complexity analysis.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/1695.png">
   <meta property="og:url" content="https://algopush.com/Leetcode/1695-maximum-erasure-value.html">
   <meta property="og:type" content="article">
@@ -23,7 +27,8 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 1695: Maximum Erasure Value">
-  <meta name="twitter:description" content="Solve maximum unique subarray sum problems efficiently. Code examples in C++, Java, and Python.">
+  <meta name="twitter:description"
+    content="Solve maximum unique subarray sum problems efficiently. Code examples in C++, Java, and Python.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/1695.png">
 
   <!-- Structured Data for SEO -->
@@ -51,7 +56,7 @@
       }
     }
   </script>
-  
+
   <style>
     :root {
       --primary-color: #102c41;
@@ -103,12 +108,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -316,6 +323,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -441,7 +449,7 @@
       gap: 1rem;
       margin: 2rem 0;
     }
-    
+
     .visual-item {
       flex: 1;
       min-width: 300px;
@@ -450,7 +458,7 @@
       background: #f8f9fa;
       box-shadow: var(--box-shadow);
     }
-    
+
     .visual-item h4 {
       color: var(--secondary-color);
       margin-top: 0;
@@ -481,7 +489,7 @@
         display: block;
         overflow-x: auto;
       }
-      
+
       .visual-item {
         min-width: 100%;
       }
@@ -519,14 +527,22 @@
         margin-top: 0.5rem;
       }
     }
-    
+
     /* Animation for prime visualization */
     @keyframes highlightPrime {
-      0% { background-color: transparent; }
-      50% { background-color: rgba(25, 99, 145, 0.3); }
-      100% { background-color: transparent; }
+      0% {
+        background-color: transparent;
+      }
+
+      50% {
+        background-color: rgba(25, 99, 145, 0.3);
+      }
+
+      100% {
+        background-color: transparent;
+      }
     }
-    
+
     .prime-highlight {
       animation: highlightPrime 1.5s ease-in-out;
     }
@@ -565,12 +581,15 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> For subarray problems with unique elements, the sliding window technique is often the most efficient solution. Maintain a window with unique elements and adjust it dynamically when duplicates appear.
+      <strong>Pro Tip:</strong> For subarray problems with unique elements, the sliding window technique is often the
+      most efficient solution. Maintain a window with unique elements and adjust it dynamically when duplicates appear.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>You are given an array of positive integers <code>nums</code>. You need to find the maximum sum of any contiguous subarray containing only unique elements. Return the maximum score achievable by erasing exactly one such subarray.</p>
-    
+    <p>You are given an array of positive integers <code>nums</code>. You need to find the maximum sum of any contiguous
+      subarray containing only unique elements. Return the maximum score achievable by erasing exactly one such
+      subarray.</p>
+
     <div class="visual-container">
       <div class="visual-item">
         <h4>Example 1</h4>
@@ -578,7 +597,7 @@
         <p><strong>Output:</strong> 17</p>
         <p><strong>Explanation:</strong> The optimal subarray is [2,4,5,6] with sum 2+4+5+6=17</p>
       </div>
-      
+
       <div class="visual-item">
         <h4>Example 2</h4>
         <p><strong>Input:</strong> nums = [5,2,1,2,5,2,1,2,5]</p>
@@ -597,15 +616,18 @@
     <hr />
 
     <h2>Key Insight</h2>
-    <p>The problem requires finding a contiguous subarray with all unique elements that has the maximum possible sum. The optimal solutions leverage:</p>
+    <p>The problem requires finding a contiguous subarray with all unique elements that has the maximum possible sum.
+      The optimal solutions leverage:</p>
     <ol>
-      <li><strong>Sliding Window Technique</strong>: Maintain a window of unique elements by expanding with new elements and contracting when duplicates appear</li>
+      <li><strong>Sliding Window Technique</strong>: Maintain a window of unique elements by expanding with new elements
+        and contracting when duplicates appear</li>
       <li><strong>Efficient Tracking</strong>: Use a set or map to track elements in the current window</li>
       <li><strong>Sum Optimization</strong>: Maintain a running sum that adjusts dynamically as the window changes</li>
     </ol>
-    
+
     <div class="callout warning">
-      <strong>Important:</strong> The solution must efficiently handle arrays up to 10<sup>5</sup> elements, requiring O(n) time complexity.
+      <strong>Important:</strong> The solution must efficiently handle arrays up to 10<sup>5</sup> elements, requiring
+      O(n) time complexity.
     </div>
 
     <hr />
@@ -618,24 +640,23 @@
       <li>Initialize two pointers i=0, j=0 and maxSum = 0</li>
       <li>Initialize a set to track elements in current window</li>
       <li>Initialize currentSum = 0</li>
-      <li>While j < length:
+      <li>While j < length: <ul>
+      <li>If nums[j] not in set:
         <ul>
-          <li>If nums[j] not in set:
-            <ul>
-              <li>Add nums[j] to set</li>
-              <li>Add nums[j] to currentSum</li>
-              <li>Update maxSum = max(maxSum, currentSum)</li>
-              <li>j++</li>
-            </ul>
-          </li>
-          <li>Else:
-            <ul>
-              <li>Remove nums[i] from set</li>
-              <li>Subtract nums[i] from currentSum</li>
-              <li>i++</li>
-            </ul>
-          </li>
+          <li>Add nums[j] to set</li>
+          <li>Add nums[j] to currentSum</li>
+          <li>Update maxSum = max(maxSum, currentSum)</li>
+          <li>j++</li>
         </ul>
+      </li>
+      <li>Else:
+        <ul>
+          <li>Remove nums[i] from set</li>
+          <li>Subtract nums[i] from currentSum</li>
+          <li>i++</li>
+        </ul>
+      </li>
+      </ul>
       </li>
       <li>Return maxSum</li>
     </ol>
@@ -743,7 +764,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This approach efficiently maintains a window of unique elements. The Python version uses a different loop structure to avoid redundant checks.
+        <strong>Implementation Note:</strong> This approach efficiently maintains a window of unique elements. The
+        Python version uses a different loop structure to avoid redundant checks.
       </div>
     </div>
 
@@ -875,7 +897,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This approach efficiently calculates subarray sums using prefix sums and handles duplicates by updating the start index based on last seen positions.
+        <strong>Implementation Note:</strong> This approach efficiently calculates subarray sums using prefix sums and
+        handles duplicates by updating the start index based on last seen positions.
       </div>
     </div>
 
@@ -1001,7 +1024,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This approach is optimized for the problem constraints where nums[i] ≤ 10,000. It uses a boolean array for O(1) lookups.
+        <strong>Implementation Note:</strong> This approach is optimized for the problem constraints where nums[i] ≤
+        10,000. It uses a boolean array for O(1) lookups.
       </div>
     </div>
 
@@ -1040,7 +1064,8 @@
     </table>
 
     <div class="callout warning">
-      <strong>Important:</strong> For the given constraints (n ≤ 10<sup>5</sup>, nums[i] ≤ 10<sup>4</sup>), the frequency array approach is most efficient.
+      <strong>Important:</strong> For the given constraints (n ≤ 10<sup>5</sup>, nums[i] ≤ 10<sup>4</sup>), the
+      frequency array approach is most efficient.
     </div>
 
     <hr />
@@ -1072,27 +1097,32 @@
     <div class="faq-section">
       <details>
         <summary>1. Why is the sliding window approach efficient?</summary>
-        <p>The sliding window approach processes each element at most twice (once by each pointer), resulting in O(n) time complexity - optimal for large inputs.</p>
+        <p>The sliding window approach processes each element at most twice (once by each pointer), resulting in O(n)
+          time complexity - optimal for large inputs.</p>
       </details>
 
       <details>
         <summary>2. How does the frequency array improve performance?</summary>
-        <p>By using direct array indexing instead of hash operations, it reduces constant factors in time complexity, especially beneficial for constrained value ranges.</p>
+        <p>By using direct array indexing instead of hash operations, it reduces constant factors in time complexity,
+          especially beneficial for constrained value ranges.</p>
       </details>
 
       <details>
         <summary>3. Can we use a bitset instead of boolean array?</summary>
-        <p>Yes, but boolean arrays are more space-efficient in most languages. A bitset would save space but add minor access overhead.</p>
+        <p>Yes, but boolean arrays are more space-efficient in most languages. A bitset would save space but add minor
+          access overhead.</p>
       </details>
 
       <details>
         <summary>4. Why use prefix sums in Approach 2?</summary>
-        <p>Prefix sums allow O(1) range sum queries, making it efficient to calculate subarray sums when we know the start and end indices.</p>
+        <p>Prefix sums allow O(1) range sum queries, making it efficient to calculate subarray sums when we know the
+          start and end indices.</p>
       </details>
 
       <details>
         <summary>5. How to handle negative numbers?</summary>
-        <p>The problem specifies positive integers only, so negative cases don't need handling. For general integers, we'd need different approaches.</p>
+        <p>The problem specifies positive integers only, so negative cases don't need handling. For general integers,
+          we'd need different approaches.</p>
       </details>
 
       <details>
@@ -1102,45 +1132,51 @@
 
       <details>
         <summary>7. Why is the answer unique?</summary>
-        <p>While there might be multiple subarrays with the same maximum sum, the problem guarantees the maximum sum is unique.</p>
+        <p>While there might be multiple subarrays with the same maximum sum, the problem guarantees the maximum sum is
+          unique.</p>
       </details>
 
       <details>
         <summary>8. Can we solve this with dynamic programming?</summary>
-        <p>Possible but less efficient. DP would typically require O(n²) time, which is infeasible for n=10<sup>5</sup>.</p>
+        <p>Possible but less efficient. DP would typically require O(n²) time, which is infeasible for n=10<sup>5</sup>.
+        </p>
       </details>
 
       <details>
         <summary>9. What if there are multiple duplicates?</summary>
-        <p>The algorithms naturally handle multiple duplicates by adjusting the window start to the last occurrence index + 1.</p>
+        <p>The algorithms naturally handle multiple duplicates by adjusting the window start to the last occurrence
+          index + 1.</p>
       </details>
 
       <details>
         <summary>10. How to modify for longest unique subarray?</summary>
-        <p>Instead of tracking sum, track window length: maxLen = max(maxLen, right-left+1). The core sliding window logic remains similar.</p>
+        <p>Instead of tracking sum, track window length: maxLen = max(maxLen, right-left+1). The core sliding window
+          logic remains similar.</p>
       </details>
     </div>
 
     <div class="callout">
-      <strong>Final Insight:</strong> This problem demonstrates how different implementations of the sliding window technique can optimize for various constraints. The frequency array approach is particularly efficient for bounded value ranges common in programming problems.
+      <strong>Final Insight:</strong> This problem demonstrates how different implementations of the sliding window
+      technique can optimize for various constraints. The frequency array approach is particularly efficient for bounded
+      value ranges common in programming problems.
     </div>
   </main>
 
   <div id="footer"></div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Tab functionality
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Initialize first tab
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
@@ -1151,7 +1187,7 @@
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -1179,4 +1215,5 @@
     });
   </script>
 </body>
+
 </html>

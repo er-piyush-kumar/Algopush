@@ -5,10 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3542 | Minimum Operations to Convert All Elements to Zero</title>
-  <meta name="description" content="LeetCode 3542: Minimum operations to zero arrays using greedy strategies. Detailed analysis with complexity comparison and multiple implementations.">
-  <meta name="keywords" content="LeetCode 3542, Minimum Operations to Zero, Array Manipulation, Greedy Algorithms, Subarray Operations, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question">
+  <meta name="description"
+    content="LeetCode 3542: Minimum operations to zero arrays using greedy strategies. Detailed analysis with complexity comparison and multiple implementations.">
+  <meta name="keywords"
+    content="LeetCode 3542, Minimum Operations to Zero, Array Manipulation, Greedy Algorithms, Subarray Operations, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question">
   <meta name="author" content="Algopush" />
-  <link rel="canonical" href="https://algopush.com/Leetcode/3542-minimum-operations-to-convert-all-elements-to-zero.html">
+  <link rel="canonical"
+    href="https://algopush.com/Leetcode/3542-minimum-operations-to-convert-all-elements-to-zero.html">
 
   <!-- Favicon -->
   <link rel="icon" href="../components/favicon.png" type="image/x-icon">
@@ -16,15 +19,18 @@
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 3542: Minimum Operations to Convert All Elements to Zero">
-  <meta property="og:description" content="Master efficient greedy approaches to minimize operations for array zero conversion. Complete guide with mathematical proofs and code implementations.">
+  <meta property="og:description"
+    content="Master efficient greedy approaches to minimize operations for array zero conversion. Complete guide with mathematical proofs and code implementations.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/3542.png">
-  <meta property="og:url" content="https://algopush.com/Leetcode/3542-minimum-operations-to-convert-all-elements-to-zero.html">
+  <meta property="og:url"
+    content="https://algopush.com/Leetcode/3542-minimum-operations-to-convert-all-elements-to-zero.html">
   <meta property="og:type" content="article">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 3542: Minimum Operations to Convert All Elements to Zero">
-  <meta name="twitter:description" content="Optimal greedy solution for converting arrays to zero with minimal operations. Code examples in Python, Java, and C++.">
+  <meta name="twitter:description"
+    content="Optimal greedy solution for converting arrays to zero with minimal operations. Code examples in Python, Java, and C++.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3542.png">
 
   <!-- Structured Data for SEO -->
@@ -104,12 +110,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -316,6 +324,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -526,11 +535,13 @@
     </div>
 
     <div class="callout tip">
-      <strong>Key Insight:</strong> The optimal strategy requires processing elements in sorted order and counting contiguous value groups.
+      <strong>Key Insight:</strong> The optimal strategy requires processing elements in sorted order and counting
+      contiguous value groups.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>Given an array of non-negative integers, determine the minimum number of operations needed to make all elements zero. Each operation lets you select a subarray and set all occurrences of its minimum value to zero.</p>
+    <p>Given an array of non-negative integers, determine the minimum number of operations needed to make all elements
+      zero. Each operation lets you select a subarray and set all occurrences of its minimum value to zero.</p>
 
     <h3>Example 1</h3>
     <pre><code>Input: nums = [0,2]
@@ -544,7 +555,8 @@ Explanation: Requires three targeted operations</code></pre>
 
     <div class="callout note">
       <strong>Problem Link:</strong>
-      <a href="https://leetcode.com/problems/minimum-operations-to-convert-all-elements-to-zero/" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/problems/minimum-operations-to-convert-all-elements-to-zero/" target="_blank"
+        rel="noopener noreferrer">
         View on LeetCode ↗
       </a>
     </div>
@@ -681,7 +693,8 @@ Explanation: Requires three targeted operations</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Insight:</strong> This solution efficiently counts value groups without modifying the original array, achieving O(n log n) time through sorting and linear scans.
+        <strong>Implementation Insight:</strong> This solution efficiently counts value groups without modifying the
+        original array, achieving O(n log n) time through sorting and linear scans.
       </div>
     </div>
 
@@ -714,7 +727,8 @@ Explanation: Requires three targeted operations</code></pre>
     </table>
 
     <div class="callout warning">
-      <strong>Important:</strong> The optimal approach leverages sorting and linear scanning to achieve efficiency, crucial for handling large input sizes up to 10⁵ elements.
+      <strong>Important:</strong> The optimal approach leverages sorting and linear scanning to achieve efficiency,
+      crucial for handling large input sizes up to 10⁵ elements.
     </div>
 
     <hr />
@@ -740,7 +754,8 @@ Explanation: Requires three targeted operations</code></pre>
     <div class="faq-section">
       <details>
         <summary>1. Why process values in sorted order?</summary>
-        <p>Smaller values can be eliminated first, creating segments that reduce operations needed for larger values.</p>
+        <p>Smaller values can be eliminated first, creating segments that reduce operations needed for larger values.
+        </p>
       </details>
 
       <details>
@@ -755,7 +770,8 @@ Explanation: Requires three targeted operations</code></pre>
 
       <details>
         <summary>4. Can we optimize further?</summary>
-        <p>This is already optimal for constraints. Further optimization would require different mathematical modeling.</p>
+        <p>This is already optimal for constraints. Further optimization would require different mathematical modeling.
+        </p>
       </details>
 
       <details>
@@ -790,7 +806,8 @@ Explanation: Requires three targeted operations</code></pre>
     </div>
 
     <div class="callout">
-      <strong>Final Insight:</strong> This problem demonstrates how careful value processing order and group counting can lead to efficient solutions for seemingly complex array transformation challenges.
+      <strong>Final Insight:</strong> This problem demonstrates how careful value processing order and group counting
+      can lead to efficient solutions for seemingly complex array transformation challenges.
     </div>
   </main>
 
@@ -798,18 +815,18 @@ Explanation: Requires three targeted operations</code></pre>
 
   <script>
     // Reuse the same JavaScript from previous post
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Tab functionality
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Initialize first tab
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
@@ -820,7 +837,7 @@ Explanation: Requires three targeted operations</code></pre>
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -848,4 +865,5 @@ Explanation: Requires three targeted operations</code></pre>
     });
   </script>
 </body>
+
 </html>

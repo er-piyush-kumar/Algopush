@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1432 | Max Difference You Can Get From Changing an Integer</title>
-    <meta name="description" 
+    <meta name="description"
         content="LeetCode 1432 solution: Efficient approaches to find maximum difference from digit replacement operations, including greedy algorithms and optimized methods.">
     <meta name="keywords"
         content="LeetCode 1432, Max Difference, Digit Replacement, Greedy Algorithm, String Manipulation, Competitive Programming, leetcode, leetcode medium problem, leetcode contest question, digit replacement problem, number transformation">
     <meta name="author" content="Algopush">
-    <link rel="canonical" href="https://algopush.com/Leetcode/1432-max-difference-you-can-get-from-changing-an-integer.html">
+    <link rel="canonical"
+        href="https://algopush.com/Leetcode/1432-max-difference-you-can-get-from-changing-an-integer.html">
 
     <!-- Favicon -->
     <link rel="icon" href="../components/favicon.png" type="image/x-icon">
@@ -20,7 +22,8 @@
     <meta property="og:description"
         content="Complete solution for LeetCode 1432 with greedy approaches, optimized algorithms, and brute force implementation for maximum difference from digit replacement.">
     <meta property="og:image" content="https://algopush.com/Leetcode/Images/1432.png">
-    <meta property="og:url" content="https://algopush.com/Leetcode/1432-max-difference-you-can-get-from-changing-an-integer.html">
+    <meta property="og:url"
+        content="https://algopush.com/Leetcode/1432-max-difference-you-can-get-from-changing-an-integer.html">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -104,12 +107,14 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            text-align: center;
         }
 
         .problem-visual img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            display: block;
+            max-height: 400px;
+            display: inline-block;
         }
 
         /* Typography */
@@ -530,13 +535,16 @@
         </div>
 
         <h2>Problem Statement</h2>
-        <p>You are given an integer <code>num</code>. You will apply the following steps to <code>num</code> two separate times:</p>
+        <p>You are given an integer <code>num</code>. You will apply the following steps to <code>num</code> two
+            separate times:</p>
         <ol>
             <li>Pick a digit <code>x</code> (0 ≤ x ≤ 9)</li>
             <li>Pick another digit <code>y</code> (0 ≤ y ≤ 9) - note y can be equal to x</li>
-            <li>Replace all occurrences of <code>x</code> in the decimal representation of <code>num</code> by <code>y</code></li>
+            <li>Replace all occurrences of <code>x</code> in the decimal representation of <code>num</code> by
+                <code>y</code></li>
         </ol>
-        <p>Let <code>a</code> and <code>b</code> be the two results from applying the operation to <code>num</code> independently.</p>
+        <p>Let <code>a</code> and <code>b</code> be the two results from applying the operation to <code>num</code>
+            independently.</p>
         <p>Return the max difference between <code>a</code> and <code>b</code>.</p>
 
         <h3>Example 1</h3>
@@ -557,7 +565,8 @@ Difference: 9 - 1 = 8</code></pre>
 
         <div class="callout note">
             <strong>Problem Link:</strong>
-            <a href="https://leetcode.com/problems/max-difference-you-can-get-from-changing-an-integer/" target="_blank">
+            <a href="https://leetcode.com/problems/max-difference-you-can-get-from-changing-an-integer/"
+                target="_blank">
                 View on LeetCode ↗
             </a>
         </div>
@@ -565,7 +574,8 @@ Difference: 9 - 1 = 8</code></pre>
         <hr>
 
         <h2>Approach 1: Greedy Algorithm</h2>
-        <p>This approach efficiently computes the maximum possible number and minimum possible number through digit replacement operations.</p>
+        <p>This approach efficiently computes the maximum possible number and minimum possible number through digit
+            replacement operations.</p>
 
         <h3>Algorithm Steps</h3>
         <ol>
@@ -747,7 +757,8 @@ Difference: 9 - 1 = 8</code></pre>
         <hr>
 
         <h2>Approach 2: Optimized Greedy</h2>
-        <p>This approach optimizes the greedy solution by combining max and min calculations and handles edge cases efficiently.</p>
+        <p>This approach optimizes the greedy solution by combining max and min calculations and handles edge cases
+            efficiently.</p>
 
         <div class="code-container">
             <div class="code-header">
@@ -910,7 +921,8 @@ Difference: 9 - 1 = 8</code></pre>
             </div>
 
             <div class="callout tip">
-                <strong>Optimization:</strong> Handles edge cases like single-digit numbers and avoids unnecessary replacements
+                <strong>Optimization:</strong> Handles edge cases like single-digit numbers and avoids unnecessary
+                replacements
             </div>
         </div>
 
@@ -1050,7 +1062,8 @@ Difference: 9 - 1 = 8</code></pre>
         </table>
 
         <div class="callout tip">
-            <strong>Recommendation:</strong> Optimized Greedy approach is best for most cases due to efficiency and correctness
+            <strong>Recommendation:</strong> Optimized Greedy approach is best for most cases due to efficiency and
+            correctness
         </div>
 
         <hr>
@@ -1078,67 +1091,80 @@ Difference: 9 - 1 = 8</code></pre>
         <div class="faq-section">
             <details>
                 <summary>Why do we replace the first non-9 digit for the maximum number?</summary>
-                <p>Replacing the leftmost non-9 digit with 9 gives the greatest value increase since digits to the left have higher place values.</p>
+                <p>Replacing the leftmost non-9 digit with 9 gives the greatest value increase since digits to the left
+                    have higher place values.</p>
             </details>
 
             <details>
                 <summary>How do we handle numbers starting with 1 for minimum value?</summary>
-                <p>When the first digit is 1, we look for the first non-zero/non-one digit and replace it with 0 to minimize the number while avoiding leading zeros.</p>
+                <p>When the first digit is 1, we look for the first non-zero/non-one digit and replace it with 0 to
+                    minimize the number while avoiding leading zeros.</p>
             </details>
 
             <details>
                 <summary>What about digits that don't appear in the number?</summary>
-                <p>Our algorithm only considers digits that actually appear in the number, so unused digits don't affect the result.</p>
+                <p>Our algorithm only considers digits that actually appear in the number, so unused digits don't affect
+                    the result.</p>
             </details>
 
             <details>
                 <summary>Why does the greedy approach work for this problem?</summary>
-                <p>The greedy approach works because the operations allow us to independently maximize one number and minimize the other through optimal digit replacements.</p>
+                <p>The greedy approach works because the operations allow us to independently maximize one number and
+                    minimize the other through optimal digit replacements.</p>
             </details>
 
             <details>
                 <summary>How do we handle edge cases like single-digit numbers?</summary>
-                <p>For single-digit numbers, the maximum difference is always 8 (9-1). We handle this as a special case in the optimized approach.</p>
+                <p>For single-digit numbers, the maximum difference is always 8 (9-1). We handle this as a special case
+                    in the optimized approach.</p>
             </details>
 
             <details>
                 <summary>Can the difference be negative?</summary>
-                <p>No, the problem asks for the maximum difference which is always non-negative. Our solutions ensure we subtract the smaller number from the larger one.</p>
+                <p>No, the problem asks for the maximum difference which is always non-negative. Our solutions ensure we
+                    subtract the smaller number from the larger one.</p>
             </details>
 
             <details>
                 <summary>Why not always replace with 9 for maximum and 0 for minimum?</summary>
-                <p>We must avoid creating leading zeros, which would make the number invalid. Our algorithm carefully handles these constraints.</p>
+                <p>We must avoid creating leading zeros, which would make the number invalid. Our algorithm carefully
+                    handles these constraints.</p>
             </details>
 
             <details>
                 <summary>How does the brute force approach avoid invalid numbers?</summary>
-                <p>The brute force approach explicitly checks for leading zeros and skips these invalid transformations.</p>
+                <p>The brute force approach explicitly checks for leading zeros and skips these invalid transformations.
+                </p>
             </details>
 
             <details>
                 <summary>What's the space complexity of these solutions?</summary>
-                <p>All solutions use O(n) space where n is the number of digits, primarily for storing the string representation of the number.</p>
+                <p>All solutions use O(n) space where n is the number of digits, primarily for storing the string
+                    representation of the number.</p>
             </details>
 
             <details>
                 <summary>Which approach is best for large numbers?</summary>
-                <p>The greedy approach (O(n) time) is optimal for large numbers up to the constraint (10^8), while the brute force approach (O(100n)) is acceptable but less efficient.</p>
+                <p>The greedy approach (O(n) time) is optimal for large numbers up to the constraint (10^8), while the
+                    brute force approach (O(100n)) is acceptable but less efficient.</p>
             </details>
 
             <details>
                 <summary>Why is the single-digit case handled as 8?</summary>
-                <p>For any single-digit number, we can get 9 (by replacing the digit with 9) and 1 (by replacing with 1), resulting in 9-1=8.</p>
+                <p>For any single-digit number, we can get 9 (by replacing the digit with 9) and 1 (by replacing with
+                    1), resulting in 9-1=8.</p>
             </details>
 
             <details>
                 <summary>How do we handle numbers like 10?</summary>
-                <p>For 10: Max number is 99 (replace 1 with 9), min number is 10 (no valid replacement that reduces value without creating leading zero), difference 89.</p>
+                <p>For 10: Max number is 99 (replace 1 with 9), min number is 10 (no valid replacement that reduces
+                    value without creating leading zero), difference 89.</p>
             </details>
         </div>
 
         <div class="callout">
-            <strong>Final Recommendation:</strong> The optimized greedy approach provides the best combination of efficiency and correctness for this problem.
+            <strong>Final Recommendation:</strong> The optimized greedy approach provides the best combination of
+            efficiency and correctness for this problem.
         </div>
     </main>
 

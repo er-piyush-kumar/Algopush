@@ -5,13 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeetCode 3223 | Minimum Length of String After Operations</title>
-  <meta name="description" content="Solve the string operation problem using frequency analysis. Complete solutions in C++, Java, and Python." />
-  <meta name="keywords" content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 3223, Minimum Length of String After Operations, frequency counting algorithm, string problems, coding interview preparation, C++ Java Python solutions" />
+  <meta name="description"
+    content="Solve the string operation problem using frequency analysis. Complete solutions in C++, Java, and Python." />
+  <meta name="keywords"
+    content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 3223, Minimum Length of String After Operations, frequency counting algorithm, string problems, coding interview preparation, C++ Java Python solutions" />
   <meta name="author" content="Algopush" />
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 3223: Minimum Length of String After Operations">
-  <meta property="og:description" content="Complete guide to solving the Minimum Length of String After Operations problem using frequency analysis.">
+  <meta property="og:description"
+    content="Complete guide to solving the Minimum Length of String After Operations problem using frequency analysis.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/3223.png">
   <meta property="og:url" content="https://algopush.com/Leetcode/3223-minimum-length-of-string-after-operations.html">
   <meta property="og:type" content="article">
@@ -19,11 +22,13 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 3223: Minimum Length of String After Operations">
-  <meta name="twitter:description" content="Frequency analysis approach to solve the LeetCode 3223: Minimum Length of String After Operations problem with code examples.">
+  <meta name="twitter:description"
+    content="Frequency analysis approach to solve the LeetCode 3223: Minimum Length of String After Operations problem with code examples.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3223.png">
 
   <!-- Google News / Publisher Meta Tags -->
-  <meta name="news_keywords" content="LeetCode, leetcode 3223, Minimum Length of String After Operations, Algorithm, Programming">
+  <meta name="news_keywords"
+    content="LeetCode, leetcode 3223, Minimum Length of String After Operations, Algorithm, Programming">
   <meta name="standout" content="https://algopush.com/Leetcode/3223-minimum-length-of-string-after-operations.html">
   <meta name="rating" content="general" />
   <meta http-equiv="content-language" content="en" />
@@ -138,12 +143,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -350,6 +357,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -543,7 +551,8 @@
 
     <!-- Problem Visualization Image -->
     <div class="problem-visual">
-      <img src="https://algopush.com/Leetcode/Images/3223.png" alt="Minimum Length of String After Operations visualization" loading="lazy">
+      <img src="https://algopush.com/Leetcode/Images/3223.png"
+        alt="Minimum Length of String After Operations visualization" loading="lazy">
     </div>
 
     <h1>3223: Minimum Length of String After Operations</h1>
@@ -565,7 +574,8 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> This problem requires understanding of frequency analysis and parity. The optimal solution runs in O(n) time with O(1) space complexity.
+      <strong>Pro Tip:</strong> This problem requires understanding of frequency analysis and parity. The optimal
+      solution runs in O(n) time with O(1) space complexity.
     </div>
 
     <h2>Problem Statement</h2>
@@ -591,7 +601,8 @@ Explanation: No operations possible</code></pre>
 
     <div class="callout note">
       <strong>Problem Link:</strong>
-      <a href="https://leetcode.com/problems/minimum-length-of-string-after-operations/" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/problems/minimum-length-of-string-after-operations/" target="_blank"
+        rel="noopener noreferrer">
         View on LeetCode ↗
       </a>
     </div>
@@ -688,7 +699,8 @@ Explanation: No operations possible</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This solution leverages the observation that each operation removes two matching characters. The final length depends on whether character counts are even or odd.
+        <strong>Implementation Note:</strong> This solution leverages the observation that each operation removes two
+        matching characters. The final length depends on whether character counts are even or odd.
       </div>
     </div>
 
@@ -783,7 +795,8 @@ Explanation: No operations possible</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> The two pointers approach simulates the actual operations by collapsing matching prefixes and suffixes. This works well for strings with matching ends.
+        <strong>Implementation Note:</strong> The two pointers approach simulates the actual operations by collapsing
+        matching prefixes and suffixes. This works well for strings with matching ends.
       </div>
     </div>
 
@@ -822,7 +835,8 @@ Explanation: No operations possible</code></pre>
     </table>
 
     <div class="callout note">
-      <strong>Interview Tip:</strong> The frequency analysis approach is often sufficient for interviews, but be prepared to discuss alternative solutions like the two pointers approach.
+      <strong>Interview Tip:</strong> The frequency analysis approach is often sufficient for interviews, but be
+      prepared to discuss alternative solutions like the two pointers approach.
     </div>
 
     <hr />
@@ -843,7 +857,8 @@ Explanation: No operations possible</code></pre>
 <b>Explanation:</b> No operations possible due to alternation</code></pre>
 
     <div class="callout warning">
-      <strong>Important:</strong> Always test your solution with these edge cases to ensure correctness. The examples demonstrate how different string patterns affect the final length.
+      <strong>Important:</strong> Always test your solution with these edge cases to ensure correctness. The examples
+      demonstrate how different string patterns affect the final length.
     </div>
 
     <hr />
@@ -867,14 +882,16 @@ Explanation: No operations possible</code></pre>
       <details>
         <summary>1. Why does the frequency approach work?</summary>
         <p>
-          Each operation removes two matching characters. The final length depends on whether we can pair all characters (even counts leave 2, odd counts leave 1).
+          Each operation removes two matching characters. The final length depends on whether we can pair all characters
+          (even counts leave 2, odd counts leave 1).
         </p>
       </details>
 
       <details>
         <summary>2. When does the two pointers approach fail?</summary>
         <p>
-          It may fail for cases where operations could be performed in the middle of the string but not at the ends. However, the problem constraints ensure it works.
+          It may fail for cases where operations could be performed in the middle of the string but not at the ends.
+          However, the problem constraints ensure it works.
         </p>
       </details>
 
@@ -888,20 +905,24 @@ Explanation: No operations possible</code></pre>
       <details>
         <summary>4. How would you handle Unicode characters?</summary>
         <p>
-          For Unicode, replace the 26-element array with a hash map to count frequencies, increasing space to O(k) where k is number of unique characters.
+          For Unicode, replace the 26-element array with a hash map to count frequencies, increasing space to O(k) where
+          k is number of unique characters.
         </p>
       </details>
 
       <details>
         <summary>5. What's the minimal possible length?</summary>
         <p>
-          The minimal length is the number of characters with odd counts (each contributes 1) plus the number of character types with even counts (each contributes 2).
+          The minimal length is the number of characters with odd counts (each contributes 1) plus the number of
+          character types with even counts (each contributes 2).
         </p>
       </details>
     </div>
 
     <div class="callout">
-      <strong>Final Thoughts:</strong> This problem demonstrates how careful analysis of operations can lead to efficient solutions without complex simulations. The frequency counting approach provides an optimal O(n) time solution.
+      <strong>Final Thoughts:</strong> This problem demonstrates how careful analysis of operations can lead to
+      efficient solutions without complex simulations. The frequency counting approach provides an optimal O(n) time
+      solution.
     </div>
   </main>
 
@@ -910,34 +931,34 @@ Explanation: No operations possible</code></pre>
 
   <script>
     // Tab functionality with improved mobile support
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Initialize tabs
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Set first tab as active by default if none are active
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         // Add click handlers
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
-            
+
             // Update active tab button
             tabButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            
+
             // Update active tab content
             tabContents.forEach(content => content.classList.remove('active'));
             container.querySelector(`#${tabName}-tab`).classList.add('active');
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -950,7 +971,7 @@ Explanation: No operations possible</code></pre>
           });
         });
       });
-      
+
       // FAQ highlight when opened
       document.querySelectorAll('.faq-section details').forEach(detail => {
         detail.addEventListener('toggle', () => {
@@ -959,7 +980,7 @@ Explanation: No operations possible</code></pre>
           }
         });
       });
-      
+
       // Load header and footer
       fetch("../components/header.html")
         .then((response) => response.text())

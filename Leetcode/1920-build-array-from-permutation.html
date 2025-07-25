@@ -5,8 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeetCode 1920 | Build Array from Permutation</title>
-  <meta name="description" content="Complete solutions for LeetCode 1920: optimal O(n) approaches with space optimization techniques. C++, Java, and Python implementations." />
-  <meta name="keywords" content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, LeetCode 1920, Build Array from Permutation, in-place algorithm, Leetcode problem of the day, array transformation, leetcode array question, leetcode contest question, leetcode contest" />
+  <meta name="description"
+    content="Complete solutions for LeetCode 1920: optimal O(n) approaches with space optimization techniques. C++, Java, and Python implementations." />
+  <meta name="keywords"
+    content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, LeetCode 1920, Build Array from Permutation, in-place algorithm, Leetcode problem of the day, array transformation, leetcode array question, leetcode contest question, leetcode contest" />
   <meta name="author" content="Algopush" />
   <link rel="canonical" href="https://algopush.com/Leetcode/1920-build-array-from-permutation.html">
 
@@ -16,7 +18,8 @@
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 1920: Build Array from Permutation">
-  <meta property="og:description" content="Optimal solutions with O(n) time and O(1) space complexity. Complete guide with multiple approaches and implementations.">
+  <meta property="og:description"
+    content="Optimal solutions with O(n) time and O(1) space complexity. Complete guide with multiple approaches and implementations.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/1920.png">
   <meta property="og:url" content="https://algopush.com/Leetcode/1920-build-array-from-permutation.html">
   <meta property="og:type" content="article">
@@ -24,7 +27,8 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 1920: Build Array from Permutation">
-  <meta name="twitter:description" content="Solve array transformation problem with in-place O(1) space optimization. Code examples in C++, Java, and Python.">
+  <meta name="twitter:description"
+    content="Solve array transformation problem with in-place O(1) space optimization. Code examples in C++, Java, and Python.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/1920.png">
 
   <!-- Structured Data for SEO -->
@@ -104,12 +108,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -316,6 +322,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -526,11 +533,14 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> The optimal solution requires understanding of modular arithmetic for in-place array transformations. Focus on encoding two values in one position.
+      <strong>Pro Tip:</strong> The optimal solution requires understanding of modular arithmetic for in-place array
+      transformations. Focus on encoding two values in one position.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>Given a zero-based permutation array <code>nums</code>, return an array <code>ans</code> where <code>ans[i] = nums[nums[i]]</code> for each index <code>i</code>. Solve it with O(1) extra space for bonus points.</p>
+    <p>Given a zero-based permutation array <code>nums</code>, return an array <code>ans</code> where
+      <code>ans[i] = nums[nums[i]]</code> for each index <code>i</code>. Solve it with O(1) extra space for bonus
+      points.</p>
 
     <h3>Example 1</h3>
     <pre><code>Input: nums = [0,2,1,5,3,4]
@@ -624,7 +634,8 @@ Explanation: Transformation done in-place</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This simple approach is optimal when O(n) space is acceptable. Preferred for readability in most cases.
+        <strong>Implementation Note:</strong> This simple approach is optimal when O(n) space is acceptable. Preferred
+        for readability in most cases.
       </div>
     </div>
 
@@ -714,7 +725,8 @@ Explanation: Transformation done in-place</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This advanced technique encodes both original and new values using mathematical operations. The modulo preserves original values during overwriting.
+        <strong>Implementation Note:</strong> This advanced technique encodes both original and new values using
+        mathematical operations. The modulo preserves original values during overwriting.
       </div>
     </div>
 
@@ -747,7 +759,8 @@ Explanation: Transformation done in-place</code></pre>
     </table>
 
     <div class="callout warning">
-      <strong>Important:</strong> The in-place method modifies the input array. Use defensive copying if original array must be preserved.
+      <strong>Important:</strong> The in-place method modifies the input array. Use defensive copying if original array
+      must be preserved.
     </div>
 
     <hr />
@@ -773,27 +786,32 @@ Explanation: Transformation done in-place</code></pre>
     <div class="faq-section">
       <details>
         <summary>1. Why does the in-place method work with modulo?</summary>
-        <p>Using nums[nums[i]] % n preserves the original value before any modifications during the first pass, ensuring correct calculations.</p>
+        <p>Using nums[nums[i]] % n preserves the original value before any modifications during the first pass, ensuring
+          correct calculations.</p>
       </details>
 
       <details>
         <summary>2. How does encoding two values work?</summary>
-        <p>We store new_value * n + original_value in each position. Division by n extracts new value, modulo gets original (but not needed in final result).</p>
+        <p>We store new_value * n + original_value in each position. Division by n extracts new value, modulo gets
+          original (but not needed in final result).</p>
       </details>
 
       <details>
         <summary>3. What if nums contains large numbers?</summary>
-        <p>The problem constraints guarantee 0 ≤ nums[i] < n, making the encoding safe within standard integer ranges.</p>
+        <p>The problem constraints guarantee 0 ≤ nums[i] < n, making the encoding safe within standard integer
+            ranges.</p>
       </details>
 
       <details>
         <summary>4. Why multiply by n instead of other numbers?</summary>
-        <p>Since all values are < n, multiplying by n creates a unique base-n encoding that prevents information overlap.</p>
+        <p>Since all values are < n, multiplying by n creates a unique base-n encoding that prevents information
+            overlap.</p>
       </details>
 
       <details>
         <summary>5. Can we solve this with bit manipulation?</summary>
-        <p>Yes, but modulo/division approach is more readable. Bitwise methods would need sufficient bit space (unlikely in practice).</p>
+        <p>Yes, but modulo/division approach is more readable. Bitwise methods would need sufficient bit space (unlikely
+          in practice).</p>
       </details>
 
       <details>
@@ -818,12 +836,15 @@ Explanation: Transformation done in-place</code></pre>
 
       <details>
         <summary>10. Why is this problem important?</summary>
-        <p>Teaches advanced array manipulation techniques crucial for memory-constrained environments and low-level programming.</p>
+        <p>Teaches advanced array manipulation techniques crucial for memory-constrained environments and low-level
+          programming.</p>
       </details>
     </div>
 
     <div class="callout">
-      <strong>Final Insight:</strong> This problem beautifully demonstrates how mathematical number theory can optimize space complexity in array transformations. The in-place solution is a perfect example of thinking "outside the box" while respecting constraints.
+      <strong>Final Insight:</strong> This problem beautifully demonstrates how mathematical number theory can optimize
+      space complexity in array transformations. The in-place solution is a perfect example of thinking "outside the
+      box" while respecting constraints.
     </div>
   </main>
 
@@ -831,18 +852,18 @@ Explanation: Transformation done in-place</code></pre>
 
   <script>
     // Reuse the same JavaScript from previous post
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Tab functionality
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Initialize first tab
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
@@ -853,7 +874,7 @@ Explanation: Transformation done in-place</code></pre>
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -881,4 +902,5 @@ Explanation: Transformation done in-place</code></pre>
     });
   </script>
 </body>
+
 </html>

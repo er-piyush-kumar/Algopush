@@ -5,25 +5,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeetCode 3387 | Maximize Amount After Two Days of Conversions</title>
-  <meta name="description" content="Solve the currency conversion maximization problem using Floyd-Warshall algorithm. Complete solutions in C++, Java, and Python." />
-  <meta name="keywords" content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 3387, Maximize Amount After Two Days of Conversions, Floyd-Warshall algorithm, graph problems, dynamic programming, C++ Java Python solutions, coding interview preparation" />
+  <meta name="description"
+    content="Solve the currency conversion maximization problem using Floyd-Warshall algorithm. Complete solutions in C++, Java, and Python." />
+  <meta name="keywords"
+    content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 3387, Maximize Amount After Two Days of Conversions, Floyd-Warshall algorithm, graph problems, dynamic programming, C++ Java Python solutions, coding interview preparation" />
   <meta name="author" content="Algopush" />
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 3387: Maximize Amount After Two Days of Conversions">
-  <meta property="og:description" content="Complete guide to solving the Maximize Amount After Two Days of Conversions problem using Floyd-Warshall algorithm.">
+  <meta property="og:description"
+    content="Complete guide to solving the Maximize Amount After Two Days of Conversions problem using Floyd-Warshall algorithm.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/3387.png">
-  <meta property="og:url" content="https://algopush.com/Leetcode/3387-maximize-amount-after-two-days-of-conversions.html">
+  <meta property="og:url"
+    content="https://algopush.com/Leetcode/3387-maximize-amount-after-two-days-of-conversions.html">
   <meta property="og:type" content="article">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 3387: Maximize Amount After Two Days of Conversions">
-  <meta name="twitter:description" content="Floyd-Warshall approach to solve the LeetCode 3387: Maximize Amount After Two Days of Conversions problem with code examples.">
+  <meta name="twitter:description"
+    content="Floyd-Warshall approach to solve the LeetCode 3387: Maximize Amount After Two Days of Conversions problem with code examples.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3387.png">
 
   <!-- Google News / Publisher Meta Tags -->
-  <meta name="news_keywords" content="LeetCode, leetcode 3387, Maximize Amount After Two Days of Conversions, Algorithm, Programming">
+  <meta name="news_keywords"
+    content="LeetCode, leetcode 3387, Maximize Amount After Two Days of Conversions, Algorithm, Programming">
   <meta name="standout" content="https://algopush.com/Leetcode/3387-maximize-amount-after-two-days-of-conversions.html">
   <meta name="rating" content="general" />
   <meta http-equiv="content-language" content="en" />
@@ -112,12 +118,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -324,6 +332,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -517,7 +526,8 @@
 
     <!-- Problem Visualization Image -->
     <div class="problem-visual">
-      <img src="https://algopush.com/Leetcode/Images/3387.png" alt="Maximize Amount After Two Days of Conversions" loading="lazy">
+      <img src="https://algopush.com/Leetcode/Images/3387.png" alt="Maximize Amount After Two Days of Conversions"
+        loading="lazy">
     </div>
 
     <h1>3387: Maximize Amount After Two Days of Conversions</h1>
@@ -539,11 +549,14 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> This problem requires understanding of graph algorithms and dynamic programming. The optimal solution using Floyd-Warshall runs in O(V^3) time where V is the number of currencies.
+      <strong>Pro Tip:</strong> This problem requires understanding of graph algorithms and dynamic programming. The
+      optimal solution using Floyd-Warshall runs in O(V^3) time where V is the number of currencies.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>You are given an initial currency and exchange rates for two consecutive days. The task is to maximize the amount of initial currency after performing any number of conversions on both days, using the respective day's exchange rates.</p>
+    <p>You are given an initial currency and exchange rates for two consecutive days. The task is to maximize the amount
+      of initial currency after performing any number of conversions on both days, using the respective day's exchange
+      rates.</p>
 
     <h3>Example 1</h3>
     <pre><code>Input:
@@ -567,7 +580,8 @@ Output: 1.50000</code></pre>
 
     <div class="callout note">
       <strong>Problem Link:</strong>
-      <a href="https://leetcode.com/problems/maximize-amount-after-two-days-of-conversions/" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/problems/maximize-amount-after-two-days-of-conversions/" target="_blank"
+        rel="noopener noreferrer">
         View on LeetCode ↗
       </a>
     </div>
@@ -852,7 +866,9 @@ Output: 1.50000</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> The Floyd-Warshall approach efficiently computes all possible conversion paths by dynamically updating the maximum exchange rates between all currency pairs. This avoids the exponential complexity of the brute force method.
+        <strong>Implementation Note:</strong> The Floyd-Warshall approach efficiently computes all possible conversion
+        paths by dynamically updating the maximum exchange rates between all currency pairs. This avoids the exponential
+        complexity of the brute force method.
       </div>
     </div>
 
@@ -891,7 +907,9 @@ Output: 1.50000</code></pre>
     </table>
 
     <div class="callout note">
-      <strong>Interview Tip:</strong> While explaining the Floyd-Warshall solution, emphasize how it efficiently computes all-pairs shortest paths (or in this case, maximum exchange rates) by dynamic programming, avoiding redundant calculations.
+      <strong>Interview Tip:</strong> While explaining the Floyd-Warshall solution, emphasize how it efficiently
+      computes all-pairs shortest paths (or in this case, maximum exchange rates) by dynamic programming, avoiding
+      redundant calculations.
     </div>
 
     <hr />
@@ -918,17 +936,20 @@ rates2 = [0.5, 0.333, 0.25]
 <b>Explanation:</b> Circular conversions result in the original amount.</code></pre>
 
     <div class="callout warning">
-      <strong>Important:</strong> Always test your solution with these edge cases to ensure correctness. The examples demonstrate how different conversion paths can affect the final amount.
+      <strong>Important:</strong> Always test your solution with these edge cases to ensure correctness. The examples
+      demonstrate how different conversion paths can affect the final amount.
     </div>
 
     <hr />
 
     <h2>Visualization</h2>
     <div class="callout">
-      <p>The Floyd-Warshall algorithm works by progressively improving estimates on the maximum exchange rate between currencies:</p>
+      <p>The Floyd-Warshall algorithm works by progressively improving estimates on the maximum exchange rate between
+        currencies:</p>
       <ol>
         <li><strong>Initialization:</strong> Direct exchange rates between connected currencies</li>
-        <li><strong>Iteration:</strong> For each intermediate currency k, update rates between i and j if i→k→j is better</li>
+        <li><strong>Iteration:</strong> For each intermediate currency k, update rates between i and j if i→k→j is
+          better</li>
         <li><strong>Result:</strong> Matrix of maximum exchange rates between all currency pairs</li>
       </ol>
       <p>This dynamic programming approach efficiently captures all possible conversion paths.</p>
@@ -942,76 +963,89 @@ rates2 = [0.5, 0.333, 0.25]
       <details>
         <summary>1. Why use Floyd-Warshall instead of Dijkstra's algorithm?</summary>
         <p>
-          Floyd-Warshall computes all-pairs maximum rates in O(V^3) time, which is more efficient than running Dijkstra's (O(V^2)) for each currency. It's particularly suited when we need maximum rates between all pairs, not just from a single source.
+          Floyd-Warshall computes all-pairs maximum rates in O(V^3) time, which is more efficient than running
+          Dijkstra's (O(V^2)) for each currency. It's particularly suited when we need maximum rates between all pairs,
+          not just from a single source.
         </p>
       </details>
 
       <details>
         <summary>2. How does the algorithm handle reciprocal rates?</summary>
         <p>
-          The graph construction includes both directions with reciprocal rates (e.g., if USD→EUR = 2.0, then EUR→USD = 0.5). This ensures the conversion works both ways with mathematically correct rates.
+          The graph construction includes both directions with reciprocal rates (e.g., if USD→EUR = 2.0, then EUR→USD =
+          0.5). This ensures the conversion works both ways with mathematically correct rates.
         </p>
       </details>
 
       <details>
         <summary>3. What's the significance of initializing diagonal elements to 1.0?</summary>
         <p>
-          The diagonal (currency to itself) is set to 1.0 because converting a currency to itself should yield the same amount (no change). This is crucial for the dynamic programming approach to work correctly.
+          The diagonal (currency to itself) is set to 1.0 because converting a currency to itself should yield the same
+          amount (no change). This is crucial for the dynamic programming approach to work correctly.
         </p>
       </details>
 
       <details>
         <summary>4. Can negative exchange rates be handled?</summary>
         <p>
-          This problem assumes positive exchange rates. Negative rates would require different algorithms (like Bellman-Ford for detecting negative cycles) and have different economic implications.
+          This problem assumes positive exchange rates. Negative rates would require different algorithms (like
+          Bellman-Ford for detecting negative cycles) and have different economic implications.
         </p>
       </details>
 
       <details>
         <summary>5. How would you modify this for more than two days?</summary>
         <p>
-          For n days, you would apply the Floyd-Warshall algorithm sequentially for each day's rates, using the previous day's result as input to the next. The complexity would be O(nV^3).
+          For n days, you would apply the Floyd-Warshall algorithm sequentially for each day's rates, using the previous
+          day's result as input to the next. The complexity would be O(nV^3).
         </p>
       </details>
 
       <details>
         <summary>6. What optimizations are possible for sparse graphs?</summary>
         <p>
-          For sparse graphs (few currency pairs), Johnson's algorithm (O(V^2 log V + VE)) might be more efficient, though Floyd-Warshall is often preferred for its simplicity and small constant factors.
+          For sparse graphs (few currency pairs), Johnson's algorithm (O(V^2 log V + VE)) might be more efficient,
+          though Floyd-Warshall is often preferred for its simplicity and small constant factors.
         </p>
       </details>
 
       <details>
         <summary>7. How does this compare to matrix exponentiation methods?</summary>
         <p>
-          Matrix exponentiation can also solve all-pairs problems but is less intuitive for this specific case. Floyd-Warshall's dynamic programming approach is more straightforward for currency conversion scenarios.
+          Matrix exponentiation can also solve all-pairs problems but is less intuitive for this specific case.
+          Floyd-Warshall's dynamic programming approach is more straightforward for currency conversion scenarios.
         </p>
       </details>
 
       <details>
         <summary>8. What's the practical limit for the number of currencies?</summary>
         <p>
-          With V=100 currencies, Floyd-Warshall's O(V^3) = 1,000,000 operations is manageable. For V=1000 (1 billion operations), you might need optimizations or parallel processing.
+          With V=100 currencies, Floyd-Warshall's O(V^3) = 1,000,000 operations is manageable. For V=1000 (1 billion
+          operations), you might need optimizations or parallel processing.
         </p>
       </details>
 
       <details>
         <summary>9. How would you handle floating-point precision issues?</summary>
         <p>
-          For very small/large rates, use logarithms to convert multiplications to additions, reducing floating-point errors. Alternatively, use arbitrary-precision arithmetic libraries if precision is critical.
+          For very small/large rates, use logarithms to convert multiplications to additions, reducing floating-point
+          errors. Alternatively, use arbitrary-precision arithmetic libraries if precision is critical.
         </p>
       </details>
 
       <details>
         <summary>10. Can this be adapted for cryptocurrency arbitrage?</summary>
         <p>
-          Yes, by looking for cycles where the product of exchange rates is >1 (profit). The same Floyd-Warshall approach can detect such opportunities by checking diagonal entries after log transformation.
+          Yes, by looking for cycles where the product of exchange rates is >1 (profit). The same Floyd-Warshall
+          approach can detect such opportunities by checking diagonal entries after log transformation.
         </p>
       </details>
     </div>
 
     <div class="callout">
-      <strong>Final Thoughts:</strong> This problem demonstrates how graph algorithms can model real-world financial scenarios. The Floyd-Warshall solution provides an elegant way to maximize currency conversions while avoiding exponential complexity.
+      <strong>Final Thoughts:</strong> This problem demonstrates how graph algorithms can model real-world financial
+      scenarios. The Floyd-Warshall solution provides an elegant way to maximize currency conversions while avoiding
+      exponential complexity.
     </div>
   </main>
 
@@ -1020,34 +1054,34 @@ rates2 = [0.5, 0.333, 0.25]
 
   <script>
     // Tab functionality with improved mobile support
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Initialize tabs
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Set first tab as active by default if none are active
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         // Add click handlers
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
-            
+
             // Update active tab button
             tabButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            
+
             // Update active tab content
             tabContents.forEach(content => content.classList.remove('active'));
             container.querySelector(`#${tabName}-tab`).classList.add('active');
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -1060,7 +1094,7 @@ rates2 = [0.5, 0.333, 0.25]
           });
         });
       });
-      
+
       // FAQ highlight when opened
       document.querySelectorAll('.faq-section details').forEach(detail => {
         detail.addEventListener('toggle', () => {
@@ -1069,7 +1103,7 @@ rates2 = [0.5, 0.333, 0.25]
           }
         });
       });
-      
+
       // Load header and footer
       fetch("../components/header.html")
         .then((response) => response.text())

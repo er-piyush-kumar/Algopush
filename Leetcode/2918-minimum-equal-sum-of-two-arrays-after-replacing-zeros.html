@@ -5,25 +5,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2918 | Minimum Equal Sum of Two Arrays After Replacing Zeros</title>
-  <meta name="description" content="Complete solution for LeetCode 2918: Learn optimal strategies to balance array sums by replacing zeros. Detailed analysis with mathematical proofs.">
-  <meta name="keywords" content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 2918, Minimum Equal Sum, Array Manipulation, Zero Replacement Problem, Algorithm Optimization, Competitive Programming, LeetCode Hard Problem">
+  <meta name="description"
+    content="Complete solution for LeetCode 2918: Learn optimal strategies to balance array sums by replacing zeros. Detailed analysis with mathematical proofs.">
+  <meta name="keywords"
+    content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 2918, Minimum Equal Sum, Array Manipulation, Zero Replacement Problem, Algorithm Optimization, Competitive Programming, LeetCode Hard Problem">
   <meta name="author" content="Algopush" />
-  <link rel="canonical" href="https://algopush.com/Leetcode/2918-minimum-equal-sum-of-two-arrays-after-replacing-zeros.html">
+  <link rel="canonical"
+    href="https://algopush.com/Leetcode/2918-minimum-equal-sum-of-two-arrays-after-replacing-zeros.html">
   <!-- Favicon -->
   <link rel="icon" href="../components/favicon.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="../components/favicon.png">
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 2918: Minimum Equal Sum of Two Arrays After Replacing Zeros">
-  <meta property="og:description" content="Master the mathematical approach to balance array sums through zero replacement. Complete guide with multiple optimization strategies and code implementations.">
+  <meta property="og:description"
+    content="Master the mathematical approach to balance array sums through zero replacement. Complete guide with multiple optimization strategies and code implementations.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/2918.png">
-  <meta property="og:url" content="https://algopush.com/Leetcode/2918-minimum-equal-sum-of-two-arrays-after-replacing-zeros.html">
+  <meta property="og:url"
+    content="https://algopush.com/Leetcode/2918-minimum-equal-sum-of-two-arrays-after-replacing-zeros.html">
   <meta property="og:type" content="article">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 2918: Minimum Equal Sum of Two Arrays After Replacing Zeros">
-  <meta name="twitter:description" content="Optimal solution for balancing array sums with zero replacement constraints. Code examples in Python, Java, and C++.">
+  <meta name="twitter:description"
+    content="Optimal solution for balancing array sums with zero replacement constraints. Code examples in Python, Java, and C++.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/2918.png">
 
   <!-- Structured Data for SEO -->
@@ -103,12 +109,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -315,6 +323,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -525,11 +534,13 @@
     </div>
 
     <div class="callout tip">
-      <strong>Key Insight:</strong> The optimal solution requires calculating base sums and understanding the mathematical relationship between zero counts in both arrays.
+      <strong>Key Insight:</strong> The optimal solution requires calculating base sums and understanding the
+      mathematical relationship between zero counts in both arrays.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>Given two arrays containing positive integers and zeros, replace all zeros with positive integers such that both arrays have equal sums. Return the minimum possible equal sum or -1 if impossible.</p>
+    <p>Given two arrays containing positive integers and zeros, replace all zeros with positive integers such that both
+      arrays have equal sums. Return the minimum possible equal sum or -1 if impossible.</p>
 
     <h3>Example 1</h3>
     <pre><code>Input: nums1 = [3,2,0,1,0], nums2 = [6,5,0]
@@ -543,7 +554,8 @@ Explanation: Impossible to balance sums</code></pre>
 
     <div class="callout note">
       <strong>Problem Link:</strong>
-      <a href="https://leetcode.com/problems/minimum-equal-sum-of-two-arrays-after-replacing-zeros/" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/problems/minimum-equal-sum-of-two-arrays-after-replacing-zeros/" target="_blank"
+        rel="noopener noreferrer">
         View on LeetCode ↗
       </a>
     </div>
@@ -691,7 +703,8 @@ Explanation: Impossible to balance sums</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Insight:</strong> The solution leverages mathematical constraints to determine the minimal possible sum without explicit simulation of replacements.
+        <strong>Implementation Insight:</strong> The solution leverages mathematical constraints to determine the
+        minimal possible sum without explicit simulation of replacements.
       </div>
     </div>
 
@@ -726,7 +739,8 @@ Explanation: Impossible to balance sums</code></pre>
     </table>
 
     <div class="callout warning">
-      <strong>Critical Edge Case:</strong> When one array has no zeros, its sum must be ≤ the other array's potential minimal sum.
+      <strong>Critical Edge Case:</strong> When one array has no zeros, its sum must be ≤ the other array's potential
+      minimal sum.
     </div>
 
     <hr />
@@ -802,7 +816,9 @@ Explanation: Impossible to balance sums</code></pre>
     </div>
 
     <div class="callout">
-      <strong>Final Analysis:</strong> This problem teaches essential skills in constraint analysis and mathematical optimization for array manipulation. The solution demonstrates how careful mathematical reasoning can lead to O(n) time algorithms even for seemingly complex problems.
+      <strong>Final Analysis:</strong> This problem teaches essential skills in constraint analysis and mathematical
+      optimization for array manipulation. The solution demonstrates how careful mathematical reasoning can lead to O(n)
+      time algorithms even for seemingly complex problems.
     </div>
   </main>
 
@@ -810,18 +826,18 @@ Explanation: Impossible to balance sums</code></pre>
 
   <script>
     // Reuse the same JavaScript from previous post
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Tab functionality
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Initialize first tab
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
@@ -832,7 +848,7 @@ Explanation: Impossible to balance sums</code></pre>
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -860,4 +876,5 @@ Explanation: Impossible to balance sums</code></pre>
     });
   </script>
 </body>
+
 </html>

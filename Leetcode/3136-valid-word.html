@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3136. Valid Word | LeetCode Solution</title>
-    <meta name="description" 
+    <meta name="description"
         content="Complete solution for LeetCode 3136 Valid Word problem with multiple approaches, detailed explanations, and code implementations in C++, Java, and Python.">
     <meta name="keywords"
         content="LeetCode 3136, Valid Word, String Validation, Vowel Consonant Check, Programming Solutions, C++, Java, Python, String Processing, Algorithm, Programming, Coding Interview, LeetCode Easy Problem, Competitive Programming, leetcode, leetcode problem of the day, leetcode easy question, leetcode daily question, Leetcode interview question, sde interview question">
     <meta name="author" content="Algorithm Solutions">
     <link rel="canonical" href="https://algopush.com/Leetcode/3136-valid-word.html">
-    
+
     <!-- Favicon -->
     <link rel="icon" href="../components/favicon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="../components/favicon.png">
@@ -96,21 +97,27 @@
             border-radius: var(--border-radius);
         }
 
+        /* Problem Visualization Image */
         .problem-visual {
             max-width: 100%;
             margin: 1.5rem 0;
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            text-align: center;
         }
 
         .problem-visual img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            display: block;
+            max-height: 400px;
+            display: inline-block;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             color: var(--primary-color);
             font-weight: 600;
             margin-top: 1.8rem;
@@ -203,7 +210,8 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        th, td {
+        th,
+        td {
             padding: 0.8rem;
             text-align: center;
             border: 1px solid #ddd;
@@ -302,8 +310,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .faq-section {
@@ -420,23 +433,60 @@
                 margin: 1rem;
                 padding: 1.5rem;
             }
-            h1 { font-size: 1.7rem; }
-            h2 { font-size: 1.4rem; }
-            .problem-meta { flex-direction: column; }
-            table { display: block; overflow-x: auto; }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .problem-meta {
+                flex-direction: column;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
         }
 
         @media (max-width: 480px) {
-            main { padding: 1rem; }
-            h1 { font-size: 1.5rem; }
-            h2 { font-size: 1.2rem; }
-            pre { padding: 0.8rem; font-size: 0.85rem; }
-            .tab-button { padding: 0.6rem; font-size: 0.9rem; }
-            .code-header { flex-direction: column; align-items: flex-start; }
-            .code-copy { margin-top: 0.5rem; }
+            main {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            pre {
+                padding: 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .tab-button {
+                padding: 0.6rem;
+                font-size: 0.9rem;
+            }
+
+            .code-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .code-copy {
+                margin-top: 0.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <div id="header"></div>
 
@@ -476,8 +526,9 @@
             <li>It includes at least one vowel</li>
             <li>It includes at least one consonant</li>
         </ol>
-        <p>Given a string <code>word</code>, return <code>true</code> if word is valid, otherwise return <code>false</code>.</p>
-        
+        <p>Given a string <code>word</code>, return <code>true</code> if word is valid, otherwise return
+            <code>false</code>.</p>
+
         <div class="callout note">
             <strong>Notes:</strong>
             <ul>
@@ -504,7 +555,7 @@ Explanation: Contains invalid character '$' and missing consonant</code></pre>
         <div class="callout note">
             <strong>Constraints:</strong>
             <ul>
-                <li>1 <= word.length <= 20</li>
+                <li>1 <= word.length <=20</li>
                 <li>word consists of English uppercase and lowercase letters, digits, '@', '#', and '$'</li>
             </ul>
         </div>
@@ -519,9 +570,10 @@ Explanation: Contains invalid character '$' and missing consonant</code></pre>
             <li><strong>Vowel presence</strong>: At least one vowel must exist in the word</li>
             <li><strong>Consonant presence</strong>: At least one consonant must exist in the word</li>
         </ol>
-        
+
         <div class="callout tip">
-            <strong>Important Note:</strong> Digits are allowed in the word but they don't count as vowels or consonants. 
+            <strong>Important Note:</strong> Digits are allowed in the word but they don't count as vowels or
+            consonants.
             Only letters are considered for vowel/consonant checks.
         </div>
 
@@ -806,7 +858,7 @@ Explanation: Contains invalid character '$' and missing consonant</code></pre>
             
         <span class="code-token-keyword">return</span> True</code></pre>
             <div class="callout note">
-                <strong>Note:</strong> While concise, regex solutions can be less efficient for small strings 
+                <strong>Note:</strong> While concise, regex solutions can be less efficient for small strings
                 and harder to maintain for complex patterns.
             </div>
         </div>
@@ -880,57 +932,68 @@ Explanation: Contains invalid character '$' and missing consonant</code></pre>
         <div class="faq-section">
             <details>
                 <summary>Why are digits allowed if they don't count as vowels or consonants?</summary>
-                <p>Digits are permitted in valid words as per the problem statement, but they don't fulfill the vowel or consonant requirements. The word must contain at least one vowel and one consonant from letters.</p>
+                <p>Digits are permitted in valid words as per the problem statement, but they don't fulfill the vowel or
+                    consonant requirements. The word must contain at least one vowel and one consonant from letters.</p>
             </details>
 
             <details>
                 <summary>How should uppercase vowels be handled?</summary>
-                <p>Uppercase vowels ('A', 'E', etc.) should be treated the same as lowercase vowels. The solution should convert letters to a consistent case before checking.</p>
+                <p>Uppercase vowels ('A', 'E', etc.) should be treated the same as lowercase vowels. The solution should
+                    convert letters to a consistent case before checking.</p>
             </details>
 
             <details>
                 <summary>Can a word be valid if it has vowels but no consonants?</summary>
-                <p>No, the problem requires at least one vowel AND at least one consonant. Words like "aei" would be invalid.</p>
+                <p>No, the problem requires at least one vowel AND at least one consonant. Words like "aei" would be
+                    invalid.</p>
             </details>
 
             <details>
                 <summary>What constitutes an invalid character?</summary>
-                <p>Any character that is not a digit (0-9) and not an English letter (a-z, A-Z). Special characters like '@', '#', and '$' are explicitly invalid.</p>
+                <p>Any character that is not a digit (0-9) and not an English letter (a-z, A-Z). Special characters like
+                    '@', '#', and '$' are explicitly invalid.</p>
             </details>
 
             <details>
                 <summary>Is a word with 2 letters and 1 digit considered valid?</summary>
-                <p>No, because it has only 3 characters but lacks both vowel and consonant requirements. The digit doesn't count as either, so it would fail the vowel/consonant checks.</p>
+                <p>No, because it has only 3 characters but lacks both vowel and consonant requirements. The digit
+                    doesn't count as either, so it would fail the vowel/consonant checks.</p>
             </details>
 
             <details>
                 <summary>How does the solution handle mixed case words?</summary>
-                <p>By converting all letters to lowercase before checking vowel/consonant status, the solution handles mixed case words consistently.</p>
+                <p>By converting all letters to lowercase before checking vowel/consonant status, the solution handles
+                    mixed case words consistently.</p>
             </details>
 
             <details>
                 <summary>Can a word be valid with only one vowel and one consonant?</summary>
-                <p>Yes, as long as it has at least 3 characters and meets all other requirements. For example, "a1b" would be valid.</p>
+                <p>Yes, as long as it has at least 3 characters and meets all other requirements. For example, "a1b"
+                    would be valid.</p>
             </details>
 
             <details>
                 <summary>Why is the iterative approach more efficient than regex?</summary>
-                <p>The iterative approach processes the string in a single pass with O(n) time complexity and minimal overhead, while regex operations often have higher constant factors.</p>
+                <p>The iterative approach processes the string in a single pass with O(n) time complexity and minimal
+                    overhead, while regex operations often have higher constant factors.</p>
             </details>
 
             <details>
                 <summary>What's the best approach for very long strings?</summary>
-                <p>For this problem, strings are constrained to 20 characters, so all approaches are efficient. For longer strings, the iterative approach would be preferred.</p>
+                <p>For this problem, strings are constrained to 20 characters, so all approaches are efficient. For
+                    longer strings, the iterative approach would be preferred.</p>
             </details>
 
             <details>
                 <summary>How would you modify the solution to count 'y' as a vowel?</summary>
-                <p>Simply add 'y' to the vowel set/check: <code>if (lowerC == 'a' || lowerC == 'e' || ... || lowerC == 'y')</code></p>
+                <p>Simply add 'y' to the vowel set/check:
+                    <code>if (lowerC == 'a' || lowerC == 'e' || ... || lowerC == 'y')</code></p>
             </details>
         </div>
 
         <div class="callout">
-            <strong>Final Recommendation:</strong> The iterative approach provides the best balance of efficiency, readability, and language compatibility for this problem.
+            <strong>Final Recommendation:</strong> The iterative approach provides the best balance of efficiency,
+            readability, and language compatibility for this problem.
         </div>
     </main>
 
@@ -994,4 +1057,5 @@ Explanation: Contains invalid character '$' and missing consonant</code></pre>
         });
     </script>
 </body>
+
 </html>

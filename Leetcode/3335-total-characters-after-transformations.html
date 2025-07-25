@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3335 | Total Characters in String After Transformations I</title>
-  <meta name="description" content="LeetCode 3335 solution: Efficient approaches to calculate string length after transformations using frequency mapping and mathematical optimization.">
-  <meta name="keywords" content="LeetCode 3335, String Transformations, Frequency Mapping, Mathematical Optimization, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, Leetcode company dsa problem, DSA Problems">
+  <meta name="description"
+    content="LeetCode 3335 solution: Efficient approaches to calculate string length after transformations using frequency mapping and mathematical optimization.">
+  <meta name="keywords"
+    content="LeetCode 3335, String Transformations, Frequency Mapping, Mathematical Optimization, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, Leetcode company dsa problem, DSA Problems">
   <meta name="author" content="Algopush">
   <link rel="canonical" href="https://algopush.com/Leetcode/3335-total-characters-after-transformations.html">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="../components/favicon.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="../components/favicon.png">
@@ -105,12 +108,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -496,14 +501,15 @@
   </style>
 
 </head>
+
 <body>
   <div id="header"></div>
 
   <main>
     <div class="breadcrumb">
-        <a href="https://algopush.com">Home</a> &gt;
-        <a href="https://algopush.com/Leetcode/leetcode.html">LeetCode</a> &gt;
-        <span>3335. Total Characters in String After Transformations I</span>
+      <a href="https://algopush.com">Home</a> &gt;
+      <a href="https://algopush.com/Leetcode/leetcode.html">LeetCode</a> &gt;
+      <span>3335. Total Characters in String After Transformations I</span>
     </div>
 
     <div class="problem-visual">
@@ -513,26 +519,26 @@
     <h1>3335: Total Characters in String After Transformations I</h1>
 
     <div class="problem-meta">
-        <div class="meta-item">
-            <span class="label">Difficulty:</span>
-            <span class="value">Medium</span>
-        </div>
-        <div class="meta-item">
-            <span class="label">Topics:</span>
-            <span class="value">String Manipulation, Frequency Counting, Mathematical Modeling</span>
-        </div>
-        <div class="meta-item">
-            <span class="label">Companies:</span>
-            <span class="value">Google, Amazon, Bloomberg</span>
-        </div>
+      <div class="meta-item">
+        <span class="label">Difficulty:</span>
+        <span class="value">Medium</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Topics:</span>
+        <span class="value">String Manipulation, Frequency Counting, Mathematical Modeling</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Companies:</span>
+        <span class="value">Google, Amazon, Bloomberg</span>
+      </div>
     </div>
 
     <h2>Problem Statement</h2>
     <p>Given a string and transformation rules, calculate the final string length after t transformations where:
-        <ul>
-            <li>'z' becomes "ab"</li>
-            <li>Other characters become next in alphabet</li>
-        </ul>
+    <ul>
+      <li>'z' becomes "ab"</li>
+      <li>Other characters become next in alphabet</li>
+    </ul>
     Return result modulo 10⁹+7.</p>
 
     <h3>Example 1</h3>
@@ -546,10 +552,10 @@ Output: 5
 Explanation: After 1 transform: "babcl"</code></pre>
 
     <div class="callout note">
-        <strong>Problem Link:</strong>
-        <a href="https://leetcode.com/problems/total-characters-in-string-after-transformations-i/" target="_blank">
-            View on LeetCode ↗
-        </a>
+      <strong>Problem Link:</strong>
+      <a href="https://leetcode.com/problems/total-characters-in-string-after-transformations-i/" target="_blank">
+        View on LeetCode ↗
+      </a>
     </div>
 
     <hr>
@@ -559,43 +565,43 @@ Explanation: After 1 transform: "babcl"</code></pre>
 
     <h3>Algorithm Steps</h3>
     <ol>
-        <li>Initialize frequency array for 26 letters</li>
-        <li>Count initial character frequencies</li>
-        <li>Simulate transformations using temporary array</li>
-        <li>Sum frequencies after t transformations</li>
+      <li>Initialize frequency array for 26 letters</li>
+      <li>Count initial character frequencies</li>
+      <li>Simulate transformations using temporary array</li>
+      <li>Sum frequencies after t transformations</li>
     </ol>
 
     <h3>Complexity Analysis</h3>
     <table>
-        <thead>
-            <tr>
-                <th>Time Complexity</th>
-                <th>Space Complexity</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>O(t*26)</td>
-                <td>O(26)</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>Time Complexity</th>
+          <th>Space Complexity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>O(t*26)</td>
+          <td>O(26)</td>
+        </tr>
+      </tbody>
     </table>
 
     <div class="code-container">
-        <div class="code-header">
-            <span class="code-filename">Optimal Solution</span>
-            <button class="code-copy">Copy Code</button>
+      <div class="code-header">
+        <span class="code-filename">Optimal Solution</span>
+        <button class="code-copy">Copy Code</button>
+      </div>
+      <div class="code-tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="cpp-arr">C++</button>
+          <button class="tab-button" data-tab="java-arr">Java</button>
+          <button class="tab-button" data-tab="python-arr">Python</button>
         </div>
-        <div class="code-tabs">
-            <div class="tab-buttons">
-                <button class="tab-button active" data-tab="cpp-arr">C++</button>
-                <button class="tab-button" data-tab="java-arr">Java</button>
-                <button class="tab-button" data-tab="python-arr">Python</button>
-            </div>
 
-            <!-- C++ Code -->
-            <div class="tab-content active" id="cpp-arr-tab">
-                <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
+        <!-- C++ Code -->
+        <div class="tab-content active" id="cpp-arr-tab">
+          <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
 <span class="code-token-keyword">public</span>:
     <span class="code-token-keyword">int</span> <span class="code-token-function">lengthAfterTransformations</span>(string s, <span class="code-token-keyword">int</span> t) {
         <span class="code-token-keyword">const</span> <span class="code-token-keyword">int</span> MOD = <span class="code-token-number">1e9</span>+<span class="code-token-number">7</span>;
@@ -621,11 +627,11 @@ Explanation: After 1 transform: "babcl"</code></pre>
         <span class="code-token-keyword">return</span> res;
     }
 };</code></pre>
-            </div>
+        </div>
 
-            <!-- Java Code -->
-            <div class="tab-content" id="java-arr-tab">
-                <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
+        <!-- Java Code -->
+        <div class="tab-content" id="java-arr-tab">
+          <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span> {
     <span class="code-token-keyword">public</span> <span class="code-token-keyword">int</span> <span class="code-token-function">lengthAfterTransformations</span>(String s, <span class="code-token-keyword">int</span> t) {
         <span class="code-token-keyword">final</span> <span class="code-token-keyword">int</span> MOD = <span class="code-token-number">1000000007</span>;
         <span class="code-token-keyword">long</span>[] freq = <span class="code-token-keyword">new</span> <span class="code-token-keyword">long</span>[<span class="code-token-number">26</span>];
@@ -651,11 +657,11 @@ Explanation: After 1 transform: "babcl"</code></pre>
         <span class="code-token-keyword">return</span> (<span class="code-token-keyword">int</span>)res;
     }
 }</code></pre>
-            </div>
+        </div>
 
-            <!-- Python Code -->
-            <div class="tab-content" id="python-arr-tab">
-                <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span>:
+        <!-- Python Code -->
+        <div class="tab-content" id="python-arr-tab">
+          <pre><code><span class="code-token-keyword">class</span> <span class="code-token-function">Solution</span>:
     <span class="code-token-keyword">def</span> <span class="code-token-function">lengthAfterTransformations</span>(self, s: str, t: int) -> int:
         MOD = <span class="code-token-number">10</span>**<span class="code-token-number">9</span> + <span class="code-token-number">7</span>
         freq = [<span class="code-token-number">0</span>] * <span class="code-token-number">26</span>
@@ -677,45 +683,45 @@ Explanation: After 1 transform: "babcl"</code></pre>
             freq = new_freq
         
         <span class="code-token-keyword">return</span> <span class="code-token-function">sum</span>(freq) % MOD</code></pre>
-            </div>
         </div>
-        <div class="callout tip">
-            <strong>Optimization Insight:</strong> Using fixed-size arrays instead of hash maps reduces 
-            overhead and improves cache locality, making it suitable for large t values.
-        </div>
+      </div>
+      <div class="callout tip">
+        <strong>Optimization Insight:</strong> Using fixed-size arrays instead of hash maps reduces
+        overhead and improves cache locality, making it suitable for large t values.
+      </div>
     </div>
 
     <hr>
 
     <h2>Approach Comparison</h2>
     <table>
-        <thead>
-            <tr>
-                <th>Approach</th>
-                <th>Time</th>
-                <th>Space</th>
-                <th>Max t Supported</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Hash Map</td>
-                <td>O(t*26)</td>
-                <td>O(26)</td>
-                <td>~10⁴</td>
-            </tr>
-            <tr>
-                <td>Frequency Array</td>
-                <td>O(t*26)</td>
-                <td>O(26)</td>
-                <td>~10⁵</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>Approach</th>
+          <th>Time</th>
+          <th>Space</th>
+          <th>Max t Supported</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hash Map</td>
+          <td>O(t*26)</td>
+          <td>O(26)</td>
+          <td>~10⁴</td>
+        </tr>
+        <tr>
+          <td>Frequency Array</td>
+          <td>O(t*26)</td>
+          <td>O(26)</td>
+          <td>~10⁵</td>
+        </tr>
+      </tbody>
     </table>
 
     <div class="callout warning">
-        <strong>Important:</strong> The frequency array approach handles 1e5 transformations in ~0.26 seconds, 
-        while hash map approach would take ~2.6 seconds for same input.
+      <strong>Important:</strong> The frequency array approach handles 1e5 transformations in ~0.26 seconds,
+      while hash map approach would take ~2.6 seconds for same input.
     </div>
 
     <hr>
@@ -731,45 +737,45 @@ Explanation: After 1 transform: "babcl"</code></pre>
     <pre><code>Input: s = "a", t = 1e5 → Output: 1 (after 1e5 shifts)</code></pre>
 
     <div class="callout danger">
-        <strong>Pitfall:</strong> Forgetting modulo operations during transformations can lead to 
-        integer overflow and wrong results.
+      <strong>Pitfall:</strong> Forgetting modulo operations during transformations can lead to
+      integer overflow and wrong results.
     </div>
 
     <hr>
 
     <h2>Frequently Asked Questions</h2>
     <div class="faq-section">
-        <details>
-            <summary>Why use MOD 1e9+7?</summary>
-            <p>Standard modulus in programming competitions to prevent integer overflow while 
-            maintaining result accuracy.</p>
-        </details>
+      <details>
+        <summary>Why use MOD 1e9+7?</summary>
+        <p>Standard modulus in programming competitions to prevent integer overflow while
+          maintaining result accuracy.</p>
+      </details>
 
-        <details>
-            <summary>How does 'z' contribute to exponential growth?</summary>
-            <p>Each 'z' generates 2 new characters per transformation, which can themselves 
-            become 'z's in subsequent steps.</p>
-        </details>
+      <details>
+        <summary>How does 'z' contribute to exponential growth?</summary>
+        <p>Each 'z' generates 2 new characters per transformation, which can themselves
+          become 'z's in subsequent steps.</p>
+      </details>
 
-        <details>
-            <summary>Can we handle very large t values?</summary>
-            <p>Yes, using mathematical modeling to track 'z' generations and their multiplicative 
-            effects over time.</p>
-        </details>
+      <details>
+        <summary>Can we handle very large t values?</summary>
+        <p>Yes, using mathematical modeling to track 'z' generations and their multiplicative
+          effects over time.</p>
+      </details>
 
-        <details>
-            <summary>Why prefer array over hash map?</summary>
-            <p>Arrays provide O(1) access and better cache performance, crucial for handling 
-            maximum constraints.</p>
-        </details>
+      <details>
+        <summary>Why prefer array over hash map?</summary>
+        <p>Arrays provide O(1) access and better cache performance, crucial for handling
+          maximum constraints.</p>
+      </details>
     </div>
 
     <div class="callout">
-        <strong>Final Analysis:</strong> The frequency array approach provides optimal performance 
-        for this problem, efficiently handling the maximum constraints through careful state 
-        management and modulo operations.
+      <strong>Final Analysis:</strong> The frequency array approach provides optimal performance
+      for this problem, efficiently handling the maximum constraints through careful state
+      management and modulo operations.
     </div>
-</main>
+  </main>
 
   <div id="footer"></div>
 
@@ -825,4 +831,5 @@ Explanation: After 1 transform: "babcl"</code></pre>
     });
   </script>
 </body>
+
 </html>

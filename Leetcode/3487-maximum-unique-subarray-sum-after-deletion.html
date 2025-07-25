@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeetCode 3487 | Maximum Unique Subarray Sum After Deletion</title>
-  <meta name="description" content="Optimal O(n) solution with distinct positives approach. Learn multiple methods to solve the maximum unique subarray sum problem after deletion." />
-  <meta name="keywords" content="LeetCode 3487, maximum unique subarray sum, array deletion, distinct positives, sliding window, algorithm optimization, leetcode premium problem, leetcode, leetcode problem of the day" />
+  <meta name="description"
+    content="Optimal O(n) solution with distinct positives approach. Learn multiple methods to solve the maximum unique subarray sum problem after deletion." />
+  <meta name="keywords"
+    content="LeetCode 3487, maximum unique subarray sum, array deletion, distinct positives, sliding window, algorithm optimization, leetcode premium problem, leetcode, leetcode problem of the day" />
   <meta name="author" content="Algopush" />
   <link rel="canonical" href="https://algopush.com/Leetcode/3487-maximum-unique-subarray-sum-after-deletion.html">
 
@@ -15,7 +18,8 @@
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 3487: Maximum Unique Subarray Sum After Deletion">
-  <meta property="og:description" content="Optimal O(n) solution with distinct positives approach. Learn multiple methods to solve this array deletion problem.">
+  <meta property="og:description"
+    content="Optimal O(n) solution with distinct positives approach. Learn multiple methods to solve this array deletion problem.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/3487.png">
   <meta property="og:url" content="https://algopush.com/Leetcode/3487-maximum-unique-subarray-sum-after-deletion.html">
   <meta property="og:type" content="article">
@@ -23,7 +27,8 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 3487: Maximum Unique Subarray Sum After Deletion">
-  <meta name="twitter:description" content="Solve array deletion problems with distinct positives technique. Code examples in C++, Java, and Python.">
+  <meta name="twitter:description"
+    content="Solve array deletion problems with distinct positives technique. Code examples in C++, Java, and Python.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3487.png">
 
   <!-- Structured Data for SEO -->
@@ -321,6 +326,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -446,7 +452,7 @@
       gap: 1rem;
       margin: 2rem 0;
     }
-    
+
     .visual-item {
       flex: 1;
       min-width: 300px;
@@ -455,7 +461,7 @@
       background: #f8f9fa;
       box-shadow: var(--box-shadow);
     }
-    
+
     .visual-item h4 {
       color: var(--secondary-color);
       margin-top: 0;
@@ -469,7 +475,7 @@
       gap: 1rem;
       margin: 1rem 0;
     }
-    
+
     .grid-item {
       padding: 1rem;
       text-align: center;
@@ -477,26 +483,34 @@
       border-radius: var(--border-radius);
       background: white;
     }
-    
+
     .grid-item.positive {
       background-color: #e8f8f5;
       border-color: #1abc9c;
     }
-    
+
     .grid-item.negative {
       background-color: #ffebee;
       border-color: #f44336;
     }
-    
+
     .grid-item.zero {
       background-color: #eaf2f8;
       border-color: #3498db;
     }
-    
+
     @keyframes pulse {
-      0% { background-color: #e6f7ff; }
-      50% { background-color: #b3e0ff; }
-      100% { background-color: #e6f7ff; }
+      0% {
+        background-color: #e6f7ff;
+      }
+
+      50% {
+        background-color: #b3e0ff;
+      }
+
+      100% {
+        background-color: #e6f7ff;
+      }
     }
 
     /* Responsive Design */
@@ -522,11 +536,11 @@
         display: block;
         overflow-x: auto;
       }
-      
+
       .visual-item {
         min-width: 100%;
       }
-      
+
       .grid-container {
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
       }
@@ -599,11 +613,13 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> When dealing with array deletion problems, always consider what elements are beneficial to keep. Positive numbers increase your sum, while duplicates and negatives typically reduce it.
+      <strong>Pro Tip:</strong> When dealing with array deletion problems, always consider what elements are beneficial
+      to keep. Positive numbers increase your sum, while duplicates and negatives typically reduce it.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>You're given an integer array <code>nums</code>. You can delete any number of elements (but not all). After deletion, select a contiguous subarray of the remaining elements where:</p>
+    <p>You're given an integer array <code>nums</code>. You can delete any number of elements (but not all). After
+      deletion, select a contiguous subarray of the remaining elements where:</p>
     <ol>
       <li>All elements in the subarray are unique</li>
       <li>The sum of elements is maximized</li>
@@ -615,16 +631,17 @@
         <h4>Example 1</h4>
         <p><strong>Input:</strong> nums = [1,2,3,4,5]</p>
         <p><strong>Output:</strong> 15</p>
-        <p><strong>Explanation:</strong> Keep the entire array (all elements are unique) and the sum is 1+2+3+4+5=15.</p>
+        <p><strong>Explanation:</strong> Keep the entire array (all elements are unique) and the sum is 1+2+3+4+5=15.
+        </p>
       </div>
-      
+
       <div class="visual-item">
         <h4>Example 2</h4>
         <p><strong>Input:</strong> nums = [1,1,0,1,1]</p>
         <p><strong>Output:</strong> 1</p>
         <p><strong>Explanation:</strong> Delete all but one 1. The subarray [1] has the maximum sum of 1.</p>
       </div>
-      
+
       <div class="visual-item">
         <h4>Example 3</h4>
         <p><strong>Input:</strong> nums = [1,2,-1,-2,1,0,-1]</p>
@@ -635,7 +652,8 @@
 
     <div class="callout note">
       <strong>Problem Link:</strong>
-      <a href="https://leetcode.com/problems/maximum-unique-subarray-sum-after-deletion/" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/problems/maximum-unique-subarray-sum-after-deletion/" target="_blank"
+        rel="noopener noreferrer">
         View on LeetCode ↗
       </a>
     </div>
@@ -643,14 +661,19 @@
     <hr />
 
     <h2>Key Insight</h2>
-    <p>The problem requires maximizing the sum of a contiguous subarray with unique elements after deletion. The key insights are:</p>
+    <p>The problem requires maximizing the sum of a contiguous subarray with unique elements after deletion. The key
+      insights are:</p>
     <ol>
-      <li><strong>Negative numbers reduce the sum</strong> - They never increase the maximum sum, so we should delete them</li>
-      <li><strong>Duplicates can't coexist</strong> - Only one instance of each number can be included in the subarray</li>
-      <li><strong>Positive distinct values are optimal</strong> - The maximum sum comes from including all distinct positive numbers</li>
-      <li><strong>Contiguous arrangement is possible</strong> - By deleting non-essential elements, we can make distinct positives contiguous</li>
+      <li><strong>Negative numbers reduce the sum</strong> - They never increase the maximum sum, so we should delete
+        them</li>
+      <li><strong>Duplicates can't coexist</strong> - Only one instance of each number can be included in the subarray
+      </li>
+      <li><strong>Positive distinct values are optimal</strong> - The maximum sum comes from including all distinct
+        positive numbers</li>
+      <li><strong>Contiguous arrangement is possible</strong> - By deleting non-essential elements, we can make distinct
+        positives contiguous</li>
     </ol>
-    
+
     <div class="grid-container">
       <div class="grid-item positive">10</div>
       <div class="grid-item negative">-5</div>
@@ -658,17 +681,20 @@
       <div class="grid-item negative">-3</div>
       <div class="grid-item positive">30</div>
     </div>
-    <p class="callout">After deleting negatives and duplicates, we can form a contiguous subarray [10,20,30] with sum 60</p>
-    
+    <p class="callout">After deleting negatives and duplicates, we can form a contiguous subarray [10,20,30] with sum 60
+    </p>
+
     <div class="callout warning">
-      <strong>Important:</strong> When there are no positive numbers, the solution is the maximum element (which will be negative or zero).
+      <strong>Important:</strong> When there are no positive numbers, the solution is the maximum element (which will be
+      negative or zero).
     </div>
 
     <hr />
 
     <h2>Approach 1: Distinct Positives (Optimal)</h2>
-    <p>The most efficient approach leverages the insight that the maximum sum comes from all distinct positive numbers:</p>
-    
+    <p>The most efficient approach leverages the insight that the maximum sum comes from all distinct positive numbers:
+    </p>
+
     <h3>Algorithm Steps</h3>
     <ol>
       <li>Create a set to store distinct positive numbers</li>
@@ -681,9 +707,12 @@
       <li>If the sum is positive, return it</li>
       <li>Otherwise, return the maximum element in the array</li>
     </ol>
-    
+
     <h3>Why This Works</h3>
-    <p>By deleting all negative numbers and duplicates, we can form a contiguous subarray containing all distinct positive numbers. Since positives increase the sum and duplicates/negatives reduce it, this approach guarantees maximum sum. For arrays with no positives, the best we can do is select the largest element (least negative or zero).</p>
+    <p>By deleting all negative numbers and duplicates, we can form a contiguous subarray containing all distinct
+      positive numbers. Since positives increase the sum and duplicates/negatives reduce it, this approach guarantees
+      maximum sum. For arrays with no positives, the best we can do is select the largest element (least negative or
+      zero).</p>
 
     <h3>Complexity Analysis</h3>
     <table>
@@ -802,15 +831,17 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This approach efficiently solves the problem in O(n) time and O(n) space. It handles all edge cases including all-negative arrays and arrays with zeros.
+        <strong>Implementation Note:</strong> This approach efficiently solves the problem in O(n) time and O(n) space.
+        It handles all edge cases including all-negative arrays and arrays with zeros.
       </div>
     </div>
 
     <hr />
 
     <h2>Approach 2: Brute Force (For Comparison)</h2>
-    <p>While not optimal, this approach helps understand the problem by checking all possible contiguous subarrays in the original array:</p>
-    
+    <p>While not optimal, this approach helps understand the problem by checking all possible contiguous subarrays in
+      the original array:</p>
+
     <h3>Algorithm Steps</h3>
     <ol>
       <li>Initialize <code>max_sum</code> to smallest integer</li>
@@ -829,9 +860,11 @@
       </li>
       <li>Return <code>max_sum</code></li>
     </ol>
-    
+
     <h3>Why This Is Limited</h3>
-    <p>This approach only considers contiguous segments in the <strong>original array</strong>. It doesn't account for non-contiguous segments that can be made contiguous after deletion. For example, in [10, -1, 20], it would find [10,-1,20] (sum 29) but miss [10,20] (sum 30).</p>
+    <p>This approach only considers contiguous segments in the <strong>original array</strong>. It doesn't account for
+      non-contiguous segments that can be made contiguous after deletion. For example, in [10, -1, 20], it would find
+      [10,-1,20] (sum 29) but miss [10,20] (sum 30).</p>
 
     <h3>Complexity Analysis</h3>
     <table>
@@ -956,7 +989,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Educational Value:</strong> This approach helps understand the problem constraints but is not optimal. The distinct positives method is preferred for efficiency.
+        <strong>Educational Value:</strong> This approach helps understand the problem constraints but is not optimal.
+        The distinct positives method is preferred for efficiency.
       </div>
     </div>
 
@@ -989,7 +1023,8 @@ Output: 0
 Explanation: No positives, maximum element is 0</code></pre>
 
     <div class="callout danger">
-      <strong>Warning:</strong> Always initialize max_element to the smallest possible integer to handle negative arrays correctly.
+      <strong>Warning:</strong> Always initialize max_element to the smallest possible integer to handle negative arrays
+      correctly.
     </div>
 
     <hr />
@@ -999,75 +1034,88 @@ Explanation: No positives, maximum element is 0</code></pre>
     <div class="faq-section">
       <details>
         <summary>1. Why can we include all distinct positive numbers?</summary>
-        <p>After deleting negatives and duplicates, we can arrange distinct positives in a contiguous subarray by preserving their relative order. Since positives only increase the sum, this gives the maximum possible sum.</p>
+        <p>After deleting negatives and duplicates, we can arrange distinct positives in a contiguous subarray by
+          preserving their relative order. Since positives only increase the sum, this gives the maximum possible sum.
+        </p>
       </details>
 
       <details>
         <summary>2. Why not include negative numbers?</summary>
-        <p>Negative numbers reduce the sum. Even if they're unique, including them decreases the total, so we should always delete them to maximize the sum.</p>
+        <p>Negative numbers reduce the sum. Even if they're unique, including them decreases the total, so we should
+          always delete them to maximize the sum.</p>
       </details>
 
       <details>
         <summary>3. How do we handle arrays with no positive numbers?</summary>
-        <p>When there are no positives, we return the maximum element in the array. This will be the least negative number or zero, which is the best possible subarray sum in this case.</p>
+        <p>When there are no positives, we return the maximum element in the array. This will be the least negative
+          number or zero, which is the best possible subarray sum in this case.</p>
       </details>
 
       <details>
         <summary>4. Why is the distinct positives approach O(n)?</summary>
-        <p>We traverse the array once to collect distinct positives and find the maximum element. The set operations (insert and check) are O(1) on average, making the overall complexity O(n).</p>
+        <p>We traverse the array once to collect distinct positives and find the maximum element. The set operations
+          (insert and check) are O(1) on average, making the overall complexity O(n).</p>
       </details>
 
       <details>
         <summary>5. Can zeros be included in the subarray?</summary>
-        <p>Zeros don't increase the sum, but they don't decrease it either. However, they're not positive so they're excluded. But in all-negative arrays, zero would be selected if present since it's greater than negatives.</p>
+        <p>Zeros don't increase the sum, but they don't decrease it either. However, they're not positive so they're
+          excluded. But in all-negative arrays, zero would be selected if present since it's greater than negatives.</p>
       </details>
 
       <details>
         <summary>6. Why doesn't the brute force approach work for non-contiguous segments?</summary>
-        <p>The brute force only checks contiguous segments in the original array. After deletion, we can form contiguous segments from non-adjacent elements, which requires a different approach.</p>
+        <p>The brute force only checks contiguous segments in the original array. After deletion, we can form contiguous
+          segments from non-adjacent elements, which requires a different approach.</p>
       </details>
 
       <details>
         <summary>7. How large can the input array be?</summary>
-        <p>According to constraints, the array length is at most 100, so even O(n²) solutions are acceptable. But O(n) is more efficient.</p>
+        <p>According to constraints, the array length is at most 100, so even O(n²) solutions are acceptable. But O(n)
+          is more efficient.</p>
       </details>
 
       <details>
         <summary>8. What if the array has both positive and negative numbers?</summary>
-        <p>We only keep distinct positive numbers. Negatives are deleted as they reduce the sum. For example, in [5, -2, 3], we delete -2 and keep [5,3] with sum 8.</p>
+        <p>We only keep distinct positive numbers. Negatives are deleted as they reduce the sum. For example, in [5, -2,
+          3], we delete -2 and keep [5,3] with sum 8.</p>
       </details>
 
       <details>
         <summary>9. How does deletion affect the contiguous subarray?</summary>
-        <p>Deletion removes unwanted elements, allowing us to form a contiguous subarray from non-adjacent elements in the original array. The relative order of kept elements is preserved.</p>
+        <p>Deletion removes unwanted elements, allowing us to form a contiguous subarray from non-adjacent elements in
+          the original array. The relative order of kept elements is preserved.</p>
       </details>
 
       <details>
         <summary>10. Is the distinct positives approach always optimal?</summary>
-        <p>Yes, because including any negative would reduce the sum, and duplicates can't be included due to the uniqueness constraint. Thus, the sum of distinct positives is always maximal.</p>
+        <p>Yes, because including any negative would reduce the sum, and duplicates can't be included due to the
+          uniqueness constraint. Thus, the sum of distinct positives is always maximal.</p>
       </details>
     </div>
 
     <div class="callout">
-      <strong>Final Insight:</strong> This problem demonstrates the power of logical deduction in algorithm design. By analyzing what elements benefit the sum and leveraging the flexibility of deletion, we arrive at an elegant O(n) solution that outperforms brute force methods.
+      <strong>Final Insight:</strong> This problem demonstrates the power of logical deduction in algorithm design. By
+      analyzing what elements benefit the sum and leveraging the flexibility of deletion, we arrive at an elegant O(n)
+      solution that outperforms brute force methods.
     </div>
   </main>
 
   <div id="footer"></div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Tab functionality
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Initialize first tab
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
@@ -1078,7 +1126,7 @@ Explanation: No positives, maximum element is 0</code></pre>
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -1107,4 +1155,5 @@ Explanation: No positives, maximum element is 0</code></pre>
     });
   </script>
 </body>
+
 </html>

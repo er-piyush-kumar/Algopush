@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeetCode 3619 | Count Islands With Total Value Divisible by K</title>
-  <meta name="description" content="Complete solutions for LeetCode 3619: Learn efficient island counting techniques using DFS, BFS, and iterative methods with detailed implementations." />
-  <meta name="keywords" content="leetcode, leetcode 3619, count islands, matrix traversal, DFS, BFS, flood fill, grid problems, leetcode premium problem, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, leetcode array question, leetcode contest question, leetcode contest, leetcoide dfs questions, leetcode bfs question, leetcode grid question" />
+  <meta name="description"
+    content="Complete solutions for LeetCode 3619: Learn efficient island counting techniques using DFS, BFS, and iterative methods with detailed implementations." />
+  <meta name="keywords"
+    content="leetcode, leetcode 3619, count islands, matrix traversal, DFS, BFS, flood fill, grid problems, leetcode premium problem, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, leetcode array question, leetcode contest question, leetcode contest, leetcoide dfs questions, leetcode bfs question, leetcode grid question" />
   <meta name="author" content="Algopush" />
   <link rel="canonical" href="https://algopush.com/Leetcode/3619-count-islands-with-total-value-divisible-by-k.html">
 
@@ -15,15 +18,18 @@
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 3619: Count Islands With Total Value Divisible by K">
-  <meta property="og:description" content="Optimal solutions with O(mn) time complexity. Complete guide with DFS, BFS, and iterative approaches.">
+  <meta property="og:description"
+    content="Optimal solutions with O(mn) time complexity. Complete guide with DFS, BFS, and iterative approaches.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/3619.png">
-  <meta property="og:url" content="https://algopush.com/Leetcode/3619-count-islands-with-total-value-divisible-by-k.html">
+  <meta property="og:url"
+    content="https://algopush.com/Leetcode/3619-count-islands-with-total-value-divisible-by-k.html">
   <meta property="og:type" content="article">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 3619: Count Islands With Total Value Divisible by K">
-  <meta name="twitter:description" content="Solve island counting problems with flood fill algorithms. Code examples in C++, Java, and Python.">
+  <meta name="twitter:description"
+    content="Solve island counting problems with flood fill algorithms. Code examples in C++, Java, and Python.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3619.png">
 
   <!-- Structured Data for SEO -->
@@ -103,12 +109,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -319,6 +327,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -444,7 +453,7 @@
       gap: 1rem;
       margin: 2rem 0;
     }
-    
+
     .visual-item {
       flex: 1;
       min-width: 300px;
@@ -453,7 +462,7 @@
       background: #f8f9fa;
       box-shadow: var(--box-shadow);
     }
-    
+
     .visual-item h4 {
       color: var(--secondary-color);
       margin-top: 0;
@@ -461,11 +470,19 @@
       padding-bottom: 0.5rem;
     }
 
-    
+
     @keyframes pulse {
-      0% { background-color: #e6f7ff; }
-      50% { background-color: #b3e0ff; }
-      100% { background-color: #e6f7ff; }
+      0% {
+        background-color: #e6f7ff;
+      }
+
+      50% {
+        background-color: #b3e0ff;
+      }
+
+      100% {
+        background-color: #e6f7ff;
+      }
     }
 
     /* Responsive Design */
@@ -491,7 +508,7 @@
         display: block;
         overflow-x: auto;
       }
-      
+
       .visual-item {
         min-width: 100%;
       }
@@ -528,7 +545,7 @@
       .code-copy {
         margin-top: 0.5rem;
       }
-      
+
       .grid-container {
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
       }
@@ -564,21 +581,24 @@
     </div>
 
     <div class="problem-visual">
-      <img src="https://algopush.com/Leetcode/Images/3619.png" alt="Count Islands With Total Value Divisible by K visualization" loading="lazy">
+      <img src="https://algopush.com/Leetcode/Images/3619.png"
+        alt="Count Islands With Total Value Divisible by K visualization" loading="lazy">
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> For grid problems with connectivity, always consider using DFS, BFS, or Union-Find. DFS is simpler for small grids, but BFS is safer for large grids to avoid stack overflow.
+      <strong>Pro Tip:</strong> For grid problems with connectivity, always consider using DFS, BFS, or Union-Find. DFS
+      is simpler for small grids, but BFS is safer for large grids to avoid stack overflow.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>Given an m x n matrix <code>grid</code> and a positive integer <code>k</code>, count the number of islands where:</p>
+    <p>Given an m x n matrix <code>grid</code> and a positive integer <code>k</code>, count the number of islands where:
+    </p>
     <ol>
       <li>An island is a group of positive integers (land) connected 4-directionally (up, down, left, right)</li>
       <li>The total value of an island is the sum of all its land cells</li>
       <li>The island count is incremented when total_value % k == 0</li>
     </ol>
-    
+
     <div class="visual-container">
       <div class="visual-item">
         <h4>Example 1</h4>
@@ -590,7 +610,8 @@
 
     <div class="callout note">
       <strong>Problem Link:</strong>
-      <a href="https://leetcode.com/problems/count-islands-with-total-value-divisible-by-k/" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/problems/count-islands-with-total-value-divisible-by-k/" target="_blank"
+        rel="noopener noreferrer">
         View on LeetCode ↗
       </a>
     </div>
@@ -604,7 +625,7 @@
       <li>Calculating the sum of values for each island</li>
       <li>Counting islands where the sum is divisible by k</li>
     </ol>
-    
+
     <div class="callout warning">
       <strong>Note:</strong> Water cells (0) are not part of any island and should be skipped during traversal.
     </div>
@@ -766,7 +787,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> DFS is concise but may cause stack overflow for large grids. Use iterative DFS or BFS for production systems.
+        <strong>Implementation Note:</strong> DFS is concise but may cause stack overflow for large grids. Use iterative
+        DFS or BFS for production systems.
       </div>
     </div>
 
@@ -940,7 +962,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> BFS is iterative and avoids recursion depth issues, making it suitable for large grids (m*n ≤ 10^5).
+        <strong>Implementation Note:</strong> BFS is iterative and avoids recursion depth issues, making it suitable for
+        large grids (m*n ≤ 10^5).
       </div>
     </div>
 
@@ -1111,7 +1134,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> Iterative DFS gives DFS-like traversal with BFS-like memory characteristics, avoiding recursion limits.
+        <strong>Implementation Note:</strong> Iterative DFS gives DFS-like traversal with BFS-like memory
+        characteristics, avoiding recursion limits.
       </div>
     </div>
 
@@ -1150,7 +1174,8 @@
     </table>
 
     <div class="callout warning">
-      <strong>Important:</strong> For production systems, always prefer BFS or iterative DFS to avoid stack overflow exceptions.
+      <strong>Important:</strong> For production systems, always prefer BFS or iterative DFS to avoid stack overflow
+      exceptions.
     </div>
 
     <hr />
@@ -1169,7 +1194,8 @@
     <pre><code>Input: [[1000000]], k = 1000000 → Output: 1</code></pre>
 
     <div class="callout danger">
-      <strong>Warning:</strong> Always use long for sum calculations to prevent integer overflow with large values (up to 10^6 per cell).
+      <strong>Warning:</strong> Always use long for sum calculations to prevent integer overflow with large values (up
+      to 10^6 per cell).
     </div>
 
     <hr />
@@ -1179,42 +1205,50 @@
     <div class="faq-section">
       <details>
         <summary>1. What defines an "island" in this problem?</summary>
-        <p>An island is a group of positive integers (values > 0) connected 4-directionally (up, down, left, right). Water cells (0) are not part of any island.</p>
+        <p>An island is a group of positive integers (values > 0) connected 4-directionally (up, down, left, right).
+          Water cells (0) are not part of any island.</p>
       </details>
 
       <details>
         <summary>2. Why use visited matrix instead of modifying grid?</summary>
-        <p>Modifying the grid might be acceptable in some cases, but using a visited matrix preserves input data and is cleaner for production code.</p>
+        <p>Modifying the grid might be acceptable in some cases, but using a visited matrix preserves input data and is
+          cleaner for production code.</p>
       </details>
 
       <details>
         <summary>3. How to handle large sums that might overflow?</summary>
-        <p>Use long (64-bit integer) for sum calculations since maximum sum could be 10^5 cells * 10^6 value = 10^11, which fits in long but not in 32-bit int.</p>
+        <p>Use long (64-bit integer) for sum calculations since maximum sum could be 10^5 cells * 10^6 value = 10^11,
+          which fits in long but not in 32-bit int.</p>
       </details>
 
       <details>
         <summary>4. Can we use Union-Find for this problem?</summary>
-        <p>Union-Find is possible but less efficient for this scenario since we need to compute the sum for each island. DFS/BFS are more straightforward.</p>
+        <p>Union-Find is possible but less efficient for this scenario since we need to compute the sum for each island.
+          DFS/BFS are more straightforward.</p>
       </details>
 
       <details>
         <summary>5. Why are we using 4-directional instead of 8-directional?</summary>
-        <p>The problem specifies 4-directional connectivity (horizontal and vertical). Diagonal connections are not considered.</p>
+        <p>The problem specifies 4-directional connectivity (horizontal and vertical). Diagonal connections are not
+          considered.</p>
       </details>
 
       <details>
         <summary>6. How does BFS avoid stack overflow?</summary>
-        <p>BFS uses a queue and iterative processing, avoiding deep recursion stacks that can cause overflow in large grids.</p>
+        <p>BFS uses a queue and iterative processing, avoiding deep recursion stacks that can cause overflow in large
+          grids.</p>
       </details>
 
       <details>
         <summary>7. What is the maximum grid size we can handle?</summary>
-        <p>With O(mn) space complexity, we can handle grids up to 10^5 cells (as per constraints). For larger grids, we'd need more optimized approaches.</p>
+        <p>With O(mn) space complexity, we can handle grids up to 10^5 cells (as per constraints). For larger grids,
+          we'd need more optimized approaches.</p>
       </details>
 
       <details>
         <summary>8. Can we optimize the space further?</summary>
-        <p>We could modify the grid to mark visited cells (e.g., set to 0 or negative), reducing space to O(1), but this alters input data.</p>
+        <p>We could modify the grid to mark visited cells (e.g., set to 0 or negative), reducing space to O(1), but this
+          alters input data.</p>
       </details>
 
       <details>
@@ -1224,30 +1258,32 @@
 
       <details>
         <summary>10. Why use directions array?</summary>
-        <p>Using a directions array makes code cleaner and easier to modify if 8-directional movement is needed later.</p>
+        <p>Using a directions array makes code cleaner and easier to modify if 8-directional movement is needed later.
+        </p>
       </details>
     </div>
 
     <div class="callout">
-      <strong>Final Insight:</strong> This problem combines grid traversal with mathematical checks. Understanding flood fill algorithms is crucial for solving similar matrix connectivity problems efficiently.
+      <strong>Final Insight:</strong> This problem combines grid traversal with mathematical checks. Understanding flood
+      fill algorithms is crucial for solving similar matrix connectivity problems efficiently.
     </div>
   </main>
 
   <div id="footer"></div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Tab functionality
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Initialize first tab
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
@@ -1258,7 +1294,7 @@
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -1286,4 +1322,5 @@
     });
   </script>
 </body>
+
 </html>

@@ -5,8 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeetCode 3536 | Maximum Product of Two Digits</title>
-  <meta name="description" content="Solve the Maximum Product of Two Digits problem using digit extraction and sorting. Complete solutions in C++, Java, and Python." />
-  <meta name="keywords" content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 3536, Maximum Product of Two Digits, digit manipulation, sorting algorithm, coding interview preparation, C++ Java Python solutions" />
+  <meta name="description"
+    content="Solve the Maximum Product of Two Digits problem using digit extraction and sorting. Complete solutions in C++, Java, and Python." />
+  <meta name="keywords"
+    content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 3536, Maximum Product of Two Digits, digit manipulation, sorting algorithm, coding interview preparation, C++ Java Python solutions" />
   <meta name="author" content="Algopush" />
   <link rel="canonical" href="https://algopush.com/Leetcode/3536-maximum-product-of-two-digits.html">
   <!-- Favicon -->
@@ -15,7 +17,8 @@
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 3536: Maximum Product of Two Digits">
-  <meta property="og:description" content="Complete guide to solving the Maximum Product of Two Digits problem using digit extraction and sorting.">
+  <meta property="og:description"
+    content="Complete guide to solving the Maximum Product of Two Digits problem using digit extraction and sorting.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/3536.png">
   <meta property="og:url" content="https://algopush.com/Leetcode/3536-maximum-product-of-two-digits.html">
   <meta property="og:type" content="article">
@@ -23,7 +26,8 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 3536: Maximum Product of Two Digits">
-  <meta name="twitter:description" content="Optimal solution using digit manipulation and sorting. Code examples in C++, Java, and Python.">
+  <meta name="twitter:description"
+    content="Optimal solution using digit manipulation and sorting. Code examples in C++, Java, and Python.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3536.png">
 
   <!-- Structured Data for SEO -->
@@ -103,12 +107,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -315,6 +321,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -504,7 +511,8 @@
     </div>
 
     <div class="problem-visual">
-      <img src="https://algopush.com/Leetcode/Images/3536.png" alt="Maximum Product of Two Digits visualization" loading="lazy">
+      <img src="https://algopush.com/Leetcode/Images/3536.png" alt="Maximum Product of Two Digits visualization"
+        loading="lazy">
     </div>
 
     <h1>3536: Maximum Product of Two Digits</h1>
@@ -525,11 +533,13 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> This problem can be solved optimally in O(d log d) time where d is the number of digits. Focus on efficient digit extraction and sorting.
+      <strong>Pro Tip:</strong> This problem can be solved optimally in O(d log d) time where d is the number of digits.
+      Focus on efficient digit extraction and sorting.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>Given a positive integer <code>n</code>, return the maximum product of any two digits in <code>n</code>. You may use the same digit twice if it appears more than once.</p>
+    <p>Given a positive integer <code>n</code>, return the maximum product of any two digits in <code>n</code>. You may
+      use the same digit twice if it appears more than once.</p>
 
     <h3>Example 1</h3>
     <pre><code>Input: n = 31
@@ -640,7 +650,8 @@ Explanation: Possible product is 2 × 4 = 8</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> Sorting digits in descending order allows us to directly access the two largest digits for maximum product calculation.
+        <strong>Implementation Note:</strong> Sorting digits in descending order allows us to directly access the two
+        largest digits for maximum product calculation.
       </div>
     </div>
 
@@ -662,7 +673,8 @@ Explanation: Possible product is 2 × 4 = 8</code></pre>
 <b>Explanation:</b> 9 × 9 = 81</code></pre>
 
     <div class="callout warning">
-      <strong>Important:</strong> Always verify your solution handles minimum digit count (2 digits) and zero values properly.
+      <strong>Important:</strong> Always verify your solution handles minimum digit count (2 digits) and zero values
+      properly.
     </div>
 
     <hr />
@@ -672,32 +684,39 @@ Explanation: Possible product is 2 × 4 = 8</code></pre>
     <div class="faq-section">
       <details>
         <summary>1. Why does sorting work for this problem?</summary>
-        <p>The two largest digits will always produce the maximum product when multiplied together. Sorting helps efficiently identify these digits.</p>
+        <p>The two largest digits will always produce the maximum product when multiplied together. Sorting helps
+          efficiently identify these digits.</p>
       </details>
 
       <details>
         <summary>2. How does this handle duplicate digits?</summary>
-        <p>Sorting naturally groups duplicates. If a digit appears multiple times, the sorted array will have consecutive entries which are correctly considered.</p>
+        <p>Sorting naturally groups duplicates. If a digit appears multiple times, the sorted array will have
+          consecutive entries which are correctly considered.</p>
       </details>
 
       <details>
         <summary>3. What's the space complexity?</summary>
-        <p>O(d) where d is number of digits, needed to store the digit array. This is efficient for numbers up to 10<sup>18</sup> (18 digits).</p>
+        <p>O(d) where d is number of digits, needed to store the digit array. This is efficient for numbers up to
+          10<sup>18</sup> (18 digits).</p>
       </details>
 
       <details>
         <summary>4. Can we optimize further?</summary>
-        <p>We can find the top two digits in O(d) time without full sorting, but for practical purposes (d ≤ 10), sorting is optimal.</p>
+        <p>We can find the top two digits in O(d) time without full sorting, but for practical purposes (d ≤ 10),
+          sorting is optimal.</p>
       </details>
 
       <details>
         <summary>5. How to handle invalid inputs?</summary>
-        <p>The problem constraints guarantee valid positive integers. Code includes a check for minimum digit count as safety measure.</p>
+        <p>The problem constraints guarantee valid positive integers. Code includes a check for minimum digit count as
+          safety measure.</p>
       </details>
     </div>
 
     <div class="callout">
-      <strong>Final Thoughts:</strong> This problem demonstrates how basic digit manipulation combined with sorting can create an elegant O(d log d) solution. Always consider edge cases with zeros and single-digit inputs during implementation.
+      <strong>Final Thoughts:</strong> This problem demonstrates how basic digit manipulation combined with sorting can
+      create an elegant O(d log d) solution. Always consider edge cases with zeros and single-digit inputs during
+      implementation.
     </div>
   </main>
 
@@ -705,34 +724,34 @@ Explanation: Possible product is 2 × 4 = 8</code></pre>
 
   <script>
     // Tab functionality with improved mobile support
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Initialize tabs
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Set first tab as active by default if none are active
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         // Add click handlers
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
-            
+
             // Update active tab button
             tabButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            
+
             // Update active tab content
             tabContents.forEach(content => content.classList.remove('active'));
             container.querySelector(`#${tabName}-tab`).classList.add('active');
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -745,7 +764,7 @@ Explanation: Possible product is 2 × 4 = 8</code></pre>
           });
         });
       });
-      
+
       // FAQ highlight when opened
       document.querySelectorAll('.faq-section details').forEach(detail => {
         detail.addEventListener('toggle', () => {
@@ -754,7 +773,7 @@ Explanation: Possible product is 2 × 4 = 8</code></pre>
           }
         });
       });
-      
+
       // Load header and footer
       fetch("../components/header.html")
         .then((response) => response.text())

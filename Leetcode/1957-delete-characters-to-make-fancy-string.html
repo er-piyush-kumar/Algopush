@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeetCode 1957 | Delete Characters to Make Fancy String</title>
-  <meta name="description" content="Learn the optimal solution for LeetCode 1957: Delete minimum characters to prevent three consecutive identical characters. Code Implementations included." />
-  <meta name="keywords" content="leetcode, leetcode 1957, fancy string, string manipulation, consecutive characters, algorithm, coding interview, string processing, leetcode easy problem, programming solution, algorithm optimization, , leetcode premium problem, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, leetcode array question, leetcode contest question, leetcode contest" />
+  <meta name="description"
+    content="Learn the optimal solution for LeetCode 1957: Delete minimum characters to prevent three consecutive identical characters. Code Implementations included." />
+  <meta name="keywords"
+    content="leetcode, leetcode 1957, fancy string, string manipulation, consecutive characters, algorithm, coding interview, string processing, leetcode easy problem, programming solution, algorithm optimization, , leetcode premium problem, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, leetcode array question, leetcode contest question, leetcode contest" />
   <meta name="author" content="Algopush" />
   <link rel="canonical" href="https://algopush.com/Leetcode/1957-delete-characters-to-make-fancy-string.html">
 
@@ -15,7 +18,8 @@
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 1957: Delete Characters to Make Fancy String">
-  <meta property="og:description" content="Optimal O(n) solution to remove minimum characters preventing three consecutive identical characters. Complete guide with implementations.">
+  <meta property="og:description"
+    content="Optimal O(n) solution to remove minimum characters preventing three consecutive identical characters. Complete guide with implementations.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/1957.png">
   <meta property="og:url" content="https://algopush.com/Leetcode/1957-delete-characters-to-make-fancy-string.html">
   <meta property="og:type" content="article">
@@ -23,7 +27,8 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 1957: Delete Characters to Make Fancy String">
-  <meta name="twitter:description" content="Efficient solution to create fancy strings by removing minimum characters. Code examples in C++, Java, and Python.">
+  <meta name="twitter:description"
+    content="Efficient solution to create fancy strings by removing minimum characters. Code examples in C++, Java, and Python.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/1957.png">
 
   <!-- Structured Data for SEO -->
@@ -103,12 +108,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -319,6 +326,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -444,7 +452,7 @@
       gap: 1rem;
       margin: 2rem 0;
     }
-    
+
     .visual-item {
       flex: 1;
       min-width: 300px;
@@ -453,7 +461,7 @@
       background: #f8f9fa;
       box-shadow: var(--box-shadow);
     }
-    
+
     .visual-item h4 {
       color: var(--secondary-color);
       margin-top: 0;
@@ -461,11 +469,19 @@
       padding-bottom: 0.5rem;
     }
 
-    
+
     @keyframes pulse {
-      0% { background-color: #e6f7ff; }
-      50% { background-color: #b3e0ff; }
-      100% { background-color: #e6f7ff; }
+      0% {
+        background-color: #e6f7ff;
+      }
+
+      50% {
+        background-color: #b3e0ff;
+      }
+
+      100% {
+        background-color: #e6f7ff;
+      }
     }
 
     /* Responsive Design */
@@ -491,7 +507,7 @@
         display: block;
         overflow-x: auto;
       }
-      
+
       .visual-item {
         min-width: 100%;
       }
@@ -528,7 +544,7 @@
       .code-copy {
         margin-top: 0.5rem;
       }
-      
+
       .grid-container {
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
       }
@@ -548,7 +564,8 @@
     </div>
 
     <div class="problem-visual">
-      <img src="https://algopush.com/Leetcode/Images/1957.png" alt="Fancy string transformation visualization" loading="lazy">
+      <img src="https://algopush.com/Leetcode/Images/1957.png" alt="Fancy string transformation visualization"
+        loading="lazy">
     </div>
 
     <h1>1957: Delete Characters to Make Fancy String</h1>
@@ -569,12 +586,15 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> For string modification problems, always consider using a two-pointer approach or building a new string through iteration to avoid O(n²) complexity.
+      <strong>Pro Tip:</strong> For string modification problems, always consider using a two-pointer approach or
+      building a new string through iteration to avoid O(n²) complexity.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>A fancy string is defined as a string where no three consecutive characters are identical. Given a string <code>s</code>, your task is to delete the minimum number of characters to make it fancy. Return the final string after deletion. The answer is guaranteed to be unique.</p>
-    
+    <p>A fancy string is defined as a string where no three consecutive characters are identical. Given a string
+      <code>s</code>, your task is to delete the minimum number of characters to make it fancy. Return the final string
+      after deletion. The answer is guaranteed to be unique.</p>
+
     <div class="visual-container">
       <div class="visual-item">
         <h4>Example 1</h4>
@@ -582,7 +602,7 @@
         <p><strong>Output:</strong> "leetcode"</p>
         <p><strong>Explanation:</strong> Remove one 'e' from the first group of three 'e's</p>
       </div>
-      
+
       <div class="visual-item">
         <h4>Example 2</h4>
         <p><strong>Input:</strong> s = "aaabaaaa"</p>
@@ -593,7 +613,8 @@
 
     <div class="callout note">
       <strong>Problem Link:</strong>
-      <a href="https://leetcode.com/problems/delete-characters-to-make-fancy-string/" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/problems/delete-characters-to-make-fancy-string/" target="_blank"
+        rel="noopener noreferrer">
         View on LeetCode ↗
       </a>
     </div>
@@ -601,15 +622,17 @@
     <hr />
 
     <h2>Key Insight</h2>
-    <p>The problem requires removing the minimum characters to ensure no three identical characters appear consecutively. The optimal solution is to:</p>
+    <p>The problem requires removing the minimum characters to ensure no three identical characters appear
+      consecutively. The optimal solution is to:</p>
     <ol>
       <li>Traverse the string while building the result</li>
       <li>Keep at most two consecutive identical characters</li>
       <li>Skip any character that would form a third consecutive identical character</li>
     </ol>
-    
+
     <div class="callout warning">
-      <strong>Important:</strong> The solution must be efficient for strings up to 10<sup>5</sup> characters and preserve the original character order.
+      <strong>Important:</strong> The solution must be efficient for strings up to 10<sup>5</sup> characters and
+      preserve the original character order.
     </div>
 
     <hr />
@@ -709,7 +732,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This approach efficiently builds the result by checking only the last two characters, maintaining optimal O(n) performance.
+        <strong>Implementation Note:</strong> This approach efficiently builds the result by checking only the last two
+        characters, maintaining optimal O(n) performance.
       </div>
     </div>
 
@@ -821,7 +845,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This approach modifies the string in-place, reducing space complexity to O(1) extra space (excluding input storage).
+        <strong>Implementation Note:</strong> This approach modifies the string in-place, reducing space complexity to
+        O(1) extra space (excluding input storage).
       </div>
     </div>
 
@@ -829,101 +854,108 @@
 
     <h2>Edge Cases and Testing</h2>
     <h3>1. Short Strings (Length < 3)</h3>
-    <pre><code>Input: "a" → Output: "a"
+        <pre><code>Input: "a" → Output: "a"
 Input: "aa" → Output: "aa"</code></pre>
 
-    <h3>2. No Consecutive Triplets</h3>
-    <pre><code>Input: "abc" → Output: "abc"</code></pre>
+        <h3>2. No Consecutive Triplets</h3>
+        <pre><code>Input: "abc" → Output: "abc"</code></pre>
 
-    <h3>3. Multiple Consecutive Groups</h3>
-    <pre><code>Input: "aaaabbbcccddd" → Output: "aabbccdd"</code></pre>
+        <h3>3. Multiple Consecutive Groups</h3>
+        <pre><code>Input: "aaaabbbcccddd" → Output: "aabbccdd"</code></pre>
 
-    <h3>4. All Identical Characters</h3>
-    <pre><code>Input: "aaaaa" → Output: "aa"</code></pre>
+        <h3>4. All Identical Characters</h3>
+        <pre><code>Input: "aaaaa" → Output: "aa"</code></pre>
 
-    <h3>5. Mixed Characters</h3>
-    <pre><code>Input: "aabbccddeee" → Output: "aabbccddee"</code></pre>
+        <h3>5. Mixed Characters</h3>
+        <pre><code>Input: "aabbccddeee" → Output: "aabbccddee"</code></pre>
 
-    <div class="callout danger">
-      <strong>Warning:</strong> Always test with maximum length input (10<sup>5</sup> characters) to ensure O(n) performance.
-    </div>
+        <div class="callout danger">
+          <strong>Warning:</strong> Always test with maximum length input (10<sup>5</sup> characters) to ensure O(n)
+          performance.
+        </div>
 
-    <hr />
+        <hr />
 
-    <h2>Frequently Asked Questions</h2>
+        <h2>Frequently Asked Questions</h2>
 
-    <div class="faq-section">
-      <details>
-        <summary>1. Why is the result guaranteed to be unique?</summary>
-        <p>Because we always keep the first two characters in any consecutive sequence and remove subsequent duplicates, maintaining the original order.</p>
-      </details>
+        <div class="faq-section">
+          <details>
+            <summary>1. Why is the result guaranteed to be unique?</summary>
+            <p>Because we always keep the first two characters in any consecutive sequence and remove subsequent
+              duplicates, maintaining the original order.</p>
+          </details>
 
-      <details>
-        <summary>2. Can this be solved with regular expressions?</summary>
-        <p>Yes, but regex would be inefficient for large inputs: <code>re.sub(r'(.)\1{2,}', r'\1\1', s)</code>. Not suitable for n=10<sup>5</sup>.</p>
-      </details>
+          <details>
+            <summary>2. Can this be solved with regular expressions?</summary>
+            <p>Yes, but regex would be inefficient for large inputs: <code>re.sub(r'(.)\1{2,}', r'\1\1', s)</code>. Not
+              suitable for n=10<sup>5</sup>.</p>
+          </details>
 
-      <details>
-        <summary>3. How does the two-pointer method save space?</summary>
-        <p>It modifies the input character array in-place, using only O(1) extra space for pointers and counters.</p>
-      </details>
+          <details>
+            <summary>3. How does the two-pointer method save space?</summary>
+            <p>It modifies the input character array in-place, using only O(1) extra space for pointers and counters.
+            </p>
+          </details>
 
-      <details>
-        <summary>4. What if the string has Unicode characters?</summary>
-        <p>The algorithm works the same since it compares characters directly. Only storage would be affected.</p>
-      </details>
+          <details>
+            <summary>4. What if the string has Unicode characters?</summary>
+            <p>The algorithm works the same since it compares characters directly. Only storage would be affected.</p>
+          </details>
 
-      <details>
-        <summary>5. Why not use a stack?</summary>
-        <p>A stack would work but would use O(n) space without advantages over the simpler iterative approaches.</p>
-      </details>
+          <details>
+            <summary>5. Why not use a stack?</summary>
+            <p>A stack would work but would use O(n) space without advantages over the simpler iterative approaches.</p>
+          </details>
 
-      <details>
-        <summary>6. Can we achieve O(1) space without modifying input?</summary>
-        <p>No, since strings are immutable in some languages. The two-pointer approach requires character array conversion.</p>
-      </details>
+          <details>
+            <summary>6. Can we achieve O(1) space without modifying input?</summary>
+            <p>No, since strings are immutable in some languages. The two-pointer approach requires character array
+              conversion.</p>
+          </details>
 
-      <details>
-        <summary>7. How to handle empty strings?</summary>
-        <p>The constraint ensures n ≥ 1, so no special handling is needed.</p>
-      </details>
+          <details>
+            <summary>7. How to handle empty strings?</summary>
+            <p>The constraint ensures n ≥ 1, so no special handling is needed.</p>
+          </details>
 
-      <details>
-        <summary>8. Is there a recursive solution?</summary>
-        <p>Possible but impractical for large n due to stack overflow and O(n) space complexity.</p>
-      </details>
+          <details>
+            <summary>8. Is there a recursive solution?</summary>
+            <p>Possible but impractical for large n due to stack overflow and O(n) space complexity.</p>
+          </details>
 
-      <details>
-        <summary>9. How to extend this to k consecutive characters?</summary>
-        <p>Change the constant 3 to k and adjust conditionals accordingly.</p>
-      </details>
+          <details>
+            <summary>9. How to extend this to k consecutive characters?</summary>
+            <p>Change the constant 3 to k and adjust conditionals accordingly.</p>
+          </details>
 
-      <details>
-        <summary>10. Why is this problem categorized as easy?</summary>
-        <p>Because the optimal solution requires only a single pass with simple condition checks.</p>
-      </details>
-    </div>
+          <details>
+            <summary>10. Why is this problem categorized as easy?</summary>
+            <p>Because the optimal solution requires only a single pass with simple condition checks.</p>
+          </details>
+        </div>
 
-    <div class="callout">
-      <strong>Final Insight:</strong> This problem demonstrates how careful iteration with state tracking can efficiently solve string modification tasks. The two-pointer approach optimizes space while maintaining clarity.
-    </div>
+        <div class="callout">
+          <strong>Final Insight:</strong> This problem demonstrates how careful iteration with state tracking can
+          efficiently solve string modification tasks. The two-pointer approach optimizes space while maintaining
+          clarity.
+        </div>
   </main>
 
   <div id="footer"></div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Tab functionality
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Initialize first tab
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
@@ -934,7 +966,7 @@ Input: "aa" → Output: "aa"</code></pre>
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -962,4 +994,5 @@ Input: "aa" → Output: "aa"</code></pre>
     });
   </script>
 </body>
+
 </html>

@@ -106,12 +106,14 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            text-align: center;
         }
 
         .problem-visual img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            display: block;
+            max-height: 400px;
+            display: inline-block;
         }
 
         /* Typography */
@@ -537,7 +539,8 @@
         </div>
 
         <h2>Problem Statement</h2>
-        <p>Given a string s consisting of lowercase English letters, find the maximum difference diff = freq(a1) - freq(a2) between the frequency of characters a1 and a2 in the string such that:</p>
+        <p>Given a string s consisting of lowercase English letters, find the maximum difference diff = freq(a1) -
+            freq(a2) between the frequency of characters a1 and a2 in the string such that:</p>
         <ol>
             <li>a1 has an odd frequency in the string</li>
             <li>a2 has an even frequency in the string</li>
@@ -562,7 +565,8 @@ Explanation:
 
         <div class="callout note">
             <strong>Problem Link:</strong>
-            <a href="https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-i/" target="_blank">
+            <a href="https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-i/"
+                target="_blank">
                 View on LeetCode ↗
             </a>
         </div>
@@ -570,7 +574,8 @@ Explanation:
         <hr>
 
         <h2>Approach 1: Frequency Counting with Lists</h2>
-        <p>This approach counts character frequencies, separates odd and even frequencies into lists, then calculates max odd frequency minus min even frequency.</p>
+        <p>This approach counts character frequencies, separates odd and even frequencies into lists, then calculates
+            max odd frequency minus min even frequency.</p>
 
         <h3>Algorithm Steps</h3>
         <ol>
@@ -834,7 +839,8 @@ Explanation:
         </table>
 
         <div class="callout tip">
-            <strong>Recommendation:</strong> Optimized single-pass is best for most languages due to constant space usage
+            <strong>Recommendation:</strong> Optimized single-pass is best for most languages due to constant space
+            usage
         </div>
 
         <hr>
@@ -863,17 +869,20 @@ a:2(even), b:2(even), c:1(odd) → maxOdd=1, minEven=2 → 1-2=-1</code></pre>
         <div class="faq-section">
             <details>
                 <summary>Why calculate max odd - min even specifically?</summary>
-                <p>This combination maximizes the difference because we want the largest possible positive value from (odd_freq - even_freq).</p>
+                <p>This combination maximizes the difference because we want the largest possible positive value from
+                    (odd_freq - even_freq).</p>
             </details>
 
             <details>
                 <summary>Can the difference be negative?</summary>
-                <p>Yes, if all odd frequencies are smaller than all even frequencies, the result will be negative. The problem asks for maximum difference, which could be negative.</p>
+                <p>Yes, if all odd frequencies are smaller than all even frequencies, the result will be negative. The
+                    problem asks for maximum difference, which could be negative.</p>
             </details>
 
             <details>
                 <summary>How to handle uppercase letters?</summary>
-                <p>The problem specifies lowercase English letters, so no handling needed. For case-insensitive versions, convert to lowercase first.</p>
+                <p>The problem specifies lowercase English letters, so no handling needed. For case-insensitive
+                    versions, convert to lowercase first.</p>
             </details>
 
             <details>
@@ -898,7 +907,8 @@ a:2(even), b:2(even), c:1(odd) → maxOdd=1, minEven=2 → 1-2=-1</code></pre>
 
             <details>
                 <summary>Is 0 considered an even frequency?</summary>
-                <p>Yes, but characters with 0 frequency are not present in the string and are excluded from consideration.</p>
+                <p>Yes, but characters with 0 frequency are not present in the string and are excluded from
+                    consideration.</p>
             </details>
 
             <details>
@@ -908,12 +918,14 @@ a:2(even), b:2(even), c:1(odd) → maxOdd=1, minEven=2 → 1-2=-1</code></pre>
 
             <details>
                 <summary>Can we optimize further?</summary>
-                <p>We can combine frequency counting with tracking maxOdd/minEven in a single pass, but big-O complexity remains the same.</p>
+                <p>We can combine frequency counting with tracking maxOdd/minEven in a single pass, but big-O complexity
+                    remains the same.</p>
             </details>
         </div>
 
         <div class="callout">
-            <strong>Final Recommendation:</strong> The optimized single-pass approach provides the best combination of efficiency and readability for this problem.
+            <strong>Final Recommendation:</strong> The optimized single-pass approach provides the best combination of
+            efficiency and readability for this problem.
         </div>
     </main>
 

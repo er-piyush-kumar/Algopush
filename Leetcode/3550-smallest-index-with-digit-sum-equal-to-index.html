@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Same meta tags as previous post -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3550 | Smallest Index With Digit Sum Equal to Index</title>
-  <meta name="description" content="LeetCode 3550 solution: Multiple approaches to find smallest index where digit sum equals index, including brute force and optimized methods.">
-  <meta name="keywords" content="LeetCode 3550, Digit Sum, Array Traversal, Precomputation, 3550. Smallest Index With Digit Sum Equal to Index,, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, Leetcode company dsa problem, DSA Problems">
+  <meta name="description"
+    content="LeetCode 3550 solution: Multiple approaches to find smallest index where digit sum equals index, including brute force and optimized methods.">
+  <meta name="keywords"
+    content="LeetCode 3550, Digit Sum, Array Traversal, Precomputation, 3550. Smallest Index With Digit Sum Equal to Index,, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, Leetcode company dsa problem, DSA Problems">
   <meta name="author" content="Algopush">
   <link rel="canonical" href="https://algopush.com/Leetcode/3550-smallest-index-with-digit-sum-equal-to-index.html">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="../components/favicon.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="../components/favicon.png">
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 3550 | Smallest Index With Digit Sum Equal to Index">
-  <meta property="og:description" content="Comprehensive solutions for finding index where digit sum matches position, with multiple approaches and optimizations.">
+  <meta property="og:description"
+    content="Comprehensive solutions for finding index where digit sum matches position, with multiple approaches and optimizations.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/3550.png">
-  <meta property="og:url" content="https://algopush.com/Leetcode/3550-smallest-index-with-digit-sum-equal-to-index.html">
-  
+  <meta property="og:url"
+    content="https://algopush.com/Leetcode/3550-smallest-index-with-digit-sum-equal-to-index.html">
+
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 3550 | Smallest Index With Digit Sum Equal to Index">
-  <meta name="twitter:description" content="Optimal solutions using brute force, string conversion, and precomputation methods with detailed analysis.">
+  <meta name="twitter:description"
+    content="Optimal solutions using brute force, string conversion, and precomputation methods with detailed analysis.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3550.png">
 
   <!-- Structured Data -->
@@ -102,12 +108,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -492,6 +500,7 @@
     }
   </style>
 </head>
+
 <body>
   <div id="header"></div>
 
@@ -524,7 +533,8 @@
     </div>
 
     <h2>Problem Statement</h2>
-    <p>Given an integer array nums, return the smallest index i where the sum of digits of nums[i] equals i. Return -1 if no such index exists.</p>
+    <p>Given an integer array nums, return the smallest index i where the sum of digits of nums[i] equals i. Return -1
+      if no such index exists.</p>
 
     <h3>Example 1</h3>
     <pre><code>Input: nums = [1,3,2]
@@ -847,7 +857,8 @@ public:
     </table>
 
     <div class="callout tip">
-      <strong>Optimization Insight:</strong> The modulo method provides the best balance of speed and memory usage for single queries.
+      <strong>Optimization Insight:</strong> The modulo method provides the best balance of speed and memory usage for
+      single queries.
     </div>
 
     <hr>
@@ -922,7 +933,8 @@ public:
     </div>
 
     <div class="callout">
-      <strong>Final Analysis:</strong> The modulo-based brute force method provides the optimal balance of efficiency and readability for this problem, suitable for both small and maximum-sized inputs.
+      <strong>Final Analysis:</strong> The modulo-based brute force method provides the optimal balance of efficiency
+      and readability for this problem, suitable for both small and maximum-sized inputs.
     </div>
   </main>
 
@@ -980,4 +992,5 @@ public:
     });
   </script>
 </body>
+
 </html>

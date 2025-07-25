@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeetCode 3622 | Check Divisibility by Digit Sum and Product</title>
-  <meta name="description" content="Complete solutions LeetCode 3622: Learn efficient digit extraction techniques & multiple approaches to solve divisibility problems with detailed implementations." />
-  <meta name="keywords" content="3622. Check Divisibility by Digit Sum and Product, leetcode, leetcode 3622, digit sum, digit product, divisibility problem, number theory, digit extraction, modulo operation, leetcode easy problem, programming solution, algorithm optimization, , leetcode premium problem, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, leetcode array question, leetcode contest question, leetcode contest" />
+  <meta name="description"
+    content="Complete solutions LeetCode 3622: Learn efficient digit extraction techniques & multiple approaches to solve divisibility problems with detailed implementations." />
+  <meta name="keywords"
+    content="3622. Check Divisibility by Digit Sum and Product, leetcode, leetcode 3622, digit sum, digit product, divisibility problem, number theory, digit extraction, modulo operation, leetcode easy problem, programming solution, algorithm optimization, , leetcode premium problem, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, leetcode array question, leetcode contest question, leetcode contest" />
   <meta name="author" content="Algopush" />
   <link rel="canonical" href="https://algopush.com/Leetcode/3622-check-divisibility-by-digit-sum-and-product.html">
 
@@ -15,7 +18,8 @@
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 3622: Check Divisibility by Digit Sum and Product">
-  <meta property="og:description" content="Optimal solutions with O(d) time complexity where d is digit count. Complete guide with modulus and string conversion approaches.">
+  <meta property="og:description"
+    content="Optimal solutions with O(d) time complexity where d is digit count. Complete guide with modulus and string conversion approaches.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/3622.png">
   <meta property="og:url" content="https://algopush.com/Leetcode/3622-check-divisibility-by-digit-sum-and-product.html">
   <meta property="og:type" content="article">
@@ -23,7 +27,8 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 3622: Check Divisibility by Digit Sum and Product">
-  <meta name="twitter:description" content="Solve divisibility problems using digit extraction techniques. Code examples in C++, Java, and Python.">
+  <meta name="twitter:description"
+    content="Solve divisibility problems using digit extraction techniques. Code examples in C++, Java, and Python.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3622.png">
 
   <!-- Structured Data for SEO -->
@@ -103,12 +108,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -319,6 +326,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -444,7 +452,7 @@
       gap: 1rem;
       margin: 2rem 0;
     }
-    
+
     .visual-item {
       flex: 1;
       min-width: 300px;
@@ -453,7 +461,7 @@
       background: #f8f9fa;
       box-shadow: var(--box-shadow);
     }
-    
+
     .visual-item h4 {
       color: var(--secondary-color);
       margin-top: 0;
@@ -461,11 +469,19 @@
       padding-bottom: 0.5rem;
     }
 
-    
+
     @keyframes pulse {
-      0% { background-color: #e6f7ff; }
-      50% { background-color: #b3e0ff; }
-      100% { background-color: #e6f7ff; }
+      0% {
+        background-color: #e6f7ff;
+      }
+
+      50% {
+        background-color: #b3e0ff;
+      }
+
+      100% {
+        background-color: #e6f7ff;
+      }
     }
 
     /* Responsive Design */
@@ -491,7 +507,7 @@
         display: block;
         overflow-x: auto;
       }
-      
+
       .visual-item {
         min-width: 100%;
       }
@@ -528,7 +544,7 @@
       .code-copy {
         margin-top: 0.5rem;
       }
-      
+
       .grid-container {
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
       }
@@ -569,12 +585,15 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> For digit manipulation problems, always consider modulus operations for efficient digit extraction. Handle zero digits carefully as they make the product zero.
+      <strong>Pro Tip:</strong> For digit manipulation problems, always consider modulus operations for efficient digit
+      extraction. Handle zero digits carefully as they make the product zero.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>Given a positive integer <code>n</code>, determine if <code>n</code> is divisible by the sum of its digit sum and digit product. Return <code>true</code> if divisible, otherwise <code>false</code>.</p>
-    <p>Formally: Let <code>S</code> = sum of digits of <code>n</code>, <code>P</code> = product of digits of <code>n</code>. Return <code>true</code> if <code>n % (S + P) == 0</code>.</p>
+    <p>Given a positive integer <code>n</code>, determine if <code>n</code> is divisible by the sum of its digit sum and
+      digit product. Return <code>true</code> if divisible, otherwise <code>false</code>.</p>
+    <p>Formally: Let <code>S</code> = sum of digits of <code>n</code>, <code>P</code> = product of digits of
+      <code>n</code>. Return <code>true</code> if <code>n % (S + P) == 0</code>.</p>
 
     <div class="visual-container">
       <div class="visual-item">
@@ -583,7 +602,7 @@
         <p><strong>Calculation:</strong> S = 9+9 = 18, P = 9×9 = 81, S+P = 99</p>
         <p>99 % 99 = 0 → <strong>Output: true</strong></p>
       </div>
-      
+
       <div class="visual-item">
         <h4>Example 2</h4>
         <p><strong>Input:</strong> n = 23</p>
@@ -594,7 +613,8 @@
 
     <div class="callout note">
       <strong>Problem Link:</strong>
-      <a href="https://leetcode.com/problems/check-divisibility-by-digit-sum-and-product/" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/problems/check-divisibility-by-digit-sum-and-product/" target="_blank"
+        rel="noopener noreferrer">
         View on LeetCode ↗
       </a>
     </div>
@@ -609,9 +629,10 @@
       <li>Calculating the product of the digits (P)</li>
       <li>Checking divisibility: n % (S + P) == 0</li>
     </ol>
-    
+
     <div class="callout warning">
-      <strong>Important:</strong> If any digit is zero, the product becomes zero. This is acceptable per problem requirements.
+      <strong>Important:</strong> If any digit is zero, the product becomes zero. This is acceptable per problem
+      requirements.
     </div>
 
     <hr />
@@ -726,7 +747,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This is the most efficient method with O(1) space and O(d) time complexity. Works for numbers up to 10^9.
+        <strong>Implementation Note:</strong> This is the most efficient method with O(1) space and O(d) time
+        complexity. Works for numbers up to 10^9.
       </div>
     </div>
 
@@ -837,7 +859,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This approach is more readable but slightly less efficient due to string conversion. Useful for languages with strong string manipulation.
+        <strong>Implementation Note:</strong> This approach is more readable but slightly less efficient due to string
+        conversion. Useful for languages with strong string manipulation.
       </div>
     </div>
 
@@ -898,7 +921,8 @@
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This approach uses Python's functional programming features for concise code. The <code>reduce</code> function elegantly handles product calculation.
+        <strong>Implementation Note:</strong> This approach uses Python's functional programming features for concise
+        code. The <code>reduce</code> function elegantly handles product calculation.
       </div>
     </div>
 
@@ -925,7 +949,8 @@ Calculation: S=1+0=1, P=1*0=0, total=1 → 10%1=0</code></pre>
 Calculation: S=54, P=531441, total=531495 → 999999 % 531495 = 468504 (not 0)</code></pre>
 
     <div class="callout danger">
-      <strong>Warning:</strong> Always initialize product as 1 (not 0) to ensure correct multiplication. Zero initialization would make product always zero.
+      <strong>Warning:</strong> Always initialize product as 1 (not 0) to ensure correct multiplication. Zero
+      initialization would make product always zero.
     </div>
 
     <hr />
@@ -935,7 +960,8 @@ Calculation: S=54, P=531441, total=531495 → 999999 % 531495 = 468504 (not 0)</
     <div class="faq-section">
       <details>
         <summary>1. What if the product of digits is zero?</summary>
-        <p>This is perfectly valid. The total becomes (sum + 0) = sum. The divisibility check then becomes n % sum == 0.</p>
+        <p>This is perfectly valid. The total becomes (sum + 0) = sum. The divisibility check then becomes n % sum == 0.
+        </p>
       </details>
 
       <details>
@@ -960,7 +986,8 @@ Calculation: S=54, P=531441, total=531495 → 999999 % 531495 = 468504 (not 0)</
 
       <details>
         <summary>6. How does the product initialization work?</summary>
-        <p>Product must be initialized to 1 because multiplying by 1 is the multiplicative identity. Initializing to 0 would make the entire product zero.</p>
+        <p>Product must be initialized to 1 because multiplying by 1 is the multiplicative identity. Initializing to 0
+          would make the entire product zero.</p>
       </details>
 
       <details>
@@ -975,35 +1002,39 @@ Calculation: S=54, P=531441, total=531495 → 999999 % 531495 = 468504 (not 0)</
 
       <details>
         <summary>9. Can we use logarithms to count digits?</summary>
-        <p>Logarithms can count digits but don't help with extracting individual digits. Stick to modulus or string methods.</p>
+        <p>Logarithms can count digits but don't help with extracting individual digits. Stick to modulus or string
+          methods.</p>
       </details>
 
       <details>
         <summary>10. What are common mistakes?</summary>
-        <p>Common mistakes: initializing product to 0, not preserving original n value, and not handling zero digits correctly.</p>
+        <p>Common mistakes: initializing product to 0, not preserving original n value, and not handling zero digits
+          correctly.</p>
       </details>
     </div>
 
     <div class="callout">
-      <strong>Final Insight:</strong> This problem demonstrates how mathematical digit manipulation can be efficiently solved with basic operations. The modulus approach is optimal, while string conversion offers readability. Always handle zero digits carefully in product calculations.
+      <strong>Final Insight:</strong> This problem demonstrates how mathematical digit manipulation can be efficiently
+      solved with basic operations. The modulus approach is optimal, while string conversion offers readability. Always
+      handle zero digits carefully in product calculations.
     </div>
   </main>
 
   <div id="footer"></div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Tab functionality
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Initialize first tab
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
@@ -1014,7 +1045,7 @@ Calculation: S=54, P=531441, total=531495 → 999999 % 531495 = 468504 (not 0)</
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -1042,4 +1073,5 @@ Calculation: S=54, P=531441, total=531495 → 999999 % 531495 = 468504 (not 0)</
     });
   </script>
 </body>
+
 </html>

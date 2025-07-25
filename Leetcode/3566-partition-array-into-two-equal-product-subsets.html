@@ -21,7 +21,8 @@
     <meta property="og:description"
         content="LeetCode 3566 solution: Efficient approaches to partition an array into two subsets with equal product, including prime factorization and bitmasking techniques.">
     <meta property="og:image" content="https://algopush.com/Leetcode/Images/3566.png">
-    <meta property="og:url" content="https://algopush.com/Leetcode/3566-partition-array-into-two-equal-product-subsets.html">
+    <meta property="og:url"
+        content="https://algopush.com/Leetcode/3566-partition-array-into-two-equal-product-subsets.html">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -106,12 +107,14 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            text-align: center;
         }
 
         .problem-visual img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            display: block;
+            max-height: 400px;
+            display: inline-block;
         }
 
         /* Typography */
@@ -537,7 +540,9 @@
         </div>
 
         <h2>Problem Statement</h2>
-        <p>Given an integer array nums containing distinct positive integers and an integer target, determine if you can partition nums into two non-empty disjoint subsets such that the product of the elements in each subset equals the target.</p>
+        <p>Given an integer array nums containing distinct positive integers and an integer target, determine if you can
+            partition nums into two non-empty disjoint subsets such that the product of the elements in each subset
+            equals the target.</p>
 
         <h3>Example 1</h3>
         <pre><code>Input: nums = [3,1,6,8,4], target = 24
@@ -559,7 +564,8 @@ Explanation: No possible partition exists where both subsets have product 15.</c
         <hr>
 
         <h2>Approach 1: Prime Factorization with Bitmasking</h2>
-        <p>This approach uses prime factorization to handle large products efficiently and bitmasking to explore all possible subsets.</p>
+        <p>This approach uses prime factorization to handle large products efficiently and bitmasking to explore all
+            possible subsets.</p>
 
         <h3>Algorithm Steps</h3>
         <ol>
@@ -837,7 +843,8 @@ Explanation: No possible partition exists where both subsets have product 15.</c
             </div>
 
             <div class="callout tip">
-                <strong>Optimization:</strong> Prime factorization allows handling large products without overflow, and bitmasking efficiently explores all subsets.
+                <strong>Optimization:</strong> Prime factorization allows handling large products without overflow, and
+                bitmasking efficiently explores all subsets.
             </div>
         </div>
 
@@ -946,7 +953,8 @@ Explanation: No possible partition exists where both subsets have product 15.</c
             <div class="callout warning">
                 <strong>Note:</strong>
                 <ul>
-                    <li>Backtracking approach may be too slow for larger inputs (n > 20) due to exponential time complexity.</li>
+                    <li>Backtracking approach may be too slow for larger inputs (n > 20) due to exponential time
+                        complexity.</li>
                     <li>Due to there exponential time complexity, this code will cause Run Time Error.</li>
                 </ul>
             </div>
@@ -984,7 +992,8 @@ Explanation: No possible partition exists where both subsets have product 15.</c
         </table>
 
         <div class="callout tip">
-            <strong>Recommendation:</strong> The prime factorization approach is more efficient for handling large products and constraints.
+            <strong>Recommendation:</strong> The prime factorization approach is more efficient for handling large
+            products and constraints.
         </div>
 
         <hr>
@@ -1009,12 +1018,14 @@ Explanation: No possible partition exists where both subsets have product 15.</c
         <div class="faq-section">
             <details>
                 <summary>Why use prime factorization?</summary>
-                <p>Prime factorization helps handle large products without overflow and allows comparison of exponents rather than actual products.</p>
+                <p>Prime factorization helps handle large products without overflow and allows comparison of exponents
+                    rather than actual products.</p>
             </details>
 
             <details>
                 <summary>How does bitmasking help in this problem?</summary>
-                <p>Bitmasking provides an efficient way to represent and iterate through all possible subsets of the array.</p>
+                <p>Bitmasking provides an efficient way to represent and iterate through all possible subsets of the
+                    array.</p>
             </details>
 
             <details>
@@ -1024,7 +1035,8 @@ Explanation: No possible partition exists where both subsets have product 15.</c
 
             <details>
                 <summary>Can we use dynamic programming for this problem?</summary>
-                <p>Yes, but it would require tracking products which could be very large and impractical for the given constraints.</p>
+                <p>Yes, but it would require tracking products which could be very large and impractical for the given
+                    constraints.</p>
             </details>
 
             <details>
@@ -1039,7 +1051,8 @@ Explanation: No possible partition exists where both subsets have product 15.</c
 
             <details>
                 <summary>Why check if total product equals target squared?</summary>
-                <p>Because if we partition into two subsets with product target each, their combined product must be target × target.</p>
+                <p>Because if we partition into two subsets with product target each, their combined product must be
+                    target × target.</p>
             </details>
 
             <details>
@@ -1059,7 +1072,8 @@ Explanation: No possible partition exists where both subsets have product 15.</c
         </div>
 
         <div class="callout">
-            <strong>Final Recommendation:</strong> The prime factorization with bitmasking approach provides the best balance between efficiency and correctness for this problem.
+            <strong>Final Recommendation:</strong> The prime factorization with bitmasking approach provides the best
+            balance between efficiency and correctness for this problem.
         </div>
     </main>
 

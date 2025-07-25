@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2138. Divide a String Into Groups of Size k | LeetCode</title>
-    <meta name="description" 
+    <meta name="description"
         content="Complete solution for LeetCode 2138: Multiple approaches to divide a string into groups of size k with C++, Java, and Python implementations.">
     <meta name="keywords"
         content="LeetCode 2138, Divide String, Groups of Size k, String Partition, Algorithm, Programming, Coding Interview, LeetCode Medium Problem, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, Leetcode dsa interview question, sde interview question">
     <meta name="author" content="Algopush">
     <link rel="canonical" href="https://algopush.com/Leetcode/2138-divide-a-string-into-groups-of-size-k.html">
-    
+
     <!-- Favicon -->
     <link rel="icon" href="../components/favicon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="../components/favicon.png">
@@ -104,12 +105,14 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            text-align: center;
         }
 
         .problem-visual img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            display: block;
+            max-height: 400px;
+            display: inline-block;
         }
 
         /* Typography */
@@ -497,6 +500,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="header"></div>
 
@@ -529,12 +533,14 @@
         </div>
 
         <h2>Problem Statement</h2>
-        <p>Given a string <code>s</code>, an integer <code>k</code>, and a character <code>fill</code>, partition the string into groups of size <code>k</code> as follows:</p>
+        <p>Given a string <code>s</code>, an integer <code>k</code>, and a character <code>fill</code>, partition the
+            string into groups of size <code>k</code> as follows:</p>
         <ol>
             <li>The first group consists of the first <code>k</code> characters</li>
             <li>The second group consists of the next <code>k</code> characters</li>
             <li>Continue this process until all characters are used</li>
-            <li>For the last group, if there aren't enough characters, complete it using the <code>fill</code> character</li>
+            <li>For the last group, if there aren't enough characters, complete it using the <code>fill</code> character
+            </li>
         </ol>
         <p>Return an array of strings representing all groups after partitioning.</p>
 
@@ -556,7 +562,8 @@ Output: ["abc","def","ghi","jxx"]</code></pre>
         <hr>
 
         <h2>Approach 1: Substring with Padding (Brute Force)</h2>
-        <p>This approach processes the string by taking substrings of length <code>k</code> and pads the last group if needed.</p>
+        <p>This approach processes the string by taking substrings of length <code>k</code> and pads the last group if
+            needed.</p>
 
         <h3>Algorithm Steps</h3>
         <ol>
@@ -1133,7 +1140,8 @@ Output: ["a","b","c"]</code></pre>
         </div>
 
         <div class="callout">
-            <strong>Final Recommendation:</strong> The mathematical approach provides the best combination of efficiency and readability.
+            <strong>Final Recommendation:</strong> The mathematical approach provides the best combination of efficiency
+            and readability.
         </div>
     </main>
 
@@ -1200,4 +1208,5 @@ Output: ["a","b","c"]</code></pre>
         });
     </script>
 </body>
+
 </html>

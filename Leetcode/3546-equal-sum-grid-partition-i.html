@@ -108,12 +108,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -1052,7 +1054,8 @@ Explanation: No valid cut exists</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Optimization Insight:</strong> Precompute row and column sums during total calculation to eliminate redundant loops. This reduces time complexity from O(3mn) to O(mn).
+        <strong>Optimization Insight:</strong> Precompute row and column sums during total calculation to eliminate
+        redundant loops. This reduces time complexity from O(3mn) to O(mn).
       </div>
     </div>
 
@@ -1091,7 +1094,8 @@ Explanation: No valid cut exists</code></pre>
     </table>
 
     <div class="callout warning">
-      <strong>Important:</strong> The vertical cut check must be skipped for single-column grids to avoid invalid partitions.
+      <strong>Important:</strong> The vertical cut check must be skipped for single-column grids to avoid invalid
+      partitions.
     </div>
 
     <hr />

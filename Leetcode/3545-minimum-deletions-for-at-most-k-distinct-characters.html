@@ -5,10 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3545 | Minimum Deletions for At Most K Distinct Characters</title>
-  <meta name="description" content="Complete solution for LeetCode 3545: Learn optimal strategies to minimize deletions while maintaining character diversity. Frequency optimization approaches.">
-  <meta name="keywords" content="LeetCode 3545, Minimum Deletions, Character Frequency, Greedy Algorithm, Combinatorial Optimization, String Manipulation, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, Leetcode company dsa problem">
+  <meta name="description"
+    content="Complete solution for LeetCode 3545: Learn optimal strategies to minimize deletions while maintaining character diversity. Frequency optimization approaches.">
+  <meta name="keywords"
+    content="LeetCode 3545, Minimum Deletions, Character Frequency, Greedy Algorithm, Combinatorial Optimization, String Manipulation, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, Leetcode company dsa problem">
   <meta name="author" content="Algopush" />
-  <link rel="canonical" href="https://algopush.com/Leetcode/3545-minimum-deletions-for-at-most-k-distinct-characters.html">
+  <link rel="canonical"
+    href="https://algopush.com/Leetcode/3545-minimum-deletions-for-at-most-k-distinct-characters.html">
 
   <!-- Favicon -->
   <link rel="icon" href="../components/favicon.png" type="image/x-icon">
@@ -16,15 +19,18 @@
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 3545: Minimum Deletions for At Most K Distinct Characters">
-  <meta property="og:description" content="Master frequency-based optimization for string deletion problems. Complete guide with greedy and combinatorial approaches.">
+  <meta property="og:description"
+    content="Master frequency-based optimization for string deletion problems. Complete guide with greedy and combinatorial approaches.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/3545.png">
-  <meta property="og:url" content="https://algopush.com/Leetcode/3545-minimum-deletions-for-at-most-k-distinct-characters.html">
+  <meta property="og:url"
+    content="https://algopush.com/Leetcode/3545-minimum-deletions-for-at-most-k-distinct-characters.html">
   <meta property="og:type" content="article">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 3545: Minimum Deletions for At Most K Distinct Characters">
-  <meta name="twitter:description" content="Optimal solutions using frequency analysis and subset selection. Code examples in Python, Java, and C++.">
+  <meta name="twitter:description"
+    content="Optimal solutions using frequency analysis and subset selection. Code examples in Python, Java, and C++.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3545.png">
 
   <!-- Structured Data for SEO -->
@@ -104,12 +110,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -316,6 +324,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -526,11 +535,13 @@
     </div>
 
     <div class="callout tip">
-      <strong>Key Insight:</strong> Optimal solution requires keeping the most frequent characters and removing others. Frequency prioritization is crucial for minimal deletions.
+      <strong>Key Insight:</strong> Optimal solution requires keeping the most frequent characters and removing others.
+      Frequency prioritization is crucial for minimal deletions.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>Given a string and maximum allowed distinct characters (k), determine the minimum deletions needed to achieve at most k unique characters.</p>
+    <p>Given a string and maximum allowed distinct characters (k), determine the minimum deletions needed to achieve at
+      most k unique characters.</p>
 
     <h3>Example 1</h3>
     <pre><code>Input: s = "abc", k = 2
@@ -544,7 +555,8 @@ Explanation: Already has 2 distinct characters</code></pre>
 
     <div class="callout note">
       <strong>Problem Link:</strong>
-      <a href="https://leetcode.com/problems/minimum-deletions-for-at-most-k-distinct-characters/" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/problems/minimum-deletions-for-at-most-k-distinct-characters/" target="_blank"
+        rel="noopener noreferrer">
         View on LeetCode ↗
       </a>
     </div>
@@ -644,7 +656,8 @@ Explanation: Already has 2 distinct characters</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Optimization Insight:</strong> Sorting frequencies in descending order ensures we keep the most impactful characters first.
+        <strong>Optimization Insight:</strong> Sorting frequencies in descending order ensures we keep the most
+        impactful characters first.
       </div>
     </div>
 
@@ -768,7 +781,8 @@ Explanation: Already has 2 distinct characters</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Use Case:</strong> This approach is feasible due to small constraints (n ≤ 16), demonstrating brute-force optimization potential.
+        <strong>Use Case:</strong> This approach is feasible due to small constraints (n ≤ 16), demonstrating
+        brute-force optimization potential.
       </div>
     </div>
 
@@ -801,7 +815,8 @@ Explanation: Already has 2 distinct characters</code></pre>
     </table>
 
     <div class="callout warning">
-      <strong>Important:</strong> Greedy approach is exponentially faster for larger character sets, while combinatorial works for constraint-limited cases.
+      <strong>Important:</strong> Greedy approach is exponentially faster for larger character sets, while combinatorial
+      works for constraint-limited cases.
     </div>
 
     <hr />
@@ -827,7 +842,8 @@ Explanation: Already has 2 distinct characters</code></pre>
     <div class="faq-section">
       <details>
         <summary>1. Why does sorting frequencies guarantee optimal solution?</summary>
-        <p>Sorting lets us prioritize characters contributing most to the string length, minimizing needed deletions.</p>
+        <p>Sorting lets us prioritize characters contributing most to the string length, minimizing needed deletions.
+        </p>
       </details>
 
       <details>
@@ -877,7 +893,9 @@ Explanation: Already has 2 distinct characters</code></pre>
     </div>
 
     <div class="callout">
-      <strong>Final Analysis:</strong> This problem demonstrates the power of frequency analysis in string manipulation problems. The greedy approach provides an optimal O(n) space solution while the combinatorial method offers insight into brute-force possibilities for constrained inputs.
+      <strong>Final Analysis:</strong> This problem demonstrates the power of frequency analysis in string manipulation
+      problems. The greedy approach provides an optimal O(n) space solution while the combinatorial method offers
+      insight into brute-force possibilities for constrained inputs.
     </div>
   </main>
 
@@ -885,18 +903,18 @@ Explanation: Already has 2 distinct characters</code></pre>
 
   <script>
     // Reuse the same JavaScript from previous post
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Tab functionality
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Initialize first tab
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
@@ -907,7 +925,7 @@ Explanation: Already has 2 distinct characters</code></pre>
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -935,4 +953,5 @@ Explanation: Already has 2 distinct characters</code></pre>
     });
   </script>
 </body>
+
 </html>

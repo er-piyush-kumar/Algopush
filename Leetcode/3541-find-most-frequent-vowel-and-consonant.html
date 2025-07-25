@@ -5,8 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeetCode 3541 | Find Most Frequent Vowel and Consonant</title>
-  <meta name="description" content="LeetCode 3541: Discover optimal methods to find maximum vowel and consonant frequencies. Detailed analysis with time and space complexity comparisons.">
-  <meta name="keywords" content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 3541, Vowel Frequency, Consonant Frequency, String Manipulation, Frequency Counting, Algorithm Optimization">
+  <meta name="description"
+    content="LeetCode 3541: Discover optimal methods to find maximum vowel and consonant frequencies. Detailed analysis with time and space complexity comparisons.">
+  <meta name="keywords"
+    content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 3541, Vowel Frequency, Consonant Frequency, String Manipulation, Frequency Counting, Algorithm Optimization">
   <meta name="author" content="Algopush" />
   <link rel="canonical" href="https://algopush.com/Leetcode/3541-find-most-frequent-vowel-and-consonant.html">
 
@@ -16,7 +18,8 @@
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="LeetCode 3541: Find Most Frequent Vowel and Consonant">
-  <meta property="og:description" content="Master frequency counting techniques for string analysis. Complete guide with array and hash map approaches in C++, Java, and Python.">
+  <meta property="og:description"
+    content="Master frequency counting techniques for string analysis. Complete guide with array and hash map approaches in C++, Java, and Python.">
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/3541.png">
   <meta property="og:url" content="https://algopush.com/Leetcode/3541-find-most-frequent-vowel-and-consonant.html">
   <meta property="og:type" content="article">
@@ -24,7 +27,8 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LeetCode 3541: Find Most Frequent Vowel and Consonant">
-  <meta name="twitter:description" content="Optimal solutions for calculating maximum vowel and consonant frequencies. Code examples with complexity analysis.">
+  <meta name="twitter:description"
+    content="Optimal solutions for calculating maximum vowel and consonant frequencies. Code examples with complexity analysis.">
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/3541.png">
 
   <!-- Structured Data for SEO -->
@@ -104,12 +108,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -316,6 +322,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -526,11 +533,13 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> The optimal solution requires efficient frequency counting and proper classification of vowels vs consonants.
+      <strong>Pro Tip:</strong> The optimal solution requires efficient frequency counting and proper classification of
+      vowels vs consonants.
     </div>
 
     <h2>Problem Statement</h2>
-    <p>Given a string, return the sum of maximum vowel frequency and maximum consonant frequency. Handle edge cases where no vowels/consonants exist.</p>
+    <p>Given a string, return the sum of maximum vowel frequency and maximum consonant frequency. Handle edge cases
+      where no vowels/consonants exist.</p>
 
     <h3>Example 1</h3>
     <pre><code>Input: s = "successes"
@@ -544,7 +553,8 @@ Explanation: Max vowel (a) = 3, No consonants</code></pre>
 
     <div class="callout note">
       <strong>Problem Link:</strong>
-      <a href="https://leetcode.com/problems/find-most-frequent-vowel-and-consonant/" target="_blank" rel="noopener noreferrer">
+      <a href="https://leetcode.com/problems/find-most-frequent-vowel-and-consonant/" target="_blank"
+        rel="noopener noreferrer">
         View on LeetCode ↗
       </a>
     </div>
@@ -651,7 +661,8 @@ Explanation: Max vowel (a) = 3, No consonants</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> This method provides constant space complexity and optimal performance for all input sizes.
+        <strong>Implementation Note:</strong> This method provides constant space complexity and optimal performance for
+        all input sizes.
       </div>
     </div>
 
@@ -757,7 +768,8 @@ Explanation: Max vowel (a) = 3, No consonants</code></pre>
         </div>
       </div>
       <div class="callout note">
-        <strong>Implementation Note:</strong> While theoretically similar in complexity, this method has slightly higher constant factors due to hash table operations.
+        <strong>Implementation Note:</strong> While theoretically similar in complexity, this method has slightly higher
+        constant factors due to hash table operations.
       </div>
     </div>
 
@@ -790,7 +802,8 @@ Explanation: Max vowel (a) = 3, No consonants</code></pre>
     </table>
 
     <div class="callout warning">
-      <strong>Important:</strong> Both approaches have same asymptotic complexity but array method is generally faster in practice due to direct memory access.
+      <strong>Important:</strong> Both approaches have same asymptotic complexity but array method is generally faster
+      in practice due to direct memory access.
     </div>
 
     <hr />
@@ -816,7 +829,8 @@ Explanation: Max vowel (a) = 3, No consonants</code></pre>
     <div class="faq-section">
       <details>
         <summary>1. Why use 26-element array instead of hash map?</summary>
-        <p>Direct indexing provides O(1) access time and better cache locality, making it more efficient for fixed character sets.</p>
+        <p>Direct indexing provides O(1) access time and better cache locality, making it more efficient for fixed
+          character sets.</p>
       </details>
 
       <details>
@@ -866,26 +880,27 @@ Explanation: Max vowel (a) = 3, No consonants</code></pre>
     </div>
 
     <div class="callout">
-      <strong>Final Insight:</strong> This problem demonstrates fundamental frequency counting techniques crucial for string manipulation problems. While simple, it teaches important concepts in efficient data organization.
+      <strong>Final Insight:</strong> This problem demonstrates fundamental frequency counting techniques crucial for
+      string manipulation problems. While simple, it teaches important concepts in efficient data organization.
     </div>
   </main>
 
   <div id="footer"></div>
 
-   <script>
+  <script>
     // Reuse the same JavaScript from previous post
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Tab functionality
       document.querySelectorAll('.code-tabs').forEach(container => {
         const tabButtons = container.querySelectorAll('.tab-button');
         const tabContents = container.querySelectorAll('.tab-content');
-        
+
         // Initialize first tab
         if (!container.querySelector('.tab-button.active')) {
           tabButtons[0]?.classList.add('active');
           tabContents[0]?.classList.add('active');
         }
-        
+
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabName = button.getAttribute('data-tab');
@@ -896,7 +911,7 @@ Explanation: Max vowel (a) = 3, No consonants</code></pre>
           });
         });
       });
-      
+
       // Copy button functionality
       document.querySelectorAll('.code-copy').forEach(button => {
         button.addEventListener('click', () => {
@@ -924,4 +939,5 @@ Explanation: Max vowel (a) = 3, No consonants</code></pre>
     });
   </script>
 </body>
+
 </html>

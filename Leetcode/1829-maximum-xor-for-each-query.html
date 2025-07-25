@@ -7,20 +7,19 @@
   <title>
     LeetCode 1829 | Maximum XOR for Each Query | Algopush
   </title>
-  <meta name="description" content="Solve LeetCode 1829 with C++, Java, and Python. Learn cumulative XOR and bit manipulation to maximize XOR for each query. Step-by-step guide." />
-  <meta name="keywords" content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, LeetCode 1829, Maximum XOR for Each Query, Bit manipulation, XOR optimization, Array problems, Coding interview prep, C++ Java Python solutions, Algopush tutorials" />
+  <meta name="description"
+    content="Solve LeetCode 1829 with C++, Java, and Python. Learn cumulative XOR and bit manipulation to maximize XOR for each query. Step-by-step guide." />
+  <meta name="keywords"
+    content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question,leetcode daily question, LeetCode 1829, Maximum XOR for Each Query, Bit manipulation, XOR optimization, Array problems, Coding interview prep, C++ Java Python solutions, Algopush tutorials" />
   <meta name="author" content="Algopush" />
-  <meta property="og:title"
-    content="LeetCode 1829 Solution | Maximum XOR for Each Query - Optimized Solution" />
+  <meta property="og:title" content="LeetCode 1829 Solution | Maximum XOR for Each Query - Optimized Solution" />
   <meta property="og:description"
     content="Master the XOR bit manipulation approach to solve LeetCode 1829 efficiently. Complete guide with multiple implementations and complexity analysis." />
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/1829.png" />
-  <meta property="og:url"
-    content="https://algopush.com/Leetcode/1829-maximum-xor-for-each-query.html" />
+  <meta property="og:url" content="https://algopush.com/Leetcode/1829-maximum-xor-for-each-query.html" />
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title"
-    content="LeetCode 1829 Solution | Maximum XOR for Each Query - Optimized Solution" />
+  <meta name="twitter:title" content="LeetCode 1829 Solution | Maximum XOR for Each Query - Optimized Solution" />
   <meta name="twitter:description"
     content="Optimal bit manipulation solution for LeetCode 1829 with detailed explanations and code implementations." />
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/1829.png" />
@@ -28,8 +27,7 @@
   <meta http-equiv="content-language" content="en" />
   <meta name="distribution" content="global" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical"
-    href="https://algopush.com/Leetcode/1829-maximum-xor-for-each-query.html" />
+  <link rel="canonical" href="https://algopush.com/Leetcode/1829-maximum-xor-for-each-query.html" />
 
   <!-- Favicon -->
   <link rel="icon" href="../components/favicon.png" type="image/x-icon">
@@ -160,12 +158,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -556,16 +556,20 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> This problem combines XOR bit manipulation with cumulative operations, making it an excellent problem to master for coding interviews. The optimal solution runs in O(n) time with O(1) space.
+      <strong>Pro Tip:</strong> This problem combines XOR bit manipulation with cumulative operations, making it an
+      excellent problem to master for coding interviews. The optimal solution runs in O(n) time with O(1) space.
     </div>
 
     <p>
-      The problem "Maximum XOR for Each Query" (LeetCode 1829) requires us to find the maximum XOR result for each query on an array. Given a sorted array of non-negative integers and a maximumBit value, we need to determine the optimal k for each query that maximizes the XOR operation with the cumulative XOR of the array elements.
+      The problem "Maximum XOR for Each Query" (LeetCode 1829) requires us to find the maximum XOR result for each query
+      on an array. Given a sorted array of non-negative integers and a maximumBit value, we need to determine the
+      optimal k for each query that maximizes the XOR operation with the cumulative XOR of the array elements.
     </p>
 
     <h2>Problem Statement</h2>
     <p>
-      You are given a sorted array of non-negative integers <code>nums</code> and an integer <code>maximumBit</code>. You need to perform n queries (where n is the size of the array) where for each query:
+      You are given a sorted array of non-negative integers <code>nums</code> and an integer <code>maximumBit</code>.
+      You need to perform n queries (where n is the size of the array) where for each query:
     </p>
     <ol>
       <li>Compute the XOR of all elements in the array up to the current position</li>
@@ -582,8 +586,8 @@
 
     <h2>Problem Link</h2>
     <p>
-      <a href="https://leetcode.com/problems/maximum-xor-for-each-query/"
-        target="_blank" rel="noopener noreferrer">View on LeetCode ↗</a>
+      <a href="https://leetcode.com/problems/maximum-xor-for-each-query/" target="_blank" rel="noopener noreferrer">View
+        on LeetCode ↗</a>
     </p>
 
     <h3>Example</h3>
@@ -596,64 +600,68 @@ Query 3: nums = [0,1], k = 2 → 0 XOR 1 XOR 2 = 3
 Query 4: nums = [0], k = 3 → 0 XOR 3 = 3</code></pre>
 
     <div class="callout note">
-      <strong>Note:</strong> The key insight is that the optimal k is always (1 << maximumBit) - 1 XOR cumulative_xor, which flips all bits to maximize the result.
-    </div>
+      <strong>Note:</strong> The key insight is that the optimal k is always (1 << maximumBit) - 1 XOR cumulative_xor,
+        which flips all bits to maximize the result. </div>
 
-    <hr />
+        <hr />
 
-    <h2>Approach 1: Brute Force (TLE)</h2>
-    <p>
-      The brute force approach checks every possible value of k for each query and calculates the XOR of all elements in the current array. While straightforward, this approach results in O(n² * 2<sup>maximumBit</sup>) time complexity, which is too slow for large inputs.
-    </p>
+        <h2>Approach 1: Brute Force (TLE)</h2>
+        <p>
+          The brute force approach checks every possible value of k for each query and calculates the XOR of all
+          elements in the current array. While straightforward, this approach results in O(n² * 2<sup>maximumBit</sup>)
+          time complexity, which is too slow for large inputs.
+        </p>
 
-    <h3>Algorithm Steps</h3>
-    <ol>
-      <li><strong>Initialize</strong> an empty result array</li>
-      <li><strong>Iterate</strong> through each query (from last element to first)</li>
-      <li><strong>For each query</strong>, compute the XOR of all elements in the current array</li>
-      <li><strong>Try all possible k values</strong> from 0 to 2<sup>maximumBit</sup>-1</li>
-      <li><strong>Find the k</strong> that maximizes the XOR result</li>
-      <li><strong>Add</strong> the best k to the result array</li>
-      <li><strong>Remove</strong> the last element from the array</li>
-    </ol>
+        <h3>Algorithm Steps</h3>
+        <ol>
+          <li><strong>Initialize</strong> an empty result array</li>
+          <li><strong>Iterate</strong> through each query (from last element to first)</li>
+          <li><strong>For each query</strong>, compute the XOR of all elements in the current array</li>
+          <li><strong>Try all possible k values</strong> from 0 to 2<sup>maximumBit</sup>-1</li>
+          <li><strong>Find the k</strong> that maximizes the XOR result</li>
+          <li><strong>Add</strong> the best k to the result array</li>
+          <li><strong>Remove</strong> the last element from the array</li>
+        </ol>
 
-    <h3>Complexity Analysis</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Time Complexity</th>
-          <th>Space Complexity</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>O(n² * 2<sup>maximumBit</sup>)</td>
-          <td>O(n)</td>
-        </tr>
-      </tbody>
-    </table>
+        <h3>Complexity Analysis</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Time Complexity</th>
+              <th>Space Complexity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>O(n² * 2<sup>maximumBit</sup>)</td>
+              <td>O(n)</td>
+            </tr>
+          </tbody>
+        </table>
 
-    <p>
-      <strong>Why it fails:</strong> For n = 10<sup>5</sup> and maximumBit = 20, the number of operations would be around 10<sup>5</sup> * 10<sup>5</sup> * 2<sup>20</sup> ≈ 10<sup>15</sup>, which is way beyond what's acceptable.
-    </p>
+        <p>
+          <strong>Why it fails:</strong> For n = 10<sup>5</sup> and maximumBit = 20, the number of operations would be
+          around 10<sup>5</sup> * 10<sup>5</sup> * 2<sup>20</sup> ≈ 10<sup>15</sup>, which is way beyond what's
+          acceptable.
+        </p>
 
-    <h3>Implementation</h3>
+        <h3>Implementation</h3>
 
-    <div class="code-tabs">
-      <div class="tab-buttons">
-        <button class="tab-button active" onclick="openTab(event, 'cpp-brute')">
-          C++
-        </button>
-        <button class="tab-button" onclick="openTab(event, 'java-brute')">
-          Java
-        </button>
-        <button class="tab-button" onclick="openTab(event, 'python-brute')">
-          Python
-        </button>
-      </div>
+        <div class="code-tabs">
+          <div class="tab-buttons">
+            <button class="tab-button active" onclick="openTab(event, 'cpp-brute')">
+              C++
+            </button>
+            <button class="tab-button" onclick="openTab(event, 'java-brute')">
+              Java
+            </button>
+            <button class="tab-button" onclick="openTab(event, 'python-brute')">
+              Python
+            </button>
+          </div>
 
-      <div id="cpp-brute" class="tab-content active">
-        <pre><code>
+          <div id="cpp-brute" class="tab-content active">
+            <pre><code>
 class Solution {
 public:
     vector&lt;int&gt; getMaximumXor(vector&lt;int&gt;& nums, int maximumBit) {
@@ -680,10 +688,10 @@ public:
     }
 };
                 </code></pre>
-      </div>
+          </div>
 
-      <div id="java-brute" class="tab-content">
-        <pre><code>
+          <div id="java-brute" class="tab-content">
+            <pre><code>
 class Solution {
     public int[] getMaximumXor(int[] nums, int maximumBit) {
         int n = nums.length;
@@ -709,10 +717,10 @@ class Solution {
     }
 }
                 </code></pre>
-      </div>
+          </div>
 
-      <div id="python-brute" class="tab-content">
-        <pre><code>
+          <div id="python-brute" class="tab-content">
+            <pre><code>
 class Solution:
     def getMaximumXor(self, nums: List[int], maximumBit: int) -> List[int]:
         n = len(nums)
@@ -732,79 +740,82 @@ class Solution:
             
         return ans
                 </code></pre>
-      </div>
-    </div>
+          </div>
+        </div>
 
-    <div class="callout warning">
-      <strong>Note:</strong> This solution will result in Time Limit Exceeded (TLE) for large inputs due to its high time complexity.
-    </div>
+        <div class="callout warning">
+          <strong>Note:</strong> This solution will result in Time Limit Exceeded (TLE) for large inputs due to its high
+          time complexity.
+        </div>
 
-    <hr />
+        <hr />
 
-    <h2>Approach 2: Cumulative XOR with Bit Manipulation (Optimal)</h2>
-    <p>
-      The optimal solution uses cumulative XOR and bit manipulation to find the maximum XOR result efficiently. By recognizing that the optimal k is always (1 << maximumBit) - 1 XOR cumulative_xor, we can avoid the nested loops of the brute force approach.
-    </p>
+        <h2>Approach 2: Cumulative XOR with Bit Manipulation (Optimal)</h2>
+        <p>
+          The optimal solution uses cumulative XOR and bit manipulation to find the maximum XOR result efficiently. By
+          recognizing that the optimal k is always (1 << maximumBit) - 1 XOR cumulative_xor, we can avoid the nested
+            loops of the brute force approach. </p>
 
-    <h3>Key Insights</h3>
-    <ul>
-      <li>The maximum possible XOR result is always (1 << maximumBit) - 1</li>
-      <li>The optimal k is (max_value XOR cumulative_xor)</li>
-      <li>We can compute cumulative XOR in reverse order to reuse previous computations</li>
-      <li>No need to try all possible k values - we can calculate the optimal k directly</li>
-    </ul>
+            <h3>Key Insights</h3>
+            <ul>
+              <li>The maximum possible XOR result is always (1 << maximumBit) - 1</li>
+              <li>The optimal k is (max_value XOR cumulative_xor)</li>
+              <li>We can compute cumulative XOR in reverse order to reuse previous computations</li>
+              <li>No need to try all possible k values - we can calculate the optimal k directly</li>
+            </ul>
 
-    <h3>Algorithm Steps</h3>
-    <ol>
-      <li><strong>Compute</strong> the maximum possible value: (1 << maximumBit) - 1</li>
-      <li><strong>Initialize</strong> cumulative XOR to 0 and result array</li>
-      <li><strong>Iterate</strong> through the array in reverse order:
-        <ul>
-          <li>Update cumulative XOR with current element</li>
-          <li>Calculate optimal k as (max_value XOR cumulative_xor)</li>
-          <li>Store k in result array</li>
-        </ul>
-      </li>
-      <li><strong>Return</strong> the result array</li>
-    </ol>
+            <h3>Algorithm Steps</h3>
+            <ol>
+              <li><strong>Compute</strong> the maximum possible value: (1 << maximumBit) - 1</li>
+              <li><strong>Initialize</strong> cumulative XOR to 0 and result array</li>
+              <li><strong>Iterate</strong> through the array in reverse order:
+                <ul>
+                  <li>Update cumulative XOR with current element</li>
+                  <li>Calculate optimal k as (max_value XOR cumulative_xor)</li>
+                  <li>Store k in result array</li>
+                </ul>
+              </li>
+              <li><strong>Return</strong> the result array</li>
+            </ol>
 
-    <h3>Complexity Analysis</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Time Complexity</th>
-          <th>Space Complexity</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>O(n)</td>
-          <td>O(n)</td>
-        </tr>
-      </tbody>
-    </table>
+            <h3>Complexity Analysis</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Time Complexity</th>
+                  <th>Space Complexity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>O(n)</td>
+                  <td>O(n)</td>
+                </tr>
+              </tbody>
+            </table>
 
-    <p>
-      <strong>Explanation:</strong> We only traverse the array once, and each XOR operation is O(1). The space is O(n) for the result array.
-    </p>
+            <p>
+              <strong>Explanation:</strong> We only traverse the array once, and each XOR operation is O(1). The space
+              is O(n) for the result array.
+            </p>
 
-    <h3>Implementation</h3>
+            <h3>Implementation</h3>
 
-    <div class="code-tabs">
-      <div class="tab-buttons">
-        <button class="tab-button active" onclick="openTab(event, 'cpp-optimal')">
-          C++
-        </button>
-        <button class="tab-button" onclick="openTab(event, 'java-optimal')">
-          Java
-        </button>
-        <button class="tab-button" onclick="openTab(event, 'python-optimal')">
-          Python
-        </button>
-      </div>
+            <div class="code-tabs">
+              <div class="tab-buttons">
+                <button class="tab-button active" onclick="openTab(event, 'cpp-optimal')">
+                  C++
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'java-optimal')">
+                  Java
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'python-optimal')">
+                  Python
+                </button>
+              </div>
 
-      <div id="cpp-optimal" class="tab-content active">
-        <pre><code>
+              <div id="cpp-optimal" class="tab-content active">
+                <pre><code>
 class Solution {
 public:
     vector&lt;int&gt; getMaximumXor(vector&lt;int&gt;& nums, int maximumBit) {
@@ -822,10 +833,10 @@ public:
     }
 };
                 </code></pre>
-      </div>
+              </div>
 
-      <div id="java-optimal" class="tab-content">
-        <pre><code>
+              <div id="java-optimal" class="tab-content">
+                <pre><code>
 class Solution {
     public int[] getMaximumXor(int[] nums, int maximumBit) {
         int n = nums.length;
@@ -842,10 +853,10 @@ class Solution {
     }
 }
                 </code></pre>
-      </div>
+              </div>
 
-      <div id="python-optimal" class="tab-content">
-        <pre><code>
+              <div id="python-optimal" class="tab-content">
+                <pre><code>
 class Solution:
     def getMaximumXor(self, nums: List[int], maximumBit: int) -> List[int]:
         n = len(nums)
@@ -859,37 +870,40 @@ class Solution:
             
         return ans
                 </code></pre>
-      </div>
-    </div>
+              </div>
+            </div>
 
-    <div class="callout tip">
-      <strong>Why This Works:</strong> The XOR operation has special properties where a ^ b ^ b = a. By XOR-ing with (max_val ^ cumulative_xor), we effectively set all bits to 1 in the maximum possible range, giving us the maximum possible result.
-    </div>
+            <div class="callout tip">
+              <strong>Why This Works:</strong> The XOR operation has special properties where a ^ b ^ b = a. By XOR-ing
+              with (max_val ^ cumulative_xor), we effectively set all bits to 1 in the maximum possible range, giving us
+              the maximum possible result.
+            </div>
 
-    <hr />
+            <hr />
 
-    <h2>Approach 3: Prefix XOR (Alternative Optimal Solution)</h2>
-    <p>
-      This alternative solution computes the prefix XOR array first, then calculates the optimal k for each query. It's slightly different in implementation but has the same time complexity.
-    </p>
+            <h2>Approach 3: Prefix XOR (Alternative Optimal Solution)</h2>
+            <p>
+              This alternative solution computes the prefix XOR array first, then calculates the optimal k for each
+              query. It's slightly different in implementation but has the same time complexity.
+            </p>
 
-    <h3>Implementation</h3>
+            <h3>Implementation</h3>
 
-    <div class="code-tabs">
-      <div class="tab-buttons">
-        <button class="tab-button active" onclick="openTab(event, 'cpp-prefix')">
-          C++
-        </button>
-        <button class="tab-button" onclick="openTab(event, 'java-prefix')">
-          Java
-        </button>
-        <button class="tab-button" onclick="openTab(event, 'python-prefix')">
-          Python
-        </button>
-      </div>
+            <div class="code-tabs">
+              <div class="tab-buttons">
+                <button class="tab-button active" onclick="openTab(event, 'cpp-prefix')">
+                  C++
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'java-prefix')">
+                  Java
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'python-prefix')">
+                  Python
+                </button>
+              </div>
 
-      <div id="cpp-prefix" class="tab-content active">
-        <pre><code>
+              <div id="cpp-prefix" class="tab-content active">
+                <pre><code>
 class Solution {
 public:
     vector&lt;int&gt; getMaximumXor(vector&lt;int&gt;& nums, int maximumBit) {
@@ -912,10 +926,10 @@ public:
     }
 };
                 </code></pre>
-      </div>
+              </div>
 
-      <div id="java-prefix" class="tab-content">
-        <pre><code>
+              <div id="java-prefix" class="tab-content">
+                <pre><code>
 class Solution {
     public int[] getMaximumXor(int[] nums, int maximumBit) {
         int n = nums.length;
@@ -937,10 +951,10 @@ class Solution {
     }
 }
                 </code></pre>
-      </div>
+              </div>
 
-      <div id="python-prefix" class="tab-content">
-        <pre><code>
+              <div id="python-prefix" class="tab-content">
+                <pre><code>
 class Solution:
     def getMaximumXor(self, nums: List[int], maximumBit: int) -> List[int]:
         n = len(nums)
@@ -958,171 +972,187 @@ class Solution:
             
         return ans
                 </code></pre>
-      </div>
-    </div>
+              </div>
+            </div>
 
-    <div class="callout note">
-      <strong>Note:</strong> This approach uses O(n) extra space for the prefix array, while the previous optimal solution uses only O(1) extra space beyond the result array.
-    </div>
+            <div class="callout note">
+              <strong>Note:</strong> This approach uses O(n) extra space for the prefix array, while the previous
+              optimal solution uses only O(1) extra space beyond the result array.
+            </div>
 
-    <hr />
+            <hr />
 
-    <h2>Edge Cases and Special Considerations</h2>
-    <p>
-      When implementing solutions for this problem, consider these edge cases:
-    </p>
+            <h2>Edge Cases and Special Considerations</h2>
+            <p>
+              When implementing solutions for this problem, consider these edge cases:
+            </p>
 
-    <h3>1. Single Element Array</h3>
-    <pre><code><b>Input:</b> nums = [5], maximumBit = 3
+            <h3>1. Single Element Array</h3>
+            <pre><code><b>Input:</b> nums = [5], maximumBit = 3
 <b>Output:</b> [2]
 Explanation: max_val = 7 (2^3-1), k = 7 XOR 5 = 2</code></pre>
 
-    <h3>2. All Elements Zero</h3>
-    <pre><code><b>Input:</b> nums = [0, 0, 0], maximumBit = 2
+            <h3>2. All Elements Zero</h3>
+            <pre><code><b>Input:</b> nums = [0, 0, 0], maximumBit = 2
 <b>Output:</b> [3, 3, 3]
 Explanation: XOR is always 0, so k is always 3 (2^2-1)</code></pre>
 
-    <h3>3. Maximum Bit Value</h3>
-    <pre><code><b>Input:</b> nums = [1, 2, 3], maximumBit = 1
+            <h3>3. Maximum Bit Value</h3>
+            <pre><code><b>Input:</b> nums = [1, 2, 3], maximumBit = 1
 <b>Output:</b> [0, 1, 1]
 Explanation: max_val = 1 (2^1-1), so k can only be 0 or 1</code></pre>
 
-    <h3>4. Large Input Size</h3>
-    <pre><code><b>Input:</b> nums = [1, 2, 3, ..., 100000], maximumBit = 20
+            <h3>4. Large Input Size</h3>
+            <pre><code><b>Input:</b> nums = [1, 2, 3, ..., 100000], maximumBit = 20
 <b>Output:</b> Array of 100000 elements
 Must handle efficiently with O(n) solution</code></pre>
 
-    <div class="callout warning">
-      <strong>Important:</strong> Always test with the upper constraint limits (n=10⁵) to ensure your solution handles large inputs efficiently.
-    </div>
+            <div class="callout warning">
+              <strong>Important:</strong> Always test with the upper constraint limits (n=10⁵) to ensure your solution
+              handles large inputs efficiently.
+            </div>
 
-    <hr />
+            <hr />
 
-    <h2>Comparison of Approaches</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Approach</th>
-          <th>Time Complexity</th>
-          <th>Space Complexity</th>
-          <th>When to Use</th>
-          <th>Pros</th>
-          <th>Cons</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Brute Force</td>
-          <td>O(n² * 2<sup>maximumBit</sup>)</td>
-          <td>O(n)</td>
-          <td>Small inputs only</td>
-          <td>Simple to understand</td>
-          <td>Fails for large n</td>
-        </tr>
-        <tr>
-          <td>Cumulative XOR</td>
-          <td>O(n)</td>
-          <td>O(n)</td>
-          <td>All cases, optimal</td>
-          <td>Most efficient</td>
-          <td>Requires bit manipulation insight</td>
-        </tr>
-        <tr>
-          <td>Prefix XOR</td>
-          <td>O(n)</td>
-          <td>O(n)</td>
-          <td>When prefix array is useful</td>
-          <td>Clear separation of steps</td>
-          <td>Uses extra space</td>
-        </tr>
-      </tbody>
-    </table>
+            <h2>Comparison of Approaches</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Approach</th>
+                  <th>Time Complexity</th>
+                  <th>Space Complexity</th>
+                  <th>When to Use</th>
+                  <th>Pros</th>
+                  <th>Cons</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Brute Force</td>
+                  <td>O(n² * 2<sup>maximumBit</sup>)</td>
+                  <td>O(n)</td>
+                  <td>Small inputs only</td>
+                  <td>Simple to understand</td>
+                  <td>Fails for large n</td>
+                </tr>
+                <tr>
+                  <td>Cumulative XOR</td>
+                  <td>O(n)</td>
+                  <td>O(n)</td>
+                  <td>All cases, optimal</td>
+                  <td>Most efficient</td>
+                  <td>Requires bit manipulation insight</td>
+                </tr>
+                <tr>
+                  <td>Prefix XOR</td>
+                  <td>O(n)</td>
+                  <td>O(n)</td>
+                  <td>When prefix array is useful</td>
+                  <td>Clear separation of steps</td>
+                  <td>Uses extra space</td>
+                </tr>
+              </tbody>
+            </table>
 
-    <div class="callout tip">
-      <strong>Interview Tip:</strong> When you see XOR problems, always consider the properties of XOR (a ^ a = 0, a ^ 0 = a) and look for patterns that can help optimize the solution.
-    </div>
+            <div class="callout tip">
+              <strong>Interview Tip:</strong> When you see XOR problems, always consider the properties of XOR (a ^ a =
+              0, a ^ 0 = a) and look for patterns that can help optimize the solution.
+            </div>
 
-    <hr />
+            <hr />
 
-    <h2>Frequently Asked Questions</h2>
+            <h2>Frequently Asked Questions</h2>
 
-    <div class="faq-section">
-      <details>
-        <summary>
-          1. Why does XOR with (1 << maximumBit) - 1 give the maximum result?
-        </summary>
-        <p>
-          (1 << maximumBit) - 1 creates a number with all bits set to 1 within the maximumBit range. XOR-ing with this value flips all bits of the original number, giving the maximum possible value in that bit range.
-        </p>
-      </details>
+            <div class="faq-section">
+              <details>
+                <summary>
+                  1. Why does XOR with (1 << maximumBit) - 1 give the maximum result? </summary>
+                    <p>
+                      (1 << maximumBit) - 1 creates a number with all bits set to 1 within the maximumBit range. XOR-ing
+                        with this value flips all bits of the original number, giving the maximum possible value in that
+                        bit range. </p>
+              </details>
 
-      <details>
-        <summary>
-          2. How does the cumulative XOR approach work in reverse?
-        </summary>
-        <p>
-          By processing the array in reverse, we can build the cumulative XOR for each query efficiently. The XOR for nums[0..i] is the same as XOR(nums[0..n-1]) XOR XOR(nums[i+1..n-1]). This allows us to compute each query's XOR in constant time.
-        </p>
-      </details>
+              <details>
+                <summary>
+                  2. How does the cumulative XOR approach work in reverse?
+                </summary>
+                <p>
+                  By processing the array in reverse, we can build the cumulative XOR for each query efficiently. The
+                  XOR for nums[0..i] is the same as XOR(nums[0..n-1]) XOR XOR(nums[i+1..n-1]). This allows us to compute
+                  each query's XOR in constant time.
+                </p>
+              </details>
 
-      <details>
-        <summary>
-          3. Can this problem be solved without bit manipulation?
-        </summary>
-        <p>
-          While possible, it would be much less efficient. Bit manipulation allows us to compute the optimal k directly without trying all possibilities. Other approaches would likely result in higher time complexity.
-        </p>
-      </details>
+              <details>
+                <summary>
+                  3. Can this problem be solved without bit manipulation?
+                </summary>
+                <p>
+                  While possible, it would be much less efficient. Bit manipulation allows us to compute the optimal k
+                  directly without trying all possibilities. Other approaches would likely result in higher time
+                  complexity.
+                </p>
+              </details>
 
-      <details>
-        <summary>
-          4. What if the array wasn't sorted?
-        </summary>
-        <p>
-          The solution doesn't depend on the array being sorted. The order of XOR operations doesn't matter (XOR is commutative and associative), so the approach works regardless of the array's order.
-        </p>
-      </details>
+              <details>
+                <summary>
+                  4. What if the array wasn't sorted?
+                </summary>
+                <p>
+                  The solution doesn't depend on the array being sorted. The order of XOR operations doesn't matter (XOR
+                  is commutative and associative), so the approach works regardless of the array's order.
+                </p>
+              </details>
 
-      <details>
-        <summary>
-          5. How would you modify the solution if we needed to keep the array intact?
-        </summary>
-        <p>
-          You could make a copy of the array or use indices to track the current subarray without modifying the original array. The time and space complexity would remain the same.
-        </p>
-      </details>
+              <details>
+                <summary>
+                  5. How would you modify the solution if we needed to keep the array intact?
+                </summary>
+                <p>
+                  You could make a copy of the array or use indices to track the current subarray without modifying the
+                  original array. The time and space complexity would remain the same.
+                </p>
+              </details>
 
-      <details>
-        <summary>
-          6. Is the prefix XOR approach better than the cumulative XOR approach?
-        </summary>
-        <p>
-          Both have O(n) time complexity. The prefix XOR approach uses slightly more space (O(n) vs O(1)) but may be more intuitive for some. The cumulative XOR approach is more space-efficient.
-        </p>
-      </details>
+              <details>
+                <summary>
+                  6. Is the prefix XOR approach better than the cumulative XOR approach?
+                </summary>
+                <p>
+                  Both have O(n) time complexity. The prefix XOR approach uses slightly more space (O(n) vs O(1)) but
+                  may be more intuitive for some. The cumulative XOR approach is more space-efficient.
+                </p>
+              </details>
 
-      <details>
-        <summary>
-          7. How does this problem relate to real-world applications?
-        </summary>
-        <p>
-          XOR operations are fundamental in cryptography, error detection, and data compression. This problem demonstrates how to maximize XOR results efficiently, which is useful in encryption algorithms and checksum calculations.
-        </p>
-      </details>
+              <details>
+                <summary>
+                  7. How does this problem relate to real-world applications?
+                </summary>
+                <p>
+                  XOR operations are fundamental in cryptography, error detection, and data compression. This problem
+                  demonstrates how to maximize XOR results efficiently, which is useful in encryption algorithms and
+                  checksum calculations.
+                </p>
+              </details>
 
-      <details>
-        <summary>
-          8. What similar problems should I practice to master this pattern?
-        </summary>
-        <p>
-          Recommended problems: 421 (Maximum XOR of Two Numbers in an Array), 1318 (Minimum Flips to Make a OR b Equal to c), 1442 (Count Triplets That Can Form Two Arrays of Equal XOR), and 1734 (Decode XORed Permutation).
-        </p>
-      </details>
-    </div>
+              <details>
+                <summary>
+                  8. What similar problems should I practice to master this pattern?
+                </summary>
+                <p>
+                  Recommended problems: 421 (Maximum XOR of Two Numbers in an Array), 1318 (Minimum Flips to Make a OR b
+                  Equal to c), 1442 (Count Triplets That Can Form Two Arrays of Equal XOR), and 1734 (Decode XORed
+                  Permutation).
+                </p>
+              </details>
+            </div>
 
-    <div class="callout">
-      <strong>Final Thoughts:</strong> This problem demonstrates the power of XOR bit manipulation and cumulative operations. The key insight is recognizing that the optimal k can be computed directly without exhaustive search. Mastering this pattern will help you solve many bit manipulation problems efficiently.
-    </div>
+            <div class="callout">
+              <strong>Final Thoughts:</strong> This problem demonstrates the power of XOR bit manipulation and
+              cumulative operations. The key insight is recognizing that the optimal k can be computed directly without
+              exhaustive search. Mastering this pattern will help you solve many bit manipulation problems efficiently.
+            </div>
   </main>
 
   <!-- Footer will be inserted by JavaScript -->

@@ -9,19 +9,17 @@
   </title>
   <meta name="description"
     content="Learn step-by-step solutions to LeetCode 2799 using brute force and sliding window in C++, Java, and Python. Master counting complete subarrays easily." />
-  <meta name="keywords" content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 2799, Count Complete Subarrays, Sliding Window technique, Array problems, Coding interview prep, Algorithm optimization, C++ Java Python solutions, Time complexity, Algopush tutorials" />
+  <meta name="keywords"
+    content="leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, LeetCode 2799, Count Complete Subarrays, Sliding Window technique, Array problems, Coding interview prep, Algorithm optimization, C++ Java Python solutions, Time complexity, Algopush tutorials" />
   <meta name="author" content="Algopush" />
-  <meta property="og:title"
-    content="LeetCode 2799 Solution | Count Complete Subarrays in an Array" />
+  <meta property="og:title" content="LeetCode 2799 Solution | Count Complete Subarrays in an Array" />
   <meta property="og:description"
     content="Complete guide to solving LeetCode 2799 with brute force and optimized sliding window approaches with code examples." />
   <meta property="og:image" content="https://algopush.com/Leetcode/Images/2799.png" />
-  <meta property="og:url"
-    content="https://algopush.com/Leetcode/2799-count-complete-subarrays-in-an-array.html" />
+  <meta property="og:url" content="https://algopush.com/Leetcode/2799-count-complete-subarrays-in-an-array.html" />
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title"
-    content="LeetCode 2799 Solution | Count Complete Subarrays in an Array" />
+  <meta name="twitter:title" content="LeetCode 2799 Solution | Count Complete Subarrays in an Array" />
   <meta name="twitter:description"
     content="Multiple approaches to solve LeetCode 2799 with detailed explanations and code implementations." />
   <meta name="twitter:image" content="https://algopush.com/Leetcode/Images/2799.png" />
@@ -29,8 +27,7 @@
   <meta http-equiv="content-language" content="en" />
   <meta name="distribution" content="global" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical"
-    href="https://algopush.com/Leetcode/2799-count-complete-subarrays-in-an-array.html" />
+  <link rel="canonical" href="https://algopush.com/Leetcode/2799-count-complete-subarrays-in-an-array.html" />
 
   <!-- Favicon -->
   <link rel="icon" href="../components/favicon.png" type="image/x-icon">
@@ -162,12 +159,14 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       box-shadow: var(--box-shadow);
+      text-align: center;
     }
 
     .problem-visual img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      max-height: 400px;
+      display: inline-block;
     }
 
     /* Typography */
@@ -536,7 +535,8 @@
 
     <!-- Problem Visualization Image -->
     <div class="problem-visual">
-      <img src="https://algopush.com/Leetcode/Images/2799.png" alt="Count Complete Subarrays in an Array" loading="lazy">
+      <img src="https://algopush.com/Leetcode/Images/2799.png" alt="Count Complete Subarrays in an Array"
+        loading="lazy">
     </div>
 
     <h1>2799: Count Complete Subarrays in an Array</h1>
@@ -558,16 +558,19 @@
     </div>
 
     <div class="callout tip">
-      <strong>Pro Tip:</strong> This problem is an excellent example of how to optimize from a brute force solution to an efficient sliding window approach. The optimal solution runs in O(n) time with O(n) space.
+      <strong>Pro Tip:</strong> This problem is an excellent example of how to optimize from a brute force solution to
+      an efficient sliding window approach. The optimal solution runs in O(n) time with O(n) space.
     </div>
 
     <p>
-      The problem "Count Complete Subarrays in an Array" (LeetCode 2799) requires us to count how many subarrays contain all distinct elements present in the original array. A subarray is a contiguous part of the array.
+      The problem "Count Complete Subarrays in an Array" (LeetCode 2799) requires us to count how many subarrays contain
+      all distinct elements present in the original array. A subarray is a contiguous part of the array.
     </p>
 
     <h2>Problem Statement</h2>
     <p>
-      Given an array of positive integers <code>nums</code>, return the number of complete subarrays. A subarray is complete if it contains all the distinct elements present in the entire array.
+      Given an array of positive integers <code>nums</code>, return the number of complete subarrays. A subarray is
+      complete if it contains all the distinct elements present in the entire array.
     </p>
 
     <h3>Constraints</h3>
@@ -578,8 +581,8 @@
 
     <h2>Problem Link</h2>
     <p>
-      <a href="https://leetcode.com/problems/count-complete-subarrays-in-an-array/"
-        target="_blank" rel="noopener noreferrer">View on LeetCode ↗</a>
+      <a href="https://leetcode.com/problems/count-complete-subarrays-in-an-array/" target="_blank"
+        rel="noopener noreferrer">View on LeetCode ↗</a>
     </p>
 
     <h3>Example 1</h3>
@@ -594,14 +597,16 @@ The complete subarrays are:
 [3, 1, 2, 2]</code></pre>
 
     <div class="callout note">
-      <strong>Note:</strong> The key insight is recognizing that we need to find all contiguous subarrays that contain all distinct elements from the original array.
+      <strong>Note:</strong> The key insight is recognizing that we need to find all contiguous subarrays that contain
+      all distinct elements from the original array.
     </div>
 
     <hr />
 
     <h2>Approach 1: Brute Force (Check All Subarrays)</h2>
     <p>
-      The brute force approach checks every possible subarray to see if it contains all distinct elements from the original array.
+      The brute force approach checks every possible subarray to see if it contains all distinct elements from the
+      original array.
     </p>
 
     <h3>Algorithm Steps</h3>
@@ -718,14 +723,16 @@ class Solution:
     </div>
 
     <div class="callout warning">
-      <strong>Note:</strong> While this solution works, it's inefficient for larger arrays due to its O(n²) time complexity.
+      <strong>Note:</strong> While this solution works, it's inefficient for larger arrays due to its O(n²) time
+      complexity.
     </div>
 
     <hr />
 
     <h2>Approach 2: Sliding Window (Optimized)</h2>
     <p>
-      The sliding window approach efficiently counts complete subarrays by maintaining a window that contains all distinct elements and calculating valid subarrays from that window.
+      The sliding window approach efficiently counts complete subarrays by maintaining a window that contains all
+      distinct elements and calculating valid subarrays from that window.
     </p>
 
     <h3>Algorithm Steps</h3>
@@ -862,18 +869,22 @@ class Solution:
     </div>
 
     <div class="callout tip">
-      <strong>Why This Works:</strong> The sliding window approach efficiently tracks when we have all distinct elements in the current window and counts all valid subarrays from that point, avoiding the need to check every possible subarray.
+      <strong>Why This Works:</strong> The sliding window approach efficiently tracks when we have all distinct elements
+      in the current window and counts all valid subarrays from that point, avoiding the need to check every possible
+      subarray.
     </div>
 
     <hr />
 
     <h2>Real-Life Analogy</h2>
     <p>
-      Imagine you're collecting Pokémon cards. Your goal is to find all sets of continuous cards (subarrays) that include all types of Pokémon you have.
+      Imagine you're collecting Pokémon cards. Your goal is to find all sets of continuous cards (subarrays) that
+      include all types of Pokémon you have.
     </p>
     <ul>
       <li><strong>Brute Force:</strong> You check every possible pack manually to see if it has all Pokémon types.</li>
-      <li><strong>Sliding Window:</strong> You keep adding cards to your hand until you have all Pokémon, then slide your hand forward to explore smaller possible complete sets.</li>
+      <li><strong>Sliding Window:</strong> You keep adding cards to your hand until you have all Pokémon, then slide
+        your hand forward to explore smaller possible complete sets.</li>
     </ul>
 
     <hr />
@@ -905,7 +916,8 @@ class Solution:
     </table>
 
     <div class="callout note">
-      <strong>Interview Tip:</strong> Always mention the brute force solution first, then optimize it. The sliding window technique is a powerful pattern for subarray problems involving distinct elements.
+      <strong>Interview Tip:</strong> Always mention the brute force solution first, then optimize it. The sliding
+      window technique is a powerful pattern for subarray problems involving distinct elements.
     </div>
 
     <hr />
@@ -918,7 +930,9 @@ class Solution:
           1. What exactly is a "complete" subarray?
         </summary>
         <p>
-          A complete subarray is a contiguous sequence of elements that contains all distinct elements present in the original array. For example, if the array has elements {1, 2, 3}, then any subarray containing at least one of each is complete.
+          A complete subarray is a contiguous sequence of elements that contains all distinct elements present in the
+          original array. For example, if the array has elements {1, 2, 3}, then any subarray containing at least one of
+          each is complete.
         </p>
       </details>
 
@@ -927,7 +941,9 @@ class Solution:
           2. Why does the sliding window approach work better?
         </summary>
         <p>
-          The sliding window approach is more efficient because it processes each element at most twice (once when expanding the window, once when contracting it), resulting in O(n) time complexity compared to the brute force O(n²) approach.
+          The sliding window approach is more efficient because it processes each element at most twice (once when
+          expanding the window, once when contracting it), resulting in O(n) time complexity compared to the brute force
+          O(n²) approach.
         </p>
       </details>
 
@@ -936,7 +952,9 @@ class Solution:
           3. How does the sliding window count all valid subarrays?
         </summary>
         <p>
-          When the window contains all distinct elements, every subarray starting from the current left pointer to the end of the array (from the right pointer) is valid. That's why we add (n - right) to our count when the window contains all distinct elements.
+          When the window contains all distinct elements, every subarray starting from the current left pointer to the
+          end of the array (from the right pointer) is valid. That's why we add (n - right) to our count when the window
+          contains all distinct elements.
         </p>
       </details>
 
@@ -945,7 +963,8 @@ class Solution:
           4. What's the space complexity of these solutions?
         </summary>
         <p>
-          Both solutions have O(n) space complexity because they need to store the distinct elements. The sliding window approach additionally needs space for the current window's elements.
+          Both solutions have O(n) space complexity because they need to store the distinct elements. The sliding window
+          approach additionally needs space for the current window's elements.
         </p>
       </details>
 
@@ -954,7 +973,8 @@ class Solution:
           5. Can this problem be solved with a fixed window size?
         </summary>
         <p>
-          No, because complete subarrays can be of varying lengths. A fixed window approach wouldn't work since we need to find all subarrays that happen to contain all distinct elements, regardless of their size.
+          No, because complete subarrays can be of varying lengths. A fixed window approach wouldn't work since we need
+          to find all subarrays that happen to contain all distinct elements, regardless of their size.
         </p>
       </details>
 
@@ -963,7 +983,8 @@ class Solution:
           6. How would you handle negative numbers in the array?
         </summary>
         <p>
-          The solutions would work the same way with negative numbers since we're only concerned with distinct values, not their sign. The hash map/set would store negative numbers without issues.
+          The solutions would work the same way with negative numbers since we're only concerned with distinct values,
+          not their sign. The hash map/set would store negative numbers without issues.
         </p>
       </details>
 
@@ -972,7 +993,8 @@ class Solution:
           7. What if the array contains duplicate distinct elements?
         </summary>
         <p>
-          The solutions still work because we first count the total distinct elements in the entire array, then look for subarrays that contain all of them, regardless of how many times each appears in the subarray.
+          The solutions still work because we first count the total distinct elements in the entire array, then look for
+          subarrays that contain all of them, regardless of how many times each appears in the subarray.
         </p>
       </details>
 
@@ -981,7 +1003,8 @@ class Solution:
           8. Is there a way to solve this with O(1) space?
         </summary>
         <p>
-          No, because we need to store information about the distinct elements, which requires O(n) space in the worst case where all elements are distinct.
+          No, because we need to store information about the distinct elements, which requires O(n) space in the worst
+          case where all elements are distinct.
         </p>
       </details>
 
@@ -990,7 +1013,9 @@ class Solution:
           9. How does the time complexity change if the array has all unique elements?
         </summary>
         <p>
-          In the worst case where all elements are unique, both approaches still maintain their time complexities (O(n²) for brute force, O(n) for sliding window), though the sliding window would effectively check every single-element subarray.
+          In the worst case where all elements are unique, both approaches still maintain their time complexities (O(n²)
+          for brute force, O(n) for sliding window), though the sliding window would effectively check every
+          single-element subarray.
         </p>
       </details>
 
@@ -999,13 +1024,16 @@ class Solution:
           10. What similar problems should I practice?
         </summary>
         <p>
-          Recommended problems: 3 (Longest Substring Without Repeating Characters), 76 (Minimum Window Substring), 209 (Minimum Size Subarray Sum), 904 (Fruit Into Baskets), and 930 (Binary Subarrays With Sum).
+          Recommended problems: 3 (Longest Substring Without Repeating Characters), 76 (Minimum Window Substring), 209
+          (Minimum Size Subarray Sum), 904 (Fruit Into Baskets), and 930 (Binary Subarrays With Sum).
         </p>
       </details>
     </div>
 
     <div class="callout">
-      <strong>Final Thoughts:</strong> This problem demonstrates the power of the sliding window technique for subarray problems. While the brute force solution is straightforward, the sliding window approach provides significant efficiency gains. Understanding both approaches will strengthen your problem-solving skills for coding interviews.
+      <strong>Final Thoughts:</strong> This problem demonstrates the power of the sliding window technique for subarray
+      problems. While the brute force solution is straightforward, the sliding window approach provides significant
+      efficiency gains. Understanding both approaches will strengthen your problem-solving skills for coding interviews.
     </div>
   </main>
 

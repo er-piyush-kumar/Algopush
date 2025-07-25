@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3587. Minimum Adjacent Swaps to Alternate Parity | LeetCode</title>
-    <meta name="description" 
+    <meta name="description"
         content="Complete solution for LeetCode 3587 with efficient algorithms, multiple approaches, and code implementations in C++, Java, and Python.">
     <meta name="keywords"
         content="LeetCode 3587, Minimum Adjacent Swaps to Alternate Parity, Minimum Adjacent Swaps, Parity Alternation, Array Manipulation, Algorithm, Programming, Coding Interview, LeetCode Medium Problem, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, Leetcode dsa interview question, sde interview question">
     <meta name="author" content="Algopush">
     <link rel="canonical" href="https://algopush.com/Leetcode/3587-minimum-adjacent-swaps-to-alternate-parity.html">
-    
+
     <!-- Favicon -->
     <link rel="icon" href="../components/favicon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="../components/favicon.png">
@@ -20,7 +21,8 @@
     <meta property="og:description"
         content="Efficient solutions for LeetCode 3587 with multiple approaches and code implementations. Learn how to minimize adjacent swaps for parity alternation.">
     <meta property="og:image" content="https://algopush.com/Leetcode/Images/3587.png">
-    <meta property="og:url" content="https://algopush.com/Leetcode/3587-minimum-adjacent-swaps-to-alternate-parity.html">
+    <meta property="og:url"
+        content="https://algopush.com/Leetcode/3587-minimum-adjacent-swaps-to-alternate-parity.html">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -104,12 +106,14 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            text-align: center;
         }
 
         .problem-visual img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            display: block;
+            max-height: 400px;
+            display: inline-block;
         }
 
         /* Typography */
@@ -497,6 +501,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="header"></div>
 
@@ -529,8 +534,11 @@
         </div>
 
         <h2>Problem Statement</h2>
-        <p>You are given an array <code>nums</code> of distinct integers. In one operation, you can swap any two adjacent elements in the array.</p>
-        <p>An arrangement is valid if the parity of adjacent elements alternates (even-odd or odd-even). Return the minimum number of adjacent swaps required to transform <code>nums</code> into any valid arrangement. If impossible, return -1.</p>
+        <p>You are given an array <code>nums</code> of distinct integers. In one operation, you can swap any two
+            adjacent elements in the array.</p>
+        <p>An arrangement is valid if the parity of adjacent elements alternates (even-odd or odd-even). Return the
+            minimum number of adjacent swaps required to transform <code>nums</code> into any valid arrangement. If
+            impossible, return -1.</p>
 
         <h3>Example 1</h3>
         <pre><code>Input: nums = [2,4,6,5,7]
@@ -580,13 +588,15 @@ Explanation: No valid arrangement possible</code></pre>
         </ol>
 
         <div class="callout tip">
-            <strong>Why this works:</strong> The inversion count (number of out-of-order pairs) equals the minimum adjacent swaps needed to sort elements into their target positions.
+            <strong>Why this works:</strong> The inversion count (number of out-of-order pairs) equals the minimum
+            adjacent swaps needed to sort elements into their target positions.
         </div>
 
         <hr>
 
         <h2>Approach 1: Brute Force (For Small Inputs Only)</h2>
-        <p>This approach generates all permutations of the array, checks for valid arrangements, and calculates the minimum adjacent swaps required for each valid permutation.</p>
+        <p>This approach generates all permutations of the array, checks for valid arrangements, and calculates the
+            minimum adjacent swaps required for each valid permutation.</p>
 
         <h3>Algorithm Steps</h3>
         <ol>
@@ -1177,7 +1187,8 @@ Explanation: No valid arrangement possible</code></pre>
         <pre><code>Input: [5] → Output: 0 (trivially valid)</code></pre>
 
         <div class="callout warning">
-            <strong>Important:</strong> Always check the even/odd count difference first to avoid unnecessary computation
+            <strong>Important:</strong> Always check the even/odd count difference first to avoid unnecessary
+            computation
         </div>
 
         <hr>
@@ -1186,72 +1197,87 @@ Explanation: No valid arrangement possible</code></pre>
         <div class="faq-section">
             <details>
                 <summary>Why do we need two patterns?</summary>
-                <p>There are two possible valid arrangements: starting with even or starting with odd. We must compute costs for both and choose the minimal one when both are feasible.</p>
+                <p>There are two possible valid arrangements: starting with even or starting with odd. We must compute
+                    costs for both and choose the minimal one when both are feasible.</p>
             </details>
 
             <details>
                 <summary>How does the inversion count relate to adjacent swaps?</summary>
-                <p>The inversion count (number of out-of-order pairs) directly equals the minimum adjacent swaps needed to sort elements. Each swap fixes exactly one inversion.</p>
+                <p>The inversion count (number of out-of-order pairs) directly equals the minimum adjacent swaps needed
+                    to sort elements. Each swap fixes exactly one inversion.</p>
             </details>
 
             <details>
                 <summary>Why not use bubble sort to count swaps directly?</summary>
-                <p>Bubble sort is O(n²) which is inefficient for large inputs (n=10^5). Merge sort inversion counting is O(n log n).</p>
+                <p>Bubble sort is O(n²) which is inefficient for large inputs (n=10^5). Merge sort inversion counting is
+                    O(n log n).</p>
             </details>
 
             <details>
                 <summary>Can we use a Fenwick tree for inversion counting?</summary>
-                <p>Yes, Fenwick trees can count inversions in O(n log n), but merge sort is simpler and equally efficient for this problem.</p>
+                <p>Yes, Fenwick trees can count inversions in O(n log n), but merge sort is simpler and equally
+                    efficient for this problem.</p>
             </details>
 
             <details>
                 <summary>How do we handle arrays with duplicate values?</summary>
-                <p>The problem states all elements are distinct, so we don't need to handle duplicates. For duplicates, we'd need stable sorting.</p>
+                <p>The problem states all elements are distinct, so we don't need to handle duplicates. For duplicates,
+                    we'd need stable sorting.</p>
             </details>
 
             <details>
                 <summary>Why is the feasibility check important?</summary>
-                <p>It avoids unnecessary computation. If |even - odd| > 1, no valid arrangement exists and we immediately return -1.</p>
+                <p>It avoids unnecessary computation. If |even - odd| > 1, no valid arrangement exists and we
+                    immediately return -1.</p>
             </details>
 
             <details>
                 <summary>Can we solve with O(1) space?</summary>
-                <p>No, we need O(n) space to store indices and position mappings. The merge sort recursion also uses O(log n) stack space.</p>
+                <p>No, we need O(n) space to store indices and position mappings. The merge sort recursion also uses
+                    O(log n) stack space.</p>
             </details>
 
             <details>
                 <summary>What if the array has negative numbers?</summary>
-                <p>Parity (even/odd) is defined for negative integers the same way as positives. The modulus operation works identically.</p>
+                <p>Parity (even/odd) is defined for negative integers the same way as positives. The modulus operation
+                    works identically.</p>
             </details>
 
             <details>
                 <summary>Why assign positions with 2*j and 2*j+1?</span></summary>
-                <p>This creates a virtual target array where even and odd positions are interleaved. The exact values don't matter, only their relative ordering.</p>
+                <p>This creates a virtual target array where even and odd positions are interleaved. The exact values
+                    don't matter, only their relative ordering.</p>
             </details>
 
             <details>
                 <summary>How does this preserve the relative order of elements?</summary>
-                <p>We assign positions based on original indices, maintaining relative order within even and odd groups to minimize swaps.</p>
+                <p>We assign positions based on original indices, maintaining relative order within even and odd groups
+                    to minimize swaps.</p>
             </details>
 
             <details>
                 <summary>Can we optimize further?</summary>
-                <p>We could compute the inversion count without building the position array, but it wouldn't change the O(n log n) complexity.</p>
+                <p>We could compute the inversion count without building the position array, but it wouldn't change the
+                    O(n log n) complexity.</p>
             </details>
 
             <details>
                 <summary>Why use merge sort instead of quicksort?</summary>
-                <p>Merge sort is stable and efficiently counts inversions during the merge process. Quicksort doesn't naturally count inversions.</p>
+                <p>Merge sort is stable and efficiently counts inversions during the merge process. Quicksort doesn't
+                    naturally count inversions.</p>
             </details>
 
             <details>
                 <summary>How would you explain this to a beginner?</summary>
-                <p>Imagine organizing books on a shelf: red covers (even) and blue covers (odd) must alternate. We first check if counts match (differ by ≤1), then calculate minimum adjacent swaps by tracking how far each book is from its ideal position.</p>
+                <p>Imagine organizing books on a shelf: red covers (even) and blue covers (odd) must alternate. We first
+                    check if counts match (differ by ≤1), then calculate minimum adjacent swaps by tracking how far each
+                    book is from its ideal position.</p>
             </details>
         </div>
 
         <div class="callout">
-            <strong>Final Recommendation:</strong> The inversion count approach provides the optimal solution for this problem, efficiently handling large inputs while minimizing adjacent swaps.
+            <strong>Final Recommendation:</strong> The inversion count approach provides the optimal solution for this
+            problem, efficiently handling large inputs while minimizing adjacent swaps.
         </div>
     </main>
 
@@ -1318,4 +1344,5 @@ Explanation: No valid arrangement possible</code></pre>
         });
     </script>
 </body>
+
 </html>

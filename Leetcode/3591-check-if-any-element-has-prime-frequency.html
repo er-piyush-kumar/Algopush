@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3591. Check if Any Element Has Prime Frequency | LeetCode</title>
-    <meta name="description" 
+    <meta name="description"
         content="Complete solution for LeetCode 3591: Multiple approaches to check if any array element has prime frequency with C++, Java, and Python implementations.">
     <meta name="keywords"
         content="LeetCode 3591, Prime Frequency, Array, Algorithm, Programming, Coding Interview, Prime Numbers, Frequency Count, Coding Interview, LeetCode Medium Problem, Competitive Programming, leetcode, leetcode problem of the day, leetcode contest question, leetcode easy question, leetcode medium question, leetcode daily question, Leetcode dsa interview question, sde interview question">
     <meta name="author" content="Algopush">
     <link rel="canonical" href="https://algopush.com/Leetcode/3591-check-if-any-element-has-prime-frequency.html">
-    
+
     <!-- Favicon -->
     <link rel="icon" href="../components/favicon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="../components/favicon.png">
@@ -104,12 +105,14 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
+            text-align: center;
         }
 
         .problem-visual img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            display: block;
+            max-height: 400px;
+            display: inline-block;
         }
 
         /* Typography */
@@ -497,6 +500,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="header"></div>
 
@@ -529,9 +533,11 @@
         </div>
 
         <h2>Problem Statement</h2>
-        <p>Given an integer array <code>nums</code>, return <code>true</code> if the frequency of any element in the array is a prime number, otherwise return <code>false</code>.</p>
+        <p>Given an integer array <code>nums</code>, return <code>true</code> if the frequency of any element in the
+            array is a prime number, otherwise return <code>false</code>.</p>
         <p>The <strong>frequency</strong> of an element is the number of times it occurs in the array.</p>
-        <p>A <strong>prime number</strong> is a natural number greater than 1 that has no positive divisors other than 1 and itself.</p>
+        <p>A <strong>prime number</strong> is a natural number greater than 1 that has no positive divisors other than 1
+            and itself.</p>
 
         <h3>Example 1</h3>
         <pre><code>Input: nums = [1,2,3,4,5,4]
@@ -953,12 +959,14 @@ Explanation: 2 appears three times (prime), 4 appears twice (prime).</code></pre
         <div class="faq-section">
             <details>
                 <summary>Why is 1 not considered prime?</summary>
-                <p>By definition, prime numbers must have exactly two distinct divisors. 1 has only one divisor (itself), so it's not prime.</p>
+                <p>By definition, prime numbers must have exactly two distinct divisors. 1 has only one divisor
+                    (itself), so it's not prime.</p>
             </details>
 
             <details>
                 <summary>How do we handle negative numbers?</summary>
-                <p>Constraints specify nums[i] ≥ 0, so negatives aren't possible. For general solutions, use absolute values.</p>
+                <p>Constraints specify nums[i] ≥ 0, so negatives aren't possible. For general solutions, use absolute
+                    values.</p>
             </details>
 
             <details>
@@ -973,7 +981,8 @@ Explanation: 2 appears three times (prime), 4 appears twice (prime).</code></pre
 
             <details>
                 <summary>Why use Sieve of Eratosthenes?</summary>
-                <p>It efficiently precomputes primes up to a limit (100 in this case) with O(n log log n) time complexity.</p>
+                <p>It efficiently precomputes primes up to a limit (100 in this case) with O(n log log n) time
+                    complexity.</p>
             </details>
 
             <details>
@@ -1013,7 +1022,8 @@ Explanation: 2 appears three times (prime), 4 appears twice (prime).</code></pre
         </div>
 
         <div class="callout">
-            <strong>Final Recommendation:</strong> The precomputation approach (Approach 2) provides the best balance of efficiency and readability for this problem's constraints.
+            <strong>Final Recommendation:</strong> The precomputation approach (Approach 2) provides the best balance of
+            efficiency and readability for this problem's constraints.
         </div>
     </main>
 
@@ -1080,4 +1090,5 @@ Explanation: 2 appears three times (prime), 4 appears twice (prime).</code></pre
         });
     </script>
 </body>
+
 </html>

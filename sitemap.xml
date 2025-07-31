@@ -352,4 +352,18 @@
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://algopush.com/Leetcode/2419-longest-subarray-with-maximum-bitwise-and.html</loc>
+        <lastmod>2025-07-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://algopush.com/Leetcode/898-bitwise-ors-of-subarrays.html</loc>
+        <lastmod>2025-07-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>
